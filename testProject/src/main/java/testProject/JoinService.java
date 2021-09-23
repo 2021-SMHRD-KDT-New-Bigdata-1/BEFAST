@@ -22,6 +22,11 @@ public class JoinService extends HttpServlet {
 		// 1. 사용자가 입력한 값 가져오기 (id, pw)
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
+		String re_pw = request.getParameter("re_pw");
+		String name = request.getParameter("name");
+		String Bday = request.getParameter("Bday");
+		String gender = request.getParameter("gender");
+		String tel = request.getParameter("tel");
 		
 		
 		try {
@@ -34,18 +39,18 @@ public class JoinService extends HttpServlet {
 			Connection conn = DriverManager.getConnection(url, dbid, dbpw);
 			
 			
-			String sql = "insert into MEMBERS values(?,?,null,null,null,null,null)"; // 어떤 SQL? insert? update? delete? select?
+			String sql = "insert into MEMBERS values(?,?,?,?,?,?,?)"; // 어떤 SQL? insert? update? delete? select?
 			// 사용자로부터 어떤 값을 받을지 모르기때문에
 			PreparedStatement psmt = conn.prepareStatement(sql);
 
 			// 물음표에 뭘 넣을꺼야?
 			psmt.setString(1, id);
 			psmt.setString(2, pw);
-			psmt.setString(3, null);
-			psmt.setString(4, null);
-			psmt.setString(5, null);
-			psmt.setString(6, null);
-			psmt.setString(7, null);
+			psmt.setString(3, re_pw);
+			psmt.setString(4, name);
+			psmt.setString(5, Bday);
+			psmt.setString(6, gender);
+			psmt.setString(7, tel);
 			
 			// 2_5. sql문 실행하기 -> 성공 여부에 따라 페이지 이동시키기
 			int cnt = psmt.executeUpdate();
