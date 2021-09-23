@@ -15,10 +15,11 @@ import javax.servlet.http.HttpServletResponse;
 public class JoinService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		request.setCharacterEncoding("euc-kr");
-		
+
 		// 1. 사용자가 입력한 값 가져오기 (id, pw)
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
@@ -27,18 +28,16 @@ public class JoinService extends HttpServlet {
 		String Bday = request.getParameter("Bday");
 		String gender = request.getParameter("gender");
 		String tel = request.getParameter("tel");
-		
-		
+
 		try {
 			// 오라클 접속
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			
+
 			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
 			String dbid = "cgi_6_5";
 			String dbpw = "smhrd5";
 			Connection conn = DriverManager.getConnection(url, dbid, dbpw);
-			
-			
+
 			String sql = "insert into MEMBERS values(?,?,?,?,?,?,?)"; // 어떤 SQL? insert? update? delete? select?
 			// 사용자로부터 어떤 값을 받을지 모르기때문에
 			PreparedStatement psmt = conn.prepareStatement(sql);
@@ -52,6 +51,13 @@ public class JoinService extends HttpServlet {
 			psmt.setString(6, gender);
 			psmt.setString(7, tel);
 			
+			System.out.println("id");
+			System.out.println("pw");
+			System.out.println("re_pw");
+			System.out.println("name");
+			System.out.println("Bday");
+			System.out.println("gender");
+			System.out.println("tel");
 			// 2_5. sql문 실행하기 -> 성공 여부에 따라 페이지 이동시키기
 			int cnt = psmt.executeUpdate();
 
@@ -60,11 +66,10 @@ public class JoinService extends HttpServlet {
 				response.sendRedirect("Main.html");
 			}
 
-			
-			} catch (Exception e) {
-				e.printStackTrace();
-				// 실행 후 오류 발생 시 에러출력
-				}
+		} catch (Exception e) {
+			e.printStackTrace();
+			// 실행 후 오류 발생 시 에러출력
+		}
 
 	}
 
