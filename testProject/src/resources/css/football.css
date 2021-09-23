@@ -1,0 +1,118 @@
+@charset "EUC-KR";
+
+.newthang {
+	height: 100px;
+	background-color: rgb(3, 3, 30);
+}
+
+.container {
+	background-color: #d3d3d3;
+}
+
+.a {
+	
+}
+
+.btn-success {
+	margin-bottom: 10px;
+}
+
+.h2 {
+	color: rgb(31, 209,69);
+	font-family: Arial Black;
+	line-height: 50px;
+	margin-top: 0px;
+	align : left;
+}
+
+.box3 {
+	background-color: white;
+	margin-bottom: 20px;
+	padding: 20px 20px 20px 40px;
+	opacity: 0.9;
+}
+
+.box1 {
+	font-size: 20px;
+	align-items: center;
+	width: 80%;
+	height: 55px;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.box1>p {
+	display: block;
+	margin: 0 10px;
+}
+
+.no {
+	width: 10%;
+	font-weight: bold;
+}
+
+.text-center1 {
+	text-align: center; width : 20%;
+	font-weight: bold;
+	background-color: red;
+	color: white;
+	height: 30px;
+	line-height: 30px;
+	width: 20%;
+}
+
+.text-center2 {
+	text-align: center;
+	width: 20%;
+	font-weight: bold;
+	background-color: green;
+	color: white;
+	height: 30px;
+	line-height: 30px;
+}
+
+.text-center3 {
+	text-align: center;
+	width: 20%;
+	font-weight: bold;
+	background-color: blue;
+	color: white;
+	height: 30px;
+	line-height: 30px;
+}
+
+.member {
+	text-align: center;
+	width: 10%;
+}
+
+.field_code {
+	text-align: center;
+	width: 13%;
+}
+
+.subject {
+	height: 45px;
+	font-size: 28px;
+	padding-left: 20px;
+	line-height: 45px;
+	font-style: oblique;
+}
+
+.subject>a {
+	color: black;
+}
+
+.box2 {
+	font-size: 20px;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.name {
+	width: 25%;
+}
+
+.regdate, .hit {
+	width: 20%;
+}
