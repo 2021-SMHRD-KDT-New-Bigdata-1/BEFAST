@@ -24,7 +24,7 @@ public class LoginService extends HttpServlet {
 		
 		try {
 			// 오라클 접속
-			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Class.forName("oracle.jdbc.driver1.OracleDriver");
 			
 			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
 			String dbid = "cgi_6_5";
