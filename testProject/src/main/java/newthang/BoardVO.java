@@ -3,70 +3,78 @@ package newthang;
 import java.sql.Date;
 
 public class BoardVO {
-	private int no;
-	private String warrior;
-	private int member;
-	private String field_code;
-	private String time;
-    private String name;
-    private String subject;
-    private String content;
-    private String pwd;
-    private Date regdate;
-    private int hit;
-	public int getNo() {
-		return no;
+	private int write_number; // 글번호
+	private int team; // 팀이름
+	private String write_subject; //제목
+	private String write_content; //내용
+	private String write_pw; //비번
+	private String matching_time; //매칭시간
+	private int field_code; // 랭크전, 친선전, 일반전
+	private String field_area; // 광산구, 북구, 동구, 서구, 남구
+	private int field_member; // 모집인원수
+	private String write_time; //모집시간
+	private Date regdate; // 글쓴 날짜
+    private int hit; //조회수
+    private String team_logo;
+	public int getWrite_number() {
+		return write_number;
 	}
-	public void setNo(int no) {
-		this.no = no;
+	public void setWrite_number(int write_number) {
+		this.write_number = write_number;
 	}
-	public String getWarrior() {
-		return warrior;
+	public int getTeam() {
+		return team;
 	}
-	public void setWarrior(String warrior) {
-		this.warrior = warrior;
+	public void setTeam(int team) {
+		this.team = team;
 	}
-	public int getMember() {
-		return member;
+	public String getWrite_subject() {
+		return write_subject;
 	}
-	public void setMember(int member) {
-		this.member = member;
+	public void setWrite_subject(String write_subject) {
+		this.write_subject = write_subject;
 	}
-	public String getField_code() {
+	public String getWrite_content() {
+		return write_content;
+	}
+	public void setWrite_content(String write_content) {
+		this.write_content = write_content;
+	}
+	public String getWrite_pw() {
+		return write_pw;
+	}
+	public void setWrite_pw(String write_pw) {
+		this.write_pw = write_pw;
+	}
+	public String getMatching_time() {
+		return matching_time;
+	}
+	public void setMatching_time(String matching_time) {
+		this.matching_time = matching_time;
+	}
+	public int getField_code() {
 		return field_code;
 	}
-	public void setField_code(String field_code) {
+	public void setField_code(int field_code) {
 		this.field_code = field_code;
 	}
-	public String getTime() {
-		return time;
+	public int getField_area() {
+		return field_area;
 	}
-	public void setTime(String time) {
-		this.time = time;
+	public void setField_area(int field_area) {
+		this.field_area = field_area;
 	}
-	public String getName() {
-		return name;
+	public int getField_member() {
+		return field_member;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setField_member(int field_member) {
+		this.field_member = field_member;
 	}
-	public String getSubject() {
-		return subject;
+	public String getWrite_time() {
+		return write_time;
 	}
-	public void setSubject(String subject) {
-		this.subject = subject;
-	}
-	public String getContent() {
-		return content;
-	}
-	public void setContent(String content) {
-		this.content = content;
-	}
-	public String getPwd() {
-		return pwd;
-	}
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
+	public void setWrite_time(String write_time) {
+		this.write_time = write_time;
 	}
 	public Date getRegdate() {
 		return regdate;
@@ -80,6 +88,22 @@ public class BoardVO {
 	public void setHit(int hit) {
 		this.hit = hit;
 	}
+	public String getTeam_logo() {
+		return team_logo;
+	}
+	public void setTeam_logo(String team_logo) {
+		this.team_logo = team_logo;
+	}
+	
+	
+    
+    
+	
+    
+    
+	
+    
+	
 	
     
     

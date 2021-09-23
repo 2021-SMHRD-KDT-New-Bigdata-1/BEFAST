@@ -39,7 +39,7 @@ public class JoinService extends HttpServlet {
 			Connection conn = DriverManager.getConnection(url, dbid, dbpw);
 			
 			
-			String sql = "insert into MEMBERS values(?,?,?,?,?,?,?)"; // 어떤 SQL? insert? update? delete? select?
+			String sql = "insert into MEMBERS(id,pw,re_pw,name,Bday,gender,tel) values(?,?,?,?,?,?,?)"; // 어떤 SQL? insert? update? delete? select?
 			// 사용자로부터 어떤 값을 받을지 모르기때문에
 			PreparedStatement psmt = conn.prepareStatement(sql);
 

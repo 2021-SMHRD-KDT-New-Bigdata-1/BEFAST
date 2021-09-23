@@ -45,7 +45,7 @@ public class BoardDetail extends HttpServlet {
 		out.println("<h2 class=h2>BE FAST</h2>");
 		out.println("</div>");
 		out.println("<div class=container>");
-		out.println("<h2>" + vo.getSubject() + "</h2>");
+		out.println("<h2>" + vo.getWrite_subject() + "</h2>");
 		out.println("<hr>");
 		out.println("<div class=row>");
 

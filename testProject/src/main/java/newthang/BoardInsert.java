@@ -113,22 +113,22 @@ public class BoardInsert extends HttpServlet {
         try {
             request.setCharacterEncoding("EUC-KR");
         }catch(Exception ex) {}
-        String warrior=request.getParameter("warrior");
-        int member=Integer.parseInt(request.getParameter("member"));
-        String field_code=request.getParameter("field_code");
-        String name=request.getParameter("name");
-        String subject=request.getParameter("subject");
-        String content=request.getParameter("content");
-        String pwd=request.getParameter("pwd");
+        int field_code=Integer.parseInt(request.getParameter("warrior"));
+        int field_member=Integer.parseInt(request.getParameter("member"));
+        String field_area=request.getParameter("field_area");
+        int team=request.getParameter("name");
+        String write_subject=request.getParameter("subject");
+        String write_content=request.getParameter("content");
+        String write_pw=request.getParameter("pwd");
     
         BoardVO vo=new BoardVO();
-        vo.setWarrior(warrior);
-        vo.setMember(member);
         vo.setField_code(field_code);
-        vo.setName(name);
-        vo.setSubject(subject);
-        vo.setPwd(pwd);
-        vo.setContent(content);
+        vo.setField_member(field_member);
+        vo.setField_area(field_area);
+        vo.setTeam(team);
+        vo.setWrite_subject(write_subject);
+        vo.setWrite_pw(write_pw);
+        vo.setWrite_content(write_content);
         
         // DAO로 전송 => 오라클 INSERT
         BoardDAO dao=new BoardDAO();

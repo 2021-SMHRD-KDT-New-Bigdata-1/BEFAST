@@ -52,24 +52,24 @@ public class BoardList extends HttpServlet {
 		for (BoardVO vo : list) {
 			out.println("<div class=box3>");
 			out.println("<div class=box1>");
-			out.println("<p class=no>" + vo.getNo() + "번</p>");
-			if (vo.getWarrior().equals("랭크전")) {
+			out.println("<p class=no>" + vo.getWrite_number() + "번</p>");
+			if (vo.getField_code()==1) {
 				out.println("<div class=text-center1 width=10%>"
-						+ vo.getWarrior() + "</div>");
-			} else if (vo.getWarrior().equals("일반전")) {
+						+ vo.getField_code() + "</div>");
+			} else if (vo.getField_code()==2) {
 				out.println("<div class=text-center2 width=10%>"
-						+ vo.getWarrior() + "</div>");
+						+ vo.getField_code() + "</div>");
 			} else {
 				out.println("<div class=text-center3 width=10%>"
-						+ vo.getWarrior() + "</div>");
+						+ vo.getField_code() + "</div>");
 			}
-			out.println("<p class=member>" + vo.getMember() + "명</p>");
-			out.println("<p class=field_code>" + vo.getField_code() + "</p>");
+			out.println("<p class=member>" + vo.getField_member() + "명</p>");
+			out.println("<p class=field_code>" + vo.getField_area() + "</p>");
 			out.println("</div>");
-			out.println("<p class=subject>" + "<a href=BoardDetail?no=" + vo.getNo() + ">"
-					+ vo.getSubject() + "</a></p>");
+			out.println("<p class=subject>" + "<a href=BoardDetail?no=" + vo.getWrite_number() + ">"
+					+ vo.getWrite_subject() + "</a></p>");
 			out.println("<div class=box2>");
-			out.println("<p class=name>팀명 : " + vo.getName() + "</p>");
+			out.println("<p class=name>팀명 : " + vo.getTeam() + "</p>");
 			out.println("<p class=regdate>" + vo.getRegdate().toString() + "</p>");
 			out.println("<p class=hit>조회수 : " + vo.getHit() + "</p>");
 			out.println("</div>");
