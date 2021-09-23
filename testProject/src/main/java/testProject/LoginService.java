@@ -53,11 +53,12 @@ public class LoginService extends HttpServlet {
 				// 서블릿에서는 왜 세션을 사용할 수가 없을까...?
 				// JSP는 내장객체가 있기 때문에 session객체를 
 				// 선언하지 않아도 바로 사용 가능
-				response.sendRedirect("main.jsp");
+				response.sendRedirect("Main.html");
 			
 			}else {
 				// 만약 값이 없으면 로그인 실패!
 				response.sendRedirect("Loginform.html");
+				
 			}
 				
 			
