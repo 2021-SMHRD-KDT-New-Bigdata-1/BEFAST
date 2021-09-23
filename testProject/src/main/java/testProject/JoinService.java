@@ -38,7 +38,7 @@ public class JoinService extends HttpServlet {
 			String dbpw = "smhrd5";
 			Connection conn = DriverManager.getConnection(url, dbid, dbpw);
 
-			String sql = "insert into MEMBERS values(?,?,?,?,?,?,?)"; // 어떤 SQL? insert? update? delete? select?
+			String sql = "insert into MEMBERS(id, pw, re_pw, name, Bday,gender, tel) values(?,?,?,?,?,?,?)"; // 어떤 SQL? insert? update? delete? select?
 			// 사용자로부터 어떤 값을 받을지 모르기때문에
 			PreparedStatement psmt = conn.prepareStatement(sql);
 
@@ -51,13 +51,6 @@ public class JoinService extends HttpServlet {
 			psmt.setString(6, gender);
 			psmt.setString(7, tel);
 			
-			System.out.println("id");
-			System.out.println("pw");
-			System.out.println("re_pw");
-			System.out.println("name");
-			System.out.println("Bday");
-			System.out.println("gender");
-			System.out.println("tel");
 			// 2_5. sql문 실행하기 -> 성공 여부에 따라 페이지 이동시키기
 			int cnt = psmt.executeUpdate();
 
