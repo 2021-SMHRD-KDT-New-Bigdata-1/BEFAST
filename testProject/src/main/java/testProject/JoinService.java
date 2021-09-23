@@ -34,13 +34,18 @@ public class JoinService extends HttpServlet {
 			Connection conn = DriverManager.getConnection(url, dbid, dbpw);
 			
 			
-			String sql = "insert into MEMBERS values(?,?)"; // 어떤 SQL? insert? update? delete? select?
+			String sql = "insert into MEMBERS values(?,?,null,null,null,null,null)"; // 어떤 SQL? insert? update? delete? select?
 			// 사용자로부터 어떤 값을 받을지 모르기때문에
 			PreparedStatement psmt = conn.prepareStatement(sql);
 
-			// 2_4_1 첫 번째 물음표에 뭘 넣을꺼야?
+			// 물음표에 뭘 넣을꺼야?
 			psmt.setString(1, id);
 			psmt.setString(2, pw);
+			psmt.setString(3, null);
+			psmt.setString(4, null);
+			psmt.setString(5, null);
+			psmt.setString(6, null);
+			psmt.setString(7, null);
 			
 			// 2_5. sql문 실행하기 -> 성공 여부에 따라 페이지 이동시키기
 			int cnt = psmt.executeUpdate();
