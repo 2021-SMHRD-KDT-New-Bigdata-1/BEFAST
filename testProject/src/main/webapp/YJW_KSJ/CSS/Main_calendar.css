@@ -1,5 +1,3 @@
-@charset "EUC-KR";
-
 *,
 *::before,
 *::after {
@@ -82,8 +80,21 @@ input[type="text"]{
 }
 
 /* 초록박스 생성 */
-select.locaions, #fileds {
+select.locaions {
     cursor: pointer;
+    background-color: #eee;
+    padding: 5px;
+    text-align: left;
+    font-size: 18px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    border: 0.25rem solid rgba(31,209,69);
+    border-radius: 5px;
+}
+
+select#fileds {
+	    cursor: pointer;
     background-color: #eee;
     padding: 5px;
     text-align: left;
@@ -107,3 +118,8 @@ select.locaions, #fileds {
 }
 
 /* https://cbw1030.tistory.com/293 */
+
+
+
+
+
