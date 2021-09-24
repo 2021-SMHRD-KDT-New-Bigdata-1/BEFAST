@@ -21,13 +21,13 @@ public class JoinService extends HttpServlet {
 		request.setCharacterEncoding("euc-kr");
 
 		// 1. 사용자가 입력한 값 가져오기 (id, pw)
-		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
-		String re_pw = request.getParameter("re_pw");
-		String name = request.getParameter("name");
-		String Bday = request.getParameter("Bday");
-		String gender = request.getParameter("gender");
-		String tel = request.getParameter("tel");
+		String MEMBER_ID = request.getParameter("MEMBER_ID");
+		String PWD = request.getParameter("PWD");
+		//String re_pw = request.getParameter("re_pw");
+		String MEMBER_NAME = request.getParameter("MEMBER_NAME");
+		String MEMBER_BIRTHDATE = request.getParameter("MEMBER_BIRTHDATE");
+		String GENDER = request.getParameter("GENDER");
+		String MEMBER_PHONE = request.getParameter("MEMBER_PHONE");
 
 		try {
 			// 오라클 접속
@@ -38,18 +38,17 @@ public class JoinService extends HttpServlet {
 			String dbpw = "smhrd5";
 			Connection conn = DriverManager.getConnection(url, dbid, dbpw);
 
-			String sql = "insert into MEMBERS(id, pw, re_pw, name, Bday,gender, tel) values(?,?,?,?,?,?,?)"; // 어떤 SQL? insert? update? delete? select?
-			// 사용자로부터 어떤 값을 받을지 모르기때문에
+			String sql = "insert into MEMBERS(MEMBER_ID, PWD, MEMBER_NAME, MEMBER_BIRTHDATE,GENDER, MEMEBER_PHONE) values(?,?,?,?,?,?)"; // 어떤 SQL? insert? update? delete? select?
+			
 			PreparedStatement psmt = conn.prepareStatement(sql);
 
-			// 물음표에 뭘 넣을꺼야?
-			psmt.setString(1, id);
-			psmt.setString(2, pw);
-			psmt.setString(3, re_pw);
-			psmt.setString(4, name);
-			psmt.setString(5, Bday);
-			psmt.setString(6, gender);
-			psmt.setString(7, tel);
+			psmt.setString(1, MEMBER_ID);
+			psmt.setString(2, PWD);
+			//psmt.setString(3, re_pw);
+			psmt.setString(3, MEMBER_NAME);
+			psmt.setString(4, MEMBER_BIRTHDATE);
+			psmt.setString(5, GENDER);
+			psmt.setString(6, MEMBER_PHONE);
 			
 			// 2_5. sql문 실행하기 -> 성공 여부에 따라 페이지 이동시키기
 			int cnt = psmt.executeUpdate();
