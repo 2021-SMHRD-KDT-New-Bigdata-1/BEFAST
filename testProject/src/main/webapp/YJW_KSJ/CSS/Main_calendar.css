@@ -81,10 +81,11 @@ input[type="text"]{
     transform: 0.2s;
 }
 
-select.locations, .fileds {
+/* 초록박스 생성 */
+select.locaions, #fileds {
     cursor: pointer;
     background-color: #eee;
-    padding: 11px;
+    padding: 5px;
     text-align: left;
     font-size: 18px;
     height: 50px;
@@ -106,8 +107,3 @@ select.locations, .fileds {
 }
 
 /* https://cbw1030.tistory.com/293 */
-
-
-
-
-
