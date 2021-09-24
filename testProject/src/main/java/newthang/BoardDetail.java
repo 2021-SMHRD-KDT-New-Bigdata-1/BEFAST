@@ -25,10 +25,10 @@ public class BoardDetail extends HttpServlet {
 		PrintWriter out = response.getWriter();
 
 		// 번호 받는다 ?no=10
-		String no = request.getParameter("no");
+		String write_number = request.getParameter("write_number");
 		BoardDAO dao = new BoardDAO();
 
-		BoardVO vo = dao.boardDetail(Integer.parseInt(no));
+		BoardVO vo = dao.boardDetail(Integer.parseInt(write_number));
 
 		out.println("<html>");
 		out.println("<head>");
@@ -45,41 +45,51 @@ public class BoardDetail extends HttpServlet {
 		out.println("<h2 class=h2>BE FAST</h2>");
 		out.println("</div>");
 		out.println("<div class=container>");
-		out.println("<h2>" + vo.getSubject() + "</h2>");
+		out.println("<h2>" + vo.getWrite_subject() + "</h2>");
 		out.println("<hr>");
 		out.println("<div class=row>");
 
 		// post 보안 / get 다보여짐
-		out.println("<table class=\"table\">");
-		out.println("<tr>");
-		out.println("<td width=25% class=text-center>" + vo.getName() + "</td>");
-		out.println("</tr>");
+		out.println("<div class= profile >");
+//		out.println("<div class= profile1 width=60px>");
+		out.println("<img src=resources/img/img3.jfif>");
+		out.println("<div class= tjfaud>");
+		out.println("<p id=name>" + vo.getTeam_name() + "<p>");
+		out.println("<br>");
+		out.println("<span style='font-size:10px'>" + vo.getWrite_time() + "</span>");
+		out.println("<span style='font-size:10px'>조회수 : " + vo.getHit() + "</span>");
+		out.println("</div>");
+		out.println("<div class= profile2 >");
+		if (vo.getField_code()==1) {
+			out.println("<p class=text-center1>"
+					+ vo.getField_code() + "</p>");
+		} else if (vo.getField_code()==2) {
+			out.println("<div class=text-center2 width=10%>"
+					+ vo.getField_code() + "</div>");
+		} else {
+			out.println("<div class=text-center3 width=60px>"
+					+ vo.getField_code() + "</div>");
+		}
+		out.println("<p class=member>"+vo.getField_member()+"명 </p>");
+		
 
-		out.println("<tr>");
-		out.println("<td width=25% class=text-center>" + vo.getName() + "</td>");
-		out.println("<td width=25% class=text-center>조회수 : " + vo.getHit() + "</td>");
-		out.println("</tr>");
+//		out.println("</div>");
+		out.println("</div>");
+		out.println("</div>");
 
-		out.println("<tr>");
-		out.println("<td colspan=4 height=200 valign=top>" + vo.getContent() + "</td>");
-		out.println("</tr>");
-
-		out.println("<tr>");
-		out.println("<td colspan=4 class=text-right>");
+		out.println("<div class = content>" + vo.getWrite_content() + "</div>");
+		
+		out.println("<div class = ahrfhr>");
 		out.println("<a href=# class=\"btn btn-xs btn-success choice\">신청</a>");
 		out.println("<script src=\"resources/js/jquery-3.6.0.min.js\"></script>");
 		out.println("<script>$(function(){" + "$('.choice').on('click',function(){"
 				+ "alert('신청이 완료되었습니다.');location.href='BoardList';" + "}) })" + "</script>");
 		out.println("<script> </script>");
-
-		out.println("<a href=# class=\"btn btn-xs btn-success\">수정</a>");
-		out.println("<a href=# class=\"btn btn-xs btn-success\">삭제</a>");
+	
 		out.println("<a href=BoardList class=\"btn btn-xs btn-success\">목록</a>");
-		out.println("</td>");
-		out.println("</tr>");
-
-		out.println("</table>");
 		out.println("</div>");
+		out.println("</div>");
+		
 		out.println("</div>");
 		out.println("</body>");
 		out.println("</html>");

@@ -9,3 +9,10 @@
 	line-height: 50px;
 	margin-top: 0px;
 }
+.profile1{
+	width : 60px;
+}
+.profile>span{
+	color: black;
+	font-style: italic;
+}

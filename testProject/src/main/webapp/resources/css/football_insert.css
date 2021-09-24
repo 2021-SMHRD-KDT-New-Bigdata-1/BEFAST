@@ -1,0 +1,66 @@
+@charset "EUC-KR";
+
+.newthang {
+	height: 100px;
+	background-color: rgb(3, 3, 30);
+}
+
+.select1 {
+	margin-bottom: 10px;
+	height: 40px;
+	margin-right: 5px;
+	width: 31%;
+}
+
+.h2 {
+	color: rgb(31, 209, 69);
+	font-family: Arial Black;
+	line-height: 100px;
+	margin-top: 0px;
+	font-size: 40px;
+}
+.container {
+	background-color: #d3d3d3;
+	width: 800px;
+	height: 800px;
+}
+
+.h3 {
+	text-align: center;
+}
+
+.title {
+	margin-bottom: 10px;
+	height: 40px;
+	width: 500px;
+	padding-left : 5px;
+}
+
+.time {
+	margin-bottom: 10px;
+	height: 40px;
+	width: 500px;
+	padding-left : 5px;
+}
+
+.text_area {
+	margin-bottom: 10px;
+	width: 500px;
+	padding-top : 5px;
+	padding-left : 5px;
+}
+.matching_time{
+    margin-bottom: 10px;
+	width: 500px;
+	height: 40px;
+	padding-left : 5px;
+}
+.pw{
+    margin-bottom: 10px;
+	width: 500px;
+	height: 40px;
+	padding-left : 5px;
+}
+.button{
+    text-align: center;
+}
