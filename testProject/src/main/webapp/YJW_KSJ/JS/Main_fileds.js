@@ -7,11 +7,11 @@ function categoryChange(e) {
     var 서구 = ['경기장13','경기장14','경기장15'];
     var target = document.getElementById("fileds");
 
-    if (e.value == "rhkdtksrn") var XX = 광산구;
-    else if (e.value == "skarn") var XX = 남구;
-    else if (e.value == "ehdrn") var XX = 동구;
-    else if (e.value == "qnrrn") var XX = 북구;
-    else if (e.value == "tjrn") var XX = 서구;
+    if (e.value == "광산구") var XX = 광산구;
+    else if (e.value == "남구") var XX = 남구;
+    else if (e.value == "동구") var XX = 동구;
+    else if (e.value == "북구") var XX = 북구;
+    else if (e.value == "서구") var XX = 서구;
 
     target.options.length = 0;
 
