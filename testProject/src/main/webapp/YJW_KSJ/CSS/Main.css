@@ -96,7 +96,14 @@ a {
 
 span {
     font-size: 17px;
-    /* color: rgb(251,41,79); */
+
+    color: #eee;
+
+}
+
+.date_select span {
+    margin: 15px auto;
+    display: grid;
 }
 
 .container {
@@ -115,6 +122,19 @@ div {
     display: block;
 }
 
+div.fileds_container {
+    justify-content: center;
+    /* width: 600px; */
+}
+
+div.fileds_info {
+    margin: 15px auto;
+}
+
+div.fileds_info img {
+    height: 150px;
+}
+
 body {
     background-color: rgba(3,3,30);
 }
@@ -127,4 +147,21 @@ img {
 /* input#datepicker1{
     height: 48px;
 } */
+
+.button_area {
+    cursor: pointer;
+    margin: 30px 0px 9px;
+    padding: 15px;
+    display: grid;
+    width: 600px;
+    margin: 0 auto;
+}
+
+.btntype {
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    width: 100%;
+    height: 45px;
+}
 
