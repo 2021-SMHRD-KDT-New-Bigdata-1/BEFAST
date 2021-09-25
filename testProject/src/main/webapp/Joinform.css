@@ -36,7 +36,7 @@
     }
 
     .btntype {
-        font-weight: 400;
+        font-weight: 700;
     }
 
 
@@ -129,7 +129,7 @@ h3.join_group {
 
 /* 외곽 박스생성 */
 .input_box_id,.input_box_pw, .input_box_re_pw, .input_box_name, .input_box_Bday,.input_box_gender
-,.input_box_Phone{
+,.input_box_Phone, .input_box_location, .input_box_position {
     outline: 0;
     display: block;
     position: relative;
@@ -138,9 +138,16 @@ h3.join_group {
     border: solid 2px black;
     padding: 10px;
 }
+.input_box_Bday, .input_Bday {
+    cursor: pointer;
+}
 
+.ui-datepicker-title {
+    display: flex;
+}
 /* 안쪽 박스 숨기기 */
-.input_id, .input_pw, .input_re_pw, .input_name, .input_Bday, .input_Phone
+.input_id, .input_pw, .input_re_pw, .input_name, .input_Bday, .input_Phone,
+#input_location, #input_position
 {
     outline: 0;
     border: none;
@@ -153,6 +160,9 @@ h3.join_group {
     background-color:transparent;
 }
 
+
+
+
 .input_box_gender {
     text-align: center;
     margin: auto;
@@ -162,12 +172,40 @@ h3.join_group {
     margin: 30px 0px 9px;
 }
 
+input[type="submit"]:hover{
+    transition: all 0.2s ease 0s;
+    cursor: pointer;
+    background-color: rgba(31,209,69);
+}
+
 .btntype {
     text-align: center;
     display: block;
     width: 100%;
     height: 45px;
+    font-weight: 700;
 }
+
+input[type="button"] {
+    /* position: absolute; */
+    margin-left: -10px;
+    display: inline;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+}
+
+input[type="button"]:hover {
+    transition: all 0.2s ease 0s;
+    cursor: pointer;
+    background-color: rgba(31,209,69);
+}
+
 .card{
     width: 100%;
     height: 100vh;
