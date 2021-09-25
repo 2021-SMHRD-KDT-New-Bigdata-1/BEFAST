@@ -54,7 +54,7 @@ public class JoinService extends HttpServlet {
 			psmt.setString(5, GENDER);
 			psmt.setString(6, MEMBER_PHONE);
 			psmt.setString(7, P_AREA);
-			psmt.setString(6, POSITION);
+			psmt.setString(8, POSITION);
 			
 			// 2_5. sql문 실행하기 -> 성공 여부에 따라 페이지 이동시키기
 			int cnt = psmt.executeUpdate();
