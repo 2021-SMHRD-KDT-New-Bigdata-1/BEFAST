@@ -174,8 +174,8 @@ body, hmtl{font-family: 'Anton', sans-serif;}
 
 #wrapper{
   width:600px;
-  margin: 10px auto;
-  height: 400px;
+  margin:10px auto;
+  height:400px;
   position:relative;
   color:#fff;
   text-shadow:rgba(0,0,0,0.1) 2px 2px 0px;  
