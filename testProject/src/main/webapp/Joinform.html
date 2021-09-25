@@ -150,9 +150,10 @@
     <script>
         // ID중복체크
         function idCheck(){
+        	var input = document.getElementById("MEMBER_ID");
             $.ajax({
                 type : "post",
-                data : {id : input.value}, // 서버에 보낼 데이터 JSON(키-값)
+                data : {MEMBER_ID : input.value}, // 서버에 보낼 데이터 JSON(키-값)
                 url : "idCheckCon", // 데이터 보낼 서버페이지
                 dataType : "text",
                 success : function(data) {
