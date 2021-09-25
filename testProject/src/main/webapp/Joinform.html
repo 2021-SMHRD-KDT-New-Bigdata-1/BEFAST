@@ -29,10 +29,12 @@
                             <input type="text" id="MEMBER_ID" name="MEMBER_ID" class="input_id">
                             <input type="button" value="ID중복체크" onclick="idCheck()">
                             
-                            <!-- 성공 유무에 따른 결과값 받는 곳 -->
-                            <span id="sp"></span>
+                            
+                            
 
                         </span>
+                        <!-- 성공 유무에 따른 결과값 받는 곳 -->
+                        <span id="sp"></span>
 
                         <h3 class="join_group">
                             <label for="pw">비밀번호</label>
@@ -161,6 +163,7 @@
 
                     if (data == "true"){
                         sp.innerHTML = "사용할 수 없는 ID입니다!";
+
                     }else {
                         sp.innerHTML = "사용할 수 있는 ID입니다!";
                     }
