@@ -1,17 +1,17 @@
 
 function categoryChange(e) {
-    var rhkdtksrn = ['경기장1','경기장2','경기장3'];
-    var skarn = ['경기장4','경기장5','경기장6'];
-    var ehdrn = ['경기장7','경기장8','경기장9'];
-    var qnrrn = ['경기장10','경기장11','경기장12'];
-    var tjrn = ['경기장13','경기장14','경기장15'];
+    var 광산구 = ['경기장1','경기장2','경기장3'];
+    var 남구 = ['경기장4','경기장5','경기장6'];
+    var 동구 = ['경기장7','경기장8','경기장9'];
+    var 북구 = ['경기장10','경기장11','경기장12'];
+    var 서구 = ['경기장13','경기장14','경기장15'];
     var target = document.getElementById("fileds");
 
-    if (e.value == "rhkdtksrn") var XX = rhkdtksrn;
-    else if (e.value == "skarn") var XX = skarn;
-    else if (e.value == "ehdrn") var XX = ehdrn;
-    else if (e.value == "qnrrn") var XX = qnrrn;
-    else if (e.value == "tjrn") var XX = tjrn;
+    if (e.value == "rhkdtksrn") var XX = 광산구;
+    else if (e.value == "skarn") var XX = 남구;
+    else if (e.value == "ehdrn") var XX = 동구;
+    else if (e.value == "qnrrn") var XX = 북구;
+    else if (e.value == "tjrn") var XX = 서구;
 
     target.options.length = 0;
 
