@@ -1,15 +1,20 @@
 @charset "EUC-KR";
 
+/* --------햄버거 메뉴-------------- */
+
 input[id="menuicon"] {
     display: none;
+    background-color: antiquewhite;
 }
 
+/* 햄버거 크기 */
 input[id="menuicon"]+label {
     display: block;
     width: 45px;
     height: 35px;
     position: relative;
     cursor: pointer;
+    transition:all .35s;
 }
 
 input[id="menuicon"]+label span {
@@ -18,10 +23,10 @@ input[id="menuicon"]+label span {
     width: 100%;
     height: 5px;
     border-radius: 30px;
-    background: #000;
-    transition: all .35s;
+    transition: all 0.35s;
 }
 
+/* 햄버거 초기 위치 */
 input[id="menuicon"]+label span:nth-child(1){
     top: 0;
     background-color : rgba(31,209,69);
@@ -36,22 +41,104 @@ input[id="menuicon"]+label span:nth-child(2){
 input[id="menuicon"]+label span:nth-child(3){
     bottom: 0;
     background-color : rgba(31,209,69);
+    
+}
+
+
+input[id="menuicon"]:checked+label span:nth-child(1){
+	width: 12px;
+    height: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color : rgba(31,209,69);
+}
+
+input[id="menuicon"]:checked+label span:nth-child(2){
+ 	width: 12px;
+    height: 12px;
+    transform : translateY(50%) translateX(6px);
+/* 	background-color : rgba(31,209,69);
+	transform:  translateX(15px);  */
+	
+/*     opacity: 0; */
+}
+
+
+input[id="menuicon"]:checked+label span:nth-child(3){
+    bottom:50%;
+/* 	width: 12px;
+    height: 12px;
+    transform: translateY(50%);
+    background-color : rgba(31,209,69);
+    transition: all .35s; */
+}
+
+
+
+
+/* ----------클릭되었을 때 슬라이드------------- */
+
+input[id="menuicon"]:checked+label {
+    z-index: 2;
+    
+}
+
+input[id="menuicon"]:checked+label span {
+    background-color : rgba(31,209,69);
 }
 
 input[id="menuicon"]:checked+label span:nth-child(1){
     top: 50%;
     transform: translateY(-50%) rotate(45deg);
-    background-color : rgba(31,209,69);
+    width: 12px;
+    height: 12px;
 }
 
 input[id="menuicon"]:checked+label span:nth-child(2){
-    opacity: 0;
+    /* opacity: 0; */
+	width: 12px;
+    height: 12px;
+	transform : translateX(17px) translateY(-6px);
 }
 
 input[id="menuicon"]:checked+label span:nth-child(3){
-    bottom:50%;
-    transform: translateY(50%) rotate(-45deg);
-    background-color : rgba(31,209,69);
+	width: 12px;
+    height: 12px;
+    
+    bottom: 50%;
+    transform: translateX(34px) translateY(6px);
 }
 
+
+div[class="sidebar_content"] {
+    width: 200px;
+    height: 100%;
+    background-color: #3249c4;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    z-index: 1;
+    transition: all .35s;
+}
+
+/* 사이드바 초기위치 */
+input[id="menuicon"]:checked+label+div {
+    right: 0;
+}
+
+/* 사이드바 메뉴 */
+
+.sidebar_content > ul > li {
+    border-bottom: 1px solid #ccc;
+    list-style: none;
+}
+
+.sidebar_content > ul > li > a {
+    display: inline-block;
+    width: auto;
+    color: #fff;
+    padding: 10px;
+    margin: 10px;
+    /* background: #f5f5f5; */
+}
 

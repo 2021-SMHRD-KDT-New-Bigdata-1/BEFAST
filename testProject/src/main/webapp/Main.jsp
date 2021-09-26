@@ -63,10 +63,23 @@
 					}%><%else {%>
 				        <input type="checkbox" id="menuicon">
 				        <label for="menuicon">
+				        	<!-- 햄버거 -->
 				            <span></span>
 				            <span></span>
 				            <span></span>
+				           
 				        </label>
+<!-- 				        <div class="sidebar_content">
+							<ul>
+    				            <li><a>메뉴1</a></li>
+          					    <li><a>메뉴2</a></li>
+                				<li><a>메뉴3</a></li>
+                				<li><a>메뉴4</a></li>
+                				<li><a>메뉴5</a></li>
+                				<li><a>메뉴6</a></li>
+            				</ul>
+        				</div> -->
+
 						<!-- // 햄버거 메뉴 -->
 						<!-- out.print("<a href='#'><i class='iconbtn fas fa-bars'></i></a>"); -->
 						<%}
