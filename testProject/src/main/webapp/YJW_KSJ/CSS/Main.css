@@ -134,7 +134,8 @@ div.fileds_info img {
 }
 
 body {
-    background-color: rgba(3,3,30);
+	/* #090934 */
+    background-color: rgba(9,9,52); 
 }
 
 img {
