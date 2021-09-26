@@ -33,18 +33,6 @@
 		memberVO vo = (memberVO) session.getAttribute("vo");
 	%>
 	
-	<%
-		if (vo == null) {
-			out.print("<a href='#'>로그인</a>");
-		}else {
-			if (vo.getMEMBER_ID().equals("admin")){
-				out.print("<a href='#'>회원전체 관리</a>");
-			}else {
-				out.print("<a href='#'>마이페이지</a>");
-			}
-			out.print("<a href='#'>로그아웃</a>");
-		}
-	%>
 	    <!-- 순위 -->
     <!-- 이미지 슬라이더 -->
     <div class="container">
@@ -63,17 +51,19 @@
 						out.print("<a href='Loginform.jsp'>로그인</a> <span>또는</span> <a href='Joinform.html'>회원가입</a>");
 						
 					}else {
+						
 					if (vo.getMEMBER_ID().equals("admin")){
 						out.print("<a href='#'>회원전체 관리</a>");
+						
 					}else {
-						out.print("<a href='#'>마이페이지\t</a>");
-					}
-						out.print("<a href='#'>로그아웃</a>");
+						
+						out.print("<a href='#'>"+vo.getMEMBER_ID()+"님 환영합니다</a>");
+						  
+						  }
+						
 					}
 				%>
-                        <!-- <a href="Loginform.html">로그인</a> -->
-                        <!-- <span>또는</span> -->
-                        <!-- <a href="Joinform.html">회원가입</a> -->
+				
                     </div>
                 </div>
             </div>
