@@ -57,7 +57,7 @@
 
 div.navContainer {
     height: 74px;
-    margin: 0 auto;
+    margin: 15px auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -165,8 +165,18 @@ input[type="button"]:hover {
     font-weight: 600;
 }
 
+.iconbtn {
+	position: relative;
+}
+
 /* 햄버거 메뉴 사이즈 */
 .fa-bars:before {
-	font-size : 2.0rem;
+	font-size : 2.1rem;
+	
 }
+
+
+
+
+
 

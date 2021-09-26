@@ -26,7 +26,7 @@
     <!-- 달력 CSS -->
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-	<!-- 픽토그램 -->
+	<!-- 픽토그램 준비-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -60,10 +60,8 @@
 						
 					}else {
 						// 햄버거 메뉴
-						out.print("<a href='#'><i class='fas fa-bars'></i></a>");
-						
+						out.print("<a href='#'><i class='iconbtn fas fa-bars'></i></a>");
 						}
-						
 					}
 				%>
 				
