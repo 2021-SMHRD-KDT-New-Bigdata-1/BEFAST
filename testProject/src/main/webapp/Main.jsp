@@ -22,12 +22,13 @@
 
     <!-- 순위 CSS -->
     <link rel="stylesheet" href="./YJW_KSJ/CSS/Rank.css">
-    
+
     <!-- 달력 CSS -->
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 
 <body>
+
 	<%
 		memberVO vo = (memberVO) session.getAttribute("vo");
 	%>
@@ -194,7 +195,6 @@
                 </span>
             
                 <span>경기장을 선택하세요
-                    <!-- sub -->
                     <select id="fileds"> 
                         <option>경기장을 선택하세요</option>
                     </select>
@@ -210,10 +210,13 @@
 
     <!-- 제이쿼리 로드 -->
     <script src="./YJW_KSJ/JS/jquery-3.6.0.min.js"></script>
-
-    <!-- 순위 제이쿼리 -->
+	
+	<!-- 지역에 따른 경기장 선택 자바스크립트 -->
+	<!-- 한글 인코딩(charset=utf-8) 추가 -->
+	<script type="text/javascript" charset="utf-8" src="./YJW_KSJ/JS/Main_fileds.js"></script>>
     
-    <script src="./YJW_KSJ/JS/Main_rank.js" type="text/javascript"></script>
+    <!-- 순위 제이쿼리 -->
+	<script src="./YJW_KSJ/JS/Main_rank.js" type="text/javascript"></script>
 
     <!-- 제이쿼리 달력 라이브러리 로드 -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -246,8 +249,6 @@
             });                           
         });
         </script>
-        
-        <!-- 지역에 따른 경기장 선택 자바스크립트 -->
-        <script src="./YJW_KSJ/JS/Main_fileds.js"></script>
+  
 </body>
 </html>
