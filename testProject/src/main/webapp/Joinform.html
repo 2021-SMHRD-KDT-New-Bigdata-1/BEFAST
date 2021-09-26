@@ -158,7 +158,8 @@
                 data : {MEMBER_ID : input.value}, // 서버에 보낼 데이터 JSON(키-값)
                 url : "idCheckCon", // 데이터 보낼 서버페이지
                 dataType : "text",
-                success : function(data) {
+                success : function(data) {  
+                	// 데이터 유무에 따라 id="sp"로 보낼 내용
                     var sp = document.getElementById("sp");
 
                     if (data == "true"){
