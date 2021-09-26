@@ -62,7 +62,7 @@ public class JoinService extends HttpServlet {
 			System.out.println(cnt);
 			// 2_6 실행문처리
 			if (cnt > 0) {// 성공하면 Login페이지로
-				response.sendRedirect("Main.html");
+				response.sendRedirect("Main.jsp");
 			}
 
 		} catch (Exception e) {

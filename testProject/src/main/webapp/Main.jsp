@@ -1,3 +1,4 @@
+<%@page import="testProject.memberVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -25,7 +26,24 @@
     <!-- 달력 CSS -->
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
+
 <body>
+	<%
+		memberVO vo = (memberVO) session.getAttribute("vo");
+	%>
+	
+	<%
+		if (vo == null) {
+			out.print("<a href='#'>로그인</a>");
+		}else {
+			if (vo.getMEMBER_ID().equals("admin")){
+				out.print("<a href='#'>회원전체 관리</a>");
+			}else {
+				out.print("<a href='#'>마이페이지</a>");
+			}
+			out.print("<a href='#'>로그아웃</a>");
+		}
+	%>
 	    <!-- 순위 -->
     <!-- 이미지 슬라이더 -->
     <div class="container">
@@ -39,9 +57,22 @@
 
                 <div class="top_menu">
                     <div class="goIn">
-                        <a href="Loginform.html">로그인</a>
-                        <span>또는</span>
-                        <a href="Joinform.html">회원가입</a>
+				<%
+					if (vo == null) {
+						out.print("<a href='Loginform.jsp'>로그인</a> <span>또는</span> <a href='Joinform.html'>회원가입</a>");
+						
+					}else {
+					if (vo.getMEMBER_ID().equals("admin")){
+						out.print("<a href='#'>회원전체 관리</a>");
+					}else {
+						out.print("<a href='#'>마이페이지\t</a>");
+					}
+						out.print("<a href='#'>로그아웃</a>");
+					}
+				%>
+                        <!-- <a href="Loginform.html">로그인</a> -->
+                        <!-- <span>또는</span> -->
+                        <!-- <a href="Joinform.html">회원가입</a> -->
                     </div>
                 </div>
             </div>

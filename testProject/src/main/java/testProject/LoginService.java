@@ -45,17 +45,21 @@ public class LoginService extends HttpServlet {
 			// 검색된 결과값 ResultSet으로 받을 것
 			ResultSet rs = psmt.executeQuery();
 			
+			// 로그인 DB확인 및 가져오기
+			memberDAO dao = new memberDAO();
+			memberVO vo = dao.login(MEMBER_ID, PWD);
+			
 			if (rs.next()) {
 				// 만약 값이 있으면 로그인 성공! -> 세션에도 저장!
 				System.out.print("1");
 				// 세션 선언을 해야한다!!!
 				HttpSession session = request.getSession();
-				session.setAttribute("MEMBER_ID",MEMBER_ID); // (,사용자가 입력한 id값)
+				session.setAttribute("vo",vo); // (,사용자가 입력한 id값)
 				
 				// 서블릿에서는 왜 세션을 사용할 수가 없을까...?
 				// JSP는 내장객체가 있기 때문에 session객체를 
 				// 선언하지 않아도 바로 사용 가능
-				response.sendRedirect("Main.html");
+				response.sendRedirect("Main.jsp");
 			
 			}else {
 				System.out.print("2");

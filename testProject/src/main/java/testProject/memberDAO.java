@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+
 public class memberDAO {
 
 	   Connection conn = null;
@@ -73,6 +74,42 @@ public class memberDAO {
 		   
 		   return check;
 	   }
+	   
+
+	   // 로그인 기능 구현
+	   public memberVO login(String MEMBER_ID, String PWD) {
+		      memberVO vo = null;
+		      try {
+		           conn();
+		                                          
+		           String sql = "select * from MEMBERS where MEMBER_ID =? and PWD=?";
+		           psmt = conn.prepareStatement(sql);
+		           psmt.setString(1, MEMBER_ID);
+		           psmt.setString(2, PWD);
+		           rs = psmt.executeQuery();
+		           
+		           if(rs.next()) {        
+		           
+		              String MEMBER_NAME = rs.getString(3);
+		              String MEMBER_PHONE = rs.getString(4);
+		              String MEMBER_BIRTHDATE = rs.getString(5);
+		              String GENDER = rs.getString(6);
+		              String P_AREA = rs.getString(7);
+		              String POSITION = rs.getString(8);
+		              
+		                            
+		              vo = new memberVO(MEMBER_ID,MEMBER_NAME,MEMBER_PHONE,
+		            		  null, MEMBER_BIRTHDATE,GENDER,P_AREA,POSITION);                          
+		              //새로운 데이터 타입                                                        
+		           }
+		                                                                                            
+		        }catch(Exception e) {
+		           e.printStackTrace();
+		        }finally {
+		           close();
+		        }
+		      return vo;
+		   }
 	   
 	   
 	   
