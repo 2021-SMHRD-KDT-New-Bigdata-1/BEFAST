@@ -165,3 +165,8 @@ input[type="button"]:hover {
     font-weight: 600;
 }
 
+/* 햄버거 메뉴 사이즈 */
+.fa-bars:before {
+	font-size : 2.0rem;
+}
+
