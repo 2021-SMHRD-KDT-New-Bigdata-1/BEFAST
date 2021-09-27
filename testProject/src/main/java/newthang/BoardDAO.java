@@ -144,4 +144,5 @@ public class BoardDAO {
 	// 4.글수정 UPDATE
 	// 5.글삭제 DELETE
 	// 6.찾기 SELECT
+
 }
