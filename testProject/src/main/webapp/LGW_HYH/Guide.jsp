@@ -47,7 +47,7 @@
 				<div class="h9">골대를 지키는 역할, 축구에서는 골키퍼라고 한다.</div>
 			</div>
 			<div class="img1">
-				<img src="resources/img/position.jpg">
+				<img src="img/position.jpg">
 			</div>
 		</div>
 
@@ -57,11 +57,11 @@
 	<h3>풋살 기본기 영상</h3>
 	<div class="atag">
 		<a href="https://www.youtube.com/watch?v=5HnZZzs-GhU" class="b"> <img
-			src="resources/img/fut1.jpg" class="img"></a> <a
+			src="img/fut1.jpg" class="img"></a> <a
 			href="https://www.youtube.com/watch?v=ADx_6vX4gXc" class="b"> <img
-			src="resources/img/fut2.jpg" class="img"></a> <a
+			src="img/fut2.jpg" class="img"></a> <a
 			href="https://www.youtube.com/watch?v=pyMhTX1zLOg" class="b"> <img
-			src="resources/img/fut3.jpg" class="img"></a>
+			src="img/fut3.jpg" class="img"></a>
 	</div>
 	<div class="atag">
 		<a href="https://www.youtube.com/watch?v=5HnZZzs-GhU" class="a">영상
