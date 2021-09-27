@@ -147,11 +147,11 @@ public class BoardDAO {
 	// 4.±Û¼öÁ¤ UPDATE
 	
 	
-	public int update(int write_number) {
+	public int update(BoardVO vo) {
 		getConnection();
-		String sql = "update board set field_code=?, field_member=?, p_area=?, team_area=?, write_subject = ?, write_content = ?, matching_time=?,write_pw=? where write_number = ?";
+		String sql = "update board set field_code=?, field_member=?, p_area=?, team_name=?, write_subject = ?, write_content = ?, matching_time=?,write_pw=? where write_number = ?";
 		try {
-			BoardVO vo = new BoardVO();
+			//BoardVO vo = new BoardVO();
 			ps = conn.prepareStatement(sql);
 			ps.setInt(1, vo.getField_code());
 			ps.setInt(2, vo.getField_member());
