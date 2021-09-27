@@ -10,6 +10,7 @@ public class BoardDAO {
 	private Connection conn;
 	// SQL문장 전송
 	private PreparedStatement ps;
+	ResultSet rs;
 	// URL
 	private final String URL = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
 
@@ -50,10 +51,11 @@ public class BoardDAO {
 			// 연결
 			getConnection();
 			// SQL문장 전송
-			String sql = "SELECT write_number,field_code,field_member,p_area,team_name,write_subject,write_content,matching_time,write_time,hit FROM board " + "ORDER BY write_number DESC"; // 단점: 속도 늦음→INDEX
+			String sql = "SELECT write_number,field_code,field_member,p_area,team_name,write_subject,write_content,matching_time,write_time,hit FROM board "
+					+ "ORDER BY write_number DESC"; // 단점: 속도 늦음→INDEX
 			ps = conn.prepareStatement(sql);
 			// SQL 실행 후 결과값 받기
-			ResultSet rs = ps.executeQuery();
+			rs = ps.executeQuery();
 			// 결과값 ArrayList에 첨
 			while (rs.next()) {
 				BoardVO vo = new BoardVO();
@@ -86,7 +88,7 @@ public class BoardDAO {
 			// 연결
 			getConnection();
 			// SQL문장 전송 ==> 조회수 증가
-			
+
 			String sql = "UPDATE board SET hit=hit+1 WHERE write_number=?";
 			ps = conn.prepareStatement(sql);
 			ps.setInt(1, write_number); // ?에 값을 채운다
@@ -141,8 +143,84 @@ public class BoardDAO {
 
 		}
 	}
-	// 4.글수정 UPDATE
-	// 5.글삭제 DELETE
-	// 6.찾기 SELECT
 
+	// 4.글수정 UPDATE
+	
+	
+	public int update(BoardVO vo) {
+		getConnection();
+		String sql = "update board set field_code=?, field_member=?, p_area=?, team_name=?, write_subject = ?, write_content = ?, matching_time=?,write_pw=? where write_number = ?";
+		try {
+			//BoardVO vo = new BoardVO();
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, vo.getField_code());
+			ps.setInt(2, vo.getField_member());
+			ps.setString(3, vo.getP_area());
+			ps.setString(4, vo.getTeam_name());
+			ps.setString(5, vo.getWrite_subject());
+			ps.setString(6, vo.getWrite_content());
+			ps.setString(7, vo.getMatching_time());
+			ps.setString(8, vo.getWrite_pw());
+			ps.setInt(9, vo.getWrite_number());
+			
+			return ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1; // 데이터베이스 오류
+	}
+
+	// 5.글삭제 DELETE
+	public String getPass(int write_number) {// 리턴할 변수 객체 선언
+		String write_pw = "";
+		// DB연결
+		getConnection();
+
+		try {
+
+			// 쿼리 준비
+			String sql = "select write_pw from board where write_number=?";
+			// 쿼리 실행할 객체 선언
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, write_number);
+			rs = ps.executeQuery();
+			// 패스워드 값을 저장
+			if (rs.next()) {
+				write_pw = rs.getString(1);
+			}
+			// 자원 반납
+			conn.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return write_pw;
+
+	}
+
+	public void deleteBoard(int write_number) {
+		getConnection();
+		try {
+			// 쿼리 준비
+			String sql = "delete from board where write_number=?";
+			ps = conn.prepareStatement(sql);
+
+			// 쿼리 실행을 위한 인덱스와 값을 넣어주기
+			ps.setInt(1, write_number);
+
+			// 쿼리 실행
+			ps.executeUpdate();
+
+			// 자원 반납
+			conn.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
+
+// 6.찾기 SELECT
+
+// 7. 페이지 처리
+
