@@ -64,16 +64,17 @@ public class BoardList extends HttpServlet {
 						+ vo.getField_code() + "</div>");
 			}
 			out.println("<p class=member>" + vo.getField_member() + "¸í</p>");
-			out.println("<p class=field_code>" + vo.getField_area() + "</p>");
+			out.println("<p class=field_code>" + vo.getP_area() + "</p>");
 			out.println("</div>");
-			out.println("<p class=subject>" + "<a href=BoardDetail?no=" + vo.getWrite_number() + ">"
+			out.println("<p class=subject>" + "<a href=BoardDetail?write_number=" + vo.getWrite_number() + ">"
 					+ vo.getWrite_subject() + "</a></p>");
 			out.println("<div class=box2>");
-			out.println("<p class=name>ÆÀ¸í : " + vo.getTeam() + "</p>");
-			out.println("<p class=regdate>" + vo.getRegdate().toString() + "</p>");
+			out.println("<p class=name>ÆÀ¸í : " + vo.getTeam_name() + "</p>");
+			out.println("<p class=regdate>" + vo.getWrite_time().toString() + "</p>");
 			out.println("<p class=hit>Á¶È¸¼ö : " + vo.getHit() + "</p>");
 			out.println("</div>");
 			out.println("</div>");
+			
 		}
 		out.println("</table>");
 		out.println("<hr>");
