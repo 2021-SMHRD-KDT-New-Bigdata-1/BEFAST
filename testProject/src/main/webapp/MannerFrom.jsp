@@ -10,7 +10,7 @@
 <body>
 	<div id="header"></div>
         <h1><b>경기 후 평가</b></h1>
-        <form>
+        <form action="#">
         <div>
             1. 상대 팀은 시간 약속을 잘 지켰나요? 
             <div class="star-rating space-x-4 mx-auto">
