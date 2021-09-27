@@ -51,8 +51,7 @@ public class BoardDetail extends HttpServlet {
 
 		// post º¸¾È / get ´Ùº¸¿©Áü
 		out.println("<div class= profile >");
-//		out.println("<div class= profile1 width=60px>");
-		out.println("<img src=resources/img/img3.jfif>");
+		out.println("<img src=resources/img/ÆÀ·Î°í(1)>");
 		out.println("<div class= tjfaud>");
 		out.println("<p id=name>" + vo.getTeam_name() + "<p>");
 		out.println("<br>");
@@ -73,7 +72,6 @@ public class BoardDetail extends HttpServlet {
 		out.println("<p class=member>"+vo.getField_member()+"¸í </p>");
 		
 
-//		out.println("</div>");
 		out.println("</div>");
 		out.println("</div>");
 
