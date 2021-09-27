@@ -24,6 +24,10 @@
 	display : flex;
 	
 }
+.img{
+	width : 340px;
+	height: 215px;
+}
 .img1{
 	width: 50%;
 	margin-right: 20%;
@@ -40,29 +44,38 @@ h3{
 }
 .h5{
 	font-size:25px;
-	width:30%;
-	height:10%;
+	/* width:30%; */
+	height: 7%;
 	font-weight:bold;
 	color:red;
 }
 .h6{
 	font-size:20px;
-	width:50%;
+	/* width:50%; */
 	height:auto;
 }
 .h7{
 	font-size:20px;
-	width:50%;
+	/* width:50%; */
 	height:100px;
 }
 .h8{
 	font-size:20px;
-	width:50%;
+	/* width:50%; */
 	height:100px;
 }
 .h9{
 	font-size:20px;
 	height:40px;
-	width:50%;
+	/* width:50%; */
 	height:auto;
+}
+.both{
+	display: flex;
+	width: 1500px;
+	height: 600px;
+}
+.left{
+	width: 58%;
+	margin-right: 20px;
 }
