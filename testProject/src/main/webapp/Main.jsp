@@ -72,19 +72,20 @@
 				            <span></span>
 				            <span></span>
 				        </label>
-<!-- 				        <div class="sidebar_content">
+				        <div class="sidebar_content">
 							<ul>
-    				            <li><a>메뉴1</a></li>
-          					    <li><a>메뉴2</a></li>
-                				<li><a>메뉴3</a></li>
-                				<li><a>메뉴4</a></li>
-                				<li><a>메뉴5</a></li>
-                				<li><a>메뉴6</a></li>
+    				            <li><a>내 정보</a></li>
+          					    <li><a>팀 찾기</a></li>
+          					    <li><a>팀 생성</a></li>
+                				<li><a>경기선택</a></li>
+                				<li><a>용병게시판</a></li>
+                				<li><a>풋살가이드</a></li>               				
+                				<li><a>로그아웃</a></li>
             				</ul>
-        				</div> -->
+        				</div> 
 
 						<!-- // 햄버거 메뉴 -->
-						<!-- out.print("<a href='#'><i class='iconbtn fas fa-bars'></i></a>"); -->
+						 out.print("<a href='#'><i class='iconbtn fas fa-bars'></i></a>"); 
 						<%}
 					}
 				%>
@@ -100,7 +101,7 @@
                         <div class="cont">
                         <dd>
                             <ol>
-                                <li><a href="#">Rank 1 : A팀</a></li>
+                                <li><a href="#">[Rank 1] A팀 승점 : 1000점 전적 200승 2무 0패 매너점수 4.7</a></li>
                                 <li><a href="#">Rank 2</a></li>
                                 <li><a href="#">Rank 3</a></li>
                                 <li><a href="#">Rank 4</a></li>
@@ -212,6 +213,14 @@
                 <span>경기장을 선택하세요
                     <select id="fileds"> 
                         <option>경기장을 선택하세요</option>
+                    </select>
+                </span>
+                <span>경기방식을 선택하세요
+                    <select class="match_type">
+                        <option>경기방식을 선택하세요</option>
+                        <option value="친선">친선</option>
+                        <option value="일반">일반</option>
+                        <option value="랭크">랭크</option>                      
                     </select>
                 </span>
             </div>
