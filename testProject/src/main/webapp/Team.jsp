@@ -23,6 +23,7 @@
                 </h3>
                 <span class="input_box_name">
                             <input type="text" id="name" name="name" class="input_name">
+                            <input type="button" value="ÆÀ¸íÁßº¹Ã¼Å©" onclick="idCheck()">
                     </span>
                     <h3 class="join_group">
                             <label for="number">ÆÀ ÀÎ¿ø</label>
