@@ -46,6 +46,33 @@ public class memberDAO {
 		   }
 	   }
 	   
+	   // 회원가입
+	   public int join(String MEMBER_ID, String PWD, String MEMBER_NAME, String MEMBER_BIRTHDATE, String GENDER, String MEMBER_PHONE, String P_AREA, String POSITION) {   // -> 테이블에 값(사용자가 입력한 값)이 삽입
+		      int cnt =0;
+		      try {
+		            conn();
+		                             
+		            String sql = "insert into MEMBERS(MEMBER_ID, PWD, MEMBER_NAME, MEMBER_BIRTHDATE, GENDER, MEMBER_PHONE, P_AREA, POSITION) values(?,?,?,?,?,?,?,?)";
+		            psmt = conn.prepareStatement(sql);
+		            psmt.setString(1, MEMBER_ID);
+		            psmt.setString(2, PWD);
+		            psmt.setString(3, MEMBER_NAME);
+		            psmt.setString(4, MEMBER_BIRTHDATE);
+		            psmt.setString(5, GENDER);
+		            psmt.setString(6, MEMBER_PHONE);
+		            psmt.setString(7, P_AREA);
+		            psmt.setString(8, POSITION);
+		                        
+		            cnt = psmt.executeUpdate();
+		                                    
+		         }catch(Exception e) {
+		            e.printStackTrace();
+		         }finally {
+		            close();
+		         }
+		      return cnt;      
+		   }
+	   
 	   // 사용자가 입력한 MEMBER_ID 중복체크
 	   public boolean idCheck(String MEMBER_ID) {
 		   boolean check = false;
