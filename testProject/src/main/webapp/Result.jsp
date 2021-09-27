@@ -8,7 +8,7 @@
 </head>
 <body>
  <script>
-        var java = Number(prompt("铰府")); 
+        var java2 = Number(prompt("铰府")); 
         var android = Number(prompt("菩硅"));
         var web = Number(prompt("公铰何"));
 </script>
