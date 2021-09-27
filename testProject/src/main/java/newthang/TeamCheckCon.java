@@ -16,23 +16,23 @@ import testProject.memberDAO;
  */
 @WebServlet("/TeamCheckCon")
 public class TeamCheckCon extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+   private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String data = request.getParameter("name");
-		TeamDAO dao = new TeamDAO();
-		boolean check = dao.TeamCheck(data);
-		// 입력한 값이 존재하면 check -> true
-		// 입력한 값이 없으면 check -> false
-		
-		// 응답
-		PrintWriter out = response.getWriter(); // 출력 스트림
-		
-		out.print(check);
-	
-	}
+   /**
+    * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
+    */
+   protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+      String data = request.getParameter("name");
+      memberDAO dao = new memberDAO();
+      boolean check = dao.idCheck(data);
+      // 입력한 값이 존재하면 check -> true
+      // 입력한 값이 없으면 check -> false
+      
+      // 응답
+      PrintWriter out = response.getWriter(); // 출력 스트림
+      
+      out.print(check);
+   
+   }
 
 }
