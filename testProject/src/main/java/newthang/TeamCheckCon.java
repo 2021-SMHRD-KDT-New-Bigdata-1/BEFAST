@@ -23,8 +23,8 @@ public class TeamCheckCon extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String data = request.getParameter("name");
-		memberDAO dao = new memberDAO();
-		boolean check = dao.idCheck(data);
+		TeamDAO dao = new TeamDAO();
+		boolean check = dao.TeamCheck(data);
 		// 입력한 값이 존재하면 check -> true
 		// 입력한 값이 없으면 check -> false
 		
