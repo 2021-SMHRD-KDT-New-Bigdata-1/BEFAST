@@ -110,37 +110,8 @@ public class memberDAO {
 		        }
 		      return vo;
 		   }
-	   
-<<<<<<< HEAD
-	   // 팀명 중복확인
-	   public boolean TeamCheck(String TEAM_NAME) {
-		   boolean check = false;
-		   conn();
-		   String sql = "select TEAM_NAME from TEAM_MEMBER where TEAM_NAME = ?";
-		   
-		   try {
-			   
-			   psmt = conn.prepareStatement(sql);
-			   psmt.setString(1, TEAM_NAME);
-			   rs = psmt.executeQuery(); // select문 쿼리
-			   
-			   if (rs.next()) { 
-				   // 사용자가 입력한 이메일이 테이블에 존재하는 경우
-				   check = true;
-			   }else { 
-				   // 사용자가 입력한 이메일이 테이블에 존재하지 않는 경우
-				   check = false;
-			   }
-			   
-		   }catch(Exception e) {
-			   e.printStackTrace();
-		   }finally {
-			   close();
-		   }
-		   
-		   return check;
-	   }
-=======
+
+	  
 	   
 	   // 업데이트 기능 구현
 	   public int update(String PWD, String MEMBER_PHONE, String P_AREA, String POSITION, String MEMBER_ID) {
@@ -168,10 +139,6 @@ public class memberDAO {
 		         }
 		      return cnt;
 		   }
-	   
-	   
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/BEFAST.git
-	   
-	   
+
 	
 }
