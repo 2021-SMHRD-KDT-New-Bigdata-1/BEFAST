@@ -7,11 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
- 
- 	<%
-        session.invalidate(); // 모든세션정보 삭제
-        response.sendRedirect("Main.jsp"); // 로그인 화면으로 다시 돌아간다.
-    %>
-
+	Response.Write("<script>alert('추가하신 도서가 정상적으로 처리되었습니다!');</script>");
+	Response.Write("<script>location.href='viewbooks.jsp';</script>");
+	
+</script>
 </body>
 </html>
