@@ -25,7 +25,7 @@
 								</h3>
 								<span class="input_box_name"> <input type="text"
 									id="name" name="name" class="input_name"> <input
-									type="button" value="팀명중복체크" onclick="idCheck()" >
+									type="button" class="check" value="팀명중복체크" onclick="idCheck()" >
 								</span>
 								<span id="sp"></span>
 								<h3 class="join_group">

@@ -129,7 +129,22 @@ h3.join_group {
 	background-color: rgb(168, 212, 255, 0.7);
 }
 
-.input_name, .input_number, .input_area, .input_level {
+.input_name{
+	outline: 0;
+	border: none;
+	display: block;
+	position: relative;
+	width: 80%;
+	height: 29px;
+	font-size: 25px;
+	box-sizing: border-box;
+	background-color: transparent;
+	float: left;
+}
+.check{
+	width: 19%;
+}
+.input_number, .input_area, .input_level {
 	outline: 0;
 	border: none;
 	display: block;
