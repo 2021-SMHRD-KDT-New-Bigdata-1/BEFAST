@@ -7,11 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
- 
- 	<%
-        session.invalidate(); // 모든세션정보 삭제
-        response.sendRedirect("Main.jsp"); // 로그인 화면으로 다시 돌아간다.
-    %>
+ <head><h1>용병 게시판</h1></head>
 
+    <div style="background: rgb(207, 192, 192) ; width :270px ;  height:100px ">
+    <%= %>
+        
 </body>
 </html>

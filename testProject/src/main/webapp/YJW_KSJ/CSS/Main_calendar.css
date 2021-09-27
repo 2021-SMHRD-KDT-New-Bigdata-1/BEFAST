@@ -84,7 +84,7 @@ input[type="text"]{
 }
 
 /* 초록박스 생성 */
-select.locations, #fileds {
+select.locations, #fileds, .match_type  {
     cursor: pointer;
     background-color: #eee;
     padding: 5px;

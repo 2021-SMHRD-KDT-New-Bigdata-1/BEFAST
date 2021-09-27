@@ -1,0 +1,81 @@
+@charset "EUC-KR";
+.p{
+	width : 100px;
+	height : 100px;
+	background-color : black;
+	margin-right : 10px;
+}
+.a{
+	display : block;
+	font-size: 25px;
+	text-decoration: none;
+	text-align : center;
+	height : 100px;
+	width: 340px;
+	margin-right: 20px;
+	color: black;
+}
+.b{
+	width : 340px;
+	margin-right: 20px;
+	height: 215px;
+}
+.atag{
+	display : flex;
+	
+}
+.img{
+	width : 340px;
+	height: 215px;
+}
+.img1{
+	width: 50%;
+	margin-right: 20%;
+	height:auto;
+}
+h2{
+	color :green;
+	font-size :40px;
+	text-align:center;
+
+}
+h3{
+	font-size:30px;
+}
+.h5{
+	font-size:25px;
+	/* width:30%; */
+	height: 7%;
+	font-weight:bold;
+	color:red;
+}
+.h6{
+	font-size:20px;
+	/* width:50%; */
+	height:auto;
+}
+.h7{
+	font-size:20px;
+	/* width:50%; */
+	height:100px;
+}
+.h8{
+	font-size:20px;
+	/* width:50%; */
+	height:100px;
+}
+.h9{
+	font-size:20px;
+	height:40px;
+	/* width:50%; */
+	height:auto;
+}
+.both{
+	display: flex;
+	width: 1500px;
+	height: 600px;
+}
+.left{
+	width: 58%;
+	margin-right: 20px;
+}

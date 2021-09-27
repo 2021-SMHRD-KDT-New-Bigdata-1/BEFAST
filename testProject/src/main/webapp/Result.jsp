@@ -7,11 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
- 
- 	<%
-        session.invalidate(); // 모든세션정보 삭제
-        response.sendRedirect("Main.jsp"); // 로그인 화면으로 다시 돌아간다.
-    %>
-
+ <script>
+        var win = Number(prompt("승리")); 
+        var lose = Number(prompt("패배"));
+        var draw = Number(prompt("무승부"));
+</script>
 </body>
 </html>

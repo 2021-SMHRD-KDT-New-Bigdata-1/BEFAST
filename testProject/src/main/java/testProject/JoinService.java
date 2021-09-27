@@ -49,7 +49,6 @@ public class JoinService extends HttpServlet {
 
 			psmt.setString(1, MEMBER_ID);
 			psmt.setString(2, PWD);
-			//psmt.setString(3, re_pw);
 			psmt.setString(3, MEMBER_NAME);
 			psmt.setString(4, MEMBER_BIRTHDATE);
 			psmt.setString(5, GENDER);

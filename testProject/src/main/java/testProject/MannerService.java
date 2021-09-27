@@ -12,17 +12,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-@WebServlet("/LoginService")
-public class LoginService extends HttpServlet {
+@WebServlet("/MannerService")
+public class MannerService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String MEMBER_ID = request.getParameter("MEMBER_ID");
-		String PWD = request.getParameter("PWD");
-		System.out.print(MEMBER_ID);
-		System.out.print(PWD);
+		String MANNERSCORE_CODE = request.getParameter("MANNERSCORE_CODE");
+		
 		try {
 			// 오라클 접속
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -32,14 +28,13 @@ public class LoginService extends HttpServlet {
 			String dbpw = "smhrd5";
 			Connection conn = DriverManager.getConnection(url, dbid, dbpw);
 			
-			
 			// 사용자가 입력한 id, pw가 DB에 있는지 확인
 			// 없으면 로그인 
-			String sql = "select*from MEMBERS where MEMBER_ID = ? and PWD = ?";
+			String sql = "select*from MANNERSCORES where MANNERSCORE_CODE = ?";
 			PreparedStatement psmt = conn.prepareStatement(sql);
 			
-			psmt.setString(1, MEMBER_ID);
-			psmt.setString(2, PWD);
+			psmt.setString(1, MANNERSCORE_CODE);
+			
 			
 			// DB에 가서 id, pw찾아서 rs에 세트로 넣는다 -> 있으면 true, 없으면 false 
 			// 검색된 결과값 ResultSet으로 받을 것
@@ -56,15 +51,12 @@ public class LoginService extends HttpServlet {
 				HttpSession session = request.getSession();
 				session.setAttribute("vo",vo); // (,사용자가 입력한 id값)
 				
-				// 서블릿에서는 왜 세션을 사용할 수가 없을까...?
-				// JSP는 내장객체가 있기 때문에 session객체를 
-				// 선언하지 않아도 바로 사용 가능
 				response.sendRedirect("Main.jsp");
 			
 			}else {
 				System.out.print("2");
 				// 만약 값이 없으면 로그인 실패!
-				response.sendRedirect("Loginform.jsp");
+				response.sendRedirect("Loginform.html");
 				
 			}
 				
@@ -72,6 +64,11 @@ public class LoginService extends HttpServlet {
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
+	
+	
+	
+	
+	
 	
 	
 	}

@@ -59,38 +59,36 @@ public class BoardDetail extends HttpServlet {
 		out.println("<span style='font-size:10px'>조회수 : " + vo.getHit() + "</span>");
 		out.println("</div>");
 		out.println("<div class= profile2 >");
-		if (vo.getField_code()==1) {
-			out.println("<p class=text-center1>"
-					+ vo.getField_code() + "</p>");
-		} else if (vo.getField_code()==2) {
-			out.println("<div class=text-center2 width=10%>"
-					+ vo.getField_code() + "</div>");
+		if (vo.getField_code() == 1) {
+			out.println("<p class=text-center1>" + vo.getField_code() + "</p>");
+		} else if (vo.getField_code() == 2) {
+			out.println("<div class=text-center2 width=10%>" + vo.getField_code() + "</div>");
 		} else {
-			out.println("<div class=text-center3 width=60px>"
-					+ vo.getField_code() + "</div>");
+			out.println("<div class=text-center3 width=60px>" + vo.getField_code() + "</div>");
 		}
-		out.println("<p class=member>"+vo.getField_member()+"명 </p>");
-		
+		out.println("<p class=member>" + vo.getField_member() + "명 </p>");
 
 		out.println("</div>");
 		out.println("</div>");
 
 		out.println("<div class = content>" + vo.getWrite_content() + "</div>");
-		
+
 		out.println("<div class = ahrfhr>");
 		out.println("<a href=# class=\"btn btn-xs btn-success choice\">신청</a>");
 		out.println("<script src=\"resources/js/jquery-3.6.0.min.js\"></script>");
 		out.println("<script>$(function(){" + "$('.choice').on('click',function(){"
 				+ "alert('신청이 완료되었습니다.');location.href='BoardList';" + "}) })" + "</script>");
 		out.println("<script> </script>");
-	
-		out.println("<a href=BoardUpdate.jsp?write_number="+write_number+" class=\"btn btn-xs btn-success\">수정</a>");
 
-		out.println("<a href=BoardDelete.jsp?write_number="+write_number+" class=\"btn btn-xs btn-success\">삭제</a>");
+		out.println(
+				"<a href=BoardUpdate.jsp?write_number=" + write_number + " class=\"btn btn-xs btn-success\">수정</a>");
+
+		out.println(
+				"<a href=BoardDelete.jsp?write_number=" + write_number + " class=\"btn btn-xs btn-success\">삭제</a>");
 		out.println("<a href=BoardList class=\"btn btn-xs btn-success\">목록</a>");
 		out.println("</div>");
 		out.println("</div>");
-		
+
 		out.println("</div>");
 		out.println("</body>");
 		out.println("</html>");
