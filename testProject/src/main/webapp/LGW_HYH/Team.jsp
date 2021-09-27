@@ -13,7 +13,7 @@
          <b>팀 생성 페이지</b>
       </h2>
 
-      <form action="../Main.jsp" method="post">
+      <form action="../TeamInsert.jsp" method="post">
          <div id="container">
             <div id="content">
                <div class="join_content">
@@ -86,6 +86,7 @@
                </div>
             </div>
       </form>
+      
       <!-- 제이쿼리 로드 -->
       <script src="resources/js/jquery-3.6.0.min.js"></script>
       <script>

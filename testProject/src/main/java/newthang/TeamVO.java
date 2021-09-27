@@ -2,7 +2,7 @@ package newthang;
 
 public class TeamVO {
 	private String team_name;
-	private int team_code;
+	private int team_code; 
 	private String team_field;
 	private String team_level;
 	private String team_uniform;

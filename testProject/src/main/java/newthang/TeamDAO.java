@@ -51,7 +51,7 @@ public class TeamDAO {
 		try {
 			// 오라클 접속
 			conn();
-			String sql = "insert into TEAM_MEMBER(team_name, team_code, team_field, team_level, team_uniform,team_info, team_member) values((SELECT NVL(MAX(team_code)+1,1) FROM TEAM_MEMBER),?,?,?,?,?,?)";
+			String sql = "insert into TEAM_MEMBER(team_name, team_code, team_field, team_level, team_uniform,team_info, team_member) values((SELECT NVL(MAX(team_code)+1,1) FROM TEAM_MEMBER),?,?,?,?,?,1)";
 
 			PreparedStatement psmt = conn.prepareStatement(sql);
 
@@ -59,8 +59,7 @@ public class TeamDAO {
 			psmt.setString(2, vo.getTeam_field());
 			psmt.setString(3, vo.getTeam_level());
 			psmt.setString(4, vo.getTeam_uniform());
-			psmt.setString(5, vo.getTeam_field());
-			psmt.setString(6, vo.getTeam_member());
+			psmt.setString(5, vo.getTeam_info());
 
 			// 2_5. sql문 실행하기 -> 성공 여부에 따라 페이지 이동시키기
 			psmt.executeUpdate();
