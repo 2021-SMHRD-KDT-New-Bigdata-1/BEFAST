@@ -64,7 +64,7 @@ public class LoginService extends HttpServlet {
 			}else {
 				System.out.print("2");
 				// 만약 값이 없으면 로그인 실패!
-				response.sendRedirect("Loginform.html");
+				response.sendRedirect("Loginform.jsp");
 				
 			}
 				

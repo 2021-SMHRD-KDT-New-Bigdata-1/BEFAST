@@ -9,10 +9,29 @@ li {
 	list-style: none;
 }
 
+li h5 {
+	font-size: 15px;
+    justify-content: left;
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    width: 500px;
+}
+
 input[type="password"]{
 	/* height: 50px; */
 }
 
 .Update_box {
 	text-align: center;
+}
+
+
+select#input_location, select#input_position {
+    margin: 0 auto;
+    display: flex;
+    text-align: left;
+    align-items: center;
+    width: 500px;
 }
