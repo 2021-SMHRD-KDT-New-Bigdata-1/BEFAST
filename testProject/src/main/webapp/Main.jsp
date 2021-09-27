@@ -74,7 +74,7 @@
 				        </label>
 				        <div class="sidebar_content">
 							<ul>
-    				            <li><a href="Update.jsp">내 정보 변경</a></li>
+    				            <li><a href="Update.jsp">내 정보</a></li>
           					    <li><a>팀 찾기</a></li>
           					    <li><a href="Team.jsp">팀 생성</a></li>
                 				<li><a>경기선택</a></li>
