@@ -7,10 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
- <script>
-        var win = Number(prompt("½Â¸®")); 
-        var lose = Number(prompt("ÆÐ¹è"));
-        var draw = Number(prompt("¹«½ÂºÎ"));
-</script>
+	<input type="button" style="display: inline-block">½ÂºÎ</input>
+    <input type="button" style="display: inline-block">ÆÐ¹è</input>
 </body>
 </html>
