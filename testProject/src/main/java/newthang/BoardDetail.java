@@ -51,7 +51,6 @@ public class BoardDetail extends HttpServlet {
 
 		// post 보안 / get 다보여짐
 		out.println("<div class= profile >");
-//		out.println("<div class= profile1 width=60px>");
 		out.println("<img src=resources/img/img3.jfif>");
 		out.println("<div class= tjfaud>");
 		out.println("<p id=name>" + vo.getTeam_name() + "<p>");
@@ -73,7 +72,6 @@ public class BoardDetail extends HttpServlet {
 		out.println("<p class=member>"+vo.getField_member()+"명 </p>");
 		
 
-//		out.println("</div>");
 		out.println("</div>");
 		out.println("</div>");
 
@@ -86,6 +84,9 @@ public class BoardDetail extends HttpServlet {
 				+ "alert('신청이 완료되었습니다.');location.href='BoardList';" + "}) })" + "</script>");
 		out.println("<script> </script>");
 	
+		out.println("<a href=BoardUpdate.jsp?write_number="+write_number+" class=\"btn btn-xs btn-success\">수정</a>");
+
+		out.println("<a href=BoardDelete.jsp?write_number="+write_number+" class=\"btn btn-xs btn-success\">삭제</a>");
 		out.println("<a href=BoardList class=\"btn btn-xs btn-success\">목록</a>");
 		out.println("</div>");
 		out.println("</div>");
