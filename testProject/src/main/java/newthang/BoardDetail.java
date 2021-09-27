@@ -45,18 +45,18 @@ public class BoardDetail extends HttpServlet {
 		out.println("<h2 class=h2>BE FAST</h2>");
 		out.println("</div>");
 		out.println("<div class=container>");
-		out.println("<h2>" + vo.getWrite_subject() + "</h2>");
+		out.println("<h1 class=h1>" + vo.getWrite_subject() + "</h1>");
 		out.println("<hr>");
 		out.println("<div class=row>");
 
 		// post 보안 / get 다보여짐
 		out.println("<div class= profile >");
-		out.println("<img src=resources/img/팀로고(1)>");
+		out.println("<img src=resources/img/팀로고(2).jpg class=img>");
 		out.println("<div class= tjfaud>");
-		out.println("<p id=name>" + vo.getTeam_name() + "<p>");
+		out.println("<p id=name>" + vo.getTeam_name() + "</p>");
 		out.println("<br>");
-		out.println("<span style='font-size:10px'>" + vo.getWrite_time() + "</span>");
-		out.println("<span style='font-size:10px'>조회수 : " + vo.getHit() + "</span>");
+		out.println("<p class=span>" + vo.getWrite_time() + "</p>");
+		out.println("<p class=span>조회수 : " + vo.getHit() + "</p>");
 		out.println("</div>");
 		out.println("<div class= profile2 >");
 		if (vo.getField_code()==1) {
@@ -69,12 +69,13 @@ public class BoardDetail extends HttpServlet {
 			out.println("<div class=text-center3 width=60px>"
 					+ vo.getField_code() + "</div>");
 		}
-		out.println("<p class=member>"+vo.getField_member()+"명 </p>");
+		out.println("<p class=member>구인 멤버 수 : "+vo.getField_member()+"명 </p>");
 		
 
+		
 		out.println("</div>");
 		out.println("</div>");
-
+		out.println("</div>");
 		out.println("<div class = content>" + vo.getWrite_content() + "</div>");
 		
 		out.println("<div class = ahrfhr>");
@@ -86,7 +87,7 @@ public class BoardDetail extends HttpServlet {
 	
 		out.println("<a href=BoardList class=\"btn btn-xs btn-success\">목록</a>");
 		out.println("</div>");
-		out.println("</div>");
+		
 		
 		out.println("</div>");
 		out.println("</body>");
