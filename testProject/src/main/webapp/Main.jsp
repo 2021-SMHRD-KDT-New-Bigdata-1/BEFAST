@@ -79,7 +79,7 @@
           					    <li><a href="Team.jsp">팀 생성</a></li>
                 				<li><a>경기선택</a></li>
                 				<li><a href="BoardList">용병게시판</a></li>
-                				<li><a>풋살가이드</a></li>               				
+                				<li><a href="LGW_HYH/Guide.jsp">풋살가이드</a></li>               				
                 				<li><a href="Logoutform.jsp">로그아웃</a></li>
             				</ul>
         				</div> 
