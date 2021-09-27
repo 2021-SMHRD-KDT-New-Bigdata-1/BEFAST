@@ -74,18 +74,18 @@
 				        </label>
 				        <div class="sidebar_content">
 							<ul>
-    				            <li><a>내 정보</a></li>
+    				            <li><a>내 정보 변경</a></li>
           					    <li><a>팀 찾기</a></li>
-          					    <li><a>팀 생성</a></li>
+          					    <li><a href="Team.jsp">팀 생성</a></li>
                 				<li><a>경기선택</a></li>
-                				<li><a>용병게시판</a></li>
+                				<li><a href="BoardList">용병게시판</a></li>
                 				<li><a>풋살가이드</a></li>               				
-                				<li><a>로그아웃</a></li>
+                				<li><a href="Logoutform.jsp">로그아웃</a></li>
             				</ul>
         				</div> 
 
 						<!-- // 햄버거 메뉴 -->
-						 out.print("<a href='#'><i class='iconbtn fas fa-bars'></i></a>"); 
+						 <!-- out.print("<a href='#'><i class='iconbtn fas fa-bars'></i></a>");  -->
 						<%}
 					}
 				%>
