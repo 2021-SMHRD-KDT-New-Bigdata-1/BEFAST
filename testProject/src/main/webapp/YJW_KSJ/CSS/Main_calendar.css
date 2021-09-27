@@ -1,0 +1,113 @@
+@charset "EUC-KR";
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a { 
+    color:#000000;text-decoration:none; 
+}
+
+.scriptCalendar > tbody > tr > td:hover:not(.td){
+    /* background-color: green; */
+    border: 0.2rem solid yellow;
+}
+
+.calendar_box{
+    /* width: 600px; */
+    text-align: center;
+    /* justify-content: center; */
+    align-items: center;
+    margin: 0 auto;
+    padding: 8px;
+    display:grid;
+}
+
+div.label{
+    width: 600px;
+    line-height: 1.7;
+    margin: 0 auto;
+    color: #eee;
+    /* justify-content: space-between; */
+    /* text-align: center;
+    display : contents; */
+    height: 1.6rem;
+    font-size: 18px;
+}
+
+.label span {
+    text-align: left;
+    display : grid;
+    margin: 0 15px 15px;
+}
+
+select{
+    text-align: left;
+    /* display : grid; */
+}
+
+.date_select{
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+.goIn span {
+    text-align: left;
+    color : #eee;
+    /* cursor: pointer; */
+    /* display : grid; */
+}
+
+
+input[type="date"], 
+input[type="text"]{
+    /* font-family: "Roboto Mono", monospace; */
+    cursor: pointer;
+    background-color: #eee;
+    padding: 9px;
+    position: relative;
+    text-align: left;
+    font-size: 18px;
+    height: 50px;
+    justify-content: center;
+    border: 0.25rem solid rgba(31,209,69);
+    /* background-color: rgba(31,209,69); */
+    border-radius: 5px;
+    align-items: center;
+    transform: 0.2s;
+}
+
+select.locations, .fileds {
+    cursor: pointer;
+    background-color: #eee;
+    padding: 11px;
+    text-align: left;
+    font-size: 18px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    border: 0.25rem solid rgba(31,209,69);
+    border-radius: 5px;
+}
+
+::-webkit-calendar-picker-indicator{
+    background-color: rgba(31,209,69);
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.ui-datepicker .ui-datepicker-title {
+    display: flex;
+}
+
+/* https://cbw1030.tistory.com/293 */
+
+
+
+
+

@@ -1,0 +1,75 @@
+@charset "EUC-KR";
+
+
+#content {
+    margin: 20px;
+    padding: 10px;
+    background: rgba(3,3,30);
+}
+
+#rank-list a {
+    color: #eee;
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+#rank-list a:hover {
+    text-decoration: underline;
+}
+
+#rank-list {
+    overflow: hidden;
+    /* width: 160px; */
+    height: 20px;
+    margin: 0 auto;
+    justify-content: center;
+
+}
+/* 
+#rank-list dt {
+    display: none;
+} */
+
+#rank-list dd {
+    position: relative;
+    margin: 0;
+}
+
+#Rank p {
+    color: white;
+    text-align: left;
+    font-size: 1.2rem;
+    
+}
+
+.Rank_box {
+    margin: 0 auto;
+    width: 600px;
+}
+#Rank {
+    justify-content: center;
+    margin: 0 auto;
+    line-height: 1.6;
+    
+}
+
+.cont {
+    display: block;
+}
+
+#rank-list ol {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#rank-list li {
+    height: 20px;
+    line-height: 20px;
+}
+
+
