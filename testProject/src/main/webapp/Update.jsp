@@ -6,15 +6,21 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+	
+	<!-- Update CSS -->
+	<link rel="stylesheet" href="./YJW_KSJ/CSS/Update.css">
+	
 </head>
 <body>
-	<form action="UpdateService" method="post">
+	<div class="Update_box">
+		<form action="UpdateService" method="post">
 		<li><h5>회원정보수정</h5></li>
 		<%
 		memberVO vo = (memberVO) session.getAttribute("vo");
 		%>
 		
 		<li><%=vo.getMEMBER_ID() %></li>
+		
 		<li>
 		<input name="pw" type="password" placeholder="PW를 입력하세요" style="width: 500px; margin: 0 auto;">
 		</li>
@@ -31,6 +37,7 @@
 		<input type="submit" value="Update" class="button fit" style="width: 500px; margin: 0 auto;">
 		</li>
 		
-	</form>
+		</form>
+	</div>
 </body>
 </html>
