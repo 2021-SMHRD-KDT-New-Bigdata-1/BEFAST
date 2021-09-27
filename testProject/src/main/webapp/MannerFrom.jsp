@@ -55,7 +55,7 @@
         <textarea cols="50" rows="5" placeholder="의견을 적어주세요"></textarea>
     </form>
 <form>
-    <input type='button' value='등록하기'/>
+    <input type='button' value='등록하기'>
 </form>
 </body>
 </html>
