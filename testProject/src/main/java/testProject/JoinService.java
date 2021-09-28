@@ -19,7 +19,7 @@ public class JoinService extends HttpServlet {
 			throws ServletException, IOException {
 		
 		// Oracle SQL로 넘겨줄 때 euc-kr -> UTF-8로 할 것
-		request.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("EUC-KR");
 
 		// 1. 사용자가 입력한 값 가져오기 (id, pw)
 		String MEMBER_ID = request.getParameter("MEMBER_ID");
