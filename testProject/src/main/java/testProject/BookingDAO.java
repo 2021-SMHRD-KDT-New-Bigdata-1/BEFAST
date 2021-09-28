@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class BookingDAO {
-
+		
 	   Connection conn = null;
 	   PreparedStatement psmt = null;
 	   ResultSet rs = null;
@@ -49,7 +49,7 @@ public class BookingDAO {
 	   //예약하기
 		public int BOOKINGS(String FIELD_CODE, String MATCHING_DATE, String ADDRESS, String FIELD_NAME, String GAMES) {
 			conn();
-
+			
 			int cnt = 0;
 			String sql = "insert into BOOKINGS values(?,?,?,?,?)";
 
@@ -57,7 +57,7 @@ public class BookingDAO {
 				psmt = conn.prepareStatement(sql);
 				
 				
-//				psmt.setString(1, FIELD_CODE);
+				psmt.setString(1, FIELD_CODE);
 				psmt.setString(2, MATCHING_DATE);
 				psmt.setString(3, ADDRESS);
 				psmt.setString(4, FIELD_NAME);
