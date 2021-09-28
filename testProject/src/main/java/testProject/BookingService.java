@@ -17,6 +17,7 @@ public class BookingService extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		
 		request.setCharacterEncoding("UTF-8");
 		
 		// 1. 사용자가 입력한 데이터 가져오기
