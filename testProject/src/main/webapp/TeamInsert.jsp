@@ -15,7 +15,7 @@
 	String team_level = request.getParameter("level");
 	String team_uniform = request.getParameter("unifrom");
 	String team_info = request.getParameter("intro");
-
+	String member = request.getParameter("number");
 	TeamVO vo = new TeamVO();
 	vo.setTeam_name(team_name);
 	vo.setTeam_field(team_field);

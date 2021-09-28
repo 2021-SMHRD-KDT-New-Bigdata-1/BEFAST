@@ -6,16 +6,28 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import javax.tools.Tool;
+
 public class BoardDAO {
 	private Connection conn;
-	// SQL¹®Àå Àü¼Û
+	// SQLë¬¸ì¥ ì „ì†¡
 	private PreparedStatement ps;
 	ResultSet rs;
-	// URL
+
+	private static BoardDAO instance;
+
+
+	public static BoardDAO getInstance(){
+        if(instance==null)
+            instance=new BoardDAO();
+        return instance;
+    }
+
+
 	private final String URL = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
 
-	// ¿¬°á ÁØºñ
-	// 1. µå¶óÀÌ¹ö µî·Ï
+	// ì—°ê²° ì¤€ë¹„
+	// 1. ë“œë¼ì´ë²„ ë“±ë¡
 	public BoardDAO() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -24,7 +36,7 @@ public class BoardDAO {
 		}
 	}
 
-	// ¿¬°á
+	// ì—°ê²°
 	public void getConnection() {
 		try {
 			conn = DriverManager.getConnection(URL, "cgi_6_5", "smhrd5");
@@ -32,7 +44,7 @@ public class BoardDAO {
 		}
 	}
 
-	// ÇØÁ¦
+	// í•´ì œ
 	public void disConnection() {
 		try {
 			if (ps != null)
@@ -43,20 +55,20 @@ public class BoardDAO {
 		}
 	}
 
-	// ±â´É
-	// 1.¸ñ·Ï(°Ô½ÃÆÇ) SELECT
+	// ê¸°ëŠ¥
+	// 1.ëª©ë¡(ê²Œì‹œíŒ) SELECT
 	public ArrayList<BoardVO> boardListData() {
 		ArrayList<BoardVO> list = new ArrayList<BoardVO>();
 		try {
-			// ¿¬°á
+			// ì—°ê²°
 			getConnection();
-			// SQL¹®Àå Àü¼Û
+			// SQLë¬¸ì¥ ì „ì†¡
 			String sql = "SELECT write_number,field_code,field_member,p_area,team_name,write_subject,write_content,matching_time,write_time,hit FROM board "
-					+ "ORDER BY write_number DESC"; // ´ÜÁ¡: ¼Óµµ ´ÊÀ½¡æINDEX
+					+ "ORDER BY write_number DESC"; // ë‹¨ì : ì†ë„ ëŠ¦ìŒâ†’INDEX
 			ps = conn.prepareStatement(sql);
-			// SQL ½ÇÇà ÈÄ °á°ú°ª ¹Ş±â
+			// SQL ì‹¤í–‰ í›„ ê²°ê³¼ê°’ ë°›ê¸°
 			rs = ps.executeQuery();
-			// °á°ú°ª ArrayList¿¡ Ã·
+			// ê²°ê³¼ê°’ ArrayListì— ì²¨
 			while (rs.next()) {
 				BoardVO vo = new BoardVO();
 				vo.setWrite_number(rs.getInt(1));
@@ -81,20 +93,20 @@ public class BoardDAO {
 
 	}
 
-	// 2.³»¿ëº¸±â SELECT (WHERE) ?no=1
+	// 2.ë‚´ìš©ë³´ê¸° SELECT (WHERE) ?no=1
 	public BoardVO boardDetail(int write_number) {
 		BoardVO vo = new BoardVO();
 		try {
-			// ¿¬°á
+			// ì—°ê²°
 			getConnection();
-			// SQL¹®Àå Àü¼Û ==> Á¶È¸¼ö Áõ°¡
+			// SQLë¬¸ì¥ ì „ì†¡ ==> ì¡°íšŒìˆ˜ ì¦ê°€
 
 			String sql = "UPDATE board SET hit=hit+1 WHERE write_number=?";
 			ps = conn.prepareStatement(sql);
-			ps.setInt(1, write_number); // ?¿¡ °ªÀ» Ã¤¿î´Ù
-			// ½ÇÇà
+			ps.setInt(1, write_number); // ?ì— ê°’ì„ ì±„ìš´ë‹¤
+			// ì‹¤í–‰
 			ps.executeUpdate();
-			// ³»¿ë¹° µ¥ÀÌÅÍ¸¦ °¡Áö°í ¿Â´Ù
+			// ë‚´ìš©ë¬¼ ë°ì´í„°ë¥¼ ê°€ì§€ê³  ì˜¨ë‹¤
 			sql = "SELECT write_number,field_code,field_member,p_area,team_name,write_subject,write_content,matching_time,write_time,hit FROM board WHERE write_number=?";
 			ps = conn.prepareStatement(sql);
 			ps.setInt(1, write_number);
@@ -120,10 +132,10 @@ public class BoardDAO {
 		return vo;
 	}
 
-	// 3.±Û¾²±â INSERT
+	// 3.ê¸€ì“°ê¸° INSERT
 	public void boardInsert(BoardVO vo) {
 		try {
-			// ¿¬°á
+			// ì—°ê²°
 			getConnection();
 			String sql = "INSERT INTO board(write_number,field_code,field_member,p_area,team_name,write_subject,write_content,matching_time,write_pw) VALUES((SELECT NVL(MAX(write_number)+1,1) FROM board),?,?,?,?,?,?,?,?)";
 			ps = conn.prepareStatement(sql);
@@ -144,14 +156,13 @@ public class BoardDAO {
 		}
 	}
 
-	// 4.±Û¼öÁ¤ UPDATE
-	
-	
+	// 4.ê¸€ìˆ˜ì • UPDATE
+
 	public int update(BoardVO vo) {
 		getConnection();
 		String sql = "update board set field_code=?, field_member=?, p_area=?, team_name=?, write_subject = ?, write_content = ?, matching_time=?,write_pw=? where write_number = ?";
 		try {
-			//BoardVO vo = new BoardVO();
+			// BoardVO vo = new BoardVO();
 			ps = conn.prepareStatement(sql);
 			ps.setInt(1, vo.getField_code());
 			ps.setInt(2, vo.getField_member());
@@ -162,33 +173,33 @@ public class BoardDAO {
 			ps.setString(7, vo.getMatching_time());
 			ps.setString(8, vo.getWrite_pw());
 			ps.setInt(9, vo.getWrite_number());
-			
+
 			return ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return -1; // µ¥ÀÌÅÍº£ÀÌ½º ¿À·ù
+		return -1; // ë°ì´í„°ë² ì´ìŠ¤ ì˜¤ë¥˜
 	}
 
-	// 5.±Û»èÁ¦ DELETE
-	public String getPass(int write_number) {// ¸®ÅÏÇÒ º¯¼ö °´Ã¼ ¼±¾ğ
+	// 5.ê¸€ì‚­ì œ DELETE
+	public String getPass(int write_number) {// ë¦¬í„´í•  ë³€ìˆ˜ ê°ì²´ ì„ ì–¸
 		String write_pw = "";
-		// DB¿¬°á
+		// DBì—°ê²°
 		getConnection();
 
 		try {
 
-			// Äõ¸® ÁØºñ
+			// ì¿¼ë¦¬ ì¤€ë¹„
 			String sql = "select write_pw from board where write_number=?";
-			// Äõ¸® ½ÇÇàÇÒ °´Ã¼ ¼±¾ğ
+			// ì¿¼ë¦¬ ì‹¤í–‰í•  ê°ì²´ ì„ ì–¸
 			ps = conn.prepareStatement(sql);
 			ps.setInt(1, write_number);
 			rs = ps.executeQuery();
-			// ÆĞ½º¿öµå °ªÀ» ÀúÀå
+			// íŒ¨ìŠ¤ì›Œë“œ ê°’ì„ ì €ì¥
 			if (rs.next()) {
 				write_pw = rs.getString(1);
 			}
-			// ÀÚ¿ø ¹İ³³
+			// ìì› ë°˜ë‚©
 			conn.close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -201,26 +212,28 @@ public class BoardDAO {
 	public void deleteBoard(int write_number) {
 		getConnection();
 		try {
-			// Äõ¸® ÁØºñ
+			// ì¿¼ë¦¬ ì¤€ë¹„
 			String sql = "delete from board where write_number=?";
 			ps = conn.prepareStatement(sql);
 
-			// Äõ¸® ½ÇÇàÀ» À§ÇÑ ÀÎµ¦½º¿Í °ªÀ» ³Ö¾îÁÖ±â
+			// ì¿¼ë¦¬ ì‹¤í–‰ì„ ìœ„í•œ ì¸ë±ìŠ¤ì™€ ê°’ì„ ë„£ì–´ì£¼ê¸°
 			ps.setInt(1, write_number);
 
-			// Äõ¸® ½ÇÇà
+			// ì¿¼ë¦¬ ì‹¤í–‰
 			ps.executeUpdate();
 
-			// ÀÚ¿ø ¹İ³³
+			// ìì› ë°˜ë‚©
 			conn.close();
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+
+// 6.ì°¾ê¸° SELECT
+	
+
+
 }
 
-// 6.Ã£±â SELECT
-
-// 7. ÆäÀÌÁö Ã³¸®
-
+// 7. í˜ì´ì§€ ì²˜ë¦¬
