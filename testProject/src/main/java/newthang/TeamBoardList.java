@@ -76,8 +76,8 @@ public class TeamBoardList extends HttpServlet {
 	      out.println("<td class=text-left>");
 	      out.println("Search:");
 	      out.println("<select class=input-sm>");
-	      out.println("<option>팀명<option>");
-	      out.println("<option>연고지<option>");
+	      out.println("<option>팀명</option>");
+	      out.println("<option>연고지</option>");
 	      out.println("</select>");
 	      out.println("<input type=text size 15 class=input-sm>");
 	      out.println("<input type=button value=찾기 class=\"btn btn-sm btn-danger\">");
