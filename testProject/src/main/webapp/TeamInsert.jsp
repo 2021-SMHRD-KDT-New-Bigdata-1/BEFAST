@@ -10,6 +10,7 @@
 </head>
 <body>
 	<%
+	request.setCharacterEncoding("EUC-KR");
 	String team_name = request.getParameter("name");
 	String team_field = request.getParameter("area");
 	String team_level = request.getParameter("level");
