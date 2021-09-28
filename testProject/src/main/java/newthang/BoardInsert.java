@@ -28,7 +28,7 @@ public class BoardInsert extends HttpServlet {
       out.println("<head>");
       out.println(
             "<Link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">");
-      out.println("<Link rel=\"stylesheet\" href=\"resources/css/football_insert.css\">");
+      out.println("<Link rel=\"stylesheet\" href=\"LGW_HYH/resources/css/football_insert.css\">");
       out.println("<style type=text/css>");
       out.println(".row {margin:0px auto; width:500px}");
       out.println("h2 {text-align:center}");
