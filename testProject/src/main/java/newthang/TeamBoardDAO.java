@@ -88,22 +88,20 @@ public class TeamBoardDAO {
 	
 	  //2.내용보기 SELECT (WHERE) ?no=1
 	
-	public TeamVO TeamDetail(int write_number) {
+	public TeamVO TeamDetail(String team_name) {
 		TeamVO vo = new TeamVO();
 		try {
 			// 연결
 			getConnection();
 			// SQL문장 전송 ==> 조회수 증가
 
-			String sql = "UPDATE board SET hit=hit+1 WHERE write_number=?";
-			ps = conn.prepareStatement(sql);
-			ps.setInt(1, write_number); // ?에 값을 채운다
-			// 실행
-			ps.executeUpdate();
 			// 내용물 데이터를 가지고 온다
-			sql = "SELECT write_number,field_code,field_member,p_area,team_name,write_subject,write_content,matching_time,write_time,hit FROM board WHERE write_number=?";
+			String sql = "SELECT team_name, team_code, team_field, team_level, team_uniform, team_info, team_member "
+					+ "FROM team_member where team_name=?";
 			ps = conn.prepareStatement(sql);
-			ps.setInt(1, write_number);
+			// SQL 실행 후 결과값 받기
+			ps.executeUpdate();
+			ps.setString(1, team_name);
 			ResultSet rs = ps.executeQuery();
 			rs.next();
 
