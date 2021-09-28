@@ -81,7 +81,7 @@
 					
                      <ul>
                             <li><a href="Update.jsp">내 정보</a></li>
-                             <li><a>팀 찾기</a></li>
+                             <li><a href="TeamBoardList">팀 찾기</a></li>
                              <li><a href="LGW_HYH/Team.jsp">팀 생성</a></li>
                             <li><a>경기선택</a></li>
                             <li><a href="BoardList">용병게시판</a></li>

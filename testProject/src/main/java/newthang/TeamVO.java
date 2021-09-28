@@ -9,6 +9,8 @@ public class TeamVO {
 	private String team_info;
 	private String team_member;
 	
+	
+	
 	public String getTeam_name() {
 		return team_name;
 	}

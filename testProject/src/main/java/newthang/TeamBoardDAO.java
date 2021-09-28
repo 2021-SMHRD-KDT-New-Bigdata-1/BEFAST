@@ -14,13 +14,11 @@ public class TeamBoardDAO {
 
 	private static BoardDAO instance;
 
-
-	public static BoardDAO getInstance(){
-        if(instance==null)
-            instance=new BoardDAO();
-        return instance;
-    }
-
+	public static BoardDAO getInstance() {
+		if (instance == null)
+			instance = new BoardDAO();
+		return instance;
+	}
 
 	private final String URL = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
 
@@ -52,41 +50,44 @@ public class TeamBoardDAO {
 		} catch (Exception ex) {
 		}
 	}
-	   //기능
-	   //1.목록(게시판) SELECT
-	   public ArrayList<TeamBoardVO> boardListData(){
-	      ArrayList<TeamBoardVO> list=new ArrayList<TeamBoardVO>();
-	      try {
-	         //연결
-	         getConnection();
-	         //SQL문장 전송
-	         String sql="SELECT team_name, team_code, team_field, team_level, team_uniform, team_info, team_member  FROM team_member "
-	                + "ORDER BY no DESC"; //단점: 속도 늦음→INDEX
-	         ps=conn.prepareStatement(sql);
-	         //SQL 실행 후 결과값 받기
-	         ResultSet rs=ps.executeQuery();      
-	         //결과값 ArrayList에 첨부
-	         while(rs.next()) {
-	            TeamBoardVO vo=new TeamBoardVO();
-	            vo.setTeam_name(rs.getString(1));
-	            vo.setTeam_code(rs.getString(2));
-	            vo.setTeam_field(rs.getString(3));
-	            vo.setTeam_level(rs.getString(4));
-	            vo.setTeam_uniform(rs.getString(5));
-	            vo.setTeam_info(rs.getString(6));
-	            vo.setTeam_code(rs.getString(7));
-	            list.add(vo);
-	         }
-	         rs.close();
-	      }catch(Exception ex) {
-	         System.out.println(ex.getMessage());
-	      }finally {
-	         disConnection();
-	      }
-	      return list;
-	      
-	   }
-	   //2.내용보기 SELECT (WHERE) ?no=1
+
+	// 기능
+	// 1.목록(게시판) SELECT
+	public ArrayList<TeamBoardVO> TeamboardListData() {
+		ArrayList<TeamBoardVO> list = new ArrayList<TeamBoardVO>();
+		try {
+			// 연결
+			getConnection();
+			// SQL문장 전송
+			String sql = "SELECT team_name, team_code, team_field, team_level, team_uniform, team_info, team_member  FROM team_member "
+					+ "ORDER BY no DESC"; // 단점: 속도 늦음→INDEX
+			ps = conn.prepareStatement(sql);
+			// SQL 실행 후 결과값 받기
+			ResultSet rs = ps.executeQuery();
+			// 결과값 ArrayList에 첨부
+			while (rs.next()) {
+				TeamBoardVO vo = new TeamBoardVO();
+				vo.setTeam_name(rs.getString(1));
+				vo.setTeam_code(rs.getString(2));
+				vo.setTeam_field(rs.getString(3));
+				vo.setTeam_level(rs.getString(4));
+				vo.setTeam_uniform(rs.getString(5));
+				vo.setTeam_info(rs.getString(6));
+				vo.setTeam_code(rs.getString(7));
+				list.add(vo);
+			}
+			rs.close();
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		} finally {
+			disConnection();
+		}
+		return list;
+
+	}
+	
+	  //2.내용보기 SELECT (WHERE) ?no=1
+	  
 		/*
 		 * public TeamBoardVO boardDetail(int no) { BoardVO vo=new BoardVO(); try { //
 		 * 연결 getConnection(); // SQL문장 전송 ==> 조회수 증가 String
@@ -103,6 +104,5 @@ public class TeamBoardDAO {
 		 * }catch(Exception ex) { System.out.println(ex.getMessage()); } finally {
 		 * disConnection(); } return vo; }
 		 */
-	
-	   }
 
+}

@@ -27,6 +27,8 @@
 	// DAO로 전송 => 오라클 INSERT
 	TeamDAO dao = new TeamDAO();
 	dao.TeamInsert(vo);
+	dao.TeamboardListData();
+	
 	%>
 	<script>
 		alert("팀 생성되었습니다.");
