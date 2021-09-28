@@ -29,7 +29,7 @@ public class BoardList extends HttpServlet {
 		out.println(
 				"<Link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">");
 		out.println(
-				"<Link rel=\"stylesheet\" href=\"resources/css/football.css\">");
+				"<Link rel=\"stylesheet\" href=\"LGW_HYH/resources/css/football.css\">");
 		out.println("<style type=text/css>");
 		out.println(".row {margin:15px auto; width:700px}"); 
 		out.println("h2 {text-align:center}");
@@ -84,18 +84,22 @@ public class BoardList extends HttpServlet {
 
 		out.println("<td class=text-left>");
 		out.println("Search:");
-		out.println("<select class=input-sm>");
-		out.println("<option>이름<option>");
-		out.println("<option>제목<option>");
-		out.println("<option>내용<option>");
+		out.println("<form name=\"form1\" method=\"post\" action=\"list.jsp\">");
+		out.println("<select class=input-sm name=col>");
+		out.println("<option value=rname>이름<option>");
+		out.println("<option value=title>제목<option>");
+		out.println("<option value=content>내용<option>");
+		out.println("<input type=text size 15 class=input-sm name=word>");
+		out.println("<input type=submit value=찾기 class=\"btn btn-sm btn-danger\">");
 		out.println("</select>");
-		out.println("<input type=text size 15 class=input-sm>");
-		out.println("<input type=button value=찾기 class=\"btn btn-sm btn-danger\">");
-		out.println("</td>");
+		out.println("</form>");
+
+		
 
 		out.println("<td class=text-right>");
 		// primary -진한 청색
-		out.println("<a href=BoardInsert class=\"btn btn-sm btn-primary\">이전</a>");
+		
+		out.println("<a href=p=${startNum - 1}&f=&q= class=\"btn btn-sm btn-primary\">이전</a>");
 		out.println("0 page / 0 pages");
 		out.println("<a href=BoardInsert class=\"btn btn-sm btn-primary\">다음</a>");
 		out.println("</td>");
@@ -107,5 +111,7 @@ public class BoardList extends HttpServlet {
 		out.println("</div>");
 		out.println("</body>");
 		out.println("</html>");
+		
+		
 	}
 }
