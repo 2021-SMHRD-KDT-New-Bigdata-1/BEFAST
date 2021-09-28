@@ -20,7 +20,7 @@ public class BookingService extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		// 1. 사용자가 입력한 데이터 가져오기
-		String FIELD_CODE = request.getParameter("FIELD_CODE");
+		//String FIELD_CODE = request.getParameter("FIELD_CODE");
 		String MATCHING_DATE = request.getParameter("MATCHING_DATE");
 		String ADDRESS = request.getParameter("ADDRESS");
 		String FIELD_NAME = request.getParameter("FIELD_NAME");
@@ -28,7 +28,7 @@ public class BookingService extends HttpServlet {
 		
 		BookingDAO dao = new BookingDAO();
 		
-		int cnt = dao.BOOKINGS(FIELD_CODE, MATCHING_DATE, ADDRESS, FIELD_NAME, GAMES);
+		int cnt = dao.BOOKINGS(MATCHING_DATE, ADDRESS, FIELD_NAME, GAMES);
 		
 		if (cnt>0) {
 			response.sendRedirect("Main.jsp");
