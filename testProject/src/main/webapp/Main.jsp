@@ -75,11 +75,14 @@
                  
                     <div class="sidebar_content">
                     
+                    <%-- <%
+				 	out.print("<h3>" + vo.getMEMBER_ID() + "´Ô È¯¿µÇÕ´Ï´Ù.</h3>");
+					%> --%>
+					
+                     <ul>
                     <%
 				 	out.print("<h3>" + vo.getMEMBER_ID() + "´Ô È¯¿µÇÕ´Ï´Ù.</h3>");
 					%>
-					
-                     <ul>
                             <li><a href="Update.jsp">³» Á¤º¸</a></li>
                              <li><a href="TeamBoardList">ÆÀ Ã£±â</a></li>
                              <li><a href="LGW_HYH/Team.jsp">ÆÀ »ý¼º</a></li>
