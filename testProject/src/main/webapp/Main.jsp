@@ -49,7 +49,7 @@
             <div class="navContainer">
                 <div class="newLogo">
                     <a href="#">
-                        <img src="./99. img/logo1.png">
+                        <img src="YJW_KSJ/resources/99. img/logo1.png">
                     </a>
                 </div>
 
