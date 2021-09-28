@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +8,7 @@
     <link rel="stylesheet" href="YJW_KSJ/CSS/4Selectpage.css">
 </head>
 <body>
-	<div class="container">
+<div class="container">
 		<div class="outcontainer">
 			<div class="game_box">
 				<h1 class="select_game">경기방식을 선택하세요</h1>
