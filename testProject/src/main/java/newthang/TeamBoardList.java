@@ -59,7 +59,7 @@ public class TeamBoardList extends HttpServlet {
 	     for(int i=0; i<list.size();i++){//회원의 수만큼 반복
        		out.print("<tr>");
        		out.print("<td>"+(i+1)+"</td>");
-       		out.print("<td>"+list.get(i).getTeam_name()+"</td>");
+       		out.print("<td><a href=TeamDetail>"+list.get(i).getTeam_name()+"</a></td>");
        		out.print("<td>"+list.get(i).getTeam_field()+"</td>");
        		out.print("<td>"+list.get(i).getTeam_level()+"</td>");
        		out.print("<td>"+list.get(i).getTeam_uniform()+"</td>");

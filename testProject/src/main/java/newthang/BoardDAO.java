@@ -6,8 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import javax.tools.Tool;
-
 public class BoardDAO {
 	private Connection conn;
 	// SQL문장 전송
@@ -276,6 +274,9 @@ public class BoardDAO {
 		return list;
 
 	}
+
+	
+	
 
 }
 

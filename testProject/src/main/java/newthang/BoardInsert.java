@@ -17,6 +17,7 @@ public class BoardInsert extends HttpServlet {
    private static final long serialVersionUID = 1L;
 
    // 폼 작업(화면 출력)
+   
    protected void doGet(HttpServletRequest request, HttpServletResponse response)
          throws ServletException, IOException {
       // 브라우저에서 실행하는 화면:HTML
