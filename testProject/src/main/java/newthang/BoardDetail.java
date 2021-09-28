@@ -34,7 +34,7 @@ public class BoardDetail extends HttpServlet {
 		out.println("<head>");
 		out.println(
 				"<Link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">");
-		out.println("<Link rel=\"stylesheet\" href=\"resources/css/football_detail.css\">");
+		out.println("<Link rel=\"stylesheet\" href=\"LGW_HYH/resources/css/football_detail.css\">");
 		out.println("<style type=text/css>");
 		out.println(".row {margin:0px auto; width:600px}"); // 가운데 출력:margin
 		out.println("h2 {text-align:center}");
