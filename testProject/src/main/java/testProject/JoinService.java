@@ -34,40 +34,49 @@ public class JoinService extends HttpServlet {
 
 		System.out.println(GENDER);
 		
-		try {
-			// 오라클 접속
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-
-			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
-			String dbid = "cgi_6_5";
-			String dbpw = "smhrd5";
-			Connection conn = DriverManager.getConnection(url, dbid, dbpw);
-
-			String sql = "insert into MEMBERS(MEMBER_ID, PWD, MEMBER_NAME, MEMBER_BIRTHDATE,GENDER, MEMBER_PHONE, P_AREA, POSITION) values(?,?,?,?,?,?,?,?)"; 
-			
-			PreparedStatement psmt = conn.prepareStatement(sql);
-
-			psmt.setString(1, MEMBER_ID);
-			psmt.setString(2, PWD);
-			psmt.setString(3, MEMBER_NAME);
-			psmt.setString(4, MEMBER_BIRTHDATE);
-			psmt.setString(5, GENDER);
-			psmt.setString(6, MEMBER_PHONE);
-			psmt.setString(7, P_AREA);
-			psmt.setString(8, POSITION);
-			
-			// 2_5. sql문 실행하기 -> 성공 여부에 따라 페이지 이동시키기
-			int cnt = psmt.executeUpdate();
-			System.out.println(cnt);
-			// 2_6 실행문처리
-			if (cnt > 0) {// 성공하면 Login페이지로
-				response.sendRedirect("Main.jsp");
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-			// 실행 후 오류 발생 시 에러출력
-		}
+		memberDAO dao = new memberDAO();
+		
+		int cnt = dao.join(MEMBER_ID, PWD, MEMBER_NAME, MEMBER_BIRTHDATE, GENDER, MEMBER_PHONE, P_AREA, POSITION);
+		
+		if(cnt>0) {
+	          response.sendRedirect("Main.jsp");
+	       }
+		
+		
+//		try {
+//			// 오라클 접속
+//			Class.forName("oracle.jdbc.driver.OracleDriver");
+//
+//			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
+//			String dbid = "cgi_6_5";
+//			String dbpw = "smhrd5";
+//			Connection conn = DriverManager.getConnection(url, dbid, dbpw);
+//
+//			String sql = "insert into MEMBERS(MEMBER_ID, PWD, MEMBER_NAME, MEMBER_BIRTHDATE,GENDER, MEMBER_PHONE, P_AREA, POSITION) values(?,?,?,?,?,?,?,?)"; 
+//			
+//			PreparedStatement psmt = conn.prepareStatement(sql);
+//
+//			psmt.setString(1, MEMBER_ID);
+//			psmt.setString(2, PWD);
+//			psmt.setString(3, MEMBER_NAME);
+//			psmt.setString(4, MEMBER_BIRTHDATE);
+//			psmt.setString(5, GENDER);
+//			psmt.setString(6, MEMBER_PHONE);
+//			psmt.setString(7, P_AREA);
+//			psmt.setString(8, POSITION);
+//			
+//			// 2_5. sql문 실행하기 -> 성공 여부에 따라 페이지 이동시키기
+//			int cnt = psmt.executeUpdate();
+//			System.out.println(cnt);
+//			// 2_6 실행문처리
+//			if (cnt > 0) {// 성공하면 Login페이지로
+//				response.sendRedirect("Main.jsp");
+//			}
+//
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			// 실행 후 오류 발생 시 에러출력
+//		}
 		
 	}
 

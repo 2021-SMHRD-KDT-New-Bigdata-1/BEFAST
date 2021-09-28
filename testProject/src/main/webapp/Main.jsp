@@ -194,17 +194,18 @@
 
 
     <!-- 매칭준비 -->
+	<form action="BookingService">
     <div class="ready">
             <div class="date_select">
 
                 <span>공 차는 날
-                    <input type="text" id="datepicker1" 
+                    <input type="text" id="datepicker1" name="MATCHING_DATE"
                         placeholder="날짜를 선택하세요" 
                         autocomplete="off">
                 </span>
             
                 <span>지역을 선택하세요
-                    <select class="locations" onchange="categoryChange(this)">
+                    <select class="locations" name="ADDRESS" onchange="categoryChange(this)">
                         <option>지역을 선택하세요</option>
                         <option value="광산구">광산구</option>
                         <option value="남구">남구</option>
@@ -215,12 +216,12 @@
                 </span>
             
                 <span>경기장을 선택하세요
-                    <select id="fileds"> 
+                    <select id="fileds" name="FILED_NAME"> 
                         <option>경기장을 선택하세요</option>
                     </select>
                 </span>
                 <span>경기방식을 선택하세요
-                    <select class="match_type">
+                    <select class="match_type" name="GAMES">
                         <option>경기방식을 선택하세요</option>
                         <option value="친선">친선</option>
                         <option value="일반">일반</option>
@@ -230,8 +231,9 @@
             </div>
          
          <div class="button_area">
-                <input type="button" id="btnjoin" class="btntype" value="예약하기">
+                <input type="submit" id="btnjoin" class="btntype" value="예약하기">
             </div>
+	</form>
            
 </div>
 
