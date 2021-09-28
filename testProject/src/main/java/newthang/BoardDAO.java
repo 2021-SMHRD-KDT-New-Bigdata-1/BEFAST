@@ -16,13 +16,11 @@ public class BoardDAO {
 
 	private static BoardDAO instance;
 
-
-	public static BoardDAO getInstance(){
-        if(instance==null)
-            instance=new BoardDAO();
-        return instance;
-    }
-
+	public static BoardDAO getInstance() {
+		if (instance == null)
+			instance = new BoardDAO();
+		return instance;
+	}
 
 	private final String URL = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
 
@@ -232,8 +230,52 @@ public class BoardDAO {
 	}
 
 // 6.찾기 SELECT
-	
+	public ArrayList<BoardVO> BoardSearchData(String col, String word) {
+		ArrayList<BoardVO> list = new ArrayList<BoardVO>();
+		// SQL문장 전송
+		String sql = "SELECT write_number,field_code,field_member,p_area,team_name,write_subject,write_content,matching_time,write_time,hit FROM board ";
+		// 단점: 속도 늦음→INDEX
+		String sqlWord = "";
+		if (col.equals("rname")) {
+			sqlWord = "where team_name like '%" + word.trim() + "%'";
+		} else if (col.equals("title")) {
+			sqlWord = "where write_subject='" + word.trim() + "'";
+		} else if (col.equals("content")) {
+			sqlWord = "where write_content like '%" + word.trim() + "%'";
+		}
+		sql = sql + sqlWord;
+		sql += "ORDER BY write_number DESC";
+		try {
+			// 연결
+			getConnection();
+			
+			ps = conn.prepareStatement(sql);
+			// SQL 실행 후 결과값 받기
+			rs = ps.executeQuery();
+			// 결과값 ArrayList에 첨
+			while (rs.next()) {
+				BoardVO vo = new BoardVO();
+				vo.setWrite_number(rs.getInt(1));
+				vo.setField_code(rs.getInt(2));
+				vo.setField_member(rs.getInt(3));
+				vo.setP_area(rs.getString(4));
+				vo.setTeam_name(rs.getString(5));
+				vo.setWrite_subject(rs.getString(6));
+				vo.setWrite_content(rs.getString(7));
+				vo.setMatching_time(rs.getString(8));
+				vo.setWrite_time(rs.getDate(9));
+				vo.setHit(rs.getInt(10));
+				list.add(vo);
+			}
+			rs.close();
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		} finally {
+			disConnection();
+		}
+		return list;
 
+	}
 
 }
 

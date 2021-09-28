@@ -87,7 +87,45 @@ public class TeamBoardDAO {
 	}
 	
 	  //2.내용보기 SELECT (WHERE) ?no=1
-	  
+	
+	public TeamVO TeamDetail(int write_number) {
+		TeamVO vo = new TeamVO();
+		try {
+			// 연결
+			getConnection();
+			// SQL문장 전송 ==> 조회수 증가
+
+			String sql = "UPDATE board SET hit=hit+1 WHERE write_number=?";
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, write_number); // ?에 값을 채운다
+			// 실행
+			ps.executeUpdate();
+			// 내용물 데이터를 가지고 온다
+			sql = "SELECT write_number,field_code,field_member,p_area,team_name,write_subject,write_content,matching_time,write_time,hit FROM board WHERE write_number=?";
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, write_number);
+			ResultSet rs = ps.executeQuery();
+			rs.next();
+
+			vo.setWrite_number(rs.getInt(1));
+			vo.setField_code(rs.getInt(2));
+			vo.setField_member(rs.getInt(3));
+			vo.setP_area(rs.getString(4));
+			vo.setTeam_name(rs.getString(5));
+			vo.setWrite_subject(rs.getString(6));
+			vo.setWrite_content(rs.getString(7));
+			vo.setMatching_time(rs.getString(8));
+			vo.setWrite_time(rs.getDate(9));
+			vo.setHit(rs.getInt(10));
+			rs.close();
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		} finally {
+			disConnection();
+		}
+		return vo;
+	}
+	
 		/*
 		 * public TeamBoardVO boardDetail(int no) { BoardVO vo=new BoardVO(); try { //
 		 * 연결 getConnection(); // SQL문장 전송 ==> 조회수 증가 String
