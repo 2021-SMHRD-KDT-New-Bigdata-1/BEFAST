@@ -233,13 +233,8 @@
             </div>
         
          <div class="button_area">
-                <input type="submit" id="btnjoin" class="btntype" value="예약하기" onclick="BOOKING">
-     		  <script>
-     		   function BOOKING({
-     			 alert("예약이 완료되었습니다.");
-     			location.href="Main.jsp";
-     		   });
-			</script>
+                <input type="submit" id="btnjoin" class="btntype" value="예약하기" onclick="BOOKING()">
+
          </div>
         
           
@@ -248,7 +243,7 @@
 </div>
 
 
-    <!-- 제이쿼리 로드 -->
+    <!-- 제이쿼리 로드 -->f
     <script src="./YJW_KSJ/JS/jquery-3.6.0.min.js"></script>
    
    <!-- 지역에 따른 경기장 선택 자바스크립트 -->
@@ -289,6 +284,12 @@
             });                           
         });
         </script>
+        
+		<script>
+     		   function BOOKING() {
+     				 alert("예약이 완료되었습니다.");
+     		   }
+		</script>
         
   
 </body>
