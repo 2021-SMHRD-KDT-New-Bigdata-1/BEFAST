@@ -57,7 +57,7 @@ public class BookingDAO {
 				psmt = conn.prepareStatement(sql);
 				
 				
-				psmt.setString(1, FIELD_CODE);
+//				psmt.setString(1, FIELD_CODE);
 				psmt.setString(2, MATCHING_DATE);
 				psmt.setString(3, ADDRESS);
 				psmt.setString(4, FIELD_NAME);
