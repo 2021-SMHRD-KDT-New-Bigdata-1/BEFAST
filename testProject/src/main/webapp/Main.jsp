@@ -74,9 +74,11 @@
                     </label>
                  
                     <div class="sidebar_content">
+                    
                     <%
 				 	out.print("<h3>" + vo.getMEMBER_ID() + "님 환영합니다.</h3>");
 					%>
+					
                      <ul>
                             <li><a href="Update.jsp">내 정보</a></li>
                              <li><a>팀 찾기</a></li>
