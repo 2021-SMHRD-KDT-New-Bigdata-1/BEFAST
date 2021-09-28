@@ -6,7 +6,7 @@ function categoryChange(e) {
     var 동구 = ['광주동구풋살경기장','경기장8','경기장9'];
     var 북구 = ['챔피언스풋살장','케이지풋살아레나 전대점','광주실내풋살장'
 				,'JK풋살아레나'];
-    var 서구 = ['더프라임풋살장','스타실내풋살장','돌파풋살'];
+    var 서구 = ['더프라임풋살장','스타실내풋살장','돌파살'];
     var target = document.getElementById("fileds");
 
     if (e.value == "광산구") var XX = 광산구;
