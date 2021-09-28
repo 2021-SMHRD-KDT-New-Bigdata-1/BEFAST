@@ -57,7 +57,7 @@
                     <div class="goIn">
             <%
                if (vo == null) {
-                  out.print("<a href='Loginform.jsp'>로그인</a> <span>또는</span> <a href='Joinform.html'>회원가입</a>");
+                  out.print("<a href='Loginform.jsp'>로그인</a> <span>또는</span> <a href='Joinform.jsp'>회원가입</a>");
                   
                }else {
                   
