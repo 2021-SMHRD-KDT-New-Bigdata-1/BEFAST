@@ -19,7 +19,7 @@ public class LoginService extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("euc-kr");
 		String MEMBER_ID = request.getParameter("MEMBER_ID");
 		String PWD = request.getParameter("PWD");
 		System.out.print(MEMBER_ID);
