@@ -231,10 +231,18 @@
                     </select>
                 </span>
             </div>
-         
+        
          <div class="button_area">
-                <input type="submit" id="btnjoin" class="btntype" value="예약하기">
-            </div>
+                <input type="submit" id="btnjoin" class="btntype" value="예약하기" onclick="BOOKING">
+     		  <script>
+     		   function BOOKING({
+     			 alert("예약이 완료되었습니다.");
+     			location.href="Main.jsp";
+     		   });
+			</script>
+         </div>
+        
+          
 	</form>
            
 </div>
