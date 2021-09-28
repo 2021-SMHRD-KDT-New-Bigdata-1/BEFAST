@@ -51,7 +51,7 @@ public class TeamDAO {
 		try {
 			// 오라클 접속
 			conn();
-			String sql = "insert into TEAM_MEMBER(team_name, team_code, team_field, team_level, team_uniform,team_info, team_member) values((SELECT NVL(MAX(team_code)+1,1) FROM TEAM_MEMBER),?,?,?,?,?,1)";
+			String sql = "insert into TEAM_MEMBER(team_name, team_code, team_field, team_level, team_uniform, team_info, team_member) values(?,(SELECT NVL(MAX(team_code)+1,1) FROM TEAM_MEMBER),?,?,?,?,1)";
 
 			PreparedStatement psmt = conn.prepareStatement(sql);
 

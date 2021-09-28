@@ -23,27 +23,27 @@
                         <h3 class="join_group">
                            <label for="name">팀 이름</label>
                         </h3>
-                        <span class="input_box_name"> <input type="text"
-                           id="name" name="name" class="input_name"> <input
-                           type="button" class="check" value="중복체크" onclick="idCheck()" >
+                        <span class="input_box_name"> 
+                        <input type="text" id="name" name="name" class="input_name"> 
+                        <input type="button" class="check" value="중복체크" onclick="idCheck()" >
                         </span>
                         <span id="sp"></span>
                         <h3 class="join_group">
                            <label for="number">팀 인원</label>
                         </h3>
-                        <span class="input_box_number"> <input type="text"
-                           id="number" name="number" class="input_number">
+                        <span class="input_box_number"> 
+                        <input type="text" id="number" name="number" class="input_number">
                         </span>
                         <h3 class="join_group">
                            <label for="teamarea">연고지</label>
                         </h3>
                         <span class="input_box_area"> <select id="area"
                            name="area" class="input_area">
-                              <option value="1">광산구</option>
-                              <option value="2">동구</option>
-                              <option value="3">서구</option>
-                              <option value="4">남구</option>
-                              <option value="5">북구</option>
+                              <option value="광산구">광산구</option>
+                              <option value="동구">동구</option>
+                              <option value="서구">서구</option>
+                              <option value="남구">남구</option>
+                              <option value="북구">북구</option>
                         </select>
                         </span>
                      </div>
@@ -55,18 +55,18 @@
                         </h3>
                         <span class="input_box_teamlevel"> <select id="level"
                            name="level" class="input_level">
-                              <option value="1">상</option>
-                              <option value="2">중</option>
-                              <option value="3">하</option>
+                              <option value="상">상</option>
+                              <option value="중">중</option>
+                              <option value="하">하</option>
                         </select>
                         </span>
 
                         <h3 class="join_group">
                            <label for="teamuniform">팀 유니폼</label>
                         </h3>
-                        <span class="input_box_teamuniform"> <input type="radio"
-                           name="unifrom" class="input_uniform">O <input
-                           type="radio" name="unifrom" class="input_uniform">X
+                        <span class="input_box_teamuniform"> 
+                        <input type="radio" name="unifrom" class="input_uniform" value="O">O 
+                        <input type="radio" name="unifrom" class="input_uniform" value="X">X
                         </span>
                         <h3 class="join_group">
                            <label for="teamintrodution">팀 소개</label>
