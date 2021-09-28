@@ -25,24 +25,24 @@
 
     <!-- 달력 CSS -->
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-	
-	<!-- 햄버거 메뉴 CSS -->
-	<link rel="stylesheet" href="./YJW_KSJ/CSS/Menuicon.css">
-	
-	<link rel="stylesheet" href="./YJW_KSJ/CSS/style.css">
+   
+   <!-- 햄버거 메뉴 CSS -->
+   <link rel="stylesheet" href="./YJW_KSJ/CSS/Menuicon.css">
+   
+   <link rel="stylesheet" href="./YJW_KSJ/CSS/style.css">
     <!-- Boxicons CDN link -->
-	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-	<!-- 픽토그램 준비-->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+   <!-- 픽토그램 준비-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
 
-	<%
-		memberVO vo = (memberVO) session.getAttribute("vo");
-	%>
-	
-	    <!-- 순위 -->
+   <%
+      memberVO vo = (memberVO) session.getAttribute("vo");
+   %>
+   
+       <!-- 순위 -->
     <!-- 이미지 슬라이더 -->
     <div class="container">
         <div class="navbar">
@@ -55,41 +55,45 @@
 
                 <div class="top_menu">
                     <div class="goIn">
-				<%
-					if (vo == null) {
-						out.print("<a href='Loginform.jsp'>로그인</a> <span>또는</span> <a href='Joinform.html'>회원가입</a>");
-						
-					}else {
-						
-					if (vo.getMEMBER_ID().equals("admin")){
-						out.print("<a href='#'>회원전체 관리</a>");
-						
-					}%><%else {%>
-				        <input type="checkbox" id="menuicon">
-				        <label for="menuicon">
-				        	<!-- 햄버거 -->
-				            <span></span>
-				            <span></span>
-				            <span></span>
-				        </label>
-				        <div class="sidebar_content">
-							<ul>
-    				            <li><a href="Update.jsp">내 정보</a></li>
-          					    <li><a>팀 찾기</a></li>
-          					    <li><a href="Team.jsp">팀 생성</a></li>
-                				<li><a>경기선택</a></li>
-                				<li><a href="BoardList">용병게시판</a></li>
-                				<li><a href="LGW_HYH/Guide.jsp">풋살가이드</a></li>               				
-                				<li><a href="Logoutform.jsp">로그아웃</a></li>
-            				</ul>
-        				</div> 
+            <%
+               if (vo == null) {
+                  out.print("<a href='Loginform.jsp'>로그인</a> <span>또는</span> <a href='Joinform.html'>회원가입</a>");
+                  
+               }else {
+                  
+               if (vo.getMEMBER_ID().equals("admin")){
+                  out.print("<a href='#'>회원전체 관리</a>");
+                  
+               }%><%else {%>
+                    <input type="checkbox" id="menuicon">
+                    <label for="menuicon">
+                       <!-- 햄버거 -->
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                 
+                    <div class="sidebar_content">
+                    <%
+				 	out.print("<h3>" + vo.getMEMBER_ID() + "님 환영합니다.</h3>");
+					%>
+                     <ul>
+                            <li><a href="Update.jsp">내 정보</a></li>
+                             <li><a>팀 찾기</a></li>
+                             <li><a href="Team.jsp">팀 생성</a></li>
+                            <li><a>경기선택</a></li>
+                            <li><a href="BoardList">용병게시판</a></li>
+                            <li><a href="LGW_HYH/Guide.jsp">풋살가이드</a></li>                           
+                            <li><a href="Logoutform.jsp">로그아웃</a></li>
+                        </ul>
+                    </div> 
 
-						<!-- // 햄버거 메뉴 -->
-						 <!-- out.print("<a href='#'><i class='iconbtn fas fa-bars'></i></a>");  -->
-						<%}
-					}
-				%>
-				
+                  <!-- // 햄버거 메뉴 -->
+                   <!-- out.print("<a href='#'><i class='iconbtn fas fa-bars'></i></a>");  -->
+                  <%}
+               }
+            %>
+            
                     </div>
                 </div>
             </div>
@@ -190,17 +194,18 @@
 
 
     <!-- 매칭준비 -->
+	<form action="BookingService">
     <div class="ready">
             <div class="date_select">
 
                 <span>공 차는 날
-                    <input type="text" id="datepicker1" 
+                    <input type="text" id="datepicker1" name="MATCHING_DATE"
                         placeholder="날짜를 선택하세요" 
                         autocomplete="off">
                 </span>
             
                 <span>지역을 선택하세요
-                    <select class="locations" onchange="categoryChange(this)">
+                    <select class="locations" name="ADDRESS" onchange="categoryChange(this)">
                         <option>지역을 선택하세요</option>
                         <option value="광산구">광산구</option>
                         <option value="남구">남구</option>
@@ -211,12 +216,12 @@
                 </span>
             
                 <span>경기장을 선택하세요
-                    <select id="fileds"> 
+                    <select id="fileds" name="FILED_NAME"> 
                         <option>경기장을 선택하세요</option>
                     </select>
                 </span>
                 <span>경기방식을 선택하세요
-                    <select class="match_type">
+                    <select class="match_type" name="GAMES">
                         <option>경기방식을 선택하세요</option>
                         <option value="친선">친선</option>
                         <option value="일반">일반</option>
@@ -224,23 +229,24 @@
                     </select>
                 </span>
             </div>
-			
-			<div class="button_area">
-                <input type="button" id="btnjoin" class="btntype" value="예약하기">
+         
+         <div class="button_area">
+                <input type="submit" id="btnjoin" class="btntype" value="예약하기">
             </div>
+	</form>
            
 </div>
 
 
     <!-- 제이쿼리 로드 -->
     <script src="./YJW_KSJ/JS/jquery-3.6.0.min.js"></script>
-	
-	<!-- 지역에 따른 경기장 선택 자바스크립트 -->
-	<!-- 한글 인코딩(charset=utf-8) 추가 -->
-	<script type="text/javascript" charset="utf-8" src="./YJW_KSJ/JS/Main_fileds.js"></script>>
+   
+   <!-- 지역에 따른 경기장 선택 자바스크립트 -->
+   <!-- 한글 인코딩(charset=utf-8) 추가 -->
+   <script type="text/javascript" charset="utf-8" src="./YJW_KSJ/JS/Main_fileds.js"></script>>
     
     <!-- 순위 제이쿼리 -->
-	<script src="./YJW_KSJ/JS/Main_rank.js" type="text/javascript"></script>
+   <script src="./YJW_KSJ/JS/Main_rank.js" type="text/javascript"></script>
 
     <!-- 제이쿼리 달력 라이브러리 로드 -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
