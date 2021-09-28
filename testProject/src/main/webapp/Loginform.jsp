@@ -18,7 +18,7 @@
             <input type="submit" value="로그인">
             
            	<div class="Join">
-            <a href="Joinform.html">회원가입</a>
+            <a href="Joinform.jsp">회원가입</a>
             </div>
         </form>
     </div>

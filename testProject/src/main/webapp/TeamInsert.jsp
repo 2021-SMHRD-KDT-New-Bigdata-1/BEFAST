@@ -27,9 +27,11 @@
 	// DAO로 전송 => 오라클 INSERT
 	TeamDAO dao = new TeamDAO();
 	dao.TeamInsert(vo);
-
-	// 목록으로 이동
-	response.sendRedirect("Main.jsp");
 	%>
+	<script>
+		alert("팀 생성되었습니다.");
+		location.href = "Main.jsp";
+	</script>
+
 </body>
 </html>

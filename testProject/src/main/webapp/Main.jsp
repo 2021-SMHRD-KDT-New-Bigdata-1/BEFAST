@@ -57,7 +57,7 @@
                     <div class="goIn">
             <%
                if (vo == null) {
-                  out.print("<a href='Loginform.jsp'>로그인</a> <span>또는</span> <a href='Joinform.html'>회원가입</a>");
+                  out.print("<a href='Loginform.jsp'>로그인</a> <span>또는</span> <a href='Joinform.jsp'>회원가입</a>");
                   
                }else {
                   
@@ -231,16 +231,19 @@
                     </select>
                 </span>
             </div>
-         
+        
          <div class="button_area">
-                <input type="submit" id="btnjoin" class="btntype" value="예약하기">
-            </div>
+                <input type="submit" id="btnjoin" class="btntype" value="예약하기" onclick="BOOKING()">
+
+         </div>
+        
+          
 	</form>
            
 </div>
 
 
-    <!-- 제이쿼리 로드 -->
+    <!-- 제이쿼리 로드 -->f
     <script src="./YJW_KSJ/JS/jquery-3.6.0.min.js"></script>
    
    <!-- 지역에 따른 경기장 선택 자바스크립트 -->
@@ -281,6 +284,12 @@
             });                           
         });
         </script>
+        
+		<script>
+     		   function BOOKING() {
+     				 alert("예약이 완료되었습니다.");
+     		   }
+		</script>
         
   
 </body>

@@ -25,15 +25,9 @@
                         </h3>
                         <span class="input_box_name"> 
                         <input type="text" id="name" name="name" class="input_name"> 
-                        <input type="button" class="check" value="중복체크" onclick="idCheck()" >
+                        <input type="button" class="check" value="중복체크" onclick="TeamCheck()" >
                         </span>
                         <span id="sp"></span>
-                        <h3 class="join_group">
-                           <label for="number">팀 인원</label>
-                        </h3>
-                        <span class="input_box_number"> 
-                        <input type="text" id="number" name="number" class="input_number">
-                        </span>
                         <h3 class="join_group">
                            <label for="teamarea">연고지</label>
                         </h3>
@@ -55,9 +49,9 @@
                         </h3>
                         <span class="input_box_teamlevel"> <select id="level"
                            name="level" class="input_level">
-                              <option value="상">상</option>
-                              <option value="중">중</option>
-                              <option value="하">하</option>
+                              <option value="3">상</option>
+                              <option value="2">중</option>
+                              <option value="1">하</option>
                         </select>
                         </span>
 
@@ -91,7 +85,7 @@
       <script src="resources/js/jquery-3.6.0.min.js"></script>
       <script>
          // ID중복체크
-         function idCheck() {
+         function TeamCheck() {
             var input = document.getElementById("name");
             $.ajax({
                type : "post",
