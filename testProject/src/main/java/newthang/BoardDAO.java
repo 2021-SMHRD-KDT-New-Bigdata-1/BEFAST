@@ -237,7 +237,7 @@ public class BoardDAO {
 		if (col.equals("rname")) {
 			sqlWord = "where team_name like '%" + word.trim() + "%'";
 		} else if (col.equals("title")) {
-			sqlWord = "where write_subject='" + word.trim() + "'";
+			sqlWord = "where write_subject like '%" + word.trim() + "%'";
 		} else if (col.equals("content")) {
 			sqlWord = "where write_content like '%" + word.trim() + "%'";
 		}

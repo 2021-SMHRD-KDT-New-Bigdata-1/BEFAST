@@ -21,8 +21,8 @@ public class BoardList extends HttpServlet {
 			throws ServletException, IOException {
 		// 브라우저에서 실행하는 화면:HTML
 		// 브라우저에 알림 : HTML문서 전송
-		response.setContentType("text/html;charset=EUC-KR");
 		request.setCharacterEncoding("euc-kr");
+		response.setContentType("text/html;charset=EUC-KR");
 		// HTML을 브라우저로 전송 시작
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
@@ -49,10 +49,8 @@ public class BoardList extends HttpServlet {
 		// 출력
 		BoardDAO dao = new BoardDAO();
 		ArrayList<BoardVO> list;
-		System.out.println(request.getParameter("word"));
 		if (request.getParameter("word") == null) {
 			list = dao.boardListData();
-			System.out.println("전체출력");
 		} else {
 			String col = request.getParameter("col");
 			String word = request.getParameter("word");

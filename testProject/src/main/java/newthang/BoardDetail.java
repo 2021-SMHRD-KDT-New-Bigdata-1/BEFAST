@@ -50,10 +50,10 @@ public class BoardDetail extends HttpServlet {
 		out.println("<div class=row>");
 
 		// post 보안 / get 다보여짐
-		out.println("<div class= profile >");
-		out.println("<img src=resources/img/img3.jfif>");
+		out.println("<div class= profile1 >");
+		out.println("<img src=resources/img/img3.jfif class=img>");
 		out.println("<div class= tjfaud>");
-		out.println("<p id=name>" + vo.getTeam_name() + "<p>");
+		out.println("<p id=name>" + vo.getTeam_name() + "</p>");
 		out.println("<br>");
 		out.println("<span style='font-size:10px'>" + vo.getWrite_time() + "</span>");
 		out.println("<span style='font-size:10px'>조회수 : " + vo.getHit() + "</span>");

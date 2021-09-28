@@ -23,7 +23,7 @@
 
 
 .profile1 {
-	width: 200px;
+	width: 100%;
 	display: flex;
 	justify-content: flex-start;
 }
@@ -32,8 +32,7 @@
 .tjfaud {
 	padding-left: 10px;
 	font-size : 30px;
-	/* display : inline; */
-	width: 300px;
+	width: 85%;
 	float: left;
 }
 
