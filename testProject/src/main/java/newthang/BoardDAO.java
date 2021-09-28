@@ -182,6 +182,7 @@ public class BoardDAO {
 	}
 
 	// 5.글삭제 DELETE
+	// 패스워드 가져오기
 	public String getPass(int write_number) {// 리턴할 변수 객체 선언
 		String write_pw = "";
 		// DB연결
