@@ -40,7 +40,7 @@ public class TeamJoin extends HttpServlet {
 		
 	}
 	else {
-		System.out.println("수정 실패");
+		System.out.println("수정실패");
 		response.sendRedirect("Main.jsp");
 		}
 	}
