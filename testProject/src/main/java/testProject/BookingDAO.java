@@ -47,11 +47,11 @@ public class BookingDAO {
 	   }
 	   
 	   //예약하기
-		public int BOOKINGS(String MATCHING_DATE, String ADDRESS, String FILED_NAME, String GAMES) {
+		public int BOOKINGS(String MATCHING_DATE, String ADDRESS, String FILED_NAME, String GAMES, String TIMES) {
 			conn();
 			
 			int cnt = 0;
-			String sql = "insert into BOOKINGS values(?,?,?,?)";
+			String sql = "insert into BOOKINGS values(?,?,?,?,?)";
 
 			try { 
 				psmt = conn.prepareStatement(sql);
@@ -61,6 +61,7 @@ public class BookingDAO {
 				psmt.setString(2, ADDRESS);
 				psmt.setString(3, FILED_NAME);
 				psmt.setString(4, GAMES);
+				psmt.setString(5, TIMES);
 
 
 				cnt = psmt.executeUpdate();
