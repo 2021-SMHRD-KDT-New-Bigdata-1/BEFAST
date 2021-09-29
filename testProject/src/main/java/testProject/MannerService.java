@@ -40,9 +40,9 @@ public class MannerService extends HttpServlet {
 			// 검색된 결과값 ResultSet으로 받을 것
 			ResultSet rs = psmt.executeQuery();
 			
-			// 로그인 DB확인 및 가져오기
+			/* 로그인 DB확인 및 가져오기
 			memberDAO dao = new memberDAO();
-			memberVO vo = dao.login(MEMBER_ID, PWD);
+			memberVO vo = dao.login(MEMBER_ID, PWD);*/
 			
 			if (rs.next()) {
 				// 만약 값이 있으면 로그인 성공! -> 세션에도 저장!
