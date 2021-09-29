@@ -15,7 +15,7 @@
  <script>
     function checks(){
     	if(document.getElementById('MEMBER_ID').value==""){
-    		alert("아이디를 입입입력해주세요.")
+    		alert("아이디를 입력해주세요.")
     		document.getElementById('MEMBER_ID').focus();
     		return false;
     	}else if(document.getElementById('PWD').value==""){
