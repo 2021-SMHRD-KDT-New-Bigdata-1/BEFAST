@@ -11,7 +11,7 @@
 <div class="container">
 		<div class="outcontainer">
 			<div class="game_box">
-				<h1 class="select_game">예약현황 페이지지롱</h1>
+				<h1 class="select_game">예약현황 페이지지롱롱</h1>
 
 				<form action="#">
 					<div class="columns">
@@ -41,8 +41,8 @@
 
 						<figure>
 							<!-- <img src="img/랭크경기.jpg"> -->
-							<button class="btn" id="btn" type="submit" href="BoardList">
-								<img class="btn-img" src="YJW_KSJ/resources/99. img/pic1.jpg">
+							<button class="btn" id="btn" type="submit">
+								<img class="btn-img" src="YJW_KSJ/resources/99. img/pic1.jpg" href="BoardList">
 							</button>
 							<figcaption>용병</figcaption>
 						</figure>
