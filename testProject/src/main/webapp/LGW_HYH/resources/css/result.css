@@ -1,11 +1,18 @@
 @charset "EUC-KR";
-
+.partner{
+	/* display : inline; */
+	background-color : green;
+	width: 110px;
+}
 .partner h2{
 	/* text-align: center */
 }
 
 .partner_info>p{
 	cursor: pointer;
+}
+.p{
+	text-align : center;
 }
 #modal{
 	width: 100%;
@@ -62,5 +69,6 @@
 	border: none;
 	border-radius: 6px;
 	color: white;
+	cursor: pointer;
 	background-color: #996699;
 }
