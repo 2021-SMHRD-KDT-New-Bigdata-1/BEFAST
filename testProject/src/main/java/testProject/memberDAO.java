@@ -105,7 +105,7 @@ public class memberDAO {
 	   }
 	   
 
-	   // 로그인 기능 구
+	   // 로그인 기능 구현
 	   public memberVO login(String MEMBER_ID, String PWD) {
 		      memberVO vo = null;
 		      try {
