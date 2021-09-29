@@ -108,12 +108,12 @@ public class TeamDAO {
 			conn();
 			// SQL문장 전송
 			String sql = "SELECT *  FROM team_member ";
-					 // 단점: 속도 늦음→INDEX
+			// 단점: 속도 늦음→INDEX
 			psmt = conn.prepareStatement(sql);
 			// SQL 실행 후 결과값 받기
 			ResultSet rs = psmt.executeQuery();
 			// 결과값 ArrayList에 첨부
-			while (rs.next()) {		
+			while (rs.next()) {
 				TeamVO vo = new TeamVO();
 				vo.setTeam_name(rs.getString(1));
 				vo.setTeam_code(rs.getInt(2));
@@ -134,10 +134,37 @@ public class TeamDAO {
 
 	}
 
+	public TeamVO TeamDetail(String team_name) {
+		TeamVO vo = new TeamVO();
+		try {
+			// 연결
+			conn();
+			// SQL문장 전송 ==> 조회수 증가
 
+			String sql = "select * FROM team_member WHERE Team_name=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, team_name); // ?에 값을 채운다
+			// 실행
+			// 내용물 데이터를 가지고 온다
 
-		
-	
+			ResultSet rs = psmt.executeQuery();
+			rs.next();
+						
+			vo.setTeam_name(rs.getString(1));
+			vo.setTeam_code(rs.getInt(2));
+			vo.setTeam_field(rs.getString(3));
+			vo.setTeam_level(rs.getString(4));
+			vo.setTeam_uniform(rs.getString(5));
+			vo.setTeam_info(rs.getString(6));
+			vo.setTeam_member(rs.getString(7));
+			rs.close();
+					
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		} finally {
+			close();
+		}
+		return vo;
+	}
 
-	
 }
