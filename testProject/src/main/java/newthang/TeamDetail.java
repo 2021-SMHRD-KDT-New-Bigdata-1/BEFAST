@@ -46,13 +46,6 @@ public class TeamDetail extends HttpServlet {
 
 		// post 보안 / get 다보여짐
 		out.println("<div class= profile >");
-		out.println(vo.getTeam_code());
-		out.println(vo.getTeam_field());
-		out.println(vo.getTeam_info());
-		out.println(vo.getTeam_level());
-		out.println(vo.getTeam_member());
-		out.println(vo.getTeam_name());
-		out.println(vo.getTeam_uniform());
 		out.println("<img src=resources/img/img3.jfif>");
 		out.println("<div class= tjfaud>");
 		out.println("<p id=name>" + vo.getTeam_code() + "<p>");

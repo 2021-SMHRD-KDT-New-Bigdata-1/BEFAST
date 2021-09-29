@@ -69,7 +69,7 @@ public class TeamList extends HttpServlet {
 		for (int i = 0; i < list.size(); i++) {// 회원의 수만큼 반복
 			out.print("<tr>");
 			out.print("<td>" + (i + 1) + "</td>");
-			out.print("<td><a href='TeamDetail?team_name=" + list.get(i).getTeam_name() + "'>"
+			out.print("<td><a href='LGW_HYH/TeamDetail.jsp?team_name=" + list.get(i).getTeam_name() + "'>"
 					+ list.get(i).getTeam_name() + "</a></td>");
 			out.print("<td>" + list.get(i).getTeam_field() + "</td>");
 			if (list.get(i).getTeam_level() == "1") {
