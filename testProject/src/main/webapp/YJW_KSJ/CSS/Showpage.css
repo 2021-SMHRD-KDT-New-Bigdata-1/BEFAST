@@ -72,6 +72,12 @@ h3 {
     margin: 0.67em 0;
     color: rgba(31,209,69);
 }
+h2{
+	color:white;
+}
+tr>td{
+	color:white;
+}
 
 /* ul {
     display: block; */
@@ -225,6 +231,19 @@ h1.select_game, ul.choose_game {
 
 }
 
-.game_box2{
-    background-color: white;
+table {
+	width: 1024px;
+}
+
+table td {
+	color: #fff;
+	padding: 0.3em 0.5em;
+}
+
+tbody {
+	width: 1024px;
+}
+
+tbody tr {
+	border: 1px solid yellow;
 }
