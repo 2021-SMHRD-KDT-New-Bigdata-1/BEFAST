@@ -46,9 +46,9 @@ public class TeamDAO {
 			e.printStackTrace();
 		}
 	}
-
+	// 팀 생성 insert
 	public void TeamInsert(TeamVO vo) {
-		// 팀 생성 insert
+		
 		try {
 			// 오라클 접속
 			conn();
@@ -165,6 +165,48 @@ public class TeamDAO {
 			close();
 		}
 		return vo;
+	}
+	
+	// 찾기 기능
+	public ArrayList<TeamVO> TeamSearchData(String col, String word) {
+		ArrayList<TeamVO> list = new ArrayList<TeamVO>();
+		// SQL문장 전송
+		String sql = "SELECT team_name,team_field, team_level, team_uniform, team_info, team_member, team_time FROM team_member ";
+		// 단점: 속도 늦음→INDEX
+		String sqlWord = "";
+		if (col.equals("rname")) {
+			sqlWord = "where team_name like '%" + word.trim() + "%'";
+		} else if (col.equals("areas")) {
+			sqlWord = "where team_field like '%" + word.trim() + "%'";
+		} 
+		sql = sql + sqlWord;
+		sql += "ORDER BY team_code DESC";
+		try {
+			// 연결
+			conn();
+			psmt = conn.prepareStatement(sql);
+			// SQL 실행 후 결과값 받기
+			rs = psmt.executeQuery();
+			// 결과값 ArrayList에 첨
+			while (rs.next()) {
+				TeamVO vo = new TeamVO();
+				vo.setTeam_name(rs.getString(1));
+				vo.setTeam_field(rs.getString(2));
+				vo.setTeam_level(rs.getString(3));
+				vo.setTeam_uniform(rs.getString(4));
+				vo.setTeam_info(rs.getString(5));
+				vo.setTeam_member(rs.getString(6));
+				vo.setTeam_time(rs.getString(7));
+				list.add(vo);
+			}
+			rs.close();
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		} finally {
+			close();
+		}
+		return list;
+
 	}
 
 }
