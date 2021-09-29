@@ -12,13 +12,6 @@ $(function() {
 
 	step(1);
 	
-	$('#rank-list ol').hover(function() {
-		$(this).stop().animate({
-			top: -height * index,
-		}, 500, function() {
-			step((index + 1) % count);
-		});
-	});
 
 
 });

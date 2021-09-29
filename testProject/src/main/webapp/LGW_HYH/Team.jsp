@@ -42,8 +42,7 @@
 								<h3 class="join_group">
 									<label for="teamtime">선호시간</label>
 								</h3>
-								<span class="input_box_time"> <select id="time"
-									name="time" class="input_time">
+								<span class="input_box_time"> 
 										<input type="checkbox" name="time" class="input_time"
 										value="월">월
 										<input type="checkbox" name="time" class="input_time"

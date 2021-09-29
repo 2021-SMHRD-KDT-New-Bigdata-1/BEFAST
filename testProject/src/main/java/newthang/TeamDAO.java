@@ -52,17 +52,18 @@ public class TeamDAO {
 		try {
 			// 오라클 접속
 			conn();
-			String sql = "insert into TEAM_MEMBER(team_name, team_code, team_field, team_level, team_uniform, team_info, team_member, team_logo) values(?,(SELECT NVL(MAX(team_code)+1,1) FROM TEAM_MEMBER),?,?,?,?,1,?)";
+			String sql = "insert into TEAM_MEMBER(team_name, team_code, team_field, team_time, team_level, team_uniform, team_info, team_member, team_logo, teamleader) values(?,(SELECT NVL(MAX(team_code)+1,1) FROM TEAM_MEMBER),?,?,?,?,?,1,?,?)";
 
 			PreparedStatement psmt = conn.prepareStatement(sql);
-
+			
 			psmt.setString(1, vo.getTeam_name());
 			psmt.setString(2, vo.getTeam_field());
-			psmt.setString(3, vo.getTeam_level());
-			psmt.setString(4, vo.getTeam_uniform());
-			psmt.setString(5, vo.getTeam_info());
-			psmt.setString(6, vo.getTeam_logo());
-
+			psmt.setString(3, vo.getTeam_time());
+			psmt.setString(4, vo.getTeam_level());
+			psmt.setString(5, vo.getTeam_uniform());
+			psmt.setString(6, vo.getTeam_info());
+			psmt.setString(7, vo.getTeam_logo());
+			psmt.setString(8, vo.getTeamleader());
 			// 2_5. sql문 실행하기 -> 성공 여부에 따라 페이지 이동시키기
 			psmt.executeUpdate();
 			// 2_6 실행문처리
@@ -123,6 +124,7 @@ public class TeamDAO {
 				vo.setTeam_uniform(rs.getString(5));
 				vo.setTeam_info(rs.getString(6));
 				vo.setTeam_member(rs.getString(7));
+				vo.setTeamleader(rs.getString(8));
 				list.add(vo);
 			}
 			rs.close();
@@ -140,7 +142,7 @@ public class TeamDAO {
 		try {
 			// 연결
 			conn();
-			// SQL문장 전송 ==> 조회수 증가
+			
 
 			String sql = "select * FROM team_member WHERE Team_name=?";
 			psmt = conn.prepareStatement(sql);
@@ -158,6 +160,9 @@ public class TeamDAO {
 			vo.setTeam_uniform(rs.getString(5));
 			vo.setTeam_info(rs.getString(6));
 			vo.setTeam_member(rs.getString(7));
+			vo.setTeam_time(rs.getString(8));
+			vo.setTeam_logo(rs.getString(9));
+			vo.setTeamleader(rs.getString(10));
 			rs.close();
 					
 		} catch (Exception ex) {
@@ -172,7 +177,7 @@ public class TeamDAO {
 	public ArrayList<TeamVO> TeamSearchData(String col, String word) {
 		ArrayList<TeamVO> list = new ArrayList<TeamVO>();
 		// SQL문장 전송
-		String sql = "SELECT team_name,team_field, team_level, team_uniform, team_info, team_member, team_time FROM team_member ";
+		String sql = "SELECT team_name,team_field, team_level, team_uniform, team_info, team_member, team_time, teamleader FROM team_member ";
 		// 단점: 속도 늦음→INDEX
 		String sqlWord = "";
 		if (col.equals("rname")) {
@@ -198,6 +203,7 @@ public class TeamDAO {
 				vo.setTeam_info(rs.getString(5));
 				vo.setTeam_member(rs.getString(6));
 				vo.setTeam_time(rs.getString(7));
+				vo.setTeamleader(rs.getString(8));
 				list.add(vo);
 			}
 			rs.close();
