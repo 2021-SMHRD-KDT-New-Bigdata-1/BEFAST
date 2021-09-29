@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+
 
 public class BookingDAO {
 		
@@ -75,5 +77,33 @@ public class BookingDAO {
 
 			return cnt;
 		}
-	
+		
+		public ArrayList<BookingVO> select() { 
+	         ArrayList<BookingVO> al = new ArrayList<BookingVO>();
+	         try {
+	            conn();
+
+	            String sql = "select * from BOOKINGS";
+	            psmt = conn.prepareStatement(sql);
+
+	            rs = psmt.executeQuery();
+	            while(rs.next()) {
+	               String MATCHING_DATE = rs.getString(1);
+	               String ADDRESS = rs.getString(2);
+	               String FILED_NAME = rs.getString(3);
+	               String GAMES = rs.getString(4);
+	               String TIMES = rs.getString(5);
+	               BookingVO vo = new BookingVO(MATCHING_DATE, ADDRESS, FILED_NAME,GAMES,TIMES);
+	               al.add(vo);
+
+	            }
+	            // response.sendRedirect("main.jsp");
+	         } catch (Exception e) {
+	            e.printStackTrace();
+	         }finally {
+	            close();
+	         }
+	         return al;            
+	   }
+		
 }
