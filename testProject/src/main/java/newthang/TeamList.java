@@ -61,7 +61,13 @@ public class TeamList extends HttpServlet {
        		out.print("<td>"+(i+1)+"</td>");
        		out.print("<td><a href='TeamDetail?team_name="+list.get(i).getTeam_name()+"'>"+list.get(i).getTeam_name()+"</a></td>");
        		out.print("<td>"+list.get(i).getTeam_field()+"</td>");
-       		out.print("<td>"+list.get(i).getTeam_level()+"</td>");
+       		if (list.get(i).getTeam_level() == "1") {
+				out.println("<td>ÇÏ</td>");
+			} else if (list.get(i).getTeam_level() == "2") {
+				out.println("<td>Áß</td>");
+			} else {
+				out.println("<td>»ó</td>");
+			}
        		out.print("<td>"+list.get(i).getTeam_uniform()+"</td>");
        		out.print("<td>"+list.get(i).getTeam_member()+"</td>");          		
        		out.print("</tr>");
