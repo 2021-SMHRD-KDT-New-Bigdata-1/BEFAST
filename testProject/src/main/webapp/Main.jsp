@@ -1,3 +1,6 @@
+<%@page import="testProject.BookingVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="testProject.BookingDAO"%>
 <%@page import="testProject.memberVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -39,7 +42,9 @@
 <body>
 
    <%
-      memberVO vo = (memberVO) session.getAttribute("vo");
+	BookingDAO dao = new BookingDAO();
+	memberVO vo = (memberVO) session.getAttribute("vo");
+	ArrayList<BookingVO> al = dao.select();
    %>
    
        <!-- 순위 -->
@@ -211,19 +216,20 @@
 					<td>경기방식</td>               
 				</tr>
 				
-<%-- 					<%
+ 					<%
                         //회원정보 출력(한명의 회원 정보는 하나의 tr 태그에 - 한줄)
                         //회원의 수만큼 tr 태그 추가
                         //각 정보 (이메일,전화번호,주소)는 각 td 태그에
                         for(int i=0; i<al.size();i++){//회원의 수만큼 반복
                            out.print("<tr>");
-                           out.print("<td>"+al.get(i).getEmail()+"</td>");
-                           out.print("<td>"+al.get(i).getTel()+"</td>");
-                           out.print("<td>"+al.get(i).getAddress()+"</td>");
-                           out.print("<td><a href='DeleteService?email="+al.get(i).getEmail()+"'>삭제</a></td>");
+                           out.print("<td>"+al.get(i).getMATCHING_DATE()+"</td>");
+                           out.print("<td>"+al.get(i).getADDRESS()+"</td>");
+                           out.print("<td>"+al.get(i).getFILED_NAME()+"</td>");
+                           out.print("<td>"+al.get(i).getTIMES()+"</td>");
+                           out.print("<td>"+al.get(i).getGAMES()+"</td>");
                            out.print("</tr>");
                         }
-					%> --%>
+					%>
 			</table>
 		</tbody>
 	</div>
