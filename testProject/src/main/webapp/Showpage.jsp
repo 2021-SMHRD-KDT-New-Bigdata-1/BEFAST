@@ -11,7 +11,7 @@
 <div class="container">
 		<div class="outcontainer">
 			<div class="game_box">
-				<h1 class="select_game">예약현황 페이지지롱</h1>
+				<h1 class="select_game">예약현황황황 페이지지롱</h1>
 
 				<form action="#">
 					<div class="columns">
