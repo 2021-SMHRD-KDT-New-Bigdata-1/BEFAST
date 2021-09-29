@@ -49,7 +49,7 @@
             <div class="navContainer">
                 <div class="newLogo">
                     <a href="#">
-                        <img src="./99. img/logo1.png">
+                        <img src="YJW_KSJ/resources/99. img/logo1.png">
                     </a>
                 </div>
 
@@ -246,7 +246,7 @@
 </div>
 
 
-    <!-- 제이쿼리 로드 -->f
+    <!-- 제이쿼리 로드 -->
     <script src="./YJW_KSJ/JS/jquery-3.6.0.min.js"></script>
    
    <!-- 지역에 따른 경기장 선택 자바스크립트 -->
