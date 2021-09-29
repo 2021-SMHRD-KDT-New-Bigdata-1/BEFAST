@@ -8,8 +8,7 @@ public class TeamVO {
 	private String team_uniform;
 	private String team_info;
 	private String team_member;
-	
-	
+	private String team_time;
 	
 	public String getTeam_name() {
 		return team_name;
@@ -53,6 +52,14 @@ public class TeamVO {
 	public void setTeam_member(String team_member) {
 		this.team_member = team_member;
 	}
+	public String getTeam_time() {
+		return team_time;
+	}
+	public void setTeam_time(String team_time) {
+		this.team_time = team_time;
+	}
+	
+	
 	
 	
 }
