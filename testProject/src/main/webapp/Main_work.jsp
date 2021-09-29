@@ -84,8 +84,8 @@
 				 	out.print("<h3>" + vo.getMEMBER_ID() + "님 환영합니다.</h3>");
 					%>
                             <li><a href="Update.jsp">내 정보</a></li>
-                            <li><a href="TeamList">팀 찾기</a></li>
-                            <li><a href="LGW_HYH/Team.jsp">팀 생성</a></li>
+                             <li><a href="TeamList">팀 찾기</a></li>
+                             <li><a href="LGW_HYH/Team.jsp">팀 생성</a></li>
                             <li><a>경기선택</a></li>
                             <li><a href="BoardList">용병게시판</a></li>
                             <li><a href="LGW_HYH/Guide.jsp">풋살가이드</a></li>                           
@@ -195,44 +195,16 @@
 
 </div>
 
-    </div> <!-- <--컨테이너 종료부분 -->
-    
 	<!-- 현재 매칭을 기다리는 팀 -->
 	<!-- DB로부터 받기만 하면 됨 -->
 	<div class="wait">
-		<table>
-		<caption><h2>현재 매칭을 기다리는 팀</h2></caption>
-			<tbody>
-				<tr>
-					<td>경기일자</td>
-					<td>지역</td>
-					<td>경기장</td>
-					<td>경기시간</td> 
-					<td>경기방식</td>               
-				</tr>
-				
-<%-- 					<%
-                        //회원정보 출력(한명의 회원 정보는 하나의 tr 태그에 - 한줄)
-                        //회원의 수만큼 tr 태그 추가
-                        //각 정보 (이메일,전화번호,주소)는 각 td 태그에
-                        for(int i=0; i<al.size();i++){//회원의 수만큼 반복
-                           out.print("<tr>");
-                           out.print("<td>"+al.get(i).getEmail()+"</td>");
-                           out.print("<td>"+al.get(i).getTel()+"</td>");
-                           out.print("<td>"+al.get(i).getAddress()+"</td>");
-                           out.print("<td><a href='DeleteService?email="+al.get(i).getEmail()+"'>삭제</a></td>");
-                           out.print("</tr>");
-                        }
-					%> --%>
-			</table>
-		</tbody>
+		<span>현재 매칭을 기다리는 팀</span>
 	</div>
+	
 
-
-
-
-
-    </div>
+    </div> <!-- <--컨테이너 종료부분 -->
+    
+    
 
 
 

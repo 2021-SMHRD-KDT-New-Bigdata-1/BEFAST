@@ -55,6 +55,13 @@
 
 }
 
+body {
+	/* #090934 */
+    background-color: rgba(9,9,52); 
+    margin: 0;
+    padding: 0;
+}
+
 div.navContainer {
     height: 74px;
     margin: 15px auto;
@@ -133,10 +140,34 @@ div.fileds_info img {
     height: 150px;
 }
 
-body {
-	/* #090934 */
-    background-color: rgba(9,9,52); 
+div.wait {
+	margin: 0px auto;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
 }
+
+table {
+	width: 1024px;
+}
+
+table td {
+	color: #fff;
+	padding: 0.2em 0.75em;
+}
+
+tbody {
+	width: 1024px;
+}
+
+tbody tr {
+	border: 1px solid yellow;
+}
+caption {
+	justify-content: center;
+}
+
 
 img {
     height: 70px;
