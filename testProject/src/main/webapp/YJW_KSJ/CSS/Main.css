@@ -133,6 +133,10 @@ div.fileds_info img {
     height: 150px;
 }
 
+div.wait {
+	margin: 0px auto;
+}
+
 body {
 	/* #090934 */
     background-color: rgba(9,9,52); 
