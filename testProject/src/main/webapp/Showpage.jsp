@@ -19,30 +19,29 @@
 	memberVO vo = (memberVO) session.getAttribute("vo");
 	ArrayList<BookingVO> al = dao.select();
    %>
+   
 	<div class="container">
 		<div class="outcontainer">
 			<div class="game_box">
-				<h3 class="select_game">예약현황 페이지지롱</h3>
+				<h3 class="select_game">예약현황 페이지</h3>
 			
-				<!-- 예약현황 -->
-				<div class="container">
-				<div class="game_box2">
-
-					<div class="wait">
-						<table>
-							<caption>
-								<h2>현재 매칭을 기다리는 팀</h2>
-							</caption>
-							<tbody>
-								<tr>
-									<td>경기일자</td>
-									<td>지역</td>
-									<td>경기장</td>
-									<td>경기시간</td>
-									<td>경기방식</td>
-								</tr>
-
-						<%
+	<!-- 예약현황 -->
+	<div class="container">
+		<div class="game_box2">
+			<div class="wait">
+				<table>
+					<caption>
+					<h2>현재 매칭을 기다리는 팀</h2>
+					</caption>
+					<tbody>
+				<tr>
+					<td>경기일자</td>
+					<td>지역</td>
+					<td>경기장</td>
+					<td>경기시간</td>
+					<td>경기방식</td>
+				</tr>
+					<%
                         //회원정보 출력(한명의 회원 정보는 하나의 tr 태그에 - 한줄)
                         //회원의 수만큼 tr 태그 추가
                         //각 정보 (이메일,전화번호,주소)는 각 td 태그에
