@@ -11,13 +11,31 @@
 
     <!-- 제이쿼리 달력 CSS -->
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
+    
+ <script>
+    function checks(){
+    	if(document.getElementById('MEMBER_ID').value==""){
+    		alert("아이디를 입력해주세요.")
+    		document.getElementById('MEMBER_ID').focus();
+    		return false;
+    	}else if(document.getElementById('PWD').value==""){
+    		alert("비밀번호를 입력해주세요.")
+    		document.document.getElementById('PWD').focus();
+    		return false;
+    	}else{
+    		alert("회원가입이 완료되었습니다.");
+    		document.getElementById('joinform').submit();
+    		return true;
+    	}
+    }
+	</script>
+    
 </head>
 <body>
     <div id="header">
         <h2><b>BE FAST</b></h2>
     </div>
-<form action="JoinService" method="post">
+<form action="JoinService" method="post" id="joinform">
     <div id="container">
         <div id="content">
             <div class="join_content">
@@ -103,19 +121,19 @@
                                 <option value="골키퍼">골키퍼</option>
                             </select>
                         </span>
-                            
-                        
-                        
+
                     </div>
 
                     <div class="button_area">
-                        <input type="submit" id="btnjoin" class="btntype" value="가입하기" onclick="JOIN()">
+                        <input type="button" id="btnjoin" class="btntype" value="가입하기" onclick="checks();">
                     </div>
                    
                     <script>
-                    function JOIN() {
-        				 alert("회원가입이 완료되었습니다.");
-        		   }
+           
+                   /*  function JOIN() {
+       				 alert("회원가입이 완료되었습니다.");
+       		   		} */
+                    
 					</script>
 
                 </div>
@@ -184,5 +202,6 @@
         }
     </script>
 	
+
 </body>
 </html>
