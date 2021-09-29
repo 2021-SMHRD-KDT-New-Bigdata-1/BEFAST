@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/TeamBoardList")
-public class TeamBoardList extends HttpServlet {
+public class TeamList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -59,7 +59,7 @@ public class TeamBoardList extends HttpServlet {
 	     for(int i=0; i<list.size();i++){//회원의 수만큼 반복
        		out.print("<tr>");
        		out.print("<td>"+(i+1)+"</td>");
-       		out.print("<td><a href=TeamDetail>"+list.get(i).getTeam_name()+"</a></td>");
+       		out.print("<td><a href='TeamDetail?team_name="+list.get(i).getTeam_name()+"'>"+list.get(i).getTeam_name()+"</a></td>");
        		out.print("<td>"+list.get(i).getTeam_field()+"</td>");
        		out.print("<td>"+list.get(i).getTeam_level()+"</td>");
        		out.print("<td>"+list.get(i).getTeam_uniform()+"</td>");
