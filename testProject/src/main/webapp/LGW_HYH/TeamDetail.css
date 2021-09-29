@@ -1,0 +1,40 @@
+@charset "EUC-KR";
+
+.team_name{
+	height: 100px;
+	width: 300px;
+	align: center;
+}
+.table1{
+	height: 300px;
+	width:200px;
+}
+div#header{
+    padding-top: 50px;
+    min-width: 220px;
+    margin: 0 300px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.logo{
+	display : flex;
+	height:80px;
+	width:100px;
+}
+.name{
+	display:inline;	
+		
+}
+.table1{
+	width: 680px;
+	height: 450px;
+}
+h4{
+	width:680px;
+	height: auto
+
+}
+.info{
+	width: 665px;
+	height:300px;
+}
