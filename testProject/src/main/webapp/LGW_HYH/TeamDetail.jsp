@@ -56,7 +56,7 @@
 				</tr>
 				<tr>
 					<td>선호 시간</td>
-					<td></td>
+					<td><%=vo.getTeam_time() %></td>
 				</tr>
 			</table>
 		</div>
