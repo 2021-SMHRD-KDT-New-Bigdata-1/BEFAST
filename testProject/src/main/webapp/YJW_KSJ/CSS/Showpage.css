@@ -129,7 +129,7 @@ h1.select_game ul {
 }
 
 div.container {
-    position : fixed;
+   /* position : fixed;*/
     top:0px;
     left:0;
     right: 0;
@@ -226,5 +226,5 @@ h1.select_game, ul.choose_game {
 }
 
 .game_box2{
-    background-color: yellow;
+    background-color: white;
 }

@@ -62,8 +62,6 @@
 
 					</div>
 
-
-
 					<form action="#">
 						<div class="columns">
 							<figure>
@@ -95,6 +93,8 @@
 				</div>
 			</div>
 		</div>
-	<div>
+	</div>
+	</div>
+	
 </body>
 </html>
