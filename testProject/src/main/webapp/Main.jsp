@@ -227,7 +227,7 @@
                 </span>
                 
 				<span>경기시간을 선택하세요
-					<select id="TIMES" name="TIMES"> 
+					<select id="TIMES" name="TIME"> 
                         <option>경기시간을 선택하세요</option>
                         <option>06:00 ~ 08:00</option>
                         <option>08:00 ~ 10:00</option>
