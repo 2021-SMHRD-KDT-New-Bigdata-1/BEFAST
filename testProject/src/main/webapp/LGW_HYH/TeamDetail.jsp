@@ -11,7 +11,6 @@
 <link rel="stylesheet" href="TeamDetail.css">
 </head>
 <body>
-<form action ="../TeamJoin">
  <% String team_name = request.getParameter("team_name");
 	TeamDAO dao = new TeamDAO();
 	TeamVO vo = dao.TeamDetail(team_name); %>
@@ -60,9 +59,8 @@
 		<%= vo.getTeam_info() %>
 		</table>
 		</div>
-		<input type = "submit" value ="가입신청">
 		<a href="../TeamJoin?teamname=<%=vo.getTeam_name()%>">가입신청</a>
 	</div>
-	</form>
+
 </body>
 </html>

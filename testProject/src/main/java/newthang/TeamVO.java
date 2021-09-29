@@ -10,6 +10,13 @@ public class TeamVO {
 	private String team_member;
 	private String team_time;
 	private String team_logo;
+	private String teamleader;
+	public String getTeamleader() {
+		return teamleader;
+	}
+	public void setTeamleader(String teamleader) {
+		this.teamleader = teamleader;
+	}
 	public String getTeam_name() {
 		return team_name;
 	}
@@ -64,6 +71,7 @@ public class TeamVO {
 	public void setTeam_logo(String team_logo) {
 		this.team_logo = team_logo;
 	}
+	
 	
 	
 	
