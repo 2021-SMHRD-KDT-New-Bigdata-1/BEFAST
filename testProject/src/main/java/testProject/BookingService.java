@@ -26,10 +26,11 @@ public class BookingService extends HttpServlet {
 		String ADDRESS = request.getParameter("ADDRESS");
 		String FILED_NAME = request.getParameter("FILED_NAME");
 		String GAMES = request.getParameter("GAMES");
+		String TIMES = request.getParameter("TIMES");
 		
 		BookingDAO dao = new BookingDAO();
 		
-		int cnt = dao.BOOKINGS(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES);
+		int cnt = dao.BOOKINGS(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES);
 		
 		if (cnt>0) {
 			response.sendRedirect("Main.jsp");

@@ -225,6 +225,26 @@
                         <option>경기장을 선택하세요</option>
                     </select>
                 </span>
+                
+				<span>경기시간을 선택하세요
+					<select id="TIMES" name="TIMES"> 
+                        <option>경기시간을 선택하세요</option>
+                        <option>06:00 ~ 08:00</option>
+                        <option>08:00 ~ 10:00</option>
+                        <option>10:00 ~ 12:00</option>
+                        <option>12:00 ~ 14:00</option>
+                        <option>14:00 ~ 16:00</option>
+                        <option>16:00 ~ 18:00</option>
+                        <option>18:00 ~ 20:00</option>
+                        <option>20:00 ~ 22:00</option>
+                        <option>22:00 ~ 24:00</option>
+                        <option>00:00 ~ 02:00</option>
+                        <option>02:00 ~ 04:00</option>
+                        <option>04:00 ~ 06:00</option>
+					</select>
+                </span>
+                
+                
                 <span>경기방식을 선택하세요
                     <select class="match_type" name="GAMES">
                         <option>경기방식을 선택하세요</option>
