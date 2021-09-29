@@ -95,6 +95,10 @@
 								<div class="button_create">
 									<input type="submit" id="create" class="create" value="得 持失馬奄">
 								</div>
+								<div class="file_upload">
+									<input type="file" name="file" class="btn btn-success"
+										accept="image/gif, image/jpeg, image/png">
+								</div>
 							</div>
 						</div>
 					</div>
