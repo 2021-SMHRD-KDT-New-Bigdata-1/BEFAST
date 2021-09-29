@@ -37,6 +37,10 @@
    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
    <!-- 픽토그램 준비-->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+
 </head>
 
 <body>
@@ -234,16 +238,12 @@
 		</tbody> -->
 	</div>
 
-
-
-
-
     </div>
 
 
 
     <!-- 매칭준비 -->
-	<form action="BookingService">
+	<form action="BookingService" id="Bookingform">
     <div class="ready">
             <div class="date_select">
 
@@ -254,8 +254,8 @@
                 </span>
             
                 <span>지역을 선택하세요
-                    <select class="locations" name="ADDRESS" onchange="categoryChange(this)">
-                        <option>지역을 선택하세요</option>
+                    <select class="locations" id="locations" name="ADDRESS" onchange="categoryChange(this)">
+                        <option value="">지역을 선택하세요</option>
                         <option value="광산구">광산구</option>
                         <option value="남구">남구</option>
                         <option value="동구">동구</option>
@@ -272,7 +272,7 @@
                 
 				<span>경기시간을 선택하세요
 					<select id="TIMES" name="TIMES"> 
-                        <option>경기시간을 선택하세요</option>
+                        <option value="">경기시간을 선택하세요</option>
                         <option>06:00 ~ 08:00</option>
                         <option>08:00 ~ 10:00</option>
                         <option>10:00 ~ 12:00</option>
@@ -290,8 +290,8 @@
                 
                 
                 <span>경기방식을 선택하세요
-                    <select class="match_type" name="GAMES">
-                        <option>경기방식을 선택하세요</option>
+                    <select class="match_type" id="match_type" name="GAMES">
+                        <option value="">경기방식을 선택하세요</option>
                         <option value="친선">친선</option>
                         <option value="일반">일반</option>
                         <option value="랭크">랭크</option>                      
@@ -300,7 +300,7 @@
             </div>
         
          <div class="button_area">
-                <input type="submit" id="btnjoin" class="btntype" value="예약하기" onclick="BOOKING()">
+                <input type="button" id="btnjoin" class="btntype" value="예약하기" onclick="BOOKING();">
 
          </div>
         
@@ -352,12 +352,47 @@
         });
         </script>
         
-		<script>
-     		   function BOOKING() {
-     				 alert("예약이 완료되었습니다.");
-     		   }
+        	<script>
+			function BOOKING() {
+
+		    	if (document.getElementById('datepicker1').value==""){
+		    		alert("경기일자를 선택해주세요.")
+		    		document.getElementById('datepicker1').focus();
+		    		
+		    		return false;
+		    		
+		    	}else if (document.getElementById('locations').value==""){
+		    		alert("지역을 선택해주세요.")
+		    		document.getElementById('locations').focus();
+		    		
+		    		return false;
+		    		
+		    	} else if (document.getElementById("fileds").value==""){
+					alert("경기장을 선택해주세요.")
+					document.getElementById('fileds').focus();
+					
+					return false;
+					
+		    	} else if (document.getElementById("TIMES").value==""){
+					alert("경기시간을 선택해주세요.")
+					document.getElementById('TIMES').focus();
+					
+					return false;
+					
+		    	} else if (document.getElementById("match_type").value=="") {
+					alert("경기방식을 선택해주세요.")
+					document.getElementById('match_type').focus();
+					
+					return false;
+					
+		    	}else{
+		    		alert("예약이 완료되었습니다.");
+		    		document.getElementById('Bookingform').submit();
+		    		return true;
+		    	}
+		    }
 		</script>
-        
+
   
 </body>
 </html>
