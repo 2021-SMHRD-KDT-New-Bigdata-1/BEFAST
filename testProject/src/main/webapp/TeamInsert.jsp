@@ -17,12 +17,14 @@
 	String team_uniform = request.getParameter("unifrom");
 	String team_info = request.getParameter("intro");
 	String member = request.getParameter("number");
+	String team_logo = request.getParameter("team_logo");
 	TeamVO vo = new TeamVO();
 	vo.setTeam_name(team_name);
 	vo.setTeam_field(team_field);
 	vo.setTeam_level(team_level);
 	vo.setTeam_uniform(team_uniform);
 	vo.setTeam_info(team_info);
+	vo.setTeam_info(team_logo);
 
 	// DAO로 전송 => 오라클 INSERT
 	TeamDAO dao = new TeamDAO();
