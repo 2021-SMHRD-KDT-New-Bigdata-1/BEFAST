@@ -44,7 +44,7 @@ public class JoinService extends HttpServlet {
 		
 		memberDAO dao = new memberDAO();
 		// 순서 주의할 것
-		dao.join(memberVO vo);
+		int cnt = dao.join(MEMBER_ID, PWD, MEMBER_NAME, MEMBER_PHONE, MEMBER_BIRTHDATE, GENDER, P_AREA, POSITION);
 		
 		if(cnt>0) {
 	          response.sendRedirect("Main.jsp");

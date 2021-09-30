@@ -52,33 +52,33 @@ public class memberDAO {
 	   }
 	   
 	   // 회원가입
-	   public void join(memberVO vo) {   // -> 테이블에 값(사용자가 입력한 값)이 삽입
+	   public int join(String MEMBER_ID, String PWD, String MEMBER_NAME, String MEMBER_PHONE,
+			   String MEMBER_BIRTHDATE, String GENDER, String P_AREA, String POSITION ) {   // -> 테이블에 값(사용자가 입력한 값)이 삽입
 		      int cnt =0;
 		      try {
 		            conn();
 		                             
-		            String sql = "insert into MEMBERS values(?,?,?,?,?,?,?,?,null,null)";
+		            String sql = "insert into MEMBERS(MEMBER_ID, PWD,MEMBER_NAME,MEMBER_PHONE,MEMBER_BIRTHDATE,GENDER,P_AREA,POSITION) values(?,?,?,?,?,?,?,?)";
 		            psmt = conn.prepareStatement(sql);
 		            
-		            psmt.setString(1, vo.getMEMBER_ID());
-		            psmt.setString(2, vo.getPWD());
-		            psmt.setString(3, vo.getMEMBER_NAME());
-		            psmt.setString(4, vo.getMEMBER_PHONE());
-		            psmt.setString(5, vo.getMEMBER_BIRTHDATE());
-		            psmt.setString(6, vo.getGENDER());
-		            psmt.setString(7, vo.getP_AREA());
-		            psmt.setString(8, vo.getPOSITION());
-		            psmt.setString(9, vo.getTEAM_NAME());
-		            psmt.setString(10, vo.getTEAM_CODE());
+		            psmt.setString(1, MEMBER_ID);
+		            psmt.setString(2, PWD);
+		            psmt.setString(3, MEMBER_NAME);
+		            psmt.setString(4, MEMBER_PHONE);
+		            psmt.setString(5, MEMBER_BIRTHDATE);
+		            psmt.setString(6, GENDER);
+		            psmt.setString(7, P_AREA);
+		            psmt.setString(8, POSITION);
+
 		                        
-		            psmt.executeUpdate();
+		            cnt = psmt.executeUpdate();
 		                                    
 		         }catch(Exception e) {
 		            e.printStackTrace();
 		         }finally {
 		            close();
 		         }
-		         
+		         return cnt;
 		   }
 	   
 	   // 사용자가 입력한 MEMBER_ID 중복체크
