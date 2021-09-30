@@ -21,7 +21,7 @@ public class memberVO {
 	
 	
 	
-	
+	//이 생성자에서는  3번째가 name 자리에요 아하!! 감사합니다!@
 	public memberVO(String MEMBER_ID, String PWD, String MEMBER_NAME, String MEMBER_PHONE, String MEMBER_BIRTHDATE,
 			String GENDER, String P_AREA, String POSITION, String TEAM_NAME, String TEAM_CODE) {
 		super();
