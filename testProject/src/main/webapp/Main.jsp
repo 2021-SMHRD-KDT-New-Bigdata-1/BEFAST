@@ -149,43 +149,43 @@
     <div id="slider-wrap">
         <ul id="slider">
             <li>
-                <div>
+               <!--  <div>
                     <h3>Slide  #1</h3>
                     <span>Sub-title #1</span>
-                </div>                
-<img src="https://fakeimg.pl/350x200/960a96/000?text=11111">
+                </div>  -->               
+<img src="YJW_KSJ/resources/99. img/foot2.jpg">
             </li>
 
             <li>
-                <div>
+               <!--  <div>
                     <h3>Slide #2</h3>
                     <span>Sub-title #2</span>
-                </div>
-<img src="https://fakeimg.pl/350x200/D27328/000?text=22222">
+                </div> -->
+<img src="YJW_KSJ/resources/99. img/foot3.jpg">
             </li>
 
             <li>
-                <div>
+               <!--  <div>
                     <h3>Slide #3</h3>
                     <span>Sub-title #3</span>
-                </div>
-<img src="https://fakeimg.pl/350x200/FF607F/000?text=33333">
+                </div> -->
+<img src="YJW_KSJ/resources/99. img/foot4.jpg">
             </li>
 
             <li>
-                <div>
+               <!--  <div>
                     <h3>Slide #4</h3>
                     <span>Sub-title #4</span>
-                </div>
-<img src="https://fakeimg.pl/350x200/0A6E0A/000?text=44444">
+                </div> -->
+<img src="YJW_KSJ/resources/99. img/foot5.jpg">
             </li>
 
             <li>
-                <div>
+               <!--  <div>
                     <h3>Slide #5</h3>
                     <span>Sub-title #5</span>
-                </div>
-<img src="https://fakeimg.pl/350x200/0064CD/000?text=55555">
+                </div> -->
+<img src="YJW_KSJ/resources/99. img/foot1.jpg">
             </li>
 
 

@@ -70,7 +70,7 @@
 							<figure>
 								<!-- ±âÁ¸ : <img src="img/·©Å©°æ±â.jpg"> -->
 								<button class="btn" value="normal" id="btn" type="submit" name="normal" >
-									<img class="btn-img" src="YJW_KSJ/resources/99. img/·©Å©°æ±â.jpg">
+									<img class="btn-img" src="YJW_KSJ/resources/99. img/team2.jpg">
 								</button>
 								<figcaption>ÀÏ¹Ý°æ±â</figcaption>
 							</figure>
@@ -78,7 +78,7 @@
 							<figure>
 								<!-- <img src="img/·©Å©°æ±â.jpg"> -->
 								<button class="btn" value="friend" id="btn" type="submit" name="friend">
-									<img class="btn-img" src="/99.img/·©Å©°æ±â.jpg">
+									<img class="btn-img" src="YJW_KSJ/resources/99. img/team2.jpg">
 								</button>
 								<figcaption>Ä£¼±°æ±â</figcaption>
 							</figure>
@@ -86,7 +86,7 @@
 							<figure>
 								<!-- <img src="img/·©Å©°æ±â.jpg"> -->
 								<button class="btn" value="rank" id="btn" type="submit" name="rank">
-									<img class="btn-img" src="/99.img/·©Å©°æ±â.jpg">
+									<img class="btn-img" src="YJW_KSJ/resources/99. img/team2.jpg">
 								</button>
 								<figcaption>·©Å©°æ±â</figcaption>
 							</figure>

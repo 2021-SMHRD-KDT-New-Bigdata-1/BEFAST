@@ -19,7 +19,7 @@
 	String team_level = request.getParameter("level");
 	String team_uniform = request.getParameter("unifrom");
 	String team_info = request.getParameter("intro");
-	String team_logo = request.getParameter("team_logo");
+	String team_logo = request.getParameter("img");
 
 	memberVO vo2 = (memberVO)session.getAttribute("vo");
 	String teamleader = vo2.getMEMBER_ID();

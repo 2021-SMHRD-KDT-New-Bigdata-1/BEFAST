@@ -1,3 +1,4 @@
+<%@page import="testProject.memberDAO"%>
 <%@page import="testProject.memberVO"%>
 <%@page import="newthang.TeamVO"%>
 <%@page import="newthang.TeamDAO"%>
@@ -16,12 +17,11 @@
 	String team_name = request.getParameter("team_name");
 	TeamDAO dao = new TeamDAO();
 	TeamVO vo = dao.TeamDetail(team_name);
-	memberVO vo2 = (memberVO)session.getAttribute("vo");
-	String teamname = vo2.getTeam_name();
+	 
 	%>
 	<div id="header">
 		<div class="team_name">
-			<div class="logo">img1</div>
+			<div class="logo"><img src="<%=vo.getTeam_logo() %>"></div>
 			<div class="name"><%=vo.getTeam_name()%>
 
 			</div>
@@ -69,11 +69,9 @@
 				<%=vo.getTeam_info()%>
 			</table>
 		</div>
-		<% if(teamname==null){ %>
+		
 		<a href="../TeamJoin?teamname=<%=vo.getTeam_name()%>">가입신청</a>
-	 <%}else{%>
-	 	<a href="../TeamList">가입신청</a>
-	<% }%>
+		 		
 	</div>
 
 </body>

@@ -1,7 +1,5 @@
 package testProject;
 
-import oracle.sql.DATE;
-
 public class memberVO {
 
 	private String MEMBER_ID; 		// È¸¿ø ID

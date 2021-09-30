@@ -51,8 +51,9 @@ public class TeamJoinDAO {
 		try {
 			// 연결
 			conn();
+			
 			// SQL문장 전송 ==> 조회수 증가
-
+			
 			String sql = "UPDATE members SET team_name=? WHERE member_id=?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, team_name); // ?에 값을 채운다
@@ -60,7 +61,9 @@ public class TeamJoinDAO {
 			
 			cnt= psmt.executeUpdate();
 			
-		
+			
+	
+			
 			
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
