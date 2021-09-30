@@ -59,7 +59,7 @@ public class MannerDAO {
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, vo.getM_result());
 			ps.setString(2, vo.getTime_result());
-			ps.setString(3, vo.getFair_palys());
+			ps.setString(3, vo.getFair_plays());
 			ps.setString(4, vo.getLanguages());
 			ps.setString(5, vo.getComments());
 
