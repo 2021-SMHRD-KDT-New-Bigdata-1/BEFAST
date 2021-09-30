@@ -1,3 +1,4 @@
+<%@page import="testProject.memberVO"%>
 <%@page import="newthang.TeamVO"%>
 <%@page import="newthang.TeamDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -15,6 +16,8 @@
 	String team_name = request.getParameter("team_name");
 	TeamDAO dao = new TeamDAO();
 	TeamVO vo = dao.TeamDetail(team_name);
+	memberVO vo2 = (memberVO)session.getAttribute("vo");
+	String teamname = vo2.getTeam_name();
 	%>
 	<div id="header">
 		<div class="team_name">
@@ -67,6 +70,7 @@
 			</table>
 		</div>
 		<a href="../TeamJoin?teamname=<%=vo.getTeam_name()%>">가입신청</a>
+	
 	</div>
 
 </body>

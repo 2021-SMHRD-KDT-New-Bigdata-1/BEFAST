@@ -123,10 +123,11 @@ public class memberDAO {
 		              String GENDER = rs.getString(6);
 		              String P_AREA = rs.getString(7);
 		              String POSITION = rs.getString(8);
+		              String team_name= rs.getString(9);
 		              
 		                            
 		              vo = new memberVO(MEMBER_ID,MEMBER_NAME,MEMBER_PHONE,
-		            		  null, MEMBER_BIRTHDATE,GENDER,P_AREA,POSITION);                          
+		            		  null, MEMBER_BIRTHDATE,GENDER,P_AREA,POSITION,team_name);                          
 		              //새로운 데이터 타입                                                        
 		           }
 		                                                                                            
