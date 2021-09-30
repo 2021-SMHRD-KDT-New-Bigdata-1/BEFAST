@@ -252,7 +252,7 @@ public class BoardDAO {
 			sqlWord = "where write_content like '%" + word.trim() + "%'";
 		}
 		sql = sql + sqlWord;
-		sql += "ORDER BY write_number DESC";
+		sql += "ORDER BY write_number DESC"; 
 		try {
 			// 연결
 			getConnection();

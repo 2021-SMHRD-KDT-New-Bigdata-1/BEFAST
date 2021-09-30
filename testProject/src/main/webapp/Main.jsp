@@ -9,7 +9,7 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
-    <!-- 폰트 -->
+    <!-- 폰트트 -->  
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,9 +46,9 @@
 <body>
 
    <%
-	BookingDAO dao = new BookingDAO();
-	memberVO vo = (memberVO) session.getAttribute("vo");
-	ArrayList<BookingVO> al = dao.select();
+   BookingDAO dao = new BookingDAO();
+   memberVO vo = (memberVO) session.getAttribute("vo");
+   ArrayList<BookingVO> al = dao.select();
    %>
    
        <!-- 순위 -->
@@ -85,15 +85,15 @@
                     <div class="sidebar_content">
                     
                     <%-- <%
-				 	out.print("<h3>" + vo.getMEMBER_ID() + "님 환영합니다.</h3>");
-					%> --%>
-					
+                out.print("<h3>" + vo.getMEMBER_ID() + "님 환영합니다.</h3>");
+               %> --%>
+               
                      <ul>
                     <%
-				 	out.print("<h3>" + vo.getMEMBER_ID() + "님 환영합니다.</h3>");
-					
-					%>
-					
+                out.print("<h3>" + vo.getMEMBER_ID() + "님 환영합니다.</h3>");
+               
+               %>
+               
                             <li><a href="Myinfo.jsp">내 정보</a></li>
                             <li><a href="TeamList">팀 찾기</a></li>
                             <li><a href="LGW_HYH/Team.jsp">팀 생성</a></li>
@@ -213,7 +213,7 @@
 
 
     <!-- 매칭준비 -->
-	<form action="BookingService" id="Bookingform">
+   <form action="BookingService" id="Bookingform">
     <div class="ready">
             <div class="date_select">
 
@@ -240,8 +240,8 @@
                     </select>
                 </span>
                 
-				<span>경기시간을 선택하세요
-					<select id="TIMES" name="TIMES"> 
+            <span>경기시간을 선택하세요
+               <select id="TIMES" name="TIMES"> 
                         <option value="">경기시간을 선택하세요</option>
                         <option>06:00 ~ 08:00</option>
                         <option>08:00 ~ 10:00</option>
@@ -255,7 +255,7 @@
                         <option>00:00 ~ 02:00</option>
                         <option>02:00 ~ 04:00</option>
                         <option>04:00 ~ 06:00</option>
-					</select>
+               </select>
                 </span>
                 
                 
@@ -275,7 +275,7 @@
          </div>
         
           
-	</form>
+   </form>
            
 </div>
 
@@ -322,46 +322,46 @@
         });
         </script>
         
-        	<script>
-			function BOOKING() {
+           <script>
+         function BOOKING() {
 
-		    	if (document.getElementById('datepicker1').value==""){
-		    		alert("경기일자를 선택해주세요.")
-		    		document.getElementById('datepicker1').focus();
-		    		
-		    		return false;
-		    		
-		    	}else if (document.getElementById('locations').value==""){
-		    		alert("지역을 선택해주세요.")
-		    		document.getElementById('locations').focus();
-		    		
-		    		return false;
-		    		
-		    	} else if (document.getElementById("fileds").value==""){
-					alert("경기장을 선택해주세요.")
-					document.getElementById('fileds').focus();
-					
-					return false;
-					
-		    	} else if (document.getElementById("TIMES").value==""){
-					alert("경기시간을 선택해주세요.")
-					document.getElementById('TIMES').focus();
-					
-					return false;
-					
-		    	} else if (document.getElementById("match_type").value=="") {
-					alert("경기방식을 선택해주세요.")
-					document.getElementById('match_type').focus();
-					
-					return false;
-					
-		    	}else{
-		    		alert("예약이 완료되었습니다.");
-		    		document.getElementById('Bookingform').submit();
-		    		return true;
-		    	}
-		    }
-		</script>
+             if (document.getElementById('datepicker1').value==""){
+                alert("경기일자를 선택해주세요.")
+                document.getElementById('datepicker1').focus();
+                
+                return false;
+                
+             }else if (document.getElementById('locations').value==""){
+                alert("지역을 선택해주세요.")
+                document.getElementById('locations').focus();
+                
+                return false;
+                
+             } else if (document.getElementById("fileds").value==""){
+               alert("경기장을 선택해주세요.")
+               document.getElementById('fileds').focus();
+               
+               return false;
+               
+             } else if (document.getElementById("TIMES").value==""){
+               alert("경기시간을 선택해주세요.")
+               document.getElementById('TIMES').focus();
+               
+               return false;
+               
+             } else if (document.getElementById("match_type").value=="") {
+               alert("경기방식을 선택해주세요.")
+               document.getElementById('match_type').focus();
+               
+               return false;
+               
+             }else{
+                alert("예약이 완료되었습니다.");
+                document.getElementById('Bookingform').submit();
+                return true;
+             }
+          }
+      </script>
 
   
 </body>
