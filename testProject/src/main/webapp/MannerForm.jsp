@@ -30,10 +30,15 @@
 				<p class="p">경기결과를 클릭해주세요</p>
 				<br>
 				<div class="modal_img">
-					<input type="button" name="m_result" value="승리" class="result">
-					<input type="button" name="m_result" value="패배" class="result">
-					<input type="button" name="m_result" value="무승부" class="result">
-				</div>
+					<input type="button" name="m_result" value="승리" class="result" onclick='hidden_change("승리")'>
+					<input type="hidden" name="m_result" value="선택안함" class="result" id="hidden_input">
+					<input type="button" name="m_result" value="패배" class="result" onclick='hidden_change("패배")'> 
+					<input type="hidden" name="m_result" value="선택안함" class="result" id="hidden_input">
+					<input type="button" name="m_result" value="무승부" class="result" onclick='hidden_change("무승부")'>
+					<input type="hidden" name="m_result" value="선택안함" class="result" id="hidden_input">
+				</div><br>
+				경기결과 : 
+				<div id='result3'>선택안함</div>
 				<div class="button">
 					<button type="button" id="btn-close">닫기</button>
 				</div>
@@ -103,9 +108,6 @@
 				코멘트<br>
 				</p>
 				<textarea cols="50" rows="5" name="comments" placeholder="의견을 적어주세요"></textarea>
-				<div id='result'></div>
-				<div id='result1'></div>
-				<div id='result2'></div>
 				<input type="submit" value='등록하기' onclick='getCheckboxValue1()'>
 	</form>
 	<script>
@@ -114,25 +116,30 @@
 		  const query = 'input[name="rating"]:checked';
 		  const query1 = 'input[name="rating2"]:checked';
 		  const query2= 'input[name="rating3"]:checked';
+		  const query3= 'input[name="m_result"]:checked';
 		  const selectedEls =  document.querySelectorAll(query);
 		  const selectedEls1 =  document.querySelectorAll(query1);
 		  const selectedEls2 =  document.querySelectorAll(query2);
+		  const selectedEls3 =  document.querySelectorAll(query3);
 		  
 		  // 선택된 목록에서 value 찾기
 		  let result = '';
 		  let result1 = '';
 		  let result2 = '';
+		  let result3 = '';
 		  selectedEls.forEach((el) => {result += el.value + ' ';});
 		  selectedEls1.forEach((el) => {result1 += el.value + ' ';});
 		  selectedEls2.forEach((el) => {result2 += el.value + ' ';});
+		  selectedEls3.forEach((el) => {result3 += el.value + ' ';});
 		  
 		  // 출력
-		  document.getElementById('result').innerText = result;
-		  document.getElementById('result1').innerText = result1;
-		  document.getElementById('result2').innerText = result2;
-		  
-		  
+		  document.getElementById('result3').innerText = result3;
 		}
+	function hidden_change(val){
+		var hidden = document.getElementById("hidden_input");
+		hidden.value = val;
+		document.getElementById("result3").innerText=val;
+	}
 </script>
 </body>
 </html>
