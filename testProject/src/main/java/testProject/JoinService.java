@@ -33,12 +33,6 @@ public class JoinService extends HttpServlet {
 		String GENDER = request.getParameter("GENDER");
 		String P_AREA = request.getParameter("P_AREA");
 		String POSITION = request.getParameter("POSITION");
-		
-	
-		
-		
-
-
 
 		System.out.println(GENDER);
 		

@@ -6,6 +6,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+
+
 import oracle.sql.DATE;
 
 
@@ -121,6 +123,7 @@ public class memberDAO {
 		           psmt = conn.prepareStatement(sql);
 		           psmt.setString(1, MEMBER_ID);
 		           psmt.setString(2, PWD);
+		          
 		           rs = psmt.executeQuery();
 		           
 		           if(rs.next()) {        
@@ -176,7 +179,46 @@ public class memberDAO {
 		      return cnt;
 		   }
 	   
-		   
-	   }
+	   // 내 정보 가져오기
+		public memberVO Myinfo(String MEMBER_ID) {
+			memberVO vo = null;
+			
+			try {
+				conn();
+				String sql = "select * from MEMBERS where MEMBER_ID =?";
+		           psmt = conn.prepareStatement(sql);
+		           psmt.setString(1, MEMBER_ID);
+		           
+		           
+		           rs = psmt.executeQuery();
+		           
+		           if(rs.next()) {        
+			            
+		        	   vo.setMEMBER_NAME(rs.getString("MEMBER_NAME"));
+//		        	   vo.set
+//						String MEMBER_NAME = rs.getString(3);
+//						String MEMBER_PHONE = rs.getString(4);
+//						String MEMBER_BIRTHDATE = rs.getString(5);
+//						String GENDER = rs.getString(6);
+//						String P_AREA = rs.getString(7);
+//						String POSITION = rs.getString(8);
+//						String TEAM_NAME = rs.getString(9);
+//						String TEAM_CODE = rs.getString(10);
+						
+//		        	   vo = new memberVO(MEMBER_NAME,MEMBER_PHONE,MEMBER_BIRTHDATE,GENDER,P_AREA,POSITION,TEAM_NAME,TEAM_CODE);
+						
+			              
+		           }
+		           
+			 }catch(Exception e) {
+	            e.printStackTrace();
+	         }finally {
+	            close();
+	         }
+			
+			return vo;
+		}
+	   
+}
 	
 

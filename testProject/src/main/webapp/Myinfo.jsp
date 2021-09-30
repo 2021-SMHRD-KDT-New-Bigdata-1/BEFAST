@@ -15,7 +15,6 @@
 	<%=vo.getMEMBER_NAME() %>
 	<%=vo.getGENDER() %>
 	<%=vo.getMEMBER_PHONE()%>
-	<%=vo.getMEMBER_BIRTHDATE()%>
 
 
 		

@@ -22,8 +22,10 @@ public class LoginService extends HttpServlet {
 		request.setCharacterEncoding("euc-kr");
 		String MEMBER_ID = request.getParameter("MEMBER_ID");
 		String PWD = request.getParameter("PWD");
+		String TEAM_NAME = request.getParameter("TEAM_NAME");
 		System.out.print(MEMBER_ID);
 		System.out.print(PWD);
+		System.out.print(TEAM_NAME);
 		
 	      // DAO °´Ã¼ »ý¼º
 		
