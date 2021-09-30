@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import newthang.BoardVO;
+
 
 public class BookingDAO {
 		
@@ -17,6 +19,7 @@ public class BookingDAO {
 	   public void conn() {
 		      
 		   try {
+			   
 			   Class.forName("oracle.jdbc.driver.OracleDriver");
 		         
 			   String url ="jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
@@ -105,5 +108,27 @@ public class BookingDAO {
 	         }
 	         return al;            
 	   }
+	
+//		public ArrayList<BookingVO> bookings() { 
+//			ArrayList<BookingVO> boo = new ArrayList<BookingVO>();
+//	       	String sql= "select MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES";
+//			String sqlnormal="";
+//			if(col.equals("normal")) {
+//				sqlnormal = where MATCHING_DATE like '%" + word.trim() + "%'";
+//			}
+	             
+	            
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 }
