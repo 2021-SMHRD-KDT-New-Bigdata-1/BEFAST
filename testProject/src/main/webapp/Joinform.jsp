@@ -49,9 +49,6 @@
                             <input type="text" id="MEMBER_ID" name="MEMBER_ID" class="input_id">
                             <input type="button" value="ID중복체크" onclick="idCheck()">
                             
-                            
-                            
-
                         </span>
                         <!-- 성공 유무에 따른 결과값 받는 곳 -->
                         <span id="sp"></span>
@@ -110,32 +107,24 @@
                             </select>
                         </span>
 
-                        <h3 class="join_group">
-                            <label for="Position">포지션</label>
-                        </h3>
-                        <span class="input_box_position">
-                            <select id="input_position" name="POSITION"> 
-                                <option>선호하는 포지션을 선택하세요</option>
-                                <option value="공격수">공격수</option>
-                                <option value="수비수">수비수</option>
-                                <option value="골키퍼">골키퍼</option>
-                            </select>
-                        </span>
+						<h3 class="join_group">
+						<label for="Position">포지션</label>
+						</h3>
+						<span class="input_box_position"> 
+							<select id="input_position" name="POSITION">
+								<option>선호하는 포지션을 선택하세요</option>
+								<option value="공격수">공격수</option>
+								<option value="수비수">수비수</option>
+								<option value="골키퍼">골키퍼</option>
+							</select>
+						</span>
 
-                    </div>
+						</div>
 
                     <div class="button_area">
                         <input type="button" id="btnjoin" class="btntype" value="가입하기" onclick="checks();">
                     </div>
                    
-                    <script>
-           
-                   /*  function JOIN() {
-       				 alert("회원가입이 완료되었습니다.");
-       		   		} */
-                    
-					</script>
-
                 </div>
             </div>
         </div>

@@ -18,8 +18,8 @@
 		<%
 		memberVO vo = (memberVO) session.getAttribute("vo");
 		%>
+
 		
-		<%-- <li><%=vo.getMEMBER_ID() %></li> --%>
 		
 		<li>
 		<input type="password" name="PWD" placeholder="PW를 입력하세요" style="width: 500px; margin: 0 auto;">

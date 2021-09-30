@@ -129,7 +129,7 @@ h3.join_group {
 
 /* 외곽 박스생성 */
 .input_box_id,.input_box_pw, .input_box_re_pw, .input_box_name, .input_box_Bday,.input_box_gender
-,.input_box_Phone, .input_box_location, .input_box_position {
+,.input_box_Phone, .input_box_location, .input_box_position, .input_box_TEAM_NAME {
     outline: 0;
     display: block;
     position: relative;
@@ -148,7 +148,7 @@ h3.join_group {
 }
 /* 안쪽 박스 숨기기 */
 .input_id, .input_pw, .input_re_pw, .input_name, .input_Bday, .input_Phone,
-#input_location, #input_position
+#input_location, #input_position, #input_TEAM_NAME
 {
     outline: 0;
     border: none;

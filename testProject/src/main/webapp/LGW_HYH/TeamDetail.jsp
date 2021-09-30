@@ -69,8 +69,11 @@
 				<%=vo.getTeam_info()%>
 			</table>
 		</div>
+		<% if(teamname==null){ %>
 		<a href="../TeamJoin?teamname=<%=vo.getTeam_name()%>">가입신청</a>
-	
+	 <%}else{%>
+	 	<a href="../TeamList">가입신청</a>
+	<% }%>
 	</div>
 
 </body>
