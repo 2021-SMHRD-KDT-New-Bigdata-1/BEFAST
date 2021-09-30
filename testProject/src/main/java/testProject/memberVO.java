@@ -13,9 +13,17 @@ public class memberVO {
 	private String P_AREA;			// 선호지역
 	private String POSITION;		// 포지션
 	
+	private String TEAM_NAME;
+	private String TEAM_CODE;
+	
+	
+	
+	
+	
+	
 	
 	public memberVO(String MEMBER_ID, String PWD, String MEMBER_NAME, String MEMBER_PHONE, String MEMBER_BIRTHDATE,
-			String GENDER, String P_AREA, String POSITION) {
+			String GENDER, String P_AREA, String POSITION, String TEAM_NAME, String TEAM_CODE) {
 		super();
 		this.MEMBER_ID = MEMBER_ID;
 		this.PWD = PWD;
@@ -25,7 +33,30 @@ public class memberVO {
 		this.GENDER = GENDER;
 		this.P_AREA = P_AREA;
 		this.POSITION = POSITION;
+		this.TEAM_NAME = TEAM_NAME;
+		this.TEAM_CODE = TEAM_CODE;
 	}
+
+
+	public String getTEAM_NAME() {
+		return TEAM_NAME;
+	}
+
+
+	public void setTEAM_NAME(String TEAM_NAME) {
+		this.TEAM_NAME = TEAM_NAME;
+	}
+
+
+	public String getTEAM_CODE() {
+		return TEAM_CODE;
+	}
+
+
+	public void setTEAM_CODE(String TEAM_CODE) {
+		this.TEAM_CODE = TEAM_CODE;
+	}
+	
 
 
 	public String getMEMBER_ID() {

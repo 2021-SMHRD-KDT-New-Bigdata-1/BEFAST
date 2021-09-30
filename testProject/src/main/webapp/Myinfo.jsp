@@ -8,14 +8,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-		<%
-		memberVO vo = (memberVO) session.getAttribute("vo");
-		%>
-	<%=vo.getMEMBER_ID() %>
-	<%=vo.getMEMBER_NAME() %>
-	<%=vo.getGENDER() %>
-	<%=vo.getMEMBER_PHONE()%>
-	<%=vo.getMEMBER_BIRTHDATE()%>
+	<%
+	memberVO vo = (mem)
+	
+	%>
+
 
 
 		

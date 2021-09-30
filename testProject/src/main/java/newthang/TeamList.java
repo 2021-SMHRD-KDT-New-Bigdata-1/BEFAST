@@ -53,7 +53,6 @@ public class TeamList extends HttpServlet {
 		out.println("<th class=text-center width=10%>팀 멤버</th>");
 		out.println("</tr>");
 		// 출력
-		TeamVO vo = new TeamVO();
 		TeamDAO dao = new TeamDAO();
 		ArrayList<TeamVO> list = dao.TeamboardListData();
 		System.out.print(list.size());
@@ -66,22 +65,48 @@ public class TeamList extends HttpServlet {
 			list = dao.TeamSearchData(col, word);
 		}
 
-		for (int i = 0; i < list.size(); i++) {// 회원의 수만큼 반복
-			out.print("<tr>");
-			out.print("<td>" + (i + 1) + "</td>");
-			out.print("<td><a href='LGW_HYH/TeamDetail.jsp?team_name=" + list.get(i).getTeam_name() + "'>"
-					+ list.get(i).getTeam_name() + "</a></td>");
-			out.print("<td>" + list.get(i).getTeam_field() + "</td>");
-			if (list.get(i).getTeam_level() == "1") {
-				out.println("<td>하</td>");
-			} else if (list.get(i).getTeam_level() == "2") {
-				out.println("<td>중</td>");
+		int size = list.size() + 1;
+		int total_page = size / 15 + (size % 5 == 0 ? 0 : 1);
+		System.out.println("사이즈:" + size + "\n토탈:" + total_page);
+		String page = request.getParameter("page");
+
+		if (page == null) {
+			page = "1";
+		}
+		int cur_page = Integer.parseInt(page);
+		System.out.println(cur_page);
+		int prev_page = cur_page - 1;
+		int next_page = cur_page + 1;
+
+		if (prev_page <= 0) {
+			cur_page = 1;
+		} else if (cur_page >= total_page) {
+			cur_page = total_page;
+		}
+
+		for (int i = 15 * (cur_page - 1); i < cur_page * 15; i++) {
+			if (i < list.size()) {
+				TeamVO vo = list.get(i);
+				// 회원의 수만큼 반복
+				out.print("<tr>");
+				out.print("<td>" + (i + 1) + "</td>");
+				out.print("<td><a href='LGW_HYH/TeamDetail.jsp?team_name=" + list.get(i).getTeam_name() + "'>"
+						+ list.get(i).getTeam_name() + "</a></td>");
+				out.print("<td>" + list.get(i).getTeam_field() + "</td>");
+				if (list.get(i).getTeam_level() == "1") {
+					out.println("<td>하</td>");
+				} else if (list.get(i).getTeam_level() == "2") {
+					out.println("<td>중</td>");
+				} else {
+					out.println("<td>상</td>");
+				}
+				out.print("<td>" + list.get(i).getTeam_uniform() + "</td>");
+				out.print("<td>" + list.get(i).getTeam_member() + "</td>");
+				out.print("</tr>");
 			} else {
-				out.println("<td>상</td>");
+				break;
 			}
-			out.print("<td>" + list.get(i).getTeam_uniform() + "</td>");
-			out.print("<td>" + list.get(i).getTeam_member() + "</td>");
-			out.print("</tr>");
+
 		}
 
 		out.println("</table>");
@@ -102,13 +127,19 @@ public class TeamList extends HttpServlet {
 		out.println("</form>");
 		out.println("</td>");
 
+		if (prev_page <= 0) {
+			prev_page = 1;
+		} else if (cur_page >= total_page) {
+			next_page = total_page;
+		}
+		
 		out.println("<td class=text-right>");
 		// primary -진한 청색
-		out.println("<a href=BoardInsert class=\"btn btn-sm btn-primary\">이전</a>");
-		out.println("0 page / 0 pages");
-		out.println("<a href=BoardInsert class=\"btn btn-sm btn-primary\">다음</a>");
+		out.println("<a href=?page=" + prev_page + " class=\"btn btn-sm btn-primary\">이전</a>");
+		out.println((prev_page) + " page / " + (next_page) + " pages");
+		out.println("<a href=?page=" + next_page + " class=\"btn btn-sm btn-primary\">다음</a>");
 		out.println("</td>");
-
+		
 		out.println("</tr>");
 		out.println("<table>");
 

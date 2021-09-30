@@ -6,6 +6,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+
+
 import oracle.sql.DATE;
 
 
@@ -52,14 +54,15 @@ public class memberDAO {
 	   }
 	   
 	   // 회원가입
-	   public int join(String MEMBER_ID, String PWD, String MEMBER_NAME, String MEMBER_PHONE, 
-			   String MEMBER_BIRTHDATE, String GENDER, String P_AREA, String POSITION) {   // -> 테이블에 값(사용자가 입력한 값)이 삽입
+	   public int join(String MEMBER_ID, String PWD, String MEMBER_NAME, String MEMBER_PHONE,
+			   String MEMBER_BIRTHDATE, String GENDER, String P_AREA, String POSITION ) {   // -> 테이블에 값(사용자가 입력한 값)이 삽입
 		      int cnt =0;
 		      try {
 		            conn();
 		                             
-		            String sql = "insert into MEMBERS values(?,?,?,?,?,?,?,?)";
+		            String sql = "insert into MEMBERS(MEMBER_ID, PWD,MEMBER_NAME,MEMBER_PHONE,MEMBER_BIRTHDATE,GENDER,P_AREA,POSITION) values(?,?,?,?,?,?,?,?)";
 		            psmt = conn.prepareStatement(sql);
+		            
 		            psmt.setString(1, MEMBER_ID);
 		            psmt.setString(2, PWD);
 		            psmt.setString(3, MEMBER_NAME);
@@ -68,6 +71,7 @@ public class memberDAO {
 		            psmt.setString(6, GENDER);
 		            psmt.setString(7, P_AREA);
 		            psmt.setString(8, POSITION);
+
 		                        
 		            cnt = psmt.executeUpdate();
 		                                    
@@ -76,7 +80,7 @@ public class memberDAO {
 		         }finally {
 		            close();
 		         }
-		      return cnt;      
+		         return cnt;
 		   }
 	   
 	   // 사용자가 입력한 MEMBER_ID 중복체크
@@ -119,6 +123,7 @@ public class memberDAO {
 		           psmt = conn.prepareStatement(sql);
 		           psmt.setString(1, MEMBER_ID);
 		           psmt.setString(2, PWD);
+		          
 		           rs = psmt.executeQuery();
 		           
 		           if(rs.next()) {        
@@ -129,8 +134,10 @@ public class memberDAO {
 		              String GENDER = rs.getString(6);
 		              String P_AREA = rs.getString(7);
 		              String POSITION = rs.getString(8);
+		              String TEAM_NAME = rs.getString(9);
+		              String TEAM_CODE = rs.getString(10);
 		                            
-		              vo = new memberVO(MEMBER_NAME, MEMBER_PHONE, MEMBER_BIRTHDATE,GENDER,null,null,P_AREA,POSITION);                          
+		              vo = new memberVO(MEMBER_ID,MEMBER_NAME,MEMBER_PHONE,MEMBER_BIRTHDATE,GENDER,P_AREA,POSITION,null,null,null);                          
 		       
 		              //새로운 데이터 타입                                                        
 		           }
@@ -172,7 +179,46 @@ public class memberDAO {
 		      return cnt;
 		   }
 	   
-		   
-	   }
+	   // 내 정보 가져오기
+		public memberVO Myinfo(String MEMBER_ID) {
+			memberVO vo = null;
+			
+			try {
+				conn();
+				String sql = "select * from MEMBERS where MEMBER_ID =?";
+		           psmt = conn.prepareStatement(sql);
+		           psmt.setString(1, MEMBER_ID);
+		           
+		           
+		           rs = psmt.executeQuery();
+		           
+		           if(rs.next()) {        
+			            
+		        	   vo.setMEMBER_NAME(rs.getString("MEMBER_NAME"));
+//		        	   vo.set
+//						String MEMBER_NAME = rs.getString(3);
+//						String MEMBER_PHONE = rs.getString(4);
+//						String MEMBER_BIRTHDATE = rs.getString(5);
+//						String GENDER = rs.getString(6);
+//						String P_AREA = rs.getString(7);
+//						String POSITION = rs.getString(8);
+//						String TEAM_NAME = rs.getString(9);
+//						String TEAM_CODE = rs.getString(10);
+						
+//		        	   vo = new memberVO(MEMBER_NAME,MEMBER_PHONE,MEMBER_BIRTHDATE,GENDER,P_AREA,POSITION,TEAM_NAME,TEAM_CODE);
+						
+			              
+		           }
+		           
+			 }catch(Exception e) {
+	            e.printStackTrace();
+	         }finally {
+	            close();
+	         }
+			
+			return vo;
+		}
+	   
+}
 	
 
