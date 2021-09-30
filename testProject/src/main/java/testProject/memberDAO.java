@@ -122,7 +122,7 @@ public class memberDAO {
 		           String sql = "select * from MEMBERS where MEMBER_ID =? and PWD=?";
 		           psmt = conn.prepareStatement(sql);
 		           psmt.setString(1, MEMBER_ID);
-		           psmt.setString(2, PWD);
+		           psmt.setString(2, PWD); //sql 넣는 자리
 		          
 		           rs = psmt.executeQuery();
 		           
@@ -137,7 +137,7 @@ public class memberDAO {
 		              String TEAM_NAME = rs.getString(9);
 		              String TEAM_CODE = rs.getString(10);
 		                            
-		              vo = new memberVO(MEMBER_ID,MEMBER_NAME,MEMBER_PHONE,MEMBER_BIRTHDATE,GENDER,P_AREA,POSITION,null,null,null);                          
+		              vo = new memberVO(MEMBER_ID,PWD,MEMBER_NAME,MEMBER_PHONE,MEMBER_BIRTHDATE,GENDER,P_AREA,POSITION,TEAM_NAME,TEAM_CODE);                          
 		       
 		              //새로운 데이터 타입                                                        
 		           }
@@ -180,8 +180,8 @@ public class memberDAO {
 		   }
 	   
 	   // 내 정보 가져오기
-		public memberVO Myinfo(String MEMBER_ID) {
-			memberVO vo = null;
+		public memberVO Myinfo(String MEMBER_ID, String MEMBER_NAME, String MEMBER_PHONE) {
+			memberVO vo2 = null;
 			
 			try {
 				conn();
@@ -194,18 +194,16 @@ public class memberDAO {
 		           
 		           if(rs.next()) {        
 			            
-		        	   vo.setMEMBER_NAME(rs.getString("MEMBER_NAME"));
-//		        	   vo.set
-//						String MEMBER_NAME = rs.getString(3);
+		        	   
 //						String MEMBER_PHONE = rs.getString(4);
-//						String MEMBER_BIRTHDATE = rs.getString(5);
-//						String GENDER = rs.getString(6);
-//						String P_AREA = rs.getString(7);
-//						String POSITION = rs.getString(8);
-//						String TEAM_NAME = rs.getString(9);
-//						String TEAM_CODE = rs.getString(10);
+						String MEMBER_BIRTHDATE = rs.getString(5);
+						String GENDER = rs.getString(6);
+						String P_AREA = rs.getString(7);
+						String POSITION = rs.getString(8);
+						String TEAM_NAME = rs.getString(9);
+						String TEAM_CODE = rs.getString(10);
 						
-//		        	   vo = new memberVO(MEMBER_NAME,MEMBER_PHONE,MEMBER_BIRTHDATE,GENDER,P_AREA,POSITION,TEAM_NAME,TEAM_CODE);
+		        	   
 						
 			              
 		           }
@@ -216,7 +214,7 @@ public class memberDAO {
 	            close();
 	         }
 			
-			return vo;
+			return vo2;
 		}
 	   
 }
