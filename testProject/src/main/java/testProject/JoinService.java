@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import oracle.sql.DATE;
+
 @WebServlet("/JoinService")
 public class JoinService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -19,24 +21,27 @@ public class JoinService extends HttpServlet {
 			throws ServletException, IOException {
 		
 		// Oracle SQL로 넘겨줄 때 euc-kr -> UTF-8로 할 것
-		request.setCharacterEncoding("EUC-KR");
+		request.setCharacterEncoding("euc-kr");
 
 		// 1. 사용자가 입력한 값 가져오기 (id, pw)
 		String MEMBER_ID = request.getParameter("MEMBER_ID");
 		String PWD = request.getParameter("PWD");
 		//String re_pw = request.getParameter("re_pw");
 		String MEMBER_NAME = request.getParameter("MEMBER_NAME");
+		String MEMBER_PHONE = request.getParameter("MEMBER_PHONE");
 		String MEMBER_BIRTHDATE = request.getParameter("MEMBER_BIRTHDATE");
 		String GENDER = request.getParameter("GENDER");
-		String MEMBER_PHONE = request.getParameter("MEMBER_PHONE");
 		String P_AREA = request.getParameter("P_AREA");
 		String POSITION = request.getParameter("POSITION");
+		
+
+
 
 		System.out.println(GENDER);
 		
 		memberDAO dao = new memberDAO();
 		
-		int cnt = dao.join(MEMBER_ID, PWD, MEMBER_NAME, MEMBER_BIRTHDATE, GENDER, MEMBER_PHONE, P_AREA, POSITION);
+		int cnt = dao.join(MEMBER_ID, PWD, MEMBER_NAME, MEMBER_PHONE,MEMBER_BIRTHDATE, GENDER, P_AREA, POSITION);
 		
 		if(cnt>0) {
 	          response.sendRedirect("Main.jsp");

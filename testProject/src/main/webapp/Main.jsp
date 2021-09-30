@@ -91,7 +91,9 @@
                      <ul>
                     <%
 				 	out.print("<h3>" + vo.getMEMBER_ID() + "´Ô È¯¿µÇÕ´Ï´Ù.</h3>");
+					
 					%>
+					
                             <li><a href="Myinfo.jsp">³» Á¤º¸</a></li>
                             <li><a href="TeamList">ÆÀ Ã£±â</a></li>
                             <li><a href="LGW_HYH/Team.jsp">ÆÀ »ý¼º</a></li>

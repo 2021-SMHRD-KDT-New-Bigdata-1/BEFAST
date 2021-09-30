@@ -1,11 +1,14 @@
 package testProject;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import oracle.sql.DATE;
+
+
 
 
 public class memberDAO {
@@ -49,12 +52,13 @@ public class memberDAO {
 	   }
 	   
 	   // 회원가입
-	   public int join(String MEMBER_ID, String PWD, String MEMBER_NAME, String MEMBER_PHONE, String MEMBER_BIRTHDATE, String GENDER, String P_AREA, String POSITION) {   // -> 테이블에 값(사용자가 입력한 값)이 삽입
+	   public int join(String MEMBER_ID, String PWD, String MEMBER_NAME, String MEMBER_PHONE, 
+			   String MEMBER_BIRTHDATE, String GENDER, String P_AREA, String POSITION) {   // -> 테이블에 값(사용자가 입력한 값)이 삽입
 		      int cnt =0;
 		      try {
 		            conn();
 		                             
-		            String sql = "insert into MEMBERS(MEMBER_ID, PWD, MEMBER_NAME, MEMBER_PHONE, MEMBER_BIRTHDATE, GENDER, P_AREA, POSITION) values(?,?,?,?,?,?,?,?)";
+		            String sql = "insert into MEMBERS values(?,?,?,?,?,?,?,?)";
 		            psmt = conn.prepareStatement(sql);
 		            psmt.setString(1, MEMBER_ID);
 		            psmt.setString(2, PWD);
@@ -111,7 +115,7 @@ public class memberDAO {
 		      try {
 		           conn();
 		                                          
-		           String sql = "SELECT * FROM MEMBERS where MEMBER_ID =? and PWD=?";
+		           String sql = "select * from MEMBERS where MEMBER_ID =? and PWD=?";
 		           psmt = conn.prepareStatement(sql);
 		           psmt.setString(1, MEMBER_ID);
 		           psmt.setString(2, PWD);
@@ -125,9 +129,8 @@ public class memberDAO {
 		              String GENDER = rs.getString(6);
 		              String P_AREA = rs.getString(7);
 		              String POSITION = rs.getString(8);
-		              
 		                            
-		              vo = new memberVO(MEMBER_NAME, MEMBER_PHONE, MEMBER_BIRTHDATE,GENDER,null,null,P_AREA,POSITION );                          
+		              vo = new memberVO(MEMBER_NAME, MEMBER_PHONE, MEMBER_BIRTHDATE,GENDER,null,null,P_AREA,POSITION);                          
 		       
 		              //새로운 데이터 타입                                                        
 		           }
@@ -168,6 +171,8 @@ public class memberDAO {
 		         }
 		      return cnt;
 		   }
-
+	   
+		   
+	   }
 	
-}
+
