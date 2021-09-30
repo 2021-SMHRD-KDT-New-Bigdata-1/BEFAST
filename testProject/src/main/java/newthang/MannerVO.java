@@ -3,7 +3,7 @@ package newthang;
 public class MannerVO {
 	private String m_result;
 	private String time_result;
-	private String fair_palys;
+	private String fair_plays;
 	private String languages;
 	private String comments;
 	public String getM_result() {
@@ -18,11 +18,11 @@ public class MannerVO {
 	public void setTime_result(String time_result) {
 		this.time_result = time_result;
 	}
-	public String getFair_palys() {
-		return fair_palys;
+	public String getFair_plays() {
+		return fair_plays;
 	}
-	public void setFair_palys(String fair_palys) {
-		this.fair_palys = fair_palys;
+	public void setFair_plays(String fair_plays) {
+		this.fair_plays = fair_plays;
 	}
 	public String getLanguages() {
 		return languages;
@@ -36,6 +36,7 @@ public class MannerVO {
 	public void setComments(String comments) {
 		this.comments = comments;
 	}
+	
 	
 	
 }
