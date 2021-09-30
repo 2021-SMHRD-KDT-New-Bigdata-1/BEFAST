@@ -1,92 +1,89 @@
 @charset "EUC-KR";
 
-.columns{
-    /* column-width:400px; */
-    column-gap: 15px;
-    max-width: 1100px;
-    margin: 0 auto;
-    
-
-}
-.columns figure{
-    display: inline-block;
-    border:1px solid rgba(0,0,0,0.2);
-    margin:0;
-    margin-bottom: 15px;
-    padding:10px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);;
-}
-.columns figure img{
-    
-    width:100%;
+.columns {
+	/* column-width:400px; */
+	column-gap: 15px;
+	max-width: 1100px;
+	margin: 0 auto;
 }
 
+.columns figure {
+	display: inline-block;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	margin: 0;
+	margin-bottom: 15px;
+	padding: 10px;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);;
+}
 
-.columns figure figcaption{
-    color : rgba(31,209,69);
-    border-top:1px solid rgba(255,255,255);
-    padding:10px;
-    margin-top:11px;
-    
+.columns figure img {
+	width: 100%;
+}
+
+.columns figure figcaption {
+	color: rgba(31, 209, 69);
+	border-top: 1px solid rgba(255, 255, 255);
+	padding: 10px;
+	margin-top: 11px;
 }
 
 @media screen and (max-width: 800px) {
-    h1.select_game {
-        font-size : 25px;
-    }
-    span.game_matching {
-        font-size : 1.2rem;
-    }
-
-    
+	h1.select_game {
+		font-size: 25px;
+	}
+	span.game_matching {
+		font-size: 1.2rem;
+	}
 }
 
 @media screen and (max-width: 1024px) {
-    h1.select_game {
-        font-size : 25px;
-    }
-    span.game_matching {
-        font-size : 1.2rem;
-    }
-
-
+	h1.select_game {
+		font-size: 25px;
+	}
+	span.game_matching {
+		font-size: 1.2rem;
+	}
 }
 
 body {
-    background-color: rgba(3,3,30);
-    font-size : 2rem;
+	background-color: rgba(3, 3, 30);
+	font-size: 2rem;
+}
 
-}
 div {
-    display: block;
+	display: block;
 }
+
 div.game_box {
-    text-align: center;
+	text-align: center;
 }
+
 h3 {
-    display: block;
-    margin-block-start : 0.67em;
-    margin-block-end : 0.67em;
-    margin-inline-start : 0px;
-    margin-inline-end : 0px;
-    margin: 0.67em 0;
-    color: rgba(31,209,69);
+	display: block;
+	margin-block-start: 0.67em;
+	margin-block-end: 0.67em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	margin: 0.67em 0;
+	color: rgba(31, 209, 69);
 }
-h2{
-	color:white;
+
+h2 {
+	color: white;
 }
-tr>td{
-	color:white;
+
+tr>td {
+	color: white;
 }
 
 /* ul {
     display: block; */
 
-    /* 마커 */
-    /* http://webberstudy.com/html-css/css-1/list-style/ */
-    /* https://www.codingfactory.net/10537 */
+/* 마커 */
+/* http://webberstudy.com/html-css/css-1/list-style/ */
+/* https://www.codingfactory.net/10537 */
 
-    /* list-style-type: disc;
+/* list-style-type: disc;
     margin-block-start : 1em;
     margin-block-end : 1em;
     margin-inline-start : 0px;
@@ -114,96 +111,80 @@ li.game {
 li.game1 {
     position : relative;
 } */
-
 .game_matching {
-    line-height: 2.5;
-    font-size : 1.3vw;
+	line-height: 2.5;
+	font-size: 1.3vw;
 }
 
 h1.select_game {
-    
-    width: 100%;
-
-    /* 굵기 가중치 */
-    /* https://aboooks.tistory.com/139 */
-    /* unset :  */
-    font-weight: bold;
+	width: 100%;
+	/* 굵기 가중치 */
+	/* https://aboooks.tistory.com/139 */
+	/* unset :  */
+	font-weight: bold;
 }
 
 h1.select_game ul {
-    padding: 0px;
+	padding: 0px;
 }
 
 div.container {
-   /* position : fixed;*/
-    top:0px;
-    left:0;
-    right: 0;
-    bottom : 0;
-    text-align: center;
+	/* position : fixed;*/
+	top: 0px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
 }
 
 div.outcontainer {
-    display: flex;
-/* https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=htmlstory&logNo=80192584519 */
-/* https://ipex.tistory.com/entry/CSS3-flex-Box-justifycontent-alignitems */
-    
-    /* 가운데 정렬 */
-    -webkit-box-pack : center;
-
-    /* 가로축 - 중심축 */
-    justify-content : center;
-
-    /* 세로축 - 교차축 */
-    align-items : center;
-
-    /* -webkit-box-orient : vertical; */
-    
-    /* 박스의 흐름 */
-    -webkit-box-direction : normal;
-
-    /* 가로 배열 */
-    flex-direction : column;
-
-    position : absolute;
-    top:0;
-    left:0;
-    right: 0;
-    bottom : 0;
+	display: flex;
+	/* https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=htmlstory&logNo=80192584519 */
+	/* https://ipex.tistory.com/entry/CSS3-flex-Box-justifycontent-alignitems */
+	/* 가운데 정렬 */
+	-webkit-box-pack: center;
+	/* 가로축 - 중심축 */
+	justify-content: center;
+	/* 세로축 - 교차축 */
+	align-items: center;
+	/* -webkit-box-orient : vertical; */
+	/* 박스의 흐름 */
+	-webkit-box-direction: normal;
+	/* 가로 배열 */
+	flex-direction: column;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 }
 
-
-
 div.game_box {
-    -webkit-box-direction : normal;
-
+	-webkit-box-direction: normal;
 }
 
 div.game_pic {
-    width: 10vw;
-    height: 10vw;
-    max-height: 200px;
-    max-width: 200px;
-    min-height: 84px;
-    min-width: 84px;
-    box-sizing: border-box;
-    position : relative;
-    text-decoration: none;
-
-    /* 이미지 반복여부 */
-    /* https://www.codingfactory.net/10571 */
-    background-repeat: no-repeat;
-
-    background-color: white;
-    background-size : cover;
-    border-radius: 4px;
-    border: none;
-
+	width: 10vw;
+	height: 10vw;
+	max-height: 200px;
+	max-width: 200px;
+	min-height: 84px;
+	min-width: 84px;
+	box-sizing: border-box;
+	position: relative;
+	text-decoration: none;
+	/* 이미지 반복여부 */
+	/* https://www.codingfactory.net/10571 */
+	background-repeat: no-repeat;
+	background-color: white;
+	background-size: cover;
+	border-radius: 4px;
+	border: none;
 }
 
 /* ul.choose_game { */
-    /* margin: 2em 0; */
-    /* margin: 0 auto;
+/* margin: 2em 0; */
+/* margin: 0 auto;
     
     align-items: center;
 } */
@@ -213,22 +194,20 @@ div.game_pic {
     font-size: 23px;
     font-weight: 500;
 } */
-
 h1.select_game, ul.choose_game {
-    opacity : 1;
-    transition : opacity .4s ease-out;
+	opacity: 1;
+	transition: opacity .4s ease-out;
 }
 
 .btn {
-    border: none;
-    outline: none;
-    background-color :rgba(3,3,30);
-    cursor: pointer;
+	border: none;
+	outline: none;
+	background-color: rgba(3, 3, 30);
+	cursor: pointer;
 }
 
 .btn:hover {
-    border : .3em solid transparent;
-
+	border: .3em solid transparent;
 }
 
 table {
@@ -236,6 +215,7 @@ table {
 }
 
 table td {
+	width: 20%;
 	color: #fff;
 	padding: 0.3em 0.5em;
 }
