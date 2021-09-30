@@ -1,14 +1,9 @@
 package testProject;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
-
-
-import oracle.sql.DATE;
 
 
 
@@ -136,8 +131,8 @@ public class memberDAO {
 		              String POSITION = rs.getString(8);
 		              String TEAM_NAME = rs.getString(9);
 		              String TEAM_CODE = rs.getString(10);
-		                            
-		              vo = new memberVO(MEMBER_ID,MEMBER_NAME,MEMBER_PHONE,MEMBER_BIRTHDATE,GENDER,P_AREA,POSITION,null,null,null);                          
+		                            //여기서 team_name 에 무조건 null 넣어서 생성하고 있어요  이렇게 하면 되나요? 네! 감사합니다!
+		              vo = new memberVO(MEMBER_ID,MEMBER_NAME,MEMBER_PHONE,MEMBER_BIRTHDATE,GENDER,P_AREA,POSITION,TEAM_NAME,null,null);                          
 		       
 		              //새로운 데이터 타입                                                        
 		           }

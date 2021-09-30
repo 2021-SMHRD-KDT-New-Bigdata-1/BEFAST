@@ -199,3 +199,21 @@ small{
 .file_upload{
 	background-color : white;
 }
+.last{
+	width: 459px;
+	display: table;
+	align-items: center;
+}
+.img{
+	width: 100px;
+	height: 100px;
+}
+.input_box_time{
+	font-size:20px;
+	color:white;
+}
+.input_time{
+	width:20px;
+	height:20px;
+
+}

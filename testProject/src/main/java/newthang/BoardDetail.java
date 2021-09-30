@@ -25,10 +25,12 @@ public class BoardDetail extends HttpServlet {
 		PrintWriter out = response.getWriter();
 
 		// 번호 받는다 ?no=10
-		String write_number = request.getParameter("write_number");
-		BoardDAO dao = new BoardDAO();
-
-		BoardVO vo = dao.boardDetail(Integer.parseInt(write_number));
+		String write_number = request.getParameter("write_number");  
+		BoardDAO dao = new BoardDAO(); 
+	
+		BoardVO vo = dao.boardDetail(Integer.parseInt(write_number));  
+		
+		
 
 		out.println("<html>");
 		out.println("<head>");
@@ -45,13 +47,19 @@ public class BoardDetail extends HttpServlet {
 		out.println("<h2 class=h2>BE FAST</h2>");
 		out.println("</div>");
 		out.println("<div class=container>");
-		out.println("<h2>" + vo.getWrite_subject() + "</h2>");
+		out.println("<h2>" + vo.getWrite_subject() + "</h2>"); //
 		out.println("<hr>");
 		out.println("<div class=row>");
 
 		// post 보안 / get 다보여짐
 		out.println("<div class= profile1 >");
-		out.println("<img src=resources/img/img3.jfif class=img>");
+		//al 10번째에.. 어떤 값이 담아져 있는지를 확인해봐야 할거 같네요 그거 그냥 테스트용으로 한번 
+		//써본겁니다..ㅠ  저 이미지가 담겨있는 순서로 지정해주셔야 할거같네요 그 지금 글쓴 사람 팀의 이미지를 받아오고 싶은데 어떻게 해야 할지 감이 안잡혀요..
+		//ㅇdao  기능 만들으셔야 해요 지금은 전부다 가져와서 al 에 담아주는데 현재 페이지에서는
+		//그럴 필요가 없기 때문에 dao 기능 호출할때 현재 로그인한 사람의 팀정보만 가지고 오는 거를 따로 만드셔야 해요.. 네 한 번 해보게
+		//습니다....감사합니다
+		System.out.println("img :"+vo.getTeam_logo());
+		out.println("<img src="+vo.getTeam_logo()+">");  //여긴가요?넵
 		out.println("<div class= tjfaud>");
 		out.println("<p id=name>" + vo.getTeam_name() + "</p>");
 		out.println("<br>");

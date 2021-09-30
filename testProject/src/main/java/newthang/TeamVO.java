@@ -7,7 +7,7 @@ public class TeamVO {
 	private String team_level;
 	private String team_uniform;
 	private String team_info;
-	private String team_member;
+	private int team_member;
 	private String team_time;
 	private String team_logo;
 	private String teamleader;
@@ -53,10 +53,10 @@ public class TeamVO {
 	public void setTeam_info(String team_info) {
 		this.team_info = team_info;
 	}
-	public String getTeam_member() {
+	public int getTeam_member() {
 		return team_member;
 	}
-	public void setTeam_member(String team_member) {
+	public void setTeam_member(int team_member) {
 		this.team_member = team_member;
 	}
 	public String getTeam_time() {

@@ -23,7 +23,7 @@ public class TeamJoin extends HttpServlet {
 		HttpSession session = request.getSession();
 		memberVO vo = (memberVO) session.getAttribute("vo");
 		String member_id = vo.getMEMBER_ID();
-
+		
 		// String team_name = request.getParameter("team_name");
 
 		TeamJoinDAO dao = new TeamJoinDAO();

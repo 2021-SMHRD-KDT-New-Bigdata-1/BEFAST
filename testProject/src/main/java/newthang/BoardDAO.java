@@ -113,7 +113,7 @@ public class BoardDAO {
 			// 실행
 			ps.executeUpdate();
 			// 내용물 데이터를 가지고 온다
-			sql = "SELECT write_number,field_code,field_member,p_area,team_name,write_subject,write_content,matching_time,write_time,hit FROM board WHERE write_number=?";
+			sql = "SELECT write_number,field_code,field_member,p_area,team_name,write_subject,write_content,matching_time,write_time,hit,team_logo FROM board WHERE write_number=?";
 			ps = conn.prepareStatement(sql);
 			ps.setInt(1, write_number);
 			ResultSet rs = ps.executeQuery();
@@ -129,6 +129,7 @@ public class BoardDAO {
 			vo.setMatching_time(rs.getString(8));
 			vo.setWrite_time(rs.getDate(9));
 			vo.setHit(rs.getInt(10));
+			vo.setTeam_logo(rs.getString(10));
 			rs.close();
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());

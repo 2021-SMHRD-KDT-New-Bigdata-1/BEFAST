@@ -42,22 +42,15 @@
 								<h3 class="join_group">
 									<label for="teamtime">선호시간</label>
 								</h3>
-								<span class="input_box_time"> 
-										<input type="checkbox" name="time" class="input_time"
-										value="월">월
-										<input type="checkbox" name="time" class="input_time"
-										value="화">화
-										<input type="checkbox" name="time" class="input_time"
-										value="수">수
-										<input type="checkbox" name="time" class="input_time"
-										value="목">목
-										<input type="checkbox" name="time" class="input_time"
-										value="금">금
-										<input type="checkbox" name="time" class="input_time"
-										value="토">토
-										<input type="checkbox" name="time" class="input_time"
-										value="일">일
-								</select>
+								<span class="input_box_time"> <input type="checkbox"
+									name="time" class="input_time" value="월">월 <input
+									type="checkbox" name="time" class="input_time" value="화">화
+									<input type="checkbox" name="time" class="input_time" value="수">수
+									<input type="checkbox" name="time" class="input_time" value="목">목
+									<input type="checkbox" name="time" class="input_time" value="금">금
+									<input type="checkbox" name="time" class="input_time" value="토">토
+									<input type="checkbox" name="time" class="input_time" value="일">일
+									</select>
 								</span>
 							</div>
 
@@ -90,17 +83,32 @@
 										name="intro">
                   </textarea>
 								</div>
-
-								<div class="button_create">
-									<input type="submit" id="create" class="create" value="팀 생성하기">
-								</div>
-								<div class="file_upload">
-									<input type="file" name="file" class="btn btn-success"
-										accept="image/gif, image/jpeg, image/png">
-								</div>
 							</div>
 						</div>
 					</div>
+				</div>
+				<div class="last">
+					<input type="radio" name="img" value="resources/img/logo1.jpg"><img
+						src="resources/img/logo1.jpg" class="img"> <input
+						type="radio" name="img" value="resources/img/logo3.jpg"><img
+						src="resources/img/logo3.jpg" class="img"> <input
+						type="radio" name="img" value="resources/img/logo4.jpg"><img
+						src="resources/img/logo4.jpg" class="img"><br> <input
+						type="radio" name="img" value="resources/img/logo5.jpg"><img
+						src="resources/img/logo5.jpg" class="img"> <input
+						type="radio" name="img" value="resources/img/logo6.jpg"><img
+						src="resources/img/logo6.jpg" class="img"> <input
+						type="radio" name="img" value="resources/img/logo7.jpg"><img
+						src="resources/img/logo7.jpg" class="img"><br> <input
+						type="radio" name="img" value="resources/img/logo8.jpg"><img
+						src="resources/img/logo8.jpg" class="img"> <input
+						type="radio" name="img" value="resources/img/logo9.jpg"><img
+						src="resources/img/logo9.jpg" class="img"> <input
+						type="radio" name="img" value="resources/img/logo10.jpg"><img
+						src="resources/img/logo10.jpg" class="img">
+				</div>
+				<div class="button_create">
+					<input type="submit" id="create" class="create" value="팀 생성하기">
 				</div>
 		</form>
 
