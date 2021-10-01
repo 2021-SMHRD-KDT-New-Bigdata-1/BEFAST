@@ -111,30 +111,7 @@
 				<input type="submit" value='등록하기'>
 	</form>
 	<script>
-	function getCheckboxValue()  {
-		  // 선택된 목록 가져오기
-		  const query = 'input[name="rating"]:checked';
-		  const query1 = 'input[name="rating2"]:checked';
-		  const query2= 'input[name="rating3"]:checked';
-		  const query3= 'input[name="m_result"]:checked';
-		  const selectedEls =  document.querySelectorAll(query);
-		  const selectedEls1 =  document.querySelectorAll(query1);
-		  const selectedEls2 =  document.querySelectorAll(query2);
-		  const selectedEls3 =  document.querySelectorAll(query3);
-		  
-		  // 선택된 목록에서 value 찾기
-		  let result = '';
-		  let result1 = '';
-		  let result2 = '';
-		  let result3 = '';
-		  selectedEls.forEach((el) => {result += el.value + ' ';});
-		 selectedEls1.forEach((el) => {result1 += el.value + ' ';});
-		  selectedEls2.forEach((el) => {result2 += el.value + ' ';});
-		  selectedEls3.forEach((el) => {result3 += el.value + ' ';});
-		  
-		  // 출력
-		  document.getElementById('result3').innerText = result3;
-		}
+	
 	function hidden_change(val){
 		var hidden = document.getElementById("hidden_input");
 		hidden.value = val;
