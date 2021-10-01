@@ -8,7 +8,9 @@ public class MannerVO {
 	private String comments;
 	private String team_name;
 	private int total_score;
-	
+	private int result_1;
+	private int result_2;
+	private int result_3;
 	public int getM_result() {
 		return m_result;
 	}
@@ -51,6 +53,26 @@ public class MannerVO {
 	public void setTotal_score(int total_score) {
 		this.total_score = total_score;
 	}
+	public int getResult_1() {
+		return result_1;
+	}
+	public void setResult_1(int result_1) {
+		this.result_1 = result_1;
+	}
+	public int getResult_2() {
+		return result_2;
+	}
+	public void setResult_2(int result_2) {
+		this.result_2 = result_2;
+	}
+	public int getResult_3() {
+		return result_3;
+	}
+	public void setResult_3(int result_3) {
+		this.result_3 = result_3;
+	}
+	
+	
 	
 	
 	

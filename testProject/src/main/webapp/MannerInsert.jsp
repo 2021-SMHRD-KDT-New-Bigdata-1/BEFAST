@@ -16,17 +16,23 @@
 	}
 	String m_result = request.getParameter("m_result");
 	int m_result1 =0;
+	int result_1 = 0;
+	int result_2 = 0;
+	int result_3 = 0;
 	//String result = request.getParameter("result");
 	if (m_result.equals("ÆÐ¹è")) {
 		m_result = "10";
 		m_result1 = Integer.parseInt(m_result);
 		m_result1 = -m_result1;
+		result_1 +=1;
 	} else if (m_result.equals("½Â¸®")) {
 		m_result = "10";
 		m_result1 = Integer.parseInt(m_result);
+		result_2 +=1;
 	} else {
 		m_result = "0";
 		m_result1 = Integer.parseInt(m_result);
+		result_3 +=1;
 	}
 	int result = Integer.parseInt(request.getParameter("rating"));
 	int result1 = Integer.parseInt(request.getParameter("rating2"));
@@ -40,6 +46,9 @@
 	vo.setLanguages(result2);
 	vo.setComments(comments);
 	vo.setTotal_score((result + result1 + result2) / 3);
+	vo.setResult_1(result_1);
+	vo.setResult_2(result_2);
+	vo.setResult_3(result_3);
 
 	MannerDAO dao = new MannerDAO();
 	dao.MannerInsert(vo);

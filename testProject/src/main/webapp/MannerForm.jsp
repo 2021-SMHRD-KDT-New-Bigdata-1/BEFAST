@@ -30,14 +30,17 @@
 				<p class="p">경기결과를 클릭해주세요</p>
 				<br>
 				<div class="modal_img">
-					<input type="button" name="m_result" value="승리" class="result" onclick='hidden_change("승리")'>
-					<input type="hidden" name="m_result" value="선택안함" class="result" id="hidden_input">
-					<input type="button" name="m_result" value="패배" class="result" onclick='hidden_change("패배")'> 
-					<input type="hidden" name="m_result" value="선택안함" class="result" id="hidden_input">
-					<input type="button" name="m_result" value="무승부" class="result" onclick='hidden_change("무승부")'>
-					<input type="hidden" name="m_result" value="선택안함" class="result" id="hidden_input">
-				</div><br>
-				경기결과 : 
+					<input type="button" name="m_result" value="승리" class="result"
+						onclick='hidden_change("승리")'> <input type="hidden"
+						name="m_result" value="선택안함" class="result" id="hidden_input">
+					<input type="button" name="m_result" value="패배" class="result"
+						onclick='hidden_change("패배")'> <input type="hidden"
+						name="m_result" value="선택안함" class="result" id="hidden_input">
+					<input type="button" name="m_result" value="무승부" class="result"
+						onclick='hidden_change("무승부")'> <input type="hidden"
+						name="m_result" value="선택안함" class="result" id="hidden_input">
+				</div>
+				<br> 경기결과 :
 				<div id='result3'>선택안함</div>
 				<div class="button">
 					<button type="button" id="btn-close">닫기</button>
@@ -111,12 +114,11 @@
 				<input type="submit" value='등록하기'>
 	</form>
 	<script>
-	
-	function hidden_change(val){
-		var hidden = document.getElementById("hidden_input");
-		hidden.value = val;
-		document.getElementById("result3").innerText=val;
-	}
-</script>
+		function hidden_change(val) {
+			var hidden = document.getElementById("hidden_input");
+			hidden.value = val;
+			document.getElementById('result3').innerText = val;
+		}
+	</script>
 </body>
 </html>
