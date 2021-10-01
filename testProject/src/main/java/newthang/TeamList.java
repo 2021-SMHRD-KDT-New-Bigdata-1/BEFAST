@@ -23,6 +23,8 @@ public class TeamList extends HttpServlet {
 		out.println("<head>");
 		out.println(
 				"<Link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">");
+		out.println(
+				"<Link rel=\"stylesheet\" href=\"LGW_HYH/resources/css/TeamList.css\">");
 		out.println("<style type=text/css>");
 		out.println(".row {margin:0px auto; width:700px}"); // °¡¿îµ¥ Ãâ·Â:margin
 		out.println("h2 {text-align:center}");
@@ -30,26 +32,26 @@ public class TeamList extends HttpServlet {
 		out.println("</head>");
 		out.println("<body>");
 		out.println("<div class=container>");
-		out.println("<h2>ÆÀ Ã£±â</h2>");
+		out.println("<h2 class=h2>BE FAST</h2>");
 		out.println("<div class=row>");
 
-		out.println("<table class=\"table\">");
-		out.println("<tr>");
-		out.println("<td>");
-
-		// btn-sm Å©±â / btn-lg : ¹öÆ° Ä¿Áü / btn-xs : ¹öÆ° ÀÛ¾ÆÁü
-		// success - ³ì»ö
-		out.println("</td>");
-		out.println("</tr>");
+		//out.println("<table class=\"table\">");
+//		out.println("<tr>");
+//		out.println("<td>");
+//
+//		// btn-sm Å©±â / btn-lg : ¹öÆ° Ä¿Áü / btn-xs : ¹öÆ° ÀÛ¾ÆÁü
+//		// success - ³ì»ö
+//		out.println("</td>");
+//		out.println("</tr>");
 		out.println("<table>");
 
 		out.println("<table class=\"table table-hover\">");
 		out.println("<tr class=info>"); // »ö»ó »¡°£»ö:danger(table-hover)
 		out.println("<th class=text-center width=10%>¹øÈ£</th>");
 		out.println("<th class=text-center width=10%>ÆÀ¸í</th>");
-		out.println("<th class=text-center width=45%>¿¬°íÁö</th>");
-		out.println("<th class=text-center width=15%>ÆÀ °æÀï·Â</th>");
-		out.println("<th class=text-center width=20%>ÆÀ À¯´ÏÆû</th>");
+		out.println("<th class=text-center width=10%>¿¬°íÁö</th>");
+		out.println("<th class=text-center width=10%>ÆÀ °æÀï·Â</th>");
+		out.println("<th class=text-center width=10%>ÆÀ À¯´ÏÆû</th>");
 		out.println("<th class=text-center width=10%>ÆÀ ¸â¹ö</th>");
 		out.println("</tr>");
 		// Ãâ·Â
@@ -110,13 +112,13 @@ public class TeamList extends HttpServlet {
 		}
 
 		out.println("</table>");
-		out.println("<hr>");
+//		out.println("<hr>");
 
 		out.println("<table class=\"table\">");
 		out.println("<tr>");
 
 		out.println("<td class=text-left>");
-		out.println("Search:");
+//		out.println("Search:");
 		out.println("<form name=\"form1\" method=\"get\" action=\"TeamList\">");
 		out.println("<select class=input-sm name=col>");
 		out.println("<option value=rname>ÆÀ¸í</option>");

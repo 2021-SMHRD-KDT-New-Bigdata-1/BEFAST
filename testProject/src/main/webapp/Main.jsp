@@ -57,7 +57,7 @@
         <div class="navbar">
             <div class="navContainer">
                 <div class="newLogo">
-                    <a href="#">
+                    <a href="Main.jsp">
                         <img src="YJW_KSJ/resources/99. img/logo1.png">
                     </a>
                 </div>

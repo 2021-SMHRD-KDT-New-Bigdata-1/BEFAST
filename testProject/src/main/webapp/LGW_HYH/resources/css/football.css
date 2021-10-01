@@ -6,7 +6,7 @@
 }
 
 .container {
-	background-color: #d3d3d3;
+	background-color: rgba(9,9,52);
 }
 
 .a {
@@ -23,6 +23,7 @@
 	line-height: 100px;
     font-size: 36px;
 	margin-top: 0px;
+	background-color:rgba(9,9,52);
 }
 
 .box3 {
@@ -115,4 +116,16 @@
 
 .regdate, .hit {
 	width: 20%;
+}
+body{
+	background-color: rgba(9,9,52);
+}
+.text-left{
+	color: #eee
+}
+.text-right{
+	color: #eee
+}
+select.input-sm {
+    color: black;
 }

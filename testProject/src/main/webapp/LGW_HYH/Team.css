@@ -38,16 +38,14 @@ div#header{
     }
 }
 body {
-   background-image : url("resources/img/img22.jpg");
+   /* background-image : url("resources/img/img22.jpg"); */
     font-size: 14px;
     -webkit-text-size-adjust : none;
     background-repeat : no-repeat;
     background-position: center;
     background-size : cover;  
-    max-width:100%
-   
-        
-        
+    max-width:100%;
+    background-color: rgba(9,9,52);       
 }
 div {
     display: block;
@@ -90,6 +88,7 @@ div.join_form {
     padding:0;
     width: 100%;
     -webkit-text-size-adjust : none;
+    color: #eee;
     
 }
 div.join_form+div.join_form {
@@ -128,8 +127,10 @@ h3.join_group {
     height: 30px;
     border: rgb(168 212 255);
     padding: 10px;
-    border-radius: 40%;
-    background-color: rgb(168, 212, 255,0.7);
+    border: solid 2px #eee;
+   /*  border-radius: 40%; */
+    /* background-color: rgb(168, 212, 255,0.7); */
+   
 }
 .input_name{
 	outline: 0;
@@ -142,9 +143,11 @@ h3.join_group {
     box-sizing: border-box;
     background-color:transparent;
     float : left;
+    color:#eee;
 }
 .check{
 	width : 19%;
+	font-size:15px;
 }
 .input_number, .input_area, .input_level 
 {
@@ -154,9 +157,10 @@ h3.join_group {
     position: relative;
     width: 100%;
     height: 29px;
-    font-size: 25px;
+    font-size: 15px;
     box-sizing: border-box;
-    background-color:transparent;
+    background-color:rgba(9,9,52);
+    color:#eee;
     
 }
 .input_uniform{
@@ -165,6 +169,7 @@ h3.join_group {
 }
 .button_create {
     margin: 30px 0px 9px;
+    text-align:center;
 }
 .btntype {
     text-align: center;
@@ -173,7 +178,7 @@ h3.join_group {
     height: 45px;
 }
 ::placeholder {
-    color: black;
+    color: eee;
 }
 div>h2{
     color: 31,209,69;
@@ -186,40 +191,53 @@ div>h2{
     height: 160px;
     border: none;
     padding: 10px;
+    
 }
 textarea{
    resize: none;
-   background-color: rgb(168 212 255);
+   background-color: rgb(9,9,52);
    font-size: 25px;
-   color :white;
+   color :#eee;
+   width:390px;
+   border: solid 2px #eee;
+   padding:30px;
 }
 small{
-   color :white;
-   font-size: 15px;
+   color :#eee;
+   font-size: 18px;
    
 }
 .file_upload{
-	background-color : white;
+	background-color : #eee;
 }
 .last{
 	width: 459px;
-	display: table;
 	align-items: center;
+	/* display: contents; */
+	text-align: center;
 }
 .img{
 	width: 100px;
 	height: 100px;
 }
 .input_box_time{
-	font-size:20px;
-	color:white;
+	font-size: 30px;
+    color: #eee;
+    text-align: center;
+    justify-content: center;
+    display: flex;
 }
+
 .input_time{
 	width:20px;
-	height:20px;
+	height:40px;
 
 }
 
 div>h2{
-    color: rgba(31,209,69)
+    color: #eee;
+}
+.input_box_teamuniform{
+	text-align:center;
+	font-size: 23px;
 }
