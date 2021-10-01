@@ -50,22 +50,53 @@
 									al = dao.bookingsSearch(choice);
 								}
 
-								//회원정보 출력(한명의 회원 정보는 하나의 tr 태그에 - 한줄)
-								//회원의 수만큼 tr 태그 추가
-								//각 정보 (이메일,전화번호,주소)는 각 td 태그에
-								for (int i = 0; i < al.size(); i++) {
-									out.print("<tr>");
-									out.print("<td>" + al.get(i).getMATCHING_DATE() + "</td>");
-									out.print("<td>" + al.get(i).getADDRESS() + "</td>");
-									out.print("<td>" + al.get(i).getFILED_NAME() + "</td>");
-									out.print("<td>" + al.get(i).getTIMES() + "</td>");
-									out.print("<td>" + al.get(i).getGAMES() + "</td>");
-									out.print("</tr>");
+								int size = al.size() + 1;
+								int total_page = size / 3 + (size % 3 == 0 ? 0 : 1);
+								String page1 = request.getParameter("page1");
+			
+								System.out.println(page1);
+								
+								if (page1 == null) {
+									page1 = "1";
 								}
+								int cur_page = Integer.parseInt(page1);
+								int prev_page = cur_page - 1;
+								int next_page = cur_page + 1;
+
+								
+								for (int i = 3 * (cur_page - 1); i < cur_page * 3; i++) {
+									if (i < al.size()) {
+										out.print("<tr>");
+										out.print("<td>" + al.get(i).getMATCHING_DATE() + "</td>");
+										out.print("<td>" + al.get(i).getADDRESS() + "</td>");
+										out.print("<td>" + al.get(i).getFILED_NAME() + "</td>");
+										out.print("<td>" + al.get(i).getTIMES() + "</td>");
+										out.print("<td>" + al.get(i).getGAMES() + "</td>");
+										out.print("</tr>");
+									} else {
+										break;
+									}
+								}
+								
+
+								if (prev_page <= 0) {
+									prev_page = 1;
+								} else if (cur_page >= total_page) {
+									next_page = total_page;
+								}
+								
+								System.out.println(prev_page);
+								System.out.println(next_page);
+								out.println("<div class=div1>");
+								out.println("<a href=?page1=" + prev_page + " class=\"btnbtn-smbtn-primary\">이전</a>");
+								out.println((prev_page) + " page / " + (next_page) + " pages");
+								out.println("<a href=?page1=" + next_page + " class=\"btnbtn-smbtn-primary\">다음</a>");
+								out.println("</div>");
 								%>
 							
 						</table>
 						</tbody>
+
 					</div>
 
 				</div>
