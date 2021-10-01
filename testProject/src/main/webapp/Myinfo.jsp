@@ -191,7 +191,7 @@ button#next {
 					<p class="My_type"><i class="fas fa-users"></i><%=vo.getTEAM_NAME()%></p>
 					</div>
 				</div>
-					<p class="Matching_info">내 매칭현황<%=Bvo.getFILED_NAME() %></p>
+					<p class="Matching_info">내 매칭현황</p>
 					<div class="line"></div>
 			</div>
 			
