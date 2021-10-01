@@ -219,5 +219,32 @@ public class TeamDAO {
 		return list;
 
 	}
+	public TeamVO Teamlogo(String Team_name){
+		TeamVO vo = new TeamVO();
+		try {
+			// 연결
+			conn();
+			
+
+			String sql = "select team_logo FROM team_member WHERE Team_name=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, Team_name); // ?에 값을 채운다
+			// 실행
+			// 내용물 데이터를 가지고 온다
+
+			ResultSet rs = psmt.executeQuery();
+			rs.next();
+			vo.setTeam_logo(rs.getString(1));
+			rs.close();
+					
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		} finally {
+			close();
+		}
+		return vo;
+	}
 	
-}
+		
+	}
+	

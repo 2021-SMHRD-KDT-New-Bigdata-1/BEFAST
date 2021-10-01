@@ -9,7 +9,7 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
-    <!-- 폰트 -->  
+    <!-- 폰트트 -->  
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -99,7 +99,7 @@
                             <li><a href="TeamList">팀 찾기</a></li>
                             <li><a href="LGW_HYH/Team.jsp">팀 생성</a></li>
                             <li><a href="BoardList">용병게시판</a></li>
-                            <li><a href="Showpage.jsp">예약현황</a></li>
+                            <li><a href="Showpage.jsp?page1=">예약현황</a></li>
                             <li><a href="LGW_HYH/Guide.jsp">풋살가이드</a></li>                           
                             <li><a href="Logoutform.jsp">로그아웃</a></li>
                         </ul>

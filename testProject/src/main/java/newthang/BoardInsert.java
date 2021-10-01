@@ -8,6 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import testProject.memberVO;
 
 /**
  * Servlet implementation class BoardInsert
@@ -61,7 +64,6 @@ public class BoardInsert extends HttpServlet {
 
       // post 보안 / get 다보여짐
 
-      out.println("<input type=\"text\" class=\"title\" name=\"name\" placeholder=\"팀이를을 입력해주세요.\"><br>");
       out.println("<input type=\"text\" class=\"title\" name=\"subject\" placeholder=\"제목을 입력해주세요.\"><br>");
 
       out.println(
@@ -93,21 +95,23 @@ public class BoardInsert extends HttpServlet {
       int field_code = Integer.parseInt(request.getParameter("warrior"));
       int field_member = Integer.parseInt(request.getParameter("member"));
       String p_area = request.getParameter("field_code");
-      String team_name = request.getParameter("name");
       String write_subject = request.getParameter("subject");
       String write_content = request.getParameter("content");
       String matching_time = request.getParameter("time");
       String write_pw = request.getParameter("pwd");
-
+      
+      HttpSession session = request.getSession();
+      memberVO vo2 = (memberVO)session.getAttribute("vo");
+      String team_name = vo2.getTEAM_NAME();
       BoardVO vo = new BoardVO();
       vo.setField_code(field_code);
       vo.setField_member(field_member);
       vo.setP_area(p_area);
-      vo.setTeam_name(team_name);
       vo.setWrite_subject(write_subject);
       vo.setWrite_content(write_content);
       vo.setMatching_time(matching_time);
       vo.setWrite_pw(write_pw);
+      vo.setTeam_name(team_name);
 
       // DAO로 전송 => 오라클 INSERT
       BoardDAO dao = new BoardDAO();
