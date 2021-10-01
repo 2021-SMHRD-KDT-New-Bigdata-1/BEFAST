@@ -37,7 +37,7 @@ public class BookingService extends HttpServlet {
       String MEMBER_ID = vo.getMEMBER_ID();
       
       BookingDAO dao = new BookingDAO();
-      
+     
       // TEAM_NAME, MEMBER_ID는 MEMBERVO의 세션값을 들고온 것
       int cnt = dao.BOOKINGS(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES, TEAM_NAME, MEMBER_ID);
       

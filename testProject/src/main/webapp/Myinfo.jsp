@@ -28,7 +28,7 @@ body {
 .Card {
 	background-color: #3d405b;
 	color: #f4f1de;
-	width: 250px;
+/* 	width: 250px; */
 	padding: 30px 20px;
 	height: auto;
 	box-shadow: 0 0 15px #000;
@@ -110,6 +110,16 @@ body {
 .Card .barOuter .barLevel {
 	height: auto;
 	line-height: 1.7;
+	padding: 8px;
+}
+
+.Card .barOuter2 .barLevel {
+	line-height: 1.4;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 }
 
 .PreNext {
@@ -134,18 +144,20 @@ button:hover {
 	cursor: pointer;
 }
 
-
-
 button#pre {
 	position: relative;
-	left: -50px;
+	/* left: -50px; */
 }
 
 button#next {
 	position: relative;
-	right: -50px;
+	right: -238px;
 }
 
+.barOuter2 {
+	text-align: center;
+
+}
 
 </style>
 <body>
@@ -175,24 +187,53 @@ button#next {
 			</div>
 			
 			<div class="My_info2">
-					<p class="title">경기정보</p>
 					<div class="line"></div>
+					<p class="title">경기정보</p>
+					
 				<div class="barOuter">
 				
-					<div class="barLevel barHTML">선호지역
-					<p class="My_type"><i class="fas fa-search-location"></i><%=vo.getP_AREA()%></p>
+					<div class="barLevel barHTML">선호지역 <i class="fas fa-search-location"></i>
+					<p class="My_type"><%=vo.getP_AREA()%></p>
 					</div>
 					
-					<div class="barLevel barHTML">선호 포지션
-					<p class="My_type"><i class="fas fa-futbol"></i><%=vo.getPOSITION()%></p>
+					<div class="barLevel barHTML">포지션 <i class="fas fa-futbol"></i>
+					<p class="My_type"><%=vo.getPOSITION()%></p>
 					</div>
 					
-					<div class="barLevel barHTML">소속 팀
-					<p class="My_type"><i class="fas fa-users"></i><%=vo.getTEAM_NAME()%></p>
+					<div class="barLevel barHTML">소속 팀 <i class="fas fa-users"></i>
+					<p class="My_type"><%=vo.getTEAM_NAME()%></p>
 					</div>
 				</div>
-					<p class="Matching_info">내 매칭현황<%=Bvo.getFILED_NAME() %></p>
+				
 					<div class="line"></div>
+					<p class="Matching_info">내 매칭현황</p>
+					
+				
+				<div class="barOuter2">
+				
+
+					<div class="barLevel barHTML">경기일자
+					<p class="My_type"><i class="far fa-calendar-alt"></i><%=Bvo.getMATCHING_DATE()%></p>
+					</div>
+					
+					<div class="barLevel barHTML">경기지역
+					<p class="My_type"><i class="far fa-calendar-alt"></i><%=Bvo.getADDRESS()%></p>
+					</div>
+					
+					<div class="barLevel barHTML">경기장
+					<p class="My_type"><i class="far fa-calendar-alt"></i><%=Bvo.getFILED_NAME()%></p>
+					</div>
+					
+					<div class="barLevel barHTML">게임방식
+					<p class="My_type"><i class="far fa-calendar-alt"></i><%=Bvo.getGAMES()%></p>
+					</div>
+					
+					<div class="barLevel barHTML">경기시간
+					<p class="My_type"><i class="far fa-calendar-alt"></i><%=Bvo.getTIMES()%></p>
+					</div>
+					
+					<div class="line"></div>
+					
 			</div>
 			
 				<div class="PreNext">
@@ -209,6 +250,7 @@ button#next {
 				</div>
 			
 		</div>
+	</div>
 		
 	</body>
 </html>
