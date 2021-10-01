@@ -1,6 +1,7 @@
 <%@page import="newthang.TeamVO"%>
 <%@page import="newthang.TeamDAO"%>
 <%@page import="testProject.memberVO"%>
+<%@page import="testProject.memberDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -20,10 +21,13 @@
 	String team_uniform = request.getParameter("unifrom");
 	String team_info = request.getParameter("intro");
 	String team_logo = request.getParameter("img");
-
+	
+	 
 	memberVO vo2 = (memberVO)session.getAttribute("vo");
 	String teamleader = vo2.getMEMBER_ID();
-	
+	String member_id = vo2.getMEMBER_ID();
+	memberDAO dao2 = new memberDAO();
+	dao2.Teamname(team_name, member_id);
 	TeamVO vo = new TeamVO();
 	vo.setTeam_name(team_name);
 	vo.setTeam_field(team_field);
@@ -36,6 +40,7 @@
 	// DAO로 전송 => 오라클 INSERT
 	TeamDAO dao = new TeamDAO();
 	dao.TeamInsert(vo);
+	
 	
 	%>
 	<script>

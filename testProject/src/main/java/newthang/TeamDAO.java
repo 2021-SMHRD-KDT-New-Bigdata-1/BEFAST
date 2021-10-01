@@ -52,6 +52,9 @@ public class TeamDAO {
 		try {
 			// 오라클 접속
 			conn();
+			
+			
+
 			String sql = "insert into TEAM_MEMBER(team_name, team_code, team_field, team_time, team_level, team_uniform, team_info, team_member, team_logo, teamleader) values(?,(SELECT NVL(MAX(team_code)+1,1) FROM TEAM_MEMBER),?,?,?,?,?,1,?,?)";
 
 			PreparedStatement psmt = conn.prepareStatement(sql);
@@ -67,7 +70,7 @@ public class TeamDAO {
 			// 2_5. sql문 실행하기 -> 성공 여부에 따라 페이지 이동시키기
 			psmt.executeUpdate();
 			// 2_6 실행문처리
-
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 			// 실행 후 오류 발생 시 에러출력
@@ -160,10 +163,10 @@ public class TeamDAO {
 			vo.setTeam_level(rs.getString(4));
 			vo.setTeam_uniform(rs.getString(5));
 			vo.setTeam_info(rs.getString(6));
-			vo.setTeam_time(rs.getString(7));
-			vo.setTeam_logo(rs.getString(8));
-			vo.setTeamleader(rs.getString(9));
-			vo.setTeam_member(rs.getInt(10));
+			vo.setTeam_time(rs.getString(8));
+			vo.setTeam_logo(rs.getString(9));
+			vo.setTeamleader(rs.getString(10));
+			vo.setTeam_member(rs.getInt(7));
 			rs.close();
 					
 		} catch (Exception ex) {
@@ -216,5 +219,5 @@ public class TeamDAO {
 		return list;
 
 	}
-
+	
 }

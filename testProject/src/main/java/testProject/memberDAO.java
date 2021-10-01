@@ -1,14 +1,9 @@
 package testProject;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
-
-
-import oracle.sql.DATE;
 
 
 
@@ -134,8 +129,10 @@ public class memberDAO {
 		              String GENDER = rs.getString(6);
 		              String P_AREA = rs.getString(7);
 		              String POSITION = rs.getString(8);
-		              String TEAM_NAME = rs.getString(9);
-		              String TEAM_CODE = rs.getString(10);
+		              String TEAM_NAME = rs.getString(10);
+		              String TEAM_CODE = rs.getString(9);
+		              
+		              System.out.println("login메소드에서 TEAM_NAME : "+TEAM_NAME);
 		                            
 		              vo = new memberVO(MEMBER_ID,PWD,MEMBER_NAME,MEMBER_PHONE,MEMBER_BIRTHDATE,GENDER,P_AREA,POSITION,TEAM_NAME,TEAM_CODE);                          
 		       
@@ -216,7 +213,38 @@ public class memberDAO {
 			
 			return vo2;
 		}
+		public int Teamname(String team_name, String member_id) {
+			
+			int cnt=0;
+			try {
+				// 연결
+				conn();
+				
+				
+				
+				String sql = "UPDATE members SET team_name=? WHERE member_id=?";
+				psmt = conn.prepareStatement(sql);
+				psmt.setString(1, team_name); // ?에 값을 채운다
+				psmt.setString(2, member_id); // ?에 값을 채운다
+				
+				cnt= psmt.executeUpdate();
+				
+				
+				
+		
+				
+				
+			} catch (Exception ex) {
+				System.out.println(ex.getMessage());
+			} finally {
+				close();
+			}
+			
+			return cnt;		
+			
+		}
+	}
 	   
-}
+
 	
 
