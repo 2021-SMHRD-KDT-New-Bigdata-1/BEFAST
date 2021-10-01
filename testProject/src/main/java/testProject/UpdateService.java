@@ -27,13 +27,24 @@ public class UpdateService extends HttpServlet {
 		String MEMBER_PHONE = request.getParameter("MEMBER_PHONE");
 		String P_AREA = request.getParameter("P_AREA");
 		String POSITION = request.getParameter("POSITION");
+		String TEAM_NAME = request.getParameter("TEAM_NAME");
+		
+		
+		String MEMBER_NAME = request.getParameter("MEMBER_NAME");
+		String MEMBER_BIRTHDATE = request.getParameter("MEMBER_BIRTHDATE");
+		String GENDER = request.getParameter("GENDER");
+		
+		
+		
+		
+		
 		
 		memberDAO dao = new memberDAO();
 		
-		int cnt = dao.update(PWD, MEMBER_PHONE, P_AREA, POSITION, MEMBER_ID);
+		int cnt = dao.update(PWD, MEMBER_PHONE, P_AREA, POSITION, TEAM_NAME, MEMBER_ID);
 		
 		if(cnt>0) {
-	          memberVO vo2 = new memberVO(MEMBER_ID, MEMBER_PHONE, null,null,null,null, P_AREA, POSITION);
+	          memberVO vo2 = new memberVO(MEMBER_ID,PWD,MEMBER_NAME,MEMBER_PHONE,MEMBER_BIRTHDATE,GENDER,P_AREA,POSITION,TEAM_NAME,null);
 	          session.setAttribute("vo", vo2);
 	          response.sendRedirect("Main.jsp");   
 	       

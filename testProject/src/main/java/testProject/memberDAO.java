@@ -153,13 +153,13 @@ public class memberDAO {
 	  
 	   
 	   // 업데이트 기능 구현
-	   public int update(String PWD, String MEMBER_PHONE, String P_AREA, String POSITION, String MEMBER_ID) {
+	   public int update(String PWD, String MEMBER_PHONE, String P_AREA, String POSITION, String TEAM_NAME,String MEMBER_ID) {
 		   
 		      int cnt = 0;
 		      try {
 		            conn();
 		            
-		            String sql = "update MEMBERS set PWD = ? , MEMBER_PHONE = ? , P_AREA = ?, POSITION = ? where MEMBER_ID = ?";
+		            String sql = "update MEMBERS set PWD = ? , MEMBER_PHONE = ? , P_AREA = ?, POSITION = ?, TEAM_NAME = ? where MEMBER_ID = ?";
 		            // 비밀번호, 휴대폰번호, 선호지역, 포지션을 바꾼다!
 		            // 단, 조건 MEMBER_ID
 		            PreparedStatement psmt = conn.prepareStatement(sql);
@@ -167,7 +167,8 @@ public class memberDAO {
 		            psmt.setString(2, MEMBER_PHONE);
 		            psmt.setString(3, P_AREA);
 		            psmt.setString(4, POSITION);
-		            psmt.setString(5, MEMBER_ID);
+		            psmt.setString(5, TEAM_NAME);
+		            psmt.setString(6, MEMBER_ID);
 		                                    
 		            cnt = psmt.executeUpdate();            
 		            
