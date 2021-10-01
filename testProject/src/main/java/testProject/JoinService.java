@@ -37,6 +37,7 @@ public class JoinService extends HttpServlet {
 		System.out.println(GENDER);
 		
 		memberDAO dao = new memberDAO();
+		
 		// 순서 주의할 것
 		int cnt = dao.join(MEMBER_ID, PWD, MEMBER_NAME, MEMBER_PHONE, MEMBER_BIRTHDATE, GENDER, P_AREA, POSITION);
 		

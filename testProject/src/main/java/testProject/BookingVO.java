@@ -6,16 +6,49 @@ public class BookingVO {
 	private String FILED_NAME;
 	private String GAMES;
 	private String TIMES;
+	private String TEAM_NAME;
+	public String getTEAM_NAME() {
+		return TEAM_NAME;
+	}
+
+
+
+
+	public void setTEAM_NAME(String TEAM_NAME) {
+		this.TEAM_NAME = TEAM_NAME;
+	}
+
+
+
+
+	public String getMEMBER_ID() {
+		return MEMBER_ID;
+	}
+
+
+
+
+	public void setMEMBER_ID(String MEMBER_ID) {
+		this.MEMBER_ID = MEMBER_ID;
+	}
+
+
+	private String MEMBER_ID;
 	
 	
-	public BookingVO(String MATCHING_DATE, String ADDRESS, String FILED_NAME, String GAMES, String TIMES) {
+	
+	public BookingVO(String MATCHING_DATE, String ADDRESS, String FILED_NAME, String GAMES, String TIMES, String TEAM_NAME, String MEMBER_ID) {
 		super();
 		this.MATCHING_DATE = MATCHING_DATE;
 		this.ADDRESS = ADDRESS;
 		this.FILED_NAME = FILED_NAME;
 		this.GAMES = GAMES;
 		this.TIMES = TIMES;
+		this.TEAM_NAME = TEAM_NAME;
+		this.MEMBER_ID = MEMBER_ID;
 	}
+
+	
 
 
 	public String getMATCHING_DATE() {

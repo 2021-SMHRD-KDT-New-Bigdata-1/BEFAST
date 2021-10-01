@@ -49,6 +49,7 @@
    BookingDAO dao = new BookingDAO();
    memberVO vo = (memberVO) session.getAttribute("vo");
    ArrayList<BookingVO> al = dao.select();
+   
    %>
    
        <!-- ¼øÀ§ -->

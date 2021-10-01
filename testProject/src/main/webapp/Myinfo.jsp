@@ -1,3 +1,5 @@
+<%@page import="testProject.BookingDAO"%>
+<%@page import="testProject.BookingVO"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -78,7 +80,7 @@ body {
 	width: 100%;
 }
 
-.Card .My_info2 .title {
+.Card .My_info2 .title, .Matching_info {
 	color: #eee;
 	margin-bottom: 8px;
 	font-weight: 500;
@@ -147,7 +149,12 @@ button#next {
 
 </style>
 <body>
-	<% memberVO vo = (memberVO) session.getAttribute("vo"); %>
+	<% memberVO vo = (memberVO) session.getAttribute("vo");
+	
+	   BookingDAO dao = new BookingDAO();
+	   BookingVO Bvo = dao.My_booking(vo.getMEMBER_ID());
+       /* BookingVO Bvo = (BookingVO) session.getAttribute("Bvo"); */
+	%>
 	
 		<div class="Card">
 			<div class="Pic">
@@ -184,6 +191,8 @@ button#next {
 					<p class="My_type"><i class="fas fa-users"></i><%=vo.getTEAM_NAME()%></p>
 					</div>
 				</div>
+					<p class="Matching_info">내 매칭현황<%=Bvo.getFILED_NAME() %></p>
+					<div class="line"></div>
 			</div>
 			
 				<div class="PreNext">

@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 
@@ -20,7 +21,7 @@ public class BookingService extends HttpServlet {
 		
 		request.setCharacterEncoding("EUC-KR");
 		
-		// 1. 사용자가 입력한 데이터 가져오기
+		// 1. 사용자가 입력한 데이터 가져기
 		//String FIELD_CODE = request.getParameter("FIELD_CODE");
 		String MATCHING_DATE = request.getParameter("MATCHING_DATE");
 		String ADDRESS = request.getParameter("ADDRESS");
@@ -28,9 +29,16 @@ public class BookingService extends HttpServlet {
 		String GAMES = request.getParameter("GAMES");
 		String TIMES = request.getParameter("TIMES");
 		
-		BookingDAO dao = new BookingDAO();
 		
-		int cnt = dao.BOOKINGS(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES);
+		
+		
+		BookingDAO dao = new BookingDAO();
+		HttpSession session   = request.getSession();
+		memberVO vo = (memberVO)session.getAttribute("vo");
+		String TEAM_NAME = vo.getTEAM_NAME();
+		
+		int cnt = dao.BOOKINGS(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES, TEAM_NAME);
+		
 		
 		if (cnt>0) {
 			response.sendRedirect("Main.jsp");
