@@ -147,7 +147,9 @@ button#next {
 
 </style>
 <body>
-	<% memberVO vo = (memberVO) session.getAttribute("vo"); %>
+	<% memberVO vo = (memberVO) session.getAttribute("vo"); 
+	  
+	%>
 	
 		<div class="Card">
 			<div class="Pic">
