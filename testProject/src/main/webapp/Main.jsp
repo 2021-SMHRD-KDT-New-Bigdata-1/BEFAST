@@ -9,7 +9,7 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
-    <!-- 폰트 -->  
+    <!-- 폰트트 -->  
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
