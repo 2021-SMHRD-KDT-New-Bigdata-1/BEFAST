@@ -62,7 +62,7 @@ input[type="text"] {
 									<td>경기장</td>
 									<td>경기시간</td>
 									<td>경기방식</td>
-									<td>명</td>
+									<td>팀명</td>
 									
 								</tr>
 								<tr>
@@ -127,7 +127,7 @@ input[type="text"] {
 									}
 								}
 								
-=======
+
                         
                         for (int i = 3 * (cur_page - 1); i < cur_page * 3; i++) {
                            if (i < al.size()) {
@@ -143,7 +143,7 @@ input[type="text"] {
                            }
                         }
                         
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/BEFAST.git
+
 
                         if (prev_page <= 0) {
                            prev_page = 1;
