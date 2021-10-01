@@ -113,11 +113,9 @@ public class BookingDAO {
 		String sqlnormal = "";
 		if (choice.equals("normal")) {
 			sqlnormal = "where GAMES like '%" + choice.trim() + "%'";
-		} else if (choice.equals("title")) {
+		} else if (choice.equals("friend")) {
 			sqlnormal = "where GAMES like '%" + choice.trim() + "%'";
-		} else if (choice.equals("content")) {
-			sqlnormal = "where GAMES like '%" + choice.trim() + "%'";
-		} else {
+		} else if (choice.equals("rank")) {
 			sqlnormal = "where GAMES like '%" + choice.trim() + "%'";
 		}
 		sql = sql + sqlnormal;
