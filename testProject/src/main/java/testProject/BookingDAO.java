@@ -78,6 +78,30 @@ public class BookingDAO {
 
 		return cnt;
 	}
+	
+	/*
+	 * // 내 예약정보 public int My_BOOKING(String MATCHING_DATE, String ADDRESS, String
+	 * FILED_NAME, String GAMES, String TIMES) { conn();
+	 * 
+	 * int cnt = 0; String sql = "select * from BOOKINGS where MEMBER_ID=?";
+	 * 
+	 * try { psmt = conn.prepareStatement(sql);
+	 * 
+	 * psmt.setString(1, MATCHING_DATE); psmt.setString(2, ADDRESS);
+	 * psmt.setString(3, FILED_NAME); psmt.setString(4, GAMES); psmt.setString(5,
+	 * TIMES);
+	 * 
+	 * cnt = psmt.executeUpdate();
+	 * 
+	 * } catch (SQLException e) {
+	 * 
+	 * e.printStackTrace(); } finally { close(); }
+	 * 
+	 * return cnt;
+	 * 
+	 * }
+	 */
+	
 
 	public ArrayList<BookingVO> select() {
 		ArrayList<BookingVO> al = new ArrayList<BookingVO>();

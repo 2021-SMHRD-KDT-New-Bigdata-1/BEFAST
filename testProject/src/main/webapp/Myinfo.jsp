@@ -78,7 +78,7 @@ body {
 	width: 100%;
 }
 
-.Card .My_info2 .title {
+.Card .My_info2 .title, .Matching_info {
 	color: #eee;
 	margin-bottom: 8px;
 	font-weight: 500;
@@ -184,6 +184,8 @@ button#next {
 					<p class="My_type"><i class="fas fa-users"></i><%=vo.getTEAM_NAME()%></p>
 					</div>
 				</div>
+					<p class="Matching_info">내 매칭현황</p>
+					<div class="line"></div>
 			</div>
 			
 				<div class="PreNext">
