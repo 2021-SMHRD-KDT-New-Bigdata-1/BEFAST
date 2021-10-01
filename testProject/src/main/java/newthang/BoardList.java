@@ -60,7 +60,6 @@ public class BoardList extends HttpServlet {
 		}
 		int size = list.size() + 1;
 		int total_page = size / 5 + (size % 5 == 0 ? 0 : 1);
-		System.out.println("ªÁ¿Ã¡Ó:"+size+"\n≈‰≈ª:"+total_page);
 		String page = request.getParameter("page");
 
 		if (page == null) {

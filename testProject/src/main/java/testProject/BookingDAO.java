@@ -109,7 +109,7 @@ public class BookingDAO {
 
 	public ArrayList<BookingVO> bookingsSearch(String choice) {
 		ArrayList<BookingVO> boo = new ArrayList<BookingVO>();
-		String sql = "select MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES";
+		String sql = "select MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES from BOOKINGS ";
 		String sqlnormal = "";
 		if (choice.equals("normal")) {
 			sqlnormal = "where GAMES like '%" + choice.trim() + "%'";

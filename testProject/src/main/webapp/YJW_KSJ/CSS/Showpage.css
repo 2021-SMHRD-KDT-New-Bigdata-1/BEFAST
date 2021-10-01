@@ -1,7 +1,5 @@
 @charset "EUC-KR";
-#result3{
-	color : white;
-}
+
 .columns {
    /* column-width:400px; */
    column-gap: 15px;
@@ -19,7 +17,6 @@
 }
 
 .columns figure img {
-<<<<<<< HEAD
    float: left;
    border: 2px solid #000;
    width: 300px;
@@ -27,15 +24,6 @@
    /* text-align: center; */
    /* line-height: 100px; */
    /* font-weight: bold; */
-=======
-	float: left;
-	border: 2px solid #000;
-	width: 300px;
-	/* height: 100px; */
-	/* text-align: center; */
-	/* line-height: 100px; */
-	/* font-weight: bold; */
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/BEFAST.git
 }
 
 .columns figure figcaption {
