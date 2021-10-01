@@ -13,22 +13,21 @@
 		<h2>
 			<b>풋살 가이드</b>
 		</h2>
-
+	</div>
 
 		<div id="guide">
-			<div id="position">
+			<div class="position">
 				<h3>기본 포지션</h3>
-			</div>
-		</div>
-		<div class="both">
-			<div class="left">
+			<div class="both">
+				<div class="left">
 
 				<div class="h5">1. 피보(PIVO)</div>
+				
 				<div class="h6">
 					가장 전방에 서는 선수로 공격적인 역할을 하며, 플레이 성향에 따라 ‘클래식 피보’와 ‘가짜 피보’로 나누어진다.<br>
 					클래식 피보는 피지컬이 좋고 공을 잘 소유하는 선수로 아라(ALA)와의 연계를 잘 한다. <br> ‘가짜
 					피보’는 축구에서 펄스 나인(False 9)과 유사하다. 피보 포지션이지만 그 자리에 국한되지 않은 플레이를 한다.
-				</div>
+				</div><br>
 
 				<div class="h5">2. 아라(ALA)</div>
 
@@ -50,10 +49,10 @@
 				<img src="resources/img/position.jpg">
 			</div>
 		</div>
-
+	</div>
 
 	</div>
-	</div>
+
 	<h3>풋살 기본기 영상</h3>
 	<div class="atag">
 		<a href="https://www.youtube.com/watch?v=5HnZZzs-GhU" class="b"> <img

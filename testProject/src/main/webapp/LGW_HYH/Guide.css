@@ -3,6 +3,7 @@
 body{
 	background-color: rgba(9,9,52);
 }
+
 .p{
 	width : 100px;
 	height : 100px;
@@ -17,7 +18,7 @@ body{
 	height : 100px;
 	width: 340px;
 	margin-right: 20px;
-	color: black;
+	color: #eee;
 }
 .b{
 	width : 340px;
@@ -25,10 +26,13 @@ body{
 	height: 215px;
 }
 .atag{
-	display : flex;
+	display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 	
 }
-.img{
+/* .img{
 	width : 340px;
 	height: 215px;
 }
@@ -36,7 +40,13 @@ body{
 	width: 50%;
 	margin-right: 20%;
 	height:auto;
+} */
+
+.img1 img{
+	width: 610px;
+    height: 589px;
 }
+
 h2{
 	color:rgba(31,209,69);
 	font-size :40px;
@@ -45,34 +55,40 @@ h2{
 }
 h3{
 	font-size:30px;
+	color:rgba(31,209,69);
+	text-align:center;
 }
 .h5{
 	font-size:25px;
 	/* width:30%; */
 	height: 7%;
 	font-weight:bold;
-	color:red;
+	color:rgba(31,209,69);
 }
 .h6{
 	font-size:20px;
 	/* width:50%; */
 	height:auto;
+	color:#eee;
 }
 .h7{
 	font-size:20px;
 	/* width:50%; */
 	height:100px;
+	color:#eee;
 }
 .h8{
 	font-size:20px;
 	/* width:50%; */
 	height:100px;
+	color:#eee;
 }
 .h9{
 	font-size:20px;
 	height:40px;
 	/* width:50%; */
 	height:auto;
+	color:#eee;
 }
 .both{
 	display: flex;
@@ -83,3 +99,10 @@ h3{
 	width: 58%;
 	margin-right: 20px;
 }
+#guide{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	text-align:center;
+}
+
