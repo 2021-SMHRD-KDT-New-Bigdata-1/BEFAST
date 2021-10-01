@@ -52,11 +52,11 @@ public class BookingDAO {
 	}
 
 	// 예약하기
-	public int BOOKINGS(String MATCHING_DATE, String ADDRESS, String FILED_NAME, String GAMES, String TIMES) {
+	public int BOOKINGS(String MATCHING_DATE, String ADDRESS, String FILED_NAME, String GAMES, String TIMES, String TEAM_NAME,String MEMBER_ID) {
 		conn();
 
 		int cnt = 0;
-		String sql = "insert into BOOKINGS values(?,?,?,?,?)";
+		String sql = "insert into BOOKINGS values(?,?,?,?,?,?,?)";
 
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -66,6 +66,8 @@ public class BookingDAO {
 			psmt.setString(3, FILED_NAME);
 			psmt.setString(4, GAMES);
 			psmt.setString(5, TIMES);
+			psmt.setString(6, TEAM_NAME);
+			psmt.setString(7, MEMBER_ID);
 
 			cnt = psmt.executeUpdate();
 
@@ -78,30 +80,46 @@ public class BookingDAO {
 
 		return cnt;
 	}
+
 	
-	/*
-	 * // 내 예약정보 public int My_BOOKING(String MATCHING_DATE, String ADDRESS, String
-	 * FILED_NAME, String GAMES, String TIMES) { conn();
-	 * 
-	 * int cnt = 0; String sql = "select * from BOOKINGS where MEMBER_ID=?";
-	 * 
-	 * try { psmt = conn.prepareStatement(sql);
-	 * 
-	 * psmt.setString(1, MATCHING_DATE); psmt.setString(2, ADDRESS);
-	 * psmt.setString(3, FILED_NAME); psmt.setString(4, GAMES); psmt.setString(5,
-	 * TIMES);
-	 * 
-	 * cnt = psmt.executeUpdate();
-	 * 
-	 * } catch (SQLException e) {
-	 * 
-	 * e.printStackTrace(); } finally { close(); }
-	 * 
-	 * return cnt;
-	 * 
-	 * }
-	 */
+	// 내 예약정보 
+	public BookingVO My_booking() { 
 	
+		BookingVO Bvo = null;
+		conn();
+	  
+		
+	  String sql = "select * from BOOKINGS WHERE MEBER_ID=?";
+	  
+		  try { 
+			  psmt = conn.prepareStatement(sql);
+			   
+
+			  rs = psmt.executeQuery();
+			  
+	           if(rs.next()) {        
+		            
+					String MATCHING_DATE = rs.getString(1);
+					String ADDRESS = rs.getString(2);
+					String FILED_NAME = rs.getString(3);
+					String GAMES = rs.getString(4);
+					String TIMES = rs.getString(5);
+					
+					
+					Bvo = new BookingVO(MATCHING_DATE,ADDRESS,FILED_NAME,GAMES,TIMES);
+	      }
+		  
+		  } catch (SQLException e) {
+		  
+			  e.printStackTrace(); 
+		  
+		  } finally {
+			  close(); 
+		  }
+		  return Bvo;
+		  
+		  }
+	 
 
 	public ArrayList<BookingVO> select() {
 		ArrayList<BookingVO> al = new ArrayList<BookingVO>();

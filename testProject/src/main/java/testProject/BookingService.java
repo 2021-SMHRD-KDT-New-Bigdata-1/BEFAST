@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 
@@ -28,9 +29,16 @@ public class BookingService extends HttpServlet {
 		String GAMES = request.getParameter("GAMES");
 		String TIMES = request.getParameter("TIMES");
 		
-		BookingDAO dao = new BookingDAO();
 		
-		int cnt = dao.BOOKINGS(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES);
+		
+		
+		BookingDAO dao = new BookingDAO();
+		HttpSession session   = request.getSession();
+		memberVO vo = (memberVO)session.getAttribute("vo");
+		String TEAM_NAME = vo.getTEAM_NAME();
+		
+		int cnt = dao.BOOKINGS(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES, TEAM_NAME);
+		
 		
 		if (cnt>0) {
 			response.sendRedirect("Main.jsp");
