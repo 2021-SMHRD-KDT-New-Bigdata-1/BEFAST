@@ -148,7 +148,7 @@ public class BookingDAO {
 			conn();
 
 			psmt = conn.prepareStatement(sql);
-			// SQL 실행 후 결과값 받기
+			// SQL 실행 후 결과값 받
 			rs = psmt.executeQuery();
 			// 결과값 ArrayList에 첨
 			while (rs.next()) {
