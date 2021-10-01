@@ -1,3 +1,4 @@
+<%@page import="jdk.internal.misc.FileSystemOption"%>
 <%@page import="testProject.memberDAO"%>
 <%@page import="testProject.memberVO"%>
 <%@page import="newthang.TeamVO"%>
@@ -21,7 +22,7 @@
 	String team_name = request.getParameter("team_name");
 	TeamDAO dao = new TeamDAO();
 	TeamVO vo = dao.TeamDetail(team_name);
-	 
+	
 	%>
 	<div id="header">
 		<div class="team_name">

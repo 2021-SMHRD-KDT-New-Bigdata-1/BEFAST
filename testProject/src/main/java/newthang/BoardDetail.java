@@ -23,12 +23,14 @@ public class BoardDetail extends HttpServlet {
 		response.setContentType("text/html;charset=EUC-KR");
 		// HTML을 브라우저로 전송 시작
 		PrintWriter out = response.getWriter();
-
 		// 번호 받는다 ?no=10
 		String write_number = request.getParameter("write_number");  
 		BoardDAO dao = new BoardDAO(); 
-	
 		BoardVO vo = dao.boardDetail(Integer.parseInt(write_number));  
+		TeamDAO dao2 = new TeamDAO();
+		
+		String Team_name = vo.getTeam_name();
+		TeamVO vo2 = dao2.Teamlogo(Team_name);
 		
 		
 
@@ -58,8 +60,8 @@ public class BoardDetail extends HttpServlet {
 		//ㅇdao  기능 만들으셔야 해요 지금은 전부다 가져와서 al 에 담아주는데 현재 페이지에서는
 		//그럴 필요가 없기 때문에 dao 기능 호출할때 현재 로그인한 사람의 팀정보만 가지고 오는 거를 따로 만드셔야 해요.. 네 한 번 해보게
 		//습니다....감사합니다
-		System.out.println("img :"+vo.getTeam_logo());
-		out.println("<img src="+vo.getTeam_logo()+">");  //여긴가요?넵
+		
+		out.println("<img src='LGW_HYH/"+vo2.getTeam_logo()+"'>");  //여긴가요?넵
 		out.println("<div class= tjfaud>");
 		out.println("<p id=name>" + vo.getTeam_name() + "</p>");
 		out.println("<br>");
@@ -68,11 +70,11 @@ public class BoardDetail extends HttpServlet {
 		out.println("</div>");
 		out.println("<div class= profile2 >");
 		if (vo.getField_code() == 1) {
-			out.println("<p class=text-center1>" + vo.getField_code() + "</p>");
+			out.println("<div class=text-center1 width=10%>" + "랭크전" + "</div>");
 		} else if (vo.getField_code() == 2) {
-			out.println("<div class=text-center2 width=10%>" + vo.getField_code() + "</div>");
+			out.println("<div class=text-center2 width=10%>" + "일반전" + "</div>");
 		} else {
-			out.println("<div class=text-center3 width=60px>" + vo.getField_code() + "</div>");
+			out.println("<div class=text-center3 width=10%>" + "친선전" + "</div>");
 		}
 		out.println("<p class=member>" + vo.getField_member() + "명 </p>");
 
