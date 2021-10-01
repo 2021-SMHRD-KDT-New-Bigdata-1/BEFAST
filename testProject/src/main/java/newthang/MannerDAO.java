@@ -55,14 +55,16 @@ public class MannerDAO {
 		try {
 			// ¿¬°á
 			getConnection();
-			String sql = "INSERT INTO MATCHING_RESULTS(m_result,time_result,fair_plays,languages,comments) VALUES (?,?,?,?,?)";
+			String sql = "INSERT INTO MATCHING_RESULTS(m_result,time_result,fair_plays,languages,comments,team_name,total_score) VALUES (?,?,?,?,?,null,?)";
 			ps = conn.prepareStatement(sql);
-			System.out.println(vo.getM_result());
-			ps.setString(1, vo.getM_result());
-			ps.setString(2, vo.getTime_result());
-			ps.setString(3, vo.getFair_plays());
-			ps.setString(4, vo.getLanguages());
+			System.out.println(vo.getTotal_score());
+			ps.setInt(1, vo.getM_result());
+			ps.setInt(2, vo.getTime_result());
+			ps.setInt(3, vo.getFair_plays());
+			ps.setInt(4, vo.getLanguages());
 			ps.setString(5, vo.getComments());
+			//ps.setString(6, vo.getTeam_name());
+			ps.setInt(6, vo.getTotal_score());
 
 			ps.executeUpdate(); // auto COMMIT
 		} catch (Exception ex) {

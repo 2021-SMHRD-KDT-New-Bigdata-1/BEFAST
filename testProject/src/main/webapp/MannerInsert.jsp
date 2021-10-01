@@ -15,10 +15,23 @@
 	} catch (Exception ex) {
 	}
 	String m_result = request.getParameter("m_result");
+	int m_result1 =0;
 	//String result = request.getParameter("result");
-	String result = request.getParameter("rating");
-	String result1 = request.getParameter("rating2");
-	String result2 = request.getParameter("rating3");
+	if (m_result.equals("패배")) {
+		m_result = "10";
+		m_result1 = Integer.parseInt(m_result);
+		m_result1 = -m_result1;
+		System.out.print(m_result);
+	} else if (m_result.equals("승리")) {
+		m_result = "10";
+		m_result1 = Integer.parseInt(m_result);
+	} else {
+		m_result = "0";
+		m_result1 = Integer.parseInt(m_result);
+	}
+	int result = Integer.parseInt(request.getParameter("rating"));
+	int result1 = Integer.parseInt(request.getParameter("rating2"));
+	int result2 = Integer.parseInt(request.getParameter("rating3"));
 	String comments = request.getParameter("comments");
 
 	System.out.println("결과 : " + m_result);
@@ -26,13 +39,15 @@
 	System.out.println("결과2 : " + result1);
 	System.out.println("결과3 : " + result2);
 	System.out.println("결과4 : " + comments);
-	
+	System.out.println((result + result1 + result2) / 3);
+
 	MannerVO vo = new MannerVO();
-	vo.setM_result(m_result);
+	vo.setM_result(m_result1);
 	vo.setTime_result(result);
 	vo.setFair_plays(result1);
 	vo.setLanguages(result2);
 	vo.setComments(comments);
+	vo.setTotal_score((result + result1 + result2) / 3);
 
 	MannerDAO dao = new MannerDAO();
 	dao.MannerInsert(vo);

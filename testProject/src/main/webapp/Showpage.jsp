@@ -60,6 +60,7 @@
 									page1 = "1";
 								}
 								int cur_page = Integer.parseInt(page1);
+								System.out.println(page1);
 								int prev_page = cur_page - 1;
 								int next_page = cur_page + 1;
 
@@ -85,8 +86,6 @@
 									next_page = total_page;
 								}
 								
-								System.out.println(prev_page);
-								System.out.println(next_page);
 								out.println("<div class=div1>");
 								out.println("<a href=?page1=" + prev_page + " class=\"btnbtn-smbtn-primary\">ÀÌÀü</a>");
 								out.println((prev_page) + " page / " + (next_page) + " pages");
