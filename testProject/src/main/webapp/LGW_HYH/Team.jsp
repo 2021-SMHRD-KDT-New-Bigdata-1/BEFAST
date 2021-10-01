@@ -1,3 +1,5 @@
+
+<%@page import="testProject.memberVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -8,6 +10,12 @@
 <link rel="stylesheet" href="Team.css">
 </head>
 <body>
+<% memberVO vo = (memberVO) session.getAttribute("vo");
+ 
+	
+	String member_id = vo.getMEMBER_ID();
+	String team_name = vo.getTEAM_NAME();    
+	%>
 	<div id="header">
 		<h2>
 			<b>팀 생성 페이지</b>
@@ -105,7 +113,14 @@
 						src="resources/img/logo10.jpg" class="img">
 				</div>
 				<div class="button_create">
+				
+				<%System.out.println(team_name); 
+				if(team_name==null){%>
 					<input type="submit" id="create" class="create" value="팀 생성하기">
+					<%} 
+				else{%>
+					<input type="text" placeholder="이미 가입된 팀이 존재합니다.">
+				<% }%>
 				</div>
 		</form>
 

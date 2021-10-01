@@ -27,7 +27,6 @@ public class TeamJoin extends HttpServlet {
 		// String team_name = request.getParameter("team_name");
 
 		TeamJoinDAO dao = new TeamJoinDAO();
-
 		int cnt = dao.TeamJoin(teamname, member_id);
 
 		if (cnt > 0) {
@@ -39,5 +38,6 @@ public class TeamJoin extends HttpServlet {
 			response.sendRedirect("Main.jsp");
 		}
 	}
+		
 
 }

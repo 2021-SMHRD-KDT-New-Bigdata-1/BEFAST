@@ -6,6 +6,8 @@ public class BookingVO {
 	private String FILED_NAME;
 	private String GAMES;
 	private String TIMES;
+	
+	
 
 
 	

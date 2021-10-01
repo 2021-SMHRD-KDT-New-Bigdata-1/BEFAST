@@ -14,6 +14,10 @@
 </head>
 <body>
 	<%
+
+	memberVO vo2 = (memberVO) session.getAttribute("vo");
+	String team_name2 = vo2.getTEAM_NAME(); 
+	
 	String team_name = request.getParameter("team_name");
 	TeamDAO dao = new TeamDAO();
 	TeamVO vo = dao.TeamDetail(team_name);
@@ -70,7 +74,14 @@
 			</table>
 		</div>
 		
-		<a href="../TeamJoin?teamname=<%=vo.getTeam_name()%>">가입신청</a>
+		<%if(team_name2==null){%>
+					<a href="../TeamJoin?teamname=<%=vo.getTeam_name()%>">가입신청</a>
+					<%} 
+				else{%>
+					<a href="../Main.jsp">목록으로</a>
+				<% }%>
+		
+	
 		 		
 	</div>
 
