@@ -87,7 +87,7 @@ public class BookingDAO {
       conn();
      
       
-     String sql = "select * from BOOKINGS WHERE MEMBER_ID=?";
+     String sql = "select * from (select*from BOOKINGS order by MATCHING_DATE DESC) where MEMBER_ID=?";
      
         try { 
            psmt = conn.prepareStatement(sql);
@@ -102,9 +102,10 @@ public class BookingDAO {
                String FILED_NAME = rs.getString(3);
                String GAMES = rs.getString(4);
                String TIMES = rs.getString(5);
+               String TEAM_NAME = rs.getString(6);
                
                
-               Bvo = new BookingVO(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES);
+               Bvo = new BookingVO(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES, TEAM_NAME, MEMBER_ID);
          }
         
         } catch (SQLException e) {
@@ -117,6 +118,36 @@ public class BookingDAO {
         return Bvo;
         
         }
+   
+   // 예약 업데이트
+   public int Booking_update(String MATCHING_DATE, String ADDRESS, String FILED_NAME, String GAMES, String TIMES, String TEAM_NAME, String MEMBER_ID) {
+	   int cnt = 0;
+	   
+	   try {
+		    conn();
+		    
+			String sql = "update BOOKINGS set MATCHING_DATE = ? , ADDRESS = ? , FILED_NAME = ?, GAMES = ?, TIMES = ?, TEAM_NAME =? where MEMBER_ID = ?";
+	
+			PreparedStatement psmt = conn.prepareStatement(sql);
+			psmt.setString(1, MATCHING_DATE);
+			psmt.setString(2, ADDRESS);
+			psmt.setString(3, FILED_NAME);
+			psmt.setString(4, GAMES);
+			psmt.setString(5, TIMES);
+			psmt.setString(6, MEMBER_ID);
+
+			cnt = psmt.executeUpdate();
+       
+	   		}catch(Exception e) {
+	   			e.printStackTrace();
+	   		}finally {
+	   			close();
+	   		}
+	   
+	   		return cnt;
+   		}
+	   
+   
     
 
    public ArrayList<BookingVO> select() {
@@ -134,7 +165,11 @@ public class BookingDAO {
             String FILED_NAME = rs.getString(3);
             String GAMES = rs.getString(4);
             String TIMES = rs.getString(5);
-            BookingVO vo = new BookingVO(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES);
+            String TEAM_NAME = rs.getString(6);
+            String MEMBER_ID = rs.getString(7);
+            
+            
+            BookingVO vo = new BookingVO(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES, TEAM_NAME, MEMBER_ID);
             al.add(vo);
 
          }
@@ -173,7 +208,10 @@ public class BookingDAO {
             String FILED_NAME = rs.getString(3);
             String GAMES = rs.getString(4);
             String TIMES = rs.getString(5);
-            BookingVO vo = new BookingVO(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES);
+            
+            String TEAM_NAME = rs.getString(6);
+            String MEMBER_ID = rs.getString(7);
+            BookingVO vo = new BookingVO(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES, TEAM_NAME, MEMBER_ID);
             boo.add(vo);
          }
          rs.close();

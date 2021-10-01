@@ -13,6 +13,26 @@
 <title>Document</title>
 <link rel="stylesheet" href="YJW_KSJ/CSS/Showpage.css">
 </head>
+<style>
+
+input[type="text"] {
+	/* cursor: pointer; */
+    background-color: #eee;
+    padding: 5px;
+    position: relative;
+    text-align: left;
+    font-size: 18px;
+    height: 50px;
+    justify-content: center;
+    border: 0.25rem solid rgba(31,209,69);
+    /* background-color: rgba(31,209,69); */
+    border-radius: 5px;
+    align-items: center;
+    transform: 0.
+}
+
+
+</style>
 <body>
 	<%
 	BookingDAO dao = new BookingDAO();
@@ -41,7 +61,14 @@
 									<td>경기장</td>
 									<td>경기시간</td>
 									<td>경기방식</td>
+									<td>팀명</td>
+									
 								</tr>
+								<tr>
+								
+								
+								</tr>
+								
 								<%
 								if (request.getParameter("choice") == null) {
 									al = dao.select();
@@ -65,15 +92,33 @@
 
 								
 								for (int i = 3 * (cur_page - 1); i < cur_page * 3; i++) {
-									if (i < al.size()) {
-										out.print("<tr>");
+									if (i < al.size()) { %>
+<%-- 									 <form action="MatchService">
+									<table>
+										<tr>
+											<td><input type="hidden"  name="MATCHING_DATE" value="<%=al.get(i).getMATCHING_DATE()%>"></td>
+											<td><input type="hidden"  name="FILED_NAME" value="<%=al.get(i).getFILED_NAME()%>"><%=al.get(i).getFILED_NAME()%></td>
+											<td><input type="hidden"  name="TIMES" value="<%=al.get(i).getTIMES()%>"><%=al.get(i).getTIMES()%></td>
+											<td><input type="hidden"  name="GAMES" value="<%=al.get(i).getGAMES()%>"><%=al.get(i).getGAMES()%></td>
+											<td><input type="hidden"  name="TEAM_NAME" value="<%=al.get(i).getTEAM_NAME()%>"><%=al.get(i).getTEAM_NAME()%></td>
+											
+											<input type="submit" value="도전">
+										</tr>
+									</table>
+									</form> --%>
+									
+										
+<!-- 										out.print("<tr>");
 										out.print("<td>" + al.get(i).getMATCHING_DATE() + "</td>");
 										out.print("<td>" + al.get(i).getADDRESS() + "</td>");
 										out.print("<td>" + al.get(i).getFILED_NAME() + "</td>");
 										out.print("<td>" + al.get(i).getTIMES() + "</td>");
 										out.print("<td>" + al.get(i).getGAMES() + "</td>");
-										out.print("</tr>");
-									} else {
+										out.print("<td>" + al.get(i).getTEAM_NAME() + "</td>");
+										out.print("</tr>"); -->
+										
+										
+									<% } else {
 										break;
 									}
 								}
