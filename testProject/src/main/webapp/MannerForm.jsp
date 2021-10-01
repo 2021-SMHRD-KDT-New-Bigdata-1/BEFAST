@@ -128,7 +128,7 @@
 		  let result2 = '';
 		  let result3 = '';
 		  selectedEls.forEach((el) => {result += el.value + ' ';});
-		  selectedEls1.forEach((el) => {result1 += el.value + ' ';});
+		 selectedEls1.forEach((el) => {result1 += el.value + ' ';});
 		  selectedEls2.forEach((el) => {result2 += el.value + ' ';});
 		  selectedEls3.forEach((el) => {result3 += el.value + ' ';});
 		  

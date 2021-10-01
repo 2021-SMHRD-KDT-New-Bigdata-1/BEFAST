@@ -125,22 +125,6 @@ public class BoardList extends HttpServlet {
 
 		out.println("<td class=text-right>");
 
-		//일단 페이징은 동작하고 있는데
-		// 요부분에 조건이 안걸려 있어서 무조건 새로운 페이지가 생기는거 같네요
-		// 그럼 어떻게 해야 하나요?? 지금보시면 prev_page랑 next_page는
-		// 조정이 안된값들이에요
-		// 위에서 조건검사하실때 얘들도 같이 조정을 해주시거나
-		// 여기에 if조건 거셔서 next가 total넘어갔을때 따로 조건을 빼주시거나
-		// 해주셔야할거 같네요 그러면 위에 있는 코드 복사해서 가져와도 되나요?
-		// 여기에 맞춰서 바꿔주셔야겠죠? 여기에 맞출려면 저 감이 안 잡혀서 그러는데
-		// 혹시 이렇게 하고, 동작하는 거 봐서 고쳐야 하나유,,?
-		// 지금 페이지가 계속 늘어나는 이유가 nex_page랑 prev_page가 조절이 안되서에요
-		// next_page는 page 요청값에 따라서 계속 늘어나요
-		// page=3일경우 next_page는 4가 되는데
-		// 여기에서 그 조절없이 next_page는 4가 되고 prev페이지는 2가되고
-		// 요거 조절을 해주시거나 아니면 아래 코드를 cur_page기준으로 다시 짜주시거나
-		// 대충 2가지 방법이 있는거 같네요
-		// 알겠습니다! 그 선생님 게시글 거꾸로 보이는건 get.
 		if (prev_page <= 0) {
 			prev_page = 1;
 		} else if (cur_page >= total_page) {
