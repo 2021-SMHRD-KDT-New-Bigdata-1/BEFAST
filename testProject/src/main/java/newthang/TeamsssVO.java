@@ -5,6 +5,9 @@ public class TeamsssVO {
 	private String team_name;
 	private int mannerscores;
 	private int winner_point; 
+	private int result_1; 
+	private int result_2; 
+	private int result_3; 
 	private String team_logo;
 	private String team_trophy;
 	private String team_info;
@@ -33,6 +36,24 @@ public class TeamsssVO {
 	public void setWinner_point(int winner_point) {
 		this.winner_point = winner_point;
 	}
+	public int getResult_1() {
+		return result_1;
+	}
+	public void setResult_1(int result_1) {
+		this.result_1 = result_1;
+	}
+	public int getResult_2() {
+		return result_2;
+	}
+	public void setResult_2(int result_2) {
+		this.result_2 = result_2;
+	}
+	public int getResult_3() {
+		return result_3;
+	}
+	public void setResult_3(int result_3) {
+		this.result_3 = result_3;
+	}
 	public String getTeam_logo() {
 		return team_logo;
 	}
@@ -57,6 +78,8 @@ public class TeamsssVO {
 	public void setTeamleader(String teamleader) {
 		this.teamleader = teamleader;
 	}
+	
+	
 
 	
 }

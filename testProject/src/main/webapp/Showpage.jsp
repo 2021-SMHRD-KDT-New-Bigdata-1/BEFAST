@@ -52,14 +52,12 @@
 
                         int size = al.size() + 1;
                         int total_page = size / 3 + (size % 3 == 0 ? 0 : 1);
-                        String page1 = request.getParameter("page1");
-         
-                        System.out.println(page1);
-                        
-                        if (page1 == null) {
-                           page1 = "1";
-                        }
-                        int cur_page = Integer.parseInt(page1);
+                        String page1 = request.getParameter("page");
+
+                		if (page1 == null) {
+                			page1 = "1";
+                		}
+                		int cur_page = Integer.parseInt(page1);
                         System.out.println(page1);
                         int prev_page = cur_page - 1;
                         int next_page = cur_page + 1;

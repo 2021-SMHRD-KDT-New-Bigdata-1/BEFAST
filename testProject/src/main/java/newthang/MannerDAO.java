@@ -54,10 +54,11 @@ public class MannerDAO {
 	public ArrayList<MannerVO> MannerListData() {
 		ArrayList<MannerVO> list = new ArrayList<MannerVO>();
 		try {
+			
 			// 연결
 			getConnection();
-			String sql = "SELECT team_name,total_score,m_result,result_1,result_2,result_3 from MATCHING_RESULTS "
-					+ "ORDER BY total_score desc"; // 단점: 속도 늦음→INDEX
+			String sql = "SELECT team_name,total_score,m_result,result_1,result_2,result_3 "
+					+ "from MATCHING_RESULTS ORDER BY total_score desc"; // 단점: 속도 늦음→INDEX
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while (rs.next()) {

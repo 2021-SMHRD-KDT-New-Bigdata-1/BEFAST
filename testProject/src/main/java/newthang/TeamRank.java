@@ -55,8 +55,10 @@ public class TeamRank extends HttpServlet {
 		// Ãâ·Â
 		MannerDAO dao = new MannerDAO();
 		ArrayList<MannerVO> list = dao.MannerListData();
-		System.out.print(list.size());
-
+		TeamsssVO vo1;
+		
+		
+		
 		for (int i = 0; i < list.size(); i++) {
 			if (i < 10) {
 				MannerVO vo = list.get(i);
