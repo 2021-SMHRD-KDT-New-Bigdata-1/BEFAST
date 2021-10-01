@@ -129,7 +129,7 @@ public class BoardDAO {
 			vo.setMatching_time(rs.getString(8));
 			vo.setWrite_time(rs.getDate(9));
 			vo.setHit(rs.getInt(10));
-			vo.setTeam_logo(rs.getString(10));
+			vo.setTeam_logo(rs.getString(11));
 			rs.close();
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
