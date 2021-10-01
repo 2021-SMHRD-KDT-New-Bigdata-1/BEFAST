@@ -14,6 +14,13 @@ public class BoardVO {
     private String write_pw; //비밀번호
     private Date write_time; //글쓴시간
     private int hit; //조회수
+    public String getTeam_logo() {
+		return team_logo;
+	}
+	public void setTeam_logo(String team_logo) {
+		this.team_logo = team_logo;
+	}
+	private String team_logo;
 	public int getWrite_number() {
 		return write_number;
 	}
