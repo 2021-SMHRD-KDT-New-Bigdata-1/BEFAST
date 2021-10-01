@@ -108,7 +108,7 @@
 				코멘트<br>
 				</p>
 				<textarea cols="50" rows="5" name="comments" placeholder="의견을 적어주세요"></textarea>
-				<input type="submit" value='등록하기' onclick='getCheckboxValue1()'>
+				<input type="submit" value='등록하기'>
 	</form>
 	<script>
 	function getCheckboxValue()  {

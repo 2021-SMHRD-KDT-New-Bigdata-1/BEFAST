@@ -1,5 +1,7 @@
 @charset "EUC-KR";
-
+#result3{
+	color : white;
+}
 .columns {
    /* column-width:400px; */
    column-gap: 15px;

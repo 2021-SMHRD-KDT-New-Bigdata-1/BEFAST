@@ -70,7 +70,7 @@
 
 				</div>
 				<div id='result3'>¼±ÅÃ¾ÈÇÔ</div>
-				<form action="Showpage.jsp\">
+				<form method="get" action="Showpage.jsp">
 					<div class="columns">
 						<figure>
 							<!-- ±âÁ¸ : <img src="img/·©Å©°æ±â.jpg"> -->
@@ -85,7 +85,7 @@
 
 						<figure>
 							<!-- <img src="img/·©Å©°æ±â.jpg"> -->
-							<input class="btn" value="friend" id="btn" type="submit"
+							<button class="btn" value="Ä£¼±" id="btn" type="submit"
 								name="choice" onclick='hidden_change("Ä£¼±")'>
 								<input type="hidden" name="choice" value="¼±ÅÃ¾ÈÇÔ" class="result"
 									id="hidden_input"> <img class="btn-img"
@@ -96,7 +96,7 @@
 
 						<figure>
 							<!-- <img src="img/·©Å©°æ±â.jpg"> -->
-							<input class="btn" value="rank" id="btn" type="submit"
+							<button class="btn" value="·©Å©" id="btn" type="submit"
 								name="choice" onclick='hidden_change("·©Å©")'>
 								<input type="hidden" name="choice" value="¼±ÅÃ¾ÈÇÔ" class="result"
 									id="hidden_input"> <img class="btn-img"

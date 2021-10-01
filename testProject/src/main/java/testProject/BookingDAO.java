@@ -135,11 +135,11 @@ public class BookingDAO {
 		ArrayList<BookingVO> boo = new ArrayList<BookingVO>();
 		String sql = "select MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES from BOOKINGS ";
 		String sqlnormal = "";
-		if (choice.equals("normal")) {
+		if (choice.equals("일반")) {
 			sqlnormal = "where GAMES like '%" + choice.trim() + "%'";
-		} else if (choice.equals("friend")) {
+		} else if (choice.equals("친선")) {
 			sqlnormal = "where GAMES like '%" + choice.trim() + "%'";
-		} else if (choice.equals("rank")) {
+		} else if (choice.equals("랭크")) {
 			sqlnormal = "where GAMES like '%" + choice.trim() + "%'";
 		}
 		sql = sql + sqlnormal;
