@@ -62,7 +62,7 @@ input[type="text"] {
 									<td>경기장</td>
 									<td>경기시간</td>
 									<td>경기방식</td>
-									<td>팀명</td>
+									<td>명</td>
 									
 								</tr>
 								<tr>
