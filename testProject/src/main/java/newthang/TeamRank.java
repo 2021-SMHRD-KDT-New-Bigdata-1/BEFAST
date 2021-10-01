@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/TeamList")
-public class TeamList extends HttpServlet {
+@WebServlet("/TeamRank")
+public class TeamRank extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
@@ -47,12 +47,10 @@ public class TeamList extends HttpServlet {
 
 		out.println("<table class=\"table table-hover\">");
 		out.println("<tr class=info>"); // »ö»ó »¡°£»ö:danger(table-hover)
-		out.println("<th class=text-center width=10%>¹øÈ£</th>");
-		out.println("<th class=text-center width=10%>ÆÀ¸í</th>");
-		out.println("<th class=text-center width=10%>¿¬°íÁö</th>");
-		out.println("<th class=text-center width=10%>ÆÀ °æÀï·Â</th>");
-		out.println("<th class=text-center width=10%>ÆÀ À¯´ÏÆû</th>");
-		out.println("<th class=text-center width=10%>ÆÀ ¸â¹ö</th>");
+		out.println("<th class=text-center width=25%>¼øÀ§</th>");
+		out.println("<th class=text-center width=25%>ÆÀ¸í</th>");
+		out.println("<th class=text-center width=25%>¸Å³ÊÁ¡¼ö</th>");
+		out.println("<th class=text-center width=25%>ÀüÀû/½ÂÁ¡</th>");
 		out.println("</tr>");
 		// Ãâ·Â
 		TeamDAO dao = new TeamDAO();

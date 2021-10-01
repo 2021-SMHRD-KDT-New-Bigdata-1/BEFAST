@@ -1,0 +1,29 @@
+@charset "EUC-KR";
+
+body{
+	background-color:rgba(9,9,52);
+}
+
+.h2 {
+	color: rgb(31, 209,69);
+	font-family: Arial Black;
+	line-height: 100px;
+    font-size: 36px;
+	margin-top: 0px;
+	background-color:rgba(9,9,52);
+}
+
+tr td{
+	text-align:center;
+	color: #eee;
+}
+.input-sm {
+    color: black;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    line-height: 2.0;
+ 
+}
+.table {
+    margin-bottom: 0px;
+}

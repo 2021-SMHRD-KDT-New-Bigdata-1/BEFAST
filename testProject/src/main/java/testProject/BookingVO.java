@@ -8,6 +8,10 @@ public class BookingVO {
 	private String TIMES;
 	
 	
+
+
+	
+	
 	public BookingVO(String MATCHING_DATE, String ADDRESS, String FILED_NAME, String GAMES, String TIMES) {
 		super();
 		this.MATCHING_DATE = MATCHING_DATE;
@@ -16,6 +20,8 @@ public class BookingVO {
 		this.GAMES = GAMES;
 		this.TIMES = TIMES;
 	}
+
+	
 
 
 	public String getMATCHING_DATE() {

@@ -9,7 +9,7 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
-    <!-- 폰트트 -->  
+    <!-- 폰트 -->  
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,6 +49,7 @@
    BookingDAO dao = new BookingDAO();
    memberVO vo = (memberVO) session.getAttribute("vo");
    ArrayList<BookingVO> al = dao.select();
+   
    %>
    
        <!-- 순위 -->
@@ -57,7 +58,7 @@
         <div class="navbar">
             <div class="navContainer">
                 <div class="newLogo">
-                    <a href="#">
+                    <a href="Main.jsp">
                         <img src="YJW_KSJ/resources/99. img/logo1.png">
                     </a>
                 </div>

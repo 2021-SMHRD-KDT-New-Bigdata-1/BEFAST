@@ -1,3 +1,5 @@
+
+<%@page import="testProject.memberVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -8,6 +10,12 @@
 <link rel="stylesheet" href="Team.css">
 </head>
 <body>
+<% memberVO vo = (memberVO) session.getAttribute("vo");
+ 
+	
+	String member_id = vo.getMEMBER_ID();
+	String team_name = vo.getTEAM_NAME();    
+	%>
 	<div id="header">
 		<h2>
 			<b>팀 생성 페이지</b>
@@ -57,7 +65,7 @@
 							<div class="join_form">
 								<h3 class="join_group">
 									<label for="teamlevel">팀 경쟁력</label><br> <small>랭킹전
-										결과에 따라 변경될 수 있습니다.</small>
+										결과에 따라 변경될 수 있습니다!!</small>
 								</h3>
 								<span class="input_box_teamlevel"> <select id="level"
 									name="level" class="input_level">
@@ -78,10 +86,7 @@
 									<label for="teamintrodution">팀 소개</label>
 								</h3>
 								<div class="input_box_teamintro">
-									<textarea cols="33" rows="5"
-										placeholder="간단한 팀 소개를 해주세요! 나의 팀 페이지에서 수정할 수 있습니다."
-										name="intro">
-                  </textarea>
+									<textarea placeholder="간단한 팀 소개를 해주세요!"></textarea>
 								</div>
 							</div>
 						</div>
@@ -89,26 +94,33 @@
 				</div>
 				<div class="last">
 					<input type="radio" name="img" value="resources/img/logo1.jpg"><img
-						src="resources/img/logo1.jpg" class="img"> <input
+						src="resources/img/logo1.jpg" class="img"><input
 						type="radio" name="img" value="resources/img/logo3.jpg"><img
-						src="resources/img/logo3.jpg" class="img"> <input
+						src="resources/img/logo3.jpg" class="img"><input
 						type="radio" name="img" value="resources/img/logo4.jpg"><img
-						src="resources/img/logo4.jpg" class="img"><br> <input
+						src="resources/img/logo4.jpg" class="img"><br><input
 						type="radio" name="img" value="resources/img/logo5.jpg"><img
-						src="resources/img/logo5.jpg" class="img"> <input
+						src="resources/img/logo5.jpg" class="img"><input
 						type="radio" name="img" value="resources/img/logo6.jpg"><img
-						src="resources/img/logo6.jpg" class="img"> <input
+						src="resources/img/logo6.jpg" class="img"><input
 						type="radio" name="img" value="resources/img/logo7.jpg"><img
-						src="resources/img/logo7.jpg" class="img"><br> <input
+						src="resources/img/logo7.jpg" class="img"><br><input
 						type="radio" name="img" value="resources/img/logo8.jpg"><img
-						src="resources/img/logo8.jpg" class="img"> <input
+						src="resources/img/logo8.jpg" class="img"><input
 						type="radio" name="img" value="resources/img/logo9.jpg"><img
-						src="resources/img/logo9.jpg" class="img"> <input
+						src="resources/img/logo9.jpg" class="img"><input
 						type="radio" name="img" value="resources/img/logo10.jpg"><img
 						src="resources/img/logo10.jpg" class="img">
 				</div>
 				<div class="button_create">
+				
+				<%System.out.println(team_name); 
+				if(team_name==null){%>
 					<input type="submit" id="create" class="create" value="팀 생성하기">
+					<%} 
+				else{%>
+					<input type="text" placeholder="이미 가입된 팀이 존재합니다.">
+				<% }%>
 				</div>
 		</form>
 
