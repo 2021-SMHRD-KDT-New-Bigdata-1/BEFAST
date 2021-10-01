@@ -71,6 +71,8 @@ div#header h2 {
     padding :0;
     font-size: 40px;
     -webkit-text-size-adjust : none;
+    color: 31,209,69;
+    
     
 }
 div#content {
@@ -126,7 +128,7 @@ h3.join_group {
     height: 30px;
     border: rgb(168 212 255);
     padding: 10px;
-    border-radius: 30%;
+    border-radius: 40%;
     background-color: rgb(168, 212, 255,0.7);
 }
 .input_name{
@@ -174,7 +176,7 @@ h3.join_group {
     color: black;
 }
 div>h2{
-    color: #d9d0ff;
+    color: 31,209,69;
 }
 .input_box_teamintro{
     outline: 0;
@@ -216,4 +218,8 @@ small{
 	width:20px;
 	height:20px;
 
+}
+
+div>h2{
+    color: rgba(31,209,69)
 }
