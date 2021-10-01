@@ -1,11 +1,9 @@
 @charset "EUC-KR";
 #result3{
-	color : white;
+	color : #eee;
 }
 .div1{
-	color: white;
-	text-decoration : none;
-}
+	color: #eee;}
 .columns {
    /* column-width:400px; */
    column-gap: 15px;
@@ -81,11 +79,11 @@ h3 {
 }
 
 h2 {
-   color: white;
+   color: #eee;
 }
 
 tr>td {
-   color: white;
+   color: #eee;
 }
 
 /* ul {
@@ -275,4 +273,8 @@ tbody tr {
    align-items: center;
    justify-content: center;
    display: flex;
+   font-size: x-large;
+}
+.btnbtn-smbtn-primary{
+	color:#Eee
 }
