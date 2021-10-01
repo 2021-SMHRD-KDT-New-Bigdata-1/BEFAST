@@ -21,7 +21,7 @@ public class BookingService extends HttpServlet {
 		
 		request.setCharacterEncoding("EUC-KR");
 		
-		// 1. 사용자가 입력한 데이터 가져오기
+		// 1. 사용자가 입력한 데이터 가져기
 		//String FIELD_CODE = request.getParameter("FIELD_CODE");
 		String MATCHING_DATE = request.getParameter("MATCHING_DATE");
 		String ADDRESS = request.getParameter("ADDRESS");
