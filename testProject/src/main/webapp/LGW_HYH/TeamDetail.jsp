@@ -26,13 +26,13 @@
 	<div id="header">
 		<div class="team_name">
 			<div class="logo"><img src="<%=vo.getTeam_logo() %>"></div>
-			<div class="name"><%=vo.getTeam_name()%>
+			<div class="name"><%="*"+vo.getTeam_name()+"*"%>
 
 			</div>
 			</h2>
 		</div>
 		<div class="table1">
-			<table border="1px" class="table1">
+			<table class="table1">
 				<tr>
 					<td>주 장</td>
 					<td><%=vo.getTeamleader()%></td>
@@ -69,7 +69,7 @@
 		</div>
 		<div class="info">
 			<h4>팀 소개</h4>
-			<table border="1px">
+			<table>
 				<%=vo.getTeam_info()%>
 			</table>
 		</div>
@@ -78,7 +78,7 @@
 					<a href="../TeamJoin?teamname=<%=vo.getTeam_name()%>">가입신청</a>
 					<%} 
 				else{%>
-					<a href="../Main.jsp">목록으로</a>
+					<a href="../TeamList">목록으로</a>
 				<% }%>
 		
 	

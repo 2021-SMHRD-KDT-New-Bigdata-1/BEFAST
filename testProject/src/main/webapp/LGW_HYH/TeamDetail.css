@@ -1,5 +1,10 @@
 @charset "EUC-KR";
 
+body{
+	width: 1480px;
+	margin: 0 auto;
+	background-color:rgba(9,9,52);
+}
 .team_name{
 	height: 100px;
 	width: 300px;
@@ -8,6 +13,7 @@
 .table1{
 	height: 300px;
 	width:200px;
+
 }
 div#header{
     padding-top: 50px;
@@ -15,6 +21,7 @@ div#header{
     margin: 0 300px;
     box-sizing: border-box;
     text-align: center;
+    width: max-content;
 }
 .logo{
 	display : flex;
@@ -22,7 +29,12 @@ div#header{
 	width:100px;
 }
 .name{
-	display:inline;	
+	display:inline;
+	color:#Eee;
+	position: absolute;
+    left: 43%;
+    font-size: xx-large;
+    top: 110px;	
 		
 }
 .table1{
@@ -31,10 +43,19 @@ div#header{
 }
 h4{
 	width:680px;
-	height: auto
+	height: auto;
+	color: #eee;
 
 }
 .info{
 	width: 665px;
-	height:300px;
+	height:125px;
+	color: #eee;
+}
+tr td{
+	color:#eee;
+	border-bottom: 1px solid #ddd;
+}
+a{
+	color:#eee;
 }
