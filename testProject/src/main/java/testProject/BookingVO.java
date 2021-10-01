@@ -6,6 +6,8 @@ public class BookingVO {
 	private String FILED_NAME;
 	private String GAMES;
 	private String TIMES;
+
+
 	
 	
 	public BookingVO(String MATCHING_DATE, String ADDRESS, String FILED_NAME, String GAMES, String TIMES) {
@@ -16,6 +18,8 @@ public class BookingVO {
 		this.GAMES = GAMES;
 		this.TIMES = TIMES;
 	}
+
+	
 
 
 	public String getMATCHING_DATE() {

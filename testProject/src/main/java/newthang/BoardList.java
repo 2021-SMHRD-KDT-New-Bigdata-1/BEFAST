@@ -111,7 +111,7 @@ public class BoardList extends HttpServlet {
 		out.println("<tr>");
 
 		out.println("<td class=text-left>");
-		out.println("Search:");
+		/* out.println("Search:"); */
 		out.println("<form name=\"form1\" method=\"get\" action=\"BoardList\">");
 		out.println("<select class=input-sm name=col>");
 		out.println("<option value=rname>ÆÀ¸í</option>");

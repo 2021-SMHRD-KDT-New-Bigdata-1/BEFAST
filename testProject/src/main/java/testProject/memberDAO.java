@@ -177,7 +177,7 @@ public class memberDAO {
 		      return cnt;
 		   }
 	   
-	   // 내 정보 가져오기
+	    // 내 정보 가져오기
 		public memberVO Myinfo(String MEMBER_ID, String MEMBER_NAME, String MEMBER_PHONE) {
 			memberVO vo2 = null;
 			
@@ -187,12 +187,10 @@ public class memberDAO {
 		           psmt = conn.prepareStatement(sql);
 		           psmt.setString(1, MEMBER_ID);
 		           
-		           
 		           rs = psmt.executeQuery();
 		           
 		           if(rs.next()) {        
 			            
-		        	   
 //						String MEMBER_PHONE = rs.getString(4);
 						String MEMBER_BIRTHDATE = rs.getString(5);
 						String GENDER = rs.getString(6);
@@ -201,9 +199,6 @@ public class memberDAO {
 						String TEAM_NAME = rs.getString(9);
 						String TEAM_CODE = rs.getString(10);
 						
-		        	   
-						
-			              
 		           }
 		           
 			 }catch(Exception e) {

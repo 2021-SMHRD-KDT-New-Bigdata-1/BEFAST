@@ -2,6 +2,7 @@ package testProject;
 
 import java.io.IOException;
 
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +21,7 @@ public class BookingService extends HttpServlet {
 		
 		request.setCharacterEncoding("EUC-KR");
 		
-		// 1. 사용자가 입력한 데이터 가져오기
+		// 1. 사용자가 입력한 데이터 가져기
 		//String FIELD_CODE = request.getParameter("FIELD_CODE");
 		String MATCHING_DATE = request.getParameter("MATCHING_DATE");
 		String ADDRESS = request.getParameter("ADDRESS");
@@ -28,14 +29,16 @@ public class BookingService extends HttpServlet {
 		String GAMES = request.getParameter("GAMES");
 		String TIMES = request.getParameter("TIMES");
 		
-		HttpSession session = request.getSession();
-		memberVO vo = (memberVO)session.getAttribute("vo");
-		String TEAM_NAME = vo.getTEAM_NAME();
-		String MEMBER_ID = vo.getMEMBER_ID();
+		
+		
 		
 		BookingDAO dao = new BookingDAO();
+//		HttpSession session   = request.getSession();
+//		memberVO vo = (memberVO)session.getAttribute("vo");
+//		String TEAM_NAME = vo.getTEAM_NAME();
 		
-		int cnt = dao.BOOKINGS(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES, TEAM_NAME, MEMBER_ID);
+		int cnt = dao.BOOKINGS(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES);
+		
 		
 		if (cnt>0) {
 			response.sendRedirect("Main.jsp");
