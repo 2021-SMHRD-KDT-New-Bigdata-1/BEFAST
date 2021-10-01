@@ -55,9 +55,8 @@ public class MannerDAO {
 		try {
 			// ¿¬°á
 			getConnection();
-			String sql = "INSERT INTO MATCHING_RESULTS(m_result,time_result,fair_plays,languages,comments,team_name,total_score) VALUES (?,?,?,?,?,null,?)";
+			String sql = "INSERT INTO MATCHING_RESULTS(m_result,time_result,fair_plays,languages,comments,team_name,total_score,numbering) VALUES (?,?,?,?,?,null,?,(SELECT NVL(MAX(numbering)+1,1) FROM matching_results))";
 			ps = conn.prepareStatement(sql);
-			System.out.println(vo.getTotal_score());
 			ps.setInt(1, vo.getM_result());
 			ps.setInt(2, vo.getTime_result());
 			ps.setInt(3, vo.getFair_plays());
