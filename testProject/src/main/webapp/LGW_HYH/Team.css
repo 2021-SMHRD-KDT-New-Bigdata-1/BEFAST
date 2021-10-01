@@ -38,7 +38,7 @@ div#header{
     }
 }
 body {
-   background-image : url("resources/img/img22.jpg");
+   background-color: #014961; 
     font-size: 14px;
     -webkit-text-size-adjust : none;
     background-repeat : no-repeat;
