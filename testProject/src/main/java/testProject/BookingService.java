@@ -33,11 +33,11 @@ public class BookingService extends HttpServlet {
 		
 		
 		BookingDAO dao = new BookingDAO();
-		HttpSession session   = request.getSession();
-		memberVO vo = (memberVO)session.getAttribute("vo");
-		String TEAM_NAME = vo.getTEAM_NAME();
+//		HttpSession session   = request.getSession();
+//		memberVO vo = (memberVO)session.getAttribute("vo");
+//		String TEAM_NAME = vo.getTEAM_NAME();
 		
-		int cnt = dao.BOOKINGS(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES, TEAM_NAME);
+		int cnt = dao.BOOKINGS(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES);
 		
 		
 		if (cnt>0) {

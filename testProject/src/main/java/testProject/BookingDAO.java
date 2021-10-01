@@ -52,11 +52,11 @@ public class BookingDAO {
 	}
 
 	// 예약하기
-	public int BOOKINGS(String MATCHING_DATE, String ADDRESS, String FILED_NAME, String GAMES, String TIMES, String TEAM_NAME,String MEMBER_ID) {
+	public int BOOKINGS(String MATCHING_DATE, String ADDRESS, String FILED_NAME, String GAMES, String TIMES) {
 		conn();
 
 		int cnt = 0;
-		String sql = "insert into BOOKINGS values(?,?,?,?,?,?,?)";
+		String sql = "insert into BOOKINGS values(?,?,?,?,?,?)";
 
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -66,8 +66,6 @@ public class BookingDAO {
 			psmt.setString(3, FILED_NAME);
 			psmt.setString(4, GAMES);
 			psmt.setString(5, TIMES);
-			psmt.setString(6, TEAM_NAME);
-			psmt.setString(7, MEMBER_ID);
 
 			cnt = psmt.executeUpdate();
 
@@ -83,7 +81,7 @@ public class BookingDAO {
 
 	
 	// 내 예약정보 
-	public BookingVO My_booking() { 
+	public BookingVO My_booking(String MEBER_ID) { 
 	
 		BookingVO Bvo = null;
 		conn();
@@ -106,7 +104,7 @@ public class BookingDAO {
 					String TIMES = rs.getString(5);
 					
 					
-					Bvo = new BookingVO(MATCHING_DATE,ADDRESS,FILED_NAME,GAMES,TIMES);
+					Bvo = new BookingVO(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES);
 	      }
 		  
 		  } catch (SQLException e) {
