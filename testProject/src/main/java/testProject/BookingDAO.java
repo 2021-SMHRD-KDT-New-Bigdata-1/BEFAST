@@ -81,17 +81,17 @@ public class BookingDAO {
 
    
    // 내 예약정보 
-   public BookingVO My_booking(String MEBER_ID) { 
+   public BookingVO My_booking(String MEMBER_ID) { 
    
       BookingVO Bvo = null;
       conn();
      
       
-     String sql = "select * from BOOKINGS WHERE MEBER_ID=?";
+     String sql = "select * from BOOKINGS WHERE MEMBER_ID=?";
      
         try { 
            psmt = conn.prepareStatement(sql);
-            
+           psmt.setString(1, MEMBER_ID);
 
            rs = psmt.executeQuery();
            
