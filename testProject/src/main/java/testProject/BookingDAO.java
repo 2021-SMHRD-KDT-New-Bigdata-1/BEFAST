@@ -59,7 +59,7 @@ public class BookingDAO {
 
 		try {
 			psmt = conn.prepareStatement(sql);
-
+			
 			psmt.setString(1, MATCHING_DATE);
 			psmt.setString(2, ADDRESS);
 			psmt.setString(3, FILED_NAME);
@@ -105,12 +105,11 @@ public class BookingDAO {
 	}
 
 	// 상대팀 정보 전달
-	public int BOOKINGS_RESULT2(String MATCHING_DATE, String ADDRESS, String FILED_NAME, String GAMES, String TIMES,String TEAM_NAME2) {
+	public int BOOKINGS_RESULT2(String MATCHING_DATE, String ADDRESS, String FILED_NAME, String GAMES, String TIMES, String TEAM_NAME2) {
 		conn();
 		
 		int cnt = 0;
 		String sql = "update BOOKINGS SET TEAM_NAME2 = ? where MATCHING_DATE=? and ADDRESS=? and FILED_NAME=? and GAMES=? and TIMES=?";
-
 		try {
 			psmt = conn.prepareStatement(sql);
 
