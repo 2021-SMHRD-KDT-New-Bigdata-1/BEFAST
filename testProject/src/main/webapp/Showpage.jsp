@@ -49,7 +49,7 @@ input[type="text"] {
          <div class="container">
             <div class="game_box2">
 
-<<<<<<< HEAD
+
 					<div class="wait">
 						<table>
 							<caption>
@@ -127,23 +127,6 @@ input[type="text"] {
 									}
 								}
 								
-=======
-                        
-                        for (int i = 3 * (cur_page - 1); i < cur_page * 3; i++) {
-                           if (i < al.size()) {
-                              out.print("<tr>");
-                              out.print("<td>" + al.get(i).getMATCHING_DATE() + "</td>");
-                              out.print("<td>" + al.get(i).getADDRESS() + "</td>");
-                              out.print("<td>" + al.get(i).getFILED_NAME() + "</td>");
-                              out.print("<td>" + al.get(i).getTIMES() + "</td>");
-                              out.print("<td>" + al.get(i).getGAMES() + "</td>");
-                              out.print("</tr>");
-                           } else {
-                              break;
-                           }
-                        }
-                        
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/BEFAST.git
 
                         if (prev_page <= 0) {
                            prev_page = 1;
@@ -152,9 +135,9 @@ input[type="text"] {
                         }
                         
                         out.println("<div class=div1>");
-                        out.println("<a href=?page1=" + prev_page + " class=\"btnbtn-smbtn-primary\">이전</a>");
+                        out.println("<a href=?page1=" + prev_page + "class=\"btnbtn-smbtn-primary\">이전</a>");
                         out.println((prev_page) + " page / " + (next_page) + " pages");
-                        out.println("<a href=?page1=" + next_page + " class=\"btnbtn-smbtn-primary\">다음</a>");
+                        out.println("<a href=?page1=" + next_page + "class=\"btnbtn-smbtn-primary\">다음</a>");
                         out.println("</div>");
                         %>
                      
