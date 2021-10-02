@@ -152,6 +152,7 @@ public class BookingDAO {
 				String TEAM_NAME = rs.getString(6);
 
 				Bvo = new BookingVO(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES, TEAM_NAME, MEMBER_ID);
+				//Bvo = new BookingVO();
 			}
 
 		} catch (SQLException e) {

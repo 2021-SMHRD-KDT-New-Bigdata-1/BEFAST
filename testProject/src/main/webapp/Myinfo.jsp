@@ -211,9 +211,9 @@ button#next {
 				
 				<div class="barOuter2">
 				
-
+					<%if(Bvo!=null){ %>
 					<div class="barLevel barHTML">경기일자
-					<p class="My_type"><i class="far fa-calendar-alt"></i><%=Bvo.getMATCHING_DATE()%></p>
+					<p class="My_type"><i class="far fa-calendar-alt"></i><%=Bvo.getMATCHING_DATE()%></p> 
 					</div>
 					
 					<div class="barLevel barHTML">경기지역
@@ -231,6 +231,9 @@ button#next {
 					<div class="barLevel barHTML">경기시간
 					<p class="My_type"><i class="far fa-calendar-alt"></i><%=Bvo.getTIMES()%></p>
 					</div>
+					<% }else{%>
+					예약이 없습니다
+					<% }%>
 					
 					<div class="line"></div>
 					

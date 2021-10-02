@@ -12,6 +12,9 @@ public class BookingVO {
 	private String TEAM_NAME2;
 	
 	
+	public BookingVO() {
+		
+	}
 
 
 	
