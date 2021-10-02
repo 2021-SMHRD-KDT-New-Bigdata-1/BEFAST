@@ -15,10 +15,8 @@
 <body>
 	<form action="MannerInsert.jsp" method="post">
 		<div id="header"></div>
-		<h1>
-			<b>경기 등록 & 경기 평가</b>
-		</h1>
-		<div class="partner">
+		
+		<!-- <div class="partner">
 			<h2>경기 결과</h2>
 			<div class="partner_info">
 				<p>클릭해주세요.</p>
@@ -56,7 +54,11 @@
 			});
 		</script>
 
-		<div>
+		<div> -->
+		<div class="Card">
+		<h1>
+			<b>경기 평가</b>
+		</h1>
 			1. 상대 팀은 시간 약속을 잘 지켰나요?
 			<div class="star-rating space-x-4 mx-auto">
 				<input type="radio" id="5-stars" name="rating" value="5"
@@ -110,8 +112,11 @@
 			<h3>
 				코멘트<br>
 				</p>
-				<textarea cols="50" rows="5" name="comments" placeholder="의견을 적어주세요"></textarea>
+				<textarea cols="50" rows="5" name="comments" placeholder="의견을 적어주세요."></textarea>
+				<div>
 				<input type="submit" value='등록하기'>
+				</div>
+		</div>
 	</form>
 	<script>
 		function hidden_change(val) {
