@@ -53,11 +53,11 @@ body {
 }
 
 .Card .MEMBER_ID {
-	font-size: 20px;
+	font-size: 25px;
 	font-weight: 600;
 	margin-top: 20px;
 	margin-bottom: 20px;
-	color: #1FD145;
+	color: #eee;
 }
 
 .Card .My_info1 {
@@ -83,6 +83,7 @@ body {
 .Card .My_info2 {
 	width: 100%;
 }
+p{ text-align: center;}
 
 .Card .My_info2 .title, .Matching_info {
 	color: #eee;
@@ -132,8 +133,9 @@ body {
 	top: 15px;
 }
 
-.PreNext a{
+.PreNext{
 	text-decoration: none;
+	margin-left: 4px;
 }
 
 button {
@@ -155,11 +157,13 @@ button#pre {
 
 button#next {
 	position: relative;
-	right: -238px;
+	right: -141px;
 }
 
 .barOuter2 {
 	text-align: center;
+	padding: 6px;
+	margin-left: 16px;
 
 }
 
@@ -215,7 +219,7 @@ button#next {
 				
 			
 					<div class="line"></div>
-					<p>내 매칭현황</p><!-- <p class="Matching_info">내 매칭현황</p> -->
+					<p class="haha">내 매칭현황</p><!-- <p class="Matching_info">내 매칭현황</p> -->
 				
 				<div class="barOuter2">
 				

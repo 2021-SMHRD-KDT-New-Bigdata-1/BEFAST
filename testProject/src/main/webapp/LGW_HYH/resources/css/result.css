@@ -5,11 +5,18 @@
 	width: 110px;
 }
 .partner h2{
-	/* text-align: center */
+	text-align: center;
+	background-color: #3d405b;
+	font-size:20px;
+	font-weight: unset;
 }
-
+.haha{
+	font-size:20px;
+}
 .partner_info>p{
 	cursor: pointer;
+	background-color: #3d405b;
+	text-decoration: underline;
 }
 .p{
 	text-align : center;
