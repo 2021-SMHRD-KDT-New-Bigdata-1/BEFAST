@@ -16,7 +16,7 @@
 	<form action="MannerInsert.jsp" method="post">
 		<div id="header"></div>
 		
-		<!-- <div class="partner">
+		<!--- <div class="partner">
 			<h2>경기 결과</h2>
 			<div class="partner_info">
 				<p>클릭해주세요.</p>
