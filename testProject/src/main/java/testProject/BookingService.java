@@ -19,7 +19,7 @@ public class BookingService extends HttpServlet {
       
       
       request.setCharacterEncoding("EUC-KR");
-      
+      BookingDAO.My_booking(MEMBER_ID);
       // 1. 사용자가 입력한 데이터 가져오기
       //String FIELD_CODE = request.getParameter("FIELD_CODE");
       String MATCHING_DATE = request.getParameter("MATCHING_DATE");
@@ -28,6 +28,9 @@ public class BookingService extends HttpServlet {
       String GAMES = request.getParameter("GAMES");
       String TIMES = request.getParameter("TIMES");
      
+      if((MATCHING_DATE)
+      
+      
       // 멤버 ID, 팀 name ?? 어디에서 받아야 하는가 --> 세션에 저장된 값을 불러온다!
       HttpSession session = request.getSession();
       memberVO vo = (memberVO)session.getAttribute("vo");
