@@ -1,5 +1,8 @@
 @charset "EUC-KR";
 
+body{
+	background-color:rgba(9,9,52);
+}
 .newthang {
 	height: 100px;
 	background-color: rgb(3, 3, 30);
@@ -18,15 +21,19 @@
 	line-height: 100px;
 	margin-top: 0px;
 	font-size: 40px;
+	background-color: rgba(9,9,52);
 }
 .container {
 	background-color: #d3d3d3;
 	width: 800px;
 	height: 800px;
+	background-color: rgba(9,9,52);
 }
 
 .h3 {
 	text-align: center;
+	color: #eee;    
+	font-weight: bold;
 }
 
 .title {
@@ -63,4 +70,9 @@
 }
 .button{
     text-align: center;
+}
+.select_1{
+	text-align:center;
+	width: 518px;
+	margin-left:-6px;
 }
