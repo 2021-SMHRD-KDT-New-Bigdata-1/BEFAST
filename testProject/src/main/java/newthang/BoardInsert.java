@@ -43,7 +43,7 @@ public class BoardInsert extends HttpServlet {
       out.println("<h2 class=h2>BE FAST</h2>");
       out.println("</div>");
       out.println("<div class=container>");
-      out.println("<h3 class=h3>용병 모집 글쓰기</h3>");
+      out.println("<h3 class=h3>용병 모집</h3>");
       out.println("<div class=row>");
 
       out.println("<form method=post action=BoardInsert>");

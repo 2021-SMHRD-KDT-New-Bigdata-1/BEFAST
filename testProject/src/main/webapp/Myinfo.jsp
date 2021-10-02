@@ -266,20 +266,20 @@ button#next {
 					<br>
 					
 				<div class="modal_img">
-					<input type="button" name="m_result" value="승리" class="result"
+					<input type="button" name="m_result" value="승리" class="win"
 						onclick='hidden_change("승리")'> <input type="hidden"
 						name="m_result" value="선택안함" class="result" id="hidden_input">
 						
-					<input type="button" name="m_result" value="패배" class="result"
+					<input type="button" name="m_result" value="패배" class="lose"
 						onclick='hidden_change("패배")'> <input type="hidden"
 						name="m_result" value="선택안함" class="result" id="hidden_input">
 						
-					<input type="button" name="m_result" value="무승부" class="result"
+					<input type="button" name="m_result" value="무승부" class="mu"
 						onclick='hidden_change("무승부")'> <input type="hidden"
 						name="m_result" value="선택안함" class="result" id="hidden_input">
 						
 				</div>
-					<br> 경기결과 :
+					<br>
 					<div id='result3'>선택안함</div>
 						<div class="button">
 							<button type="button" id="btn-close">닫기</button>
