@@ -100,16 +100,11 @@
                             <li><a href="TeamList">팀 찾기</a></li>
                             <li><a href="LGW_HYH/Team.jsp">팀 생성</a></li>
                             <li><a href="BoardList">용병게시판</a></li>
-<<<<<<< HEAD
+
                             <li><a href="Showpage.jsp">예약현황</a></li>
-=======
-<<<<<<< HEAD
+
                             <li><a href="Showpage.jsp?">예약현황</a></li>
-=======
                             <li><a href="ShowPage.jsp">예약현황</a></li>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/BEFAST.git
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/BEFAST.git
-                            <li><a href="LGW_HYH/Guide.jsp">풋살가이드</a></li>                           
                             <li><a href="Logoutform.jsp">로그아웃</a></li>
                         </ul>
                     </div> 
@@ -151,6 +146,8 @@
         </div>
     
         
+
+
 
 
 <!-- 이미지 슬라이더 -->
