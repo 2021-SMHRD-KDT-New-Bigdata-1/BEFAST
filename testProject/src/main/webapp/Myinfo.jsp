@@ -164,7 +164,10 @@ button#next {
 	<% memberVO vo = (memberVO) session.getAttribute("vo");
 	
 	   BookingDAO dao = new BookingDAO();
+	   /* BookingVO Bvo = (BookingVO) session.getAttribute("Bvo"); */
+	   /* BookingVO Bvo2 = (BookingVO) session.getAttribute("Bvo2"); */
 	   BookingVO Bvo = dao.My_booking(vo.getMEMBER_ID());
+
        /* BookingVO Bvo = (BookingVO) session.getAttribute("Bvo"); */
 	%>
 	
@@ -174,6 +177,7 @@ button#next {
 			</div>
 			
 				<p class="MEMBER_ID"><%=vo.getMEMBER_ID() %></p>
+				
 				
 			<div class="My_info1">
 				<ul>
@@ -205,9 +209,9 @@ button#next {
 					</div>
 				</div>
 				
+			<form action="Myinfo.jsp">
 					<div class="line"></div>
-					<p class="Matching_info">내 매칭현황</p>
-					
+					<p>내 매칭현황</p><!-- <p class="Matching_info">내 매칭현황</p> -->
 				
 				<div class="barOuter2">
 				
@@ -216,7 +220,7 @@ button#next {
 					<p class="My_type"><i class="far fa-calendar-alt"></i><%=Bvo.getMATCHING_DATE()%></p>
 					</div>
 					
-					<div class="barLevel barHTML">경기지역
+ 					<div class="barLevel barHTML">경기지역
 					<p class="My_type"><i class="far fa-calendar-alt"></i><%=Bvo.getADDRESS()%></p>
 					</div>
 					
@@ -235,6 +239,8 @@ button#next {
 					<div class="line"></div>
 					
 			</div>
+			</form>
+			
 			
 				<div class="PreNext">
 			

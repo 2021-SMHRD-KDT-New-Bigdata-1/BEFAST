@@ -32,6 +32,7 @@ public class BookingService extends HttpServlet {
       HttpSession session = request.getSession();
       memberVO vo = (memberVO)session.getAttribute("vo");
       
+      
       // 세션에 있는 (로그인되어있는 아이디를 기준) 값을 들고온다.
       String TEAM_NAME = vo.getTEAM_NAME();
       String MEMBER_ID = vo.getMEMBER_ID();
@@ -43,8 +44,10 @@ public class BookingService extends HttpServlet {
       int cnt1 = dao.BOOKINGS_RESULT(TEAM_NAME);
       
       if ((cnt>0)&&(cnt1>0)) {
+    	  
          response.sendRedirect("Main.jsp");
       }
+     
    }
 
 }
