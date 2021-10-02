@@ -5,13 +5,13 @@ public class TeamsssVO {
 	private String team_name;
 	private int mannerscores;
 	private int winner_point; 
-	private int result_1; 
-	private int result_2; 
-	private int result_3; 
 	private String team_logo;
 	private String team_trophy;
 	private String team_info;
 	private String teamleader;
+	private int result_1; 
+	private int result_2; 
+	private int result_3; 
 	public int getTeam_code() {
 		return team_code;
 	}
