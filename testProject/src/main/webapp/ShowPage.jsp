@@ -49,7 +49,7 @@ input[type="text"] {
          <div class="container">
             <div class="game_box2">
 
-<<<<<<< HEAD
+
 					<div class="wait">
 						<table>
 							<caption>
