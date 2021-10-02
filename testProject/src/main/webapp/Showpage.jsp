@@ -90,6 +90,9 @@ input[type="text"] {
                         System.out.println(page1);
                         int prev_page = cur_page - 1;
                         int next_page = cur_page + 1;
+                        
+                        
+                        
 
 
 								
