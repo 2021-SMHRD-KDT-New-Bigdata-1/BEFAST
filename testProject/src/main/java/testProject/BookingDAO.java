@@ -151,7 +151,10 @@ public class BookingDAO {
 				String TIMES = rs.getString(5);
 				String TEAM_NAME = rs.getString(6);
 
-				Bvo = new BookingVO(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES, TEAM_NAME, MEMBER_ID);
+				
+				Bvo = new BookingVO(MATCHING_DATE, ADDRESS, FILED_NAME,GAMES,TIMES, TEAM_NAME, MEMBER_ID);
+				 
+				
 			}
 
 		} catch (SQLException e) {
@@ -212,6 +215,7 @@ public class BookingDAO {
 				String TEAM_NAME = rs.getString(6);
 				String MEMBER_ID = rs.getString(7);
 
+				
 				BookingVO vo = new BookingVO(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES, TEAM_NAME, MEMBER_ID);
 				al.add(vo);
 
@@ -253,7 +257,9 @@ public class BookingDAO {
 				String TIMES = rs.getString(5);
 				String TEAM_NAME = rs.getString(6);
 				String MEMBER_ID = rs.getString(7);
+				
 				BookingVO vo = new BookingVO(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES, TEAM_NAME, MEMBER_ID);
+				
 				boo.add(vo);
 			}
 			rs.close();
