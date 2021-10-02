@@ -32,7 +32,7 @@ body {
 .Card {
 	background-color: #3d405b;
 	color: #f4f1de;
-/* 	width: 250px; */
+/* 	width: 250px; *//*  */
 	padding: 30px 20px;
 	height: auto;
 	box-shadow: 0 0 15px #000;
