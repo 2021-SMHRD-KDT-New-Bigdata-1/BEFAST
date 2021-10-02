@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import testProject.BookingVO;
+
 public class MannerDAO {
 	private Connection conn;
 	// SQL문장 전송
@@ -84,7 +86,7 @@ public class MannerDAO {
 	
 	
 	// 입력
-	public void MannerInsert(MannerVO vo,TeamsssVO vo2) {
+	public void MannerInsert(MannerVO vo,TeamsssVO vo2,BookingVO vo3) {
 		try {
 			// 연결
 			getConnection();// team_name,mannerscores,winner_point,result_1,result_2,result_3
