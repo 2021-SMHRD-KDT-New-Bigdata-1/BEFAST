@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 
 
@@ -238,6 +239,39 @@ public class memberDAO {
 			
 			return cnt;		
 			
+		}
+		public ArrayList<memberVO> info(String member_id) {
+			ArrayList<memberVO> list = new ArrayList<memberVO>();
+			try {
+				// 연결
+				conn();
+				// SQL문장 전송
+				String sql = "select member_id,member_name,member_phone,member_birthdate,gender,p_area,position  FROM members where =?";
+				// 단점: 속도 늦음→INDEX
+				psmt = conn.prepareStatement(sql);
+				psmt.setString(1,member_id);
+				// SQL 실행 후 결과값 받기
+				rs = psmt.executeQuery();
+				// 결과값 ArrayList에 첨부
+				while (rs.next()) {
+					memberVO vo = new memberVO();
+					vo.setMEMBER_ID(rs.getString(1));
+					vo.setMEMBER_NAME(rs.getString(2));
+					vo.setMEMBER_PHONE(rs.getString(3));
+					vo.setMEMBER_BIRTHDATE(rs.getString(4));
+					vo.setGENDER(rs.getString(5));
+					vo.setP_AREA(rs.getString(6));
+					vo.setPOSITION(rs.getString(7));				
+					list.add(vo);
+				}
+				rs.close();
+			} catch (Exception ex) {
+				System.out.println(ex.getMessage());
+			} finally {
+				close();
+			}
+			return list;
+
 		}
 	}
 	   

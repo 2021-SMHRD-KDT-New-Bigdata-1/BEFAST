@@ -65,8 +65,8 @@ public class BoardDetail extends HttpServlet {
 		out.println("<div class= tjfaud>");
 		out.println("<p id=name>" + vo.getTeam_name() + "</p>");
 		out.println("<br>");
-		out.println("<span style='font-size:10px'>" + vo.getWrite_time() + "</span>");
-		out.println("<span style='font-size:10px'>조회수 : " + vo.getHit() + "</span>");
+		out.println("<span style='font-size:15px'>" + vo.getWrite_time() + "</span>");
+		out.println("<span style='font-size:15px'>조회수 : " + vo.getHit() + "</span>");
 		out.println("</div>");
 		out.println("<div class= profile2 >");
 		if (vo.getField_code() == 1) {
