@@ -52,8 +52,8 @@
    BookingDAO dao = new BookingDAO();
    memberVO vo = (memberVO) session.getAttribute("vo");
    ArrayList<BookingVO> al = dao.select();
-  // TeamDAO dao2 =new TeamDAO();
-  // ArrayList<TeamVO> list =dao2.TeamboardListData();
+   TeamDAO dao2 =new TeamDAO();
+   ArrayList<TeamVO> list =dao2.TeamboardListData();
    
    %>
    
@@ -109,12 +109,12 @@
                             <li><a href="TeamList">ÆÀ Ã£±â</a></li>
                             <li><a href="LGW_HYH/Team.jsp">ÆÀ »ý¼º</a></li>
                             <li><a href="BoardList">¿ëº´°Ô½ÃÆÇ</a></li>
-							<%-- <% 
+							<% 
 							for(int i=0; i<list.size(); i++){
   								if(vo.getMEMBER_ID().equals(list.get(i).getTeamleader())){%>
-  							<li><a href="../dd.jsp">ÆÀ ¼ö¶ô</a></li>		
+  							<li><a href="ShowPage1.jsp">ÆÀ ¼ö¶ô</a></li>		
   								<%}
-                    }%> --%>
+                     }%>
                             <li><a href="ShowPage1.jsp">¿¹¾àÇöÈ²</a></li>
                             <li><a href="Logoutform.jsp">·Î±×¾Æ¿ô</a></li>
                         </ul>

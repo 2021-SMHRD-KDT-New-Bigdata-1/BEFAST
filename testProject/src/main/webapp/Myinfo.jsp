@@ -313,6 +313,13 @@ button#next {
 		$("#modal button").click(function() {
 			$("#modal").removeClass("active");
 		});
+		
+		function hidden_change(val) {
+			var hidden = document.getElementById("hidden_input");
+			hidden.value = val;
+			document.getElementById('result3').innerText = val;
+		}
+		
 	</script>
 		
 	</body>
