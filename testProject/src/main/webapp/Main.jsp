@@ -101,10 +101,7 @@
                             <li><a href="LGW_HYH/Team.jsp">팀 생성</a></li>
                             <li><a href="BoardList">용병게시판</a></li>
 
-                            <li><a href="Showpage.jsp">예약현황</a></li>
-
-                            <li><a href="Showpage.jsp?">예약현황</a></li>
-                            <li><a href="ShowPage.jsp">예약현황</a></li>
+                            <li><a href="ShowPage1.jsp">예약현황</a></li>
                             <li><a href="Logoutform.jsp">로그아웃</a></li>
                         </ul>
                     </div> 
