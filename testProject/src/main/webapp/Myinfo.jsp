@@ -10,6 +10,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<link rel="stylesheet" href="LGW_HYH/resources/css/result.css">
+<link rel="stylesheet" href="YJW_KSJ/CSS/Manner.css">
+
 <title>내 정보</title>
 <!-- font-awesome  -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
@@ -209,7 +213,7 @@ button#next {
 					</div>
 				</div>
 				
-			<form action="Myinfo.jsp">
+			
 					<div class="line"></div>
 					<p>내 매칭현황</p><!-- <p class="Matching_info">내 매칭현황</p> -->
 				
@@ -235,15 +239,50 @@ button#next {
 					<div class="barLevel barHTML">경기시간
 					<p class="My_type"><i class="far fa-calendar-alt"></i><%=Bvo.getTIMES()%></p>
 					</div>
+					
+					</div>
+					
 					<% }else{%>
 					예약이 없습니다
 					<% }%>
 					
 					<div class="line"></div>
 					
+		<div class="partner">
+			<h2>경기 결과</h2>
+				<div class="partner_info">
+					<p>클릭해주세요.</p>
+				</div>
+		</div>
+		
+		<div class="clear"></div>
+			<div id="modal">
+				<div class="body">
+					<p class="p">경기결과를 클릭해주세요</p>
+					<br>
+					
+				<div class="modal_img">
+					<input type="button" name="m_result" value="승리" class="result"
+						onclick='hidden_change("승리")'> <input type="hidden"
+						name="m_result" value="선택안함" class="result" id="hidden_input">
+						
+					<input type="button" name="m_result" value="패배" class="result"
+						onclick='hidden_change("패배")'> <input type="hidden"
+						name="m_result" value="선택안함" class="result" id="hidden_input">
+						
+					<input type="button" name="m_result" value="무승부" class="result"
+						onclick='hidden_change("무승부")'> <input type="hidden"
+						name="m_result" value="선택안함" class="result" id="hidden_input">
+						
+				</div>
+					<br> 경기결과 :
+					<div id='result3'>선택안함</div>
+						<div class="button">
+							<button type="button" id="btn-close">닫기</button>
+						</div>
+				</div>
 			</div>
-			</form>
-			
+		</div>
 			
 				<div class="PreNext">
 			
@@ -259,7 +298,18 @@ button#next {
 				</div>
 			
 		</div>
-	</div>
+		
+	<script src="./YJW_KSJ/JS/jquery-3.6.0.min.js"></script>
+	
+	<script>
+		$(".partner p").click(function() {
+			$("#modal").addClass("active");
+		});
+		
+		$("#modal button").click(function() {
+			$("#modal").removeClass("active");
+		});
+	</script>
 		
 	</body>
 </html>
