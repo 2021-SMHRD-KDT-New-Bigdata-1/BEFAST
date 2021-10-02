@@ -63,6 +63,7 @@ input[type="text"] {
 									<td>경기시간</td>
 									<td>경기방식</td>
 									<td>팀명</td>
+									<td>도전/마감</td>
 									
 								</tr>
 								<tr>
@@ -136,6 +137,7 @@ input[type="text"] {
                               out.print("<td>" + al.get(i).getTIMES() + "</td>");
                               out.print("<td>" + al.get(i).getGAMES() + "</td>");
                               out.print("<td>" + al.get(i).getTEAM_NAME() + "</td>");
+                              out.print("<td><input type=\"submit\" value=\"도전\"</td>");
                               out.print("</tr>");
                            } else {
                               break;

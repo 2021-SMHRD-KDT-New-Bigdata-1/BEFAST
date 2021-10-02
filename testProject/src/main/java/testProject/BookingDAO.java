@@ -54,7 +54,7 @@ public class BookingDAO {
       conn();
 
       int cnt = 0;
-      String sql = "insert into BOOKINGS values(?,?,?,?,?,?,?)";
+      String sql = "insert into BOOKINGS(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES, TEAM_NAME, MEMBER_ID) values(?,?,?,?,?,?,?)";
 
       try {
          psmt = conn.prepareStatement(sql);

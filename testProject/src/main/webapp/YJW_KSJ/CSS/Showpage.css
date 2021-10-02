@@ -226,7 +226,7 @@ table {
 }
 
 table td {
-   width: 17%;
+   width: 200px;
    color: #fff;
    padding: 0.5em 0.5em;
    border-bottom: 1px solid #444444;
