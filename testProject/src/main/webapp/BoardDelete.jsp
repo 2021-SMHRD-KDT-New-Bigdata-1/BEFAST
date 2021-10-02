@@ -21,10 +21,8 @@
 		//기존 패스워드값과 delete form에서 작성한 패스워드를 비교
 
 		if (write_pw ==<%=password%>) {
-
 			//패스워드가 둘다 같다면
 			location.href = 'BoardDelete1.jsp?write_number=<%=write_number%>';
-
 		} else {
 			//패스워드가 틀리면 바로 전페이지로 돌아가게끔 script 코드 작성
 			alert("패스워드가 틀립니다. 패스워드를 확인해주세요.");

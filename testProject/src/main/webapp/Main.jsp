@@ -109,13 +109,8 @@
                             <li><a href="TeamList">팀 찾기</a></li>
                             <li><a href="LGW_HYH/Team.jsp">팀 생성</a></li>
                             <li><a href="BoardList">용병게시판</a></li>
-							<% 
-							for(int i=0; i<list.size(); i++){
-  								if(vo.getMEMBER_ID().equals(list.get(i).getTeamleader())){%>
-  							<li><a href="ShowPage1.jsp">팀 수락</a></li>		
-  								<%}
-                     }%>
                             <li><a href="ShowPage1.jsp">예약현황</a></li>
+                            <li><a href="LGW_HYH/Guide.jsp">풋살가이드</a></li>
                             <li><a href="Logoutform.jsp">로그아웃</a></li>
                         </ul>
                     </div> 
