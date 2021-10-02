@@ -135,6 +135,7 @@ input[type="text"] {
                               out.print("<td>" + al.get(i).getFILED_NAME() + "</td>");
                               out.print("<td>" + al.get(i).getTIMES() + "</td>");
                               out.print("<td>" + al.get(i).getGAMES() + "</td>");
+                              out.print("<td>" + al.get(i).getTEAM_NAME() + "</td>");
                               out.print("</tr>");
                            } else {
                               break;

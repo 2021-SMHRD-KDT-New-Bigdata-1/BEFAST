@@ -3,7 +3,7 @@
 <%@page import="newthang.TeamVO"%>
 <%@page import="newthang.TeamDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+	pageEncoding="EUC-KR"%>s
 
 <!DOCTYPE html>
 <html>

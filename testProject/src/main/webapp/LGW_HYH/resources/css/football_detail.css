@@ -1,5 +1,8 @@
 @charset "EUC-KR";
 
+body{
+	background-color:rgba(9,9,52);
+}
 .newthang {
 	height: 50px;
 	background-color: rgb(3, 3, 30);
@@ -15,10 +18,12 @@
 	float: left;
 }
 .h2 {
-	color: rgb(31, 209, 69);
+	color: #eee;
 	font-family: Arial Black;
 	line-height: 50px;
 	margin-top: 0px;
+	background-color:rgba(9,9,52);
+	color:rgba(31,209,69)
 }
 
 
@@ -34,15 +39,16 @@
 	font-size : 30px;
 	width: 85%;
 	float: left;
+	color:#eee;
 }
 
 #name {
-	font-size: 46px;
+	font-size: 30px;
 	margin: 0 0 0px 0;
 	display: inline;
 }
 .span{
-	font-size: 20px;
+	font-size: 30px;
 	display: inline;
 }
 .text-center1 {
@@ -86,6 +92,7 @@
 	font-size: 26px;
 	margin: 20 0 22px 7;
 	/* float: left; */
+	color:#eee;
 }
 
 profile2 p {
@@ -103,4 +110,13 @@ profile2 p {
 }
 .member p{
 	margin-left: 10px;
+}
+h2{
+	color:#eee;
+}
+.member{
+	color:#eee;
+}
+span{
+	font-size: 30px;
 }
