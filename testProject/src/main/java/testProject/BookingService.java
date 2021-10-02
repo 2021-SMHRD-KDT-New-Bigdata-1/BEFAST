@@ -40,9 +40,9 @@ public class BookingService extends HttpServlet {
      
       // TEAM_NAME, MEMBER_ID는 MEMBERVO의 세션값을 들고온 것
       int cnt = dao.BOOKINGS(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES, TEAM_NAME, MEMBER_ID);
+      int cnt1 = dao.BOOKINGS_RESULT(TEAM_NAME);
       
-      
-      if (cnt>0) {
+      if ((cnt>0)&&(cnt1>0)) {
          response.sendRedirect("Main.jsp");
       }
    }

@@ -79,6 +79,30 @@ public class BookingDAO {
       return cnt;
    }
 
+   // 경기결과 등록
+   public int BOOKINGS_RESULT(String TEAM_NAME) {
+	      conn();
+
+	      int cnt = 0;
+	      String sql = "insert into teams(TEAM_NAME) values(?)";
+
+	      try {
+	         psmt = conn.prepareStatement(sql);
+
+	         psmt.setString(1, TEAM_NAME);
+
+	         cnt = psmt.executeUpdate();
+
+	      } catch (SQLException e) {
+
+	         e.printStackTrace();
+	      } finally {
+	         close();
+	      }
+
+	      return cnt;
+	   }
+
    
    // 내 예약정보 
    public BookingVO My_booking(String MEMBER_ID) { 
