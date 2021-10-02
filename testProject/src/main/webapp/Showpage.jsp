@@ -49,7 +49,6 @@ input[type="text"] {
          <div class="container">
             <div class="game_box2">
 
-<<<<<<< HEAD
 					<div class="wait">
 						<table>
 							<caption>
@@ -65,10 +64,7 @@ input[type="text"] {
 									<td>팀명</td>
 									
 								</tr>
-								<tr>
 								
-								
-								</tr>
 								
 								<%
 								if (request.getParameter("choice") == null) {
@@ -77,7 +73,23 @@ input[type="text"] {
 									String choice = request.getParameter("choice");
 									al = dao.bookingsSearch(choice);
 								}
+								
 
+<<<<<<< HEAD
+	                        	int size = al.size() + 1;
+	                        	int total_page = size / 3 + (size % 3 == 0 ? 0 : 1);
+	                        	String page1 = request.getParameter("page1");
+	         
+	                        	System.out.println(page1);
+	                        
+	                        	if (page1 == null) {
+	                      	     page1 = "1";
+	                      	  }
+	                      	 	int cur_page = Integer.parseInt(page1);
+	                      	    System.out.println(page1);
+	                       	    int prev_page = cur_page - 1;
+	                            int next_page = cur_page + 1;
+=======
 
                         int size = al.size() + 1;
                         int total_page = size / 3 + (size % 3 == 0 ? 0 : 1);
@@ -90,30 +102,14 @@ input[type="text"] {
                         System.out.println(page1);
                         int prev_page = cur_page - 1;
                         int next_page = cur_page + 1;
-                        
-                        
-                        
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/BEFAST.git
 
 
 								
-								for (int i = 3 * (cur_page - 1); i < cur_page * 3; i++) {
-									if (i < al.size()) { %>
-<%-- 									 <form action="MatchService">
-									<table>
-										<tr>
-											<td><input type="hidden"  name="MATCHING_DATE" value="<%=al.get(i).getMATCHING_DATE()%>"></td>
-											<td><input type="hidden"  name="FILED_NAME" value="<%=al.get(i).getFILED_NAME()%>"><%=al.get(i).getFILED_NAME()%></td>
-											<td><input type="hidden"  name="TIMES" value="<%=al.get(i).getTIMES()%>"><%=al.get(i).getTIMES()%></td>
-											<td><input type="hidden"  name="GAMES" value="<%=al.get(i).getGAMES()%>"><%=al.get(i).getGAMES()%></td>
-											<td><input type="hidden"  name="TEAM_NAME" value="<%=al.get(i).getTEAM_NAME()%>"><%=al.get(i).getTEAM_NAME()%></td>
-											
-											<input type="submit" value="도전">
-										</tr>
-									</table>
-									</form> --%>
-									
+								/* for (int i = 3 * (cur_page - 1); i < cur_page * 3; i++) {
+									if (i < al.size()) { */%>
 										
-<!-- 										out.print("<tr>");
+<!--  										out.print("<tr>");
 										out.print("<td>" + al.get(i).getMATCHING_DATE() + "</td>");
 										out.print("<td>" + al.get(i).getADDRESS() + "</td>");
 										out.print("<td>" + al.get(i).getFILED_NAME() + "</td>");
@@ -122,41 +118,42 @@ input[type="text"] {
 										out.print("<td>" + al.get(i).getTEAM_NAME() + "</td>");
 										out.print("</tr>"); -->
 										
-										
-									<% } else {
+									<% /* } else {
 										break;
 									}
-								}
+								} */
+						
 								
-
-                        
-                        for (int i = 3 * (cur_page - 1); i < cur_page * 3; i++) {
-                           if (i < al.size()) {
-                              out.print("<tr>");
-                              out.print("<td>" + al.get(i).getMATCHING_DATE() + "</td>");
-                              out.print("<td>" + al.get(i).getADDRESS() + "</td>");
-                              out.print("<td>" + al.get(i).getFILED_NAME() + "</td>");
-                              out.print("<td>" + al.get(i).getTIMES() + "</td>");
-                              out.print("<td>" + al.get(i).getGAMES() + "</td>");
-                              out.print("</tr>");
-                           } else {
-                              break;
-                           }
-                        }
-                        
-
-
+						for (int i = 3 * (cur_page-1); i < cur_page * 3; i++){
+							if (i < al.size()){
+								
+								out.print("<tr>");
+								out.print("<td>" + al.get(i).getMATCHING_DATE() + "</td>");
+								out.print("<td>" + al.get(i).getADDRESS() + "</td>");
+								out.print("<td>" + al.get(i).getFILED_NAME() + "</td>");
+								out.print("<td>" + al.get(i).getTIMES() + "</td>");
+								out.print("<td>" + al.get(i).getGAMES() + "</td>");
+								out.print("<td>" + al.get(i).getTEAM_NAME() + "</td>");
+								out.print("</tr>");
+								
+							} else {
+								break;
+							}
+							
+						}
+								
                         if (prev_page <= 0) {
                            prev_page = 1;
                         } else if (cur_page >= total_page) {
                            next_page = total_page;
                         }
-                        
+                       
                         out.println("<div class=div1>");
                         out.println("<a href=?page1=" + prev_page + " class=\"btnbtn-smbtn-primary\">이전</a>");
                         out.println((prev_page) + " page / " + (next_page) + " pages");
                         out.println("<a href=?page1=" + next_page + " class=\"btnbtn-smbtn-primary\">다음</a>");
                         out.println("</div>");
+                        
                         %>
                      
                   </table>
@@ -206,6 +203,7 @@ input[type="text"] {
          </div>
 
       </div>
+     </div>
       <script>
          function hidden_change(val) {
             var hidden = document.getElementById("hidden_input");
