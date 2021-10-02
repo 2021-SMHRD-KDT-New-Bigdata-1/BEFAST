@@ -105,7 +105,7 @@ input[type="text"] {
                         System.out.println(page1);
                         int prev_page = cur_page - 1;
                         int next_page = cur_page + 1;
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/BEFAST.git
+
 
 
 								
