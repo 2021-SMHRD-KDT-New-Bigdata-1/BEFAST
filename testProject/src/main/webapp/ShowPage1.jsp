@@ -164,7 +164,7 @@ input[type="text"] {
 
             </div>
             <div id='result3'>선택안함</div>
-            <form method="get" action="Showpage.jsp">
+            <form method="get" action="ShowPage1.jsp">
                <div class="columns">
                   <figure>
                      <!-- 기존 : <img src="img/랭크경기.jpg"> -->
