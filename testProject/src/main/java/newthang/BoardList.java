@@ -23,7 +23,7 @@ public class BoardList extends HttpServlet {
 		// 브라우저에 알림 : HTML문서 전송
 		request.setCharacterEncoding("euc-kr");
 		response.setContentType("text/html;charset=EUC-KR");
-		// HTML을 브라우저로 전송 시작
+		// HTML을 브라우저로 전송 시작ㄹㄹ
 		
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
