@@ -235,6 +235,7 @@
                     </select>
                 </span>
             
+            
                 <span>경기장을 선택하세요
                     <select id="fileds" name="FILED_NAME"> 
                         <option>경기장을 선택하세요</option>
