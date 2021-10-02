@@ -58,23 +58,10 @@ public class BoardDAO {
 		try {
 			// 연결
 			getConnection();
-			// SQL문장 전송
-			// order by desc네요 그러면 10,9,8,7,6~ 순서대로 불러와 지는게 맞지않나요
-			// 감사합니다! 넵
-			// 실제 서비스 생각해보면 최근에 쓰인글에 먼저와야해서 의도하신거 아니였나요
-			// 그렇긴 한데,, 잠시만요 머리가 안 돌아가서..
-			// 일반적인 커뮤니티 게시글들도 앞페이지엔 가장 나중에쓴 글들이 오잖아유
-			// 그럼 고치지 말고 놔둘까요? 
-			// 여러분들 서비스가 가장 최신글이 중요하다면 desc 놔두시는게 좋지 않을까요
-			// 그래야 될 것 같아요.. 진짜 감ㅅ합니다ㅠㅠㅠㅠ
-			// 넹 페이징도 해보시고 안되면 다시 알려주세요 넵!!
-			// 무슨 말씀하실려고 하셨나유,,?
 			String sql = "SELECT write_number,field_code,field_member,p_area,team_name,write_subject,write_content,matching_time,write_time,hit FROM board "
 					+ "ORDER BY write_number desc"; // 단점: 속도 늦음→INDEX
 			ps = conn.prepareStatement(sql);
-			// SQL 실행 후 결과값 받기
 			rs = ps.executeQuery();
-			// 결과값 ArrayList에 첨
 			while (rs.next()) {
 				BoardVO vo = new BoardVO();
 				vo.setWrite_number(rs.getInt(1));

@@ -57,7 +57,7 @@ public class TeamList extends HttpServlet {
 		// 출력
 		TeamDAO dao = new TeamDAO();
 		ArrayList<TeamVO> list = dao.TeamboardListData();
-		System.out.print(list.size());
+		System.out.print("페이지 사이즈 :"+list.size());
 
 		if (request.getParameter("word") == null) {
 			list = dao.TeamboardListData();
