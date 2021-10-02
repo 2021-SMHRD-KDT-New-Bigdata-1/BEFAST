@@ -1,3 +1,6 @@
+
+<%@page import="newthang.TeamVO"%>
+<%@page import="newthang.TeamDAO"%>
 <%@page import="testProject.BookingVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="testProject.BookingDAO"%>
@@ -49,6 +52,8 @@
    BookingDAO dao = new BookingDAO();
    memberVO vo = (memberVO) session.getAttribute("vo");
    ArrayList<BookingVO> al = dao.select();
+   TeamDAO dao2 =new TeamDAO();
+   ArrayList<TeamVO> list =dao2.TeamboardListData();
    
    %>
    
@@ -97,10 +102,19 @@
                %>
                
                             <li><a href="Myinfo.jsp">내 정보</a></li>
+                          <%--  <%if(vo.getMEMBER_ID().equals()  {%>
+                           
+                           
+                           <% }%> --%>
                             <li><a href="TeamList">팀 찾기</a></li>
                             <li><a href="LGW_HYH/Team.jsp">팀 생성</a></li>
                             <li><a href="BoardList">용병게시판</a></li>
-
+							<% 
+							for(int i=0; i<list.size(); i++){
+  								if(vo.getMEMBER_ID().equals(list.get(i).getTeamleader())){%>
+  							<li><a href="ShowPage1.jsp">팀 수락</a></li>		
+  								<%}
+                     }%>
                             <li><a href="ShowPage1.jsp">예약현황</a></li>
                             <li><a href="Logoutform.jsp">로그아웃</a></li>
                         </ul>
@@ -279,10 +293,10 @@
 
          </div>
         
-          
+    </div>      
    </form>
            
-</div>
+
 
 
     <!-- 제이쿼리 로드 -->
