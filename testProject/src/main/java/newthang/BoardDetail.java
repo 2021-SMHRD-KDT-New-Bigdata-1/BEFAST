@@ -85,7 +85,7 @@ public class BoardDetail extends HttpServlet {
 
 		out.println("<div class = ahrfhr>");
 		out.println("<a href=# class=\"btn btn-xs btn-success choice\">신청</a>");
-		out.println("<script src=\"resources/js/jquery-3.6.0.min.js\"></script>");
+		out.println("<script src=\"./YJW_KSJ/JS/jquery-3.6.0.min.js\"></script>");
 		out.println("<script>$(function(){" + "$('.choice').on('click',function(){"
 				+ "alert('신청이 완료되었습니다.');location.href='BoardList';" + "}) })" + "</script>");
 		out.println("<script> </script>");
