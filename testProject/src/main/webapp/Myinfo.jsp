@@ -315,6 +315,7 @@ button#next {
 			hidden.value = val;
 			document.getElementById('result3').innerText = val;
 		}
+		
 	</script>
 		
 	</body>
