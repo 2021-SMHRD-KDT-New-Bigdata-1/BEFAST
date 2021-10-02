@@ -34,7 +34,9 @@ public class memberVO {
 		this.TEAM_NAME = TEAM_NAME;
 		this.TEAM_CODE = TEAM_CODE;
 	}
-
+	public memberVO() {
+		
+	}
 
 	public String getTEAM_NAME() {
 		return TEAM_NAME;

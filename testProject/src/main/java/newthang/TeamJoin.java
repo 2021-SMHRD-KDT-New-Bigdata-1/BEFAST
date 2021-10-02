@@ -23,9 +23,16 @@ public class TeamJoin extends HttpServlet {
 		HttpSession session = request.getSession();
 		memberVO vo = (memberVO) session.getAttribute("vo");
 		String member_id = vo.getMEMBER_ID();
+		//memberDAO dao2 =new memberDAO();
+		//ArrayList<memberVO> list = dao2.info(member_id);
+		//for(int i=0; i<list.size(); i++){
+			//	if(member_id.equals(list.get(i).getMEMBER_ID())){
+				//System.out.println("리스트 값 :"+ list.get(i).getMEMBER_ID());}
+				//}
+		//System.out.println("리스트값:"+ list.get(0).getMEMBER_ID());
 		
 		// String team_name = request.getParameter("team_name");
-
+		
 		TeamJoinDAO dao = new TeamJoinDAO();
 		int cnt = dao.TeamJoin(teamname, member_id);
 
@@ -38,6 +45,6 @@ public class TeamJoin extends HttpServlet {
 			response.sendRedirect("Main.jsp");
 		}
 	}
-		
+	}		
 
-}
+
