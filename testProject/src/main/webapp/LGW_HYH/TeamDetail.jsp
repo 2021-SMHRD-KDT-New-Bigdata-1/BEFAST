@@ -1,4 +1,3 @@
-<%@page import="jdk.internal.misc.FileSystemOption"%>
 <%@page import="testProject.memberDAO"%>
 <%@page import="testProject.memberVO"%>
 <%@page import="newthang.TeamVO"%>
