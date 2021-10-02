@@ -45,7 +45,7 @@
 	%>
 	<script>
 		alert("팀 생성되었습니다.");
-		location.href = "Main.jsp";
+		location.href = "../Main.jsp";
 	</script>
 
 </body>
