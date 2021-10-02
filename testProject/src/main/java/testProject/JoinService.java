@@ -38,7 +38,7 @@ public class JoinService extends HttpServlet {
 		
 		memberDAO dao = new memberDAO();
 		
-		// 순서 주의할 것
+		// 순서 주의 것
 		int cnt = dao.join(MEMBER_ID, PWD, MEMBER_NAME, MEMBER_PHONE, MEMBER_BIRTHDATE, GENDER, P_AREA, POSITION);
 		
 		if(cnt>0) {
