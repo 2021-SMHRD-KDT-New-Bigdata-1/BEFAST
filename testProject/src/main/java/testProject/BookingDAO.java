@@ -184,7 +184,7 @@ public class BookingDAO {
 
    public ArrayList<BookingVO> bookingsSearch(String choice) {
       ArrayList<BookingVO> boo = new ArrayList<BookingVO>();
-      String sql = "select MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES from BOOKINGS ";
+      String sql = "select MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES, TEAM_NAME, MEMBER_ID from BOOKINGS ";
       String sqlnormal = "";
       if (choice.equals("¿œπ›")) {
          sqlnormal = "where GAMES like '%" + choice.trim() + "%'";
@@ -208,7 +208,6 @@ public class BookingDAO {
             String FILED_NAME = rs.getString(3);
             String GAMES = rs.getString(4);
             String TIMES = rs.getString(5);
-            
             String TEAM_NAME = rs.getString(6);
             String MEMBER_ID = rs.getString(7);
             BookingVO vo = new BookingVO(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES, TEAM_NAME, MEMBER_ID);
