@@ -75,7 +75,7 @@ input[type="text"] {
 								}
 								
 
-<<<<<<< HEAD
+
 	                        	int size = al.size() + 1;
 	                        	int total_page = size / 3 + (size % 3 == 0 ? 0 : 1);
 	                        	String page1 = request.getParameter("page1");
@@ -89,21 +89,6 @@ input[type="text"] {
 	                      	    System.out.println(page1);
 	                       	    int prev_page = cur_page - 1;
 	                            int next_page = cur_page + 1;
-=======
-
-                        int size = al.size() + 1;
-                        int total_page = size / 3 + (size % 3 == 0 ? 0 : 1);
-                        String page1 = request.getParameter("page");
-
-                		if (page1 == null) {
-                			page1 = "1";
-                		}
-                		int cur_page = Integer.parseInt(page1);
-                        System.out.println(page1);
-                        int prev_page = cur_page - 1;
-                        int next_page = cur_page + 1;
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/BEFAST.git
-
 
 								
 								/* for (int i = 3 * (cur_page - 1); i < cur_page * 3; i++) {
