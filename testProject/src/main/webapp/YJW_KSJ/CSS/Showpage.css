@@ -282,3 +282,9 @@ tbody tr {
 .btnbtn-smbtn-primary{
 	color:#Eee
 }
+.check{
+	width : 100px;
+	height : 100px;
+	color: white;
+	font-color : black;
+}
