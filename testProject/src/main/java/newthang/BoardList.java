@@ -50,6 +50,7 @@ public class BoardList extends HttpServlet {
 		// 출력
 		BoardDAO dao = new BoardDAO();
 		ArrayList<BoardVO> list;
+		
 
 		if (request.getParameter("word") == null) {
 			list = dao.boardListData();
@@ -59,6 +60,7 @@ public class BoardList extends HttpServlet {
 			String word = request.getParameter("word");
 			list = dao.BoardSearchData(col, word);
 		}
+		System.out.print("페이지 사이즈 :"+list.size());
 		int size = list.size() + 1;
 		int total_page = size / 5 + (size % 5 == 0 ? 0 : 1);
 		String page = request.getParameter("page");

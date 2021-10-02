@@ -7,10 +7,10 @@ public class TeamVO {
 	private String team_level;
 	private String team_uniform;
 	private String team_info;
-	private int team_member;
 	private String team_time;
 	private String team_logo;
 	private String teamleader;
+	private int team_member;
 	public String getTeamleader() {
 		return teamleader;
 	}

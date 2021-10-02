@@ -56,20 +56,19 @@ public class TeamList extends HttpServlet {
 		out.println("</tr>");
 		// 출력
 		TeamDAO dao = new TeamDAO();
-		ArrayList<TeamVO> list = dao.TeamboardListData();
-		System.out.print("페이지 사이즈 :"+list.size());
+		ArrayList<TeamVO> list;
+		
 
 		if (request.getParameter("word") == null) {
 			list = dao.TeamboardListData();
+
 		} else {
 			String col = request.getParameter("col");
 			String word = request.getParameter("word");
 			list = dao.TeamSearchData(col, word);
 		}
-
 		int size = list.size() + 1;
-		int total_page = size / 15 + (size % 5 == 0 ? 0 : 1);
-		System.out.println("사이즈:" + size + "\n토탈:" + total_page);
+		int total_page = size / 15 + (size % 15 == 0 ? 0 : 1);
 		String page = request.getParameter("page");
 
 		if (page == null) {
