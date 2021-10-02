@@ -131,11 +131,13 @@ input[type="text"] {
 								out.print("<td>" + al.get(i).getTIMES() + "</td>");
 								out.print("<td>" + al.get(i).getGAMES() + "</td>");
 								out.print("<td>" + al.get(i).getTEAM_NAME() + "</td>");
-								out.print("<td><input type=\"button\" name=\"btnsss\" value=\"예약\" class=\"result\""
-										+ "onclick='changeBtnName()'> <input type=\"hidden\""
-										+ "name=\"btnsss\" value=\"선택안함\" class=\"result\" id=\"btnsss\"></td>");
+								// 예약한 겨룰 상대팀이 예약을 눌러 예약정보에 자신의 정보가 담아지게 jsp이동
+								out.print("<form action=ShowDetail.jsp>");
+								out.print("<td><input type=\"submit\" name=\"btnsss\" value=\"예약\" class=\"result\""
+										+ "onclick='changeBtnName()'></td>");
 								//out.print("<td><input type=\"submit\" value=\"예약\" id=btnss onclick=changeBtnName()"
 								//	  +"></td>");
+								out.print("</form>");
 								out.print("</tr>");
 								} else {
 								break;
