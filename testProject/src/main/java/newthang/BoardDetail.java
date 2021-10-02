@@ -61,7 +61,7 @@ public class BoardDetail extends HttpServlet {
 		//그럴 필요가 없기 때문에 dao 기능 호출할때 현재 로그인한 사람의 팀정보만 가지고 오는 거를 따로 만드셔야 해요.. 네 한 번 해보게
 		//습니다....감사합니다
 		
-		out.println("<img src='LGW_HYH/"+vo2.getTeam_logo()+"'>");  //여긴가요?넵
+		//out.println("<img src='LGW_HYH/"+vo2.getTeam_logo()+"'>");  //여긴가요?넵
 		out.println("<div class= tjfaud>");
 		out.println("<p id=name>" + vo.getTeam_name() + "</p>");
 		out.println("<br>");

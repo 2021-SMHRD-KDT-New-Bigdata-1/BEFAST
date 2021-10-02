@@ -19,9 +19,9 @@
 	<div id="header">
 		<h2>
 			<b>팀 생성 페이지</b>
-		</h2>
+		</h2>TeamInsert
 
-		<form action="../TeamInsert.jsp" method="post">
+		<form action="TeamInsert.jsp" method="post">
 			<div id="container">
 				<div id="content">
 					<div class="join_content">

@@ -9,6 +9,7 @@ public class BookingVO {
 	
 	private String TEAM_NAME;
 	private String MEMBER_ID;
+	private String TEAM_NAME2;
 	
 	
 
