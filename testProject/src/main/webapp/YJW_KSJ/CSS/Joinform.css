@@ -161,11 +161,11 @@ h3.join_group {
     font-size: 15px;
     box-sizing: border-box;
     background-color:transparent;
+    color: #eee;
 }
-
-
-
-
+option{
+	color:black;
+}
 .input_box_gender {
     text-align: center;
     margin: auto;

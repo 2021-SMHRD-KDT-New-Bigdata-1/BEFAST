@@ -10,6 +10,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<link rel="stylesheet" href="LGW_HYH/resources/css/result.css">
+<link rel="stylesheet" href="YJW_KSJ/CSS/Manner.css">
+
 <title>내 정보</title>
 <!-- font-awesome  -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
@@ -28,7 +32,7 @@ body {
 .Card {
 	background-color: #3d405b;
 	color: #f4f1de;
-/* 	width: 250px; */
+/* 	width: 250px; *//*  */
 	padding: 30px 20px;
 	height: auto;
 	box-shadow: 0 0 15px #000;
@@ -49,11 +53,11 @@ body {
 }
 
 .Card .MEMBER_ID {
-	font-size: 20px;
+	font-size: 25px;
 	font-weight: 600;
 	margin-top: 20px;
 	margin-bottom: 20px;
-	color: #1FD145;
+	color: #eee;
 }
 
 .Card .My_info1 {
@@ -79,6 +83,7 @@ body {
 .Card .My_info2 {
 	width: 100%;
 }
+p{ text-align: center;}
 
 .Card .My_info2 .title, .Matching_info {
 	color: #eee;
@@ -128,8 +133,9 @@ body {
 	top: 15px;
 }
 
-.PreNext a{
+.PreNext{
 	text-decoration: none;
+	margin-left: 4px;
 }
 
 button {
@@ -151,11 +157,13 @@ button#pre {
 
 button#next {
 	position: relative;
-	right: -238px;
+	right: -141px;
 }
 
 .barOuter2 {
 	text-align: center;
+	padding: 6px;
+	margin-left: 16px;
 
 }
 
@@ -209,9 +217,9 @@ button#next {
 					</div>
 				</div>
 				
-			<form action="Myinfo.jsp">
+			
 					<div class="line"></div>
-					<p>내 매칭현황</p><!-- <p class="Matching_info">내 매칭현황</p> -->
+					<p class="haha">내 매칭현황</p><!-- <p class="Matching_info">내 매칭현황</p> -->
 				
 				<div class="barOuter2">
 				
@@ -235,15 +243,50 @@ button#next {
 					<div class="barLevel barHTML">경기시간
 					<p class="My_type"><i class="far fa-calendar-alt"></i><%=Bvo.getTIMES()%></p>
 					</div>
+					
+					</div>
+					
 					<% }else{%>
 					예약이 없습니다
 					<% }%>
 					
 					<div class="line"></div>
 					
+		<div class="partner">
+			<h2>경기 결과</h2>
+				<div class="partner_info">
+					<p>클릭해주세요.</p>
+				</div>
+		</div>
+		
+		<div class="clear"></div>
+			<div id="modal">
+				<div class="body">
+					<p class="p">경기결과를 클릭해주세요</p>
+					<br>
+					
+				<div class="modal_img">
+					<input type="button" name="m_result" value="승리" class="win"
+						onclick='hidden_change("승리")'> <input type="hidden"
+						name="m_result" value="선택안함" class="result" id="hidden_input">
+						
+					<input type="button" name="m_result" value="패배" class="lose"
+						onclick='hidden_change("패배")'> <input type="hidden"
+						name="m_result" value="선택안함" class="result" id="hidden_input">
+						
+					<input type="button" name="m_result" value="무승부" class="mu"
+						onclick='hidden_change("무승부")'> <input type="hidden"
+						name="m_result" value="선택안함" class="result" id="hidden_input">
+						
+				</div>
+					<br>
+					<div id='result3'>선택안함</div>
+						<div class="button">
+							<button type="button" id="btn-close">닫기</button>
+						</div>
+				</div>
 			</div>
-			</form>
-			
+		</div>
 			
 				<div class="PreNext">
 			
@@ -259,7 +302,25 @@ button#next {
 				</div>
 			
 		</div>
-	</div>
+		
+	<script src="./YJW_KSJ/JS/jquery-3.6.0.min.js"></script>
+	
+	<script>
+		$(".partner p").click(function() {
+			$("#modal").addClass("active");
+		});
+		
+		$("#modal button").click(function() {
+			$("#modal").removeClass("active");
+		});
+		
+		function hidden_change(val) {
+			var hidden = document.getElementById("hidden_input");
+			hidden.value = val;
+			document.getElementById('result3').innerText = val;
+		}
+		
+	</script>
 		
 	</body>
 </html>

@@ -1,5 +1,5 @@
 @charset "EUC-KR";
-
+/*  */
 .star-rating {
     display: flex;
     flex-direction: row-reverse;
@@ -16,10 +16,11 @@
 }
 
 .star-rating label {
-    -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+    -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 2.3px;
-    -webkit-text-stroke-color: #2b2a29;
+    -webkit-text-stroke-color: lightgoldenrodyellow;
     cursor: pointer;
+    margin: 3px;
 }
 
 .star-rating :checked ~ label {
@@ -29,4 +30,36 @@
 .star-rating label:hover,
 .star-rating label:hover ~ label {
     -webkit-text-fill-color: #fff58c;
+}
+
+body{
+	color: #eee;
+	background-color: rgba(9,9,52);
+}
+.Card {
+    background-color: #3d405b;
+    color: #f4f1de;
+    /* width: 250px; */
+    padding: 0px 22px;
+    height: auto;
+    box-shadow: 0 0 15px #000;
+    border-radius: 15px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+textarea{
+	margin-left:20px;
+}
+label{
+	color:#eee;
+}
+input{
+	margin:10px;
+	font-size: 15px;
 }

@@ -17,7 +17,7 @@
 	out.println("<html>");
 	out.println("<head>");
 	out.println("<Link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">");
-	out.println("<Link rel=\"stylesheet\" href=\"resources/css/football_insert.css\">");
+	out.println("<Link rel=\"stylesheet\" href=\"LGW_HYH/resources/css/football_insert.css\">");
 	out.println("<style type=text/css>");
 	out.println(".row {margin:0px auto; width:500px}");
 	out.println("h2 {text-align:center}");
@@ -28,7 +28,7 @@
 	out.println("<h2 class=h2>BE FAST</h2>");
 	out.println("</div>");
 	out.println("<div class=container>");
-	out.println("<h3 class=h3>용병 모집 글쓰기</h3>");
+	out.println("<h3 class=h3>용병 모집</h3>");
 	out.println("<div class=row>");
 
 	out.println("<form method=post action=BoardUpdate1.jsp?write_number="+write_number+">");
