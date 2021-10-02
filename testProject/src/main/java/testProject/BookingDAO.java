@@ -105,16 +105,21 @@ public class BookingDAO {
 	}
 
 	// 상대팀 정보 전달
-	public int BOOKINGS_RESULT2(String MEMBER_ID,String TEAM_NAME2) {
+	public int BOOKINGS_RESULT2(String MATCHING_DATE, String ADDRESS, String FILED_NAME, String GAMES, String TIMES,String TEAM_NAME2) {
 		conn();
-
+		
 		int cnt = 0;
-		String sql = "insert into BOOKINGS(TEAM_NAME2) values(?) where MEMBER_ID=?";
+		String sql = "update BOOKINGS SET TEAM_NAME2 = ? where MATCHING_DATE=? and ADDRESS=? and FILED_NAME=? and GAMES=? and TIMES=?";
 
 		try {
 			psmt = conn.prepareStatement(sql);
 
 			psmt.setString(1, TEAM_NAME2);
+			psmt.setString(2, MATCHING_DATE);
+			psmt.setString(3, ADDRESS);
+			psmt.setString(4, FILED_NAME);
+			psmt.setString(5, GAMES);
+			psmt.setString(6, TIMES);
 
 			cnt = psmt.executeUpdate();
 
@@ -151,8 +156,10 @@ public class BookingDAO {
 				String TIMES = rs.getString(5);
 				String TEAM_NAME = rs.getString(6);
 
-				Bvo = new BookingVO(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES, TEAM_NAME, MEMBER_ID);
-				//Bvo = new BookingVO();
+				
+				Bvo = new BookingVO(MATCHING_DATE, ADDRESS, FILED_NAME,GAMES,TIMES, TEAM_NAME, MEMBER_ID);
+				 
+				
 			}
 
 		} catch (SQLException e) {
@@ -213,6 +220,7 @@ public class BookingDAO {
 				String TEAM_NAME = rs.getString(6);
 				String MEMBER_ID = rs.getString(7);
 
+				
 				BookingVO vo = new BookingVO(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES, TEAM_NAME, MEMBER_ID);
 				al.add(vo);
 
@@ -254,7 +262,9 @@ public class BookingDAO {
 				String TIMES = rs.getString(5);
 				String TEAM_NAME = rs.getString(6);
 				String MEMBER_ID = rs.getString(7);
+				
 				BookingVO vo = new BookingVO(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES, TEAM_NAME, MEMBER_ID);
+				
 				boo.add(vo);
 			}
 			rs.close();

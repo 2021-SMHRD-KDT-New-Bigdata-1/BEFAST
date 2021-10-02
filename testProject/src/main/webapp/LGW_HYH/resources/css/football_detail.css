@@ -46,7 +46,8 @@ body{
 	font-size: 30px;
 	margin: 0 0 0px 0;
 	display: inline;
-	color:rgba(31,209,69);
+	color:#eee;
+	font-weight: bold;
 }
 .span{
 	font-size: 30px;
@@ -56,11 +57,11 @@ body{
 	text-align: center;
 	font-weight: bold;
 	background-color: red;
-	color: white;
+	color: #eee;
 	height: 30px;
 	line-height: 30px;
-	width: 120px;
-	/* margin-left: 300px; */
+	width: 48%;
+	 margin-left: 64px;
 	/* justify-content: right; */
 	/* align-items: inherit; */
 }
@@ -78,13 +79,13 @@ body{
 
 .text-center3 {
 	text-align: center;
-	width: 30%;
+	width: 48%;
 	font-weight: bold;
 	background-color: blue;
-	color: white;
+	color: #eee;
 	height: 30px;
 	line-height: 30px;
-	margin-left: 140px;
+	margin-left: 64px;
 }
 .member p{
 	margin-left: 2px;
@@ -93,7 +94,9 @@ body{
 	font-size: 26px;
 	margin: 20 0 22px 7;
 	/* float: left; */
-	color:#eee;
+	color: black;
+	background-color:ivory;
+	padding: 35px;
 }
 
 profile2 p {
@@ -124,4 +127,10 @@ span{
 }
 .ahrfhr{
     padding:0px;
+}
+div span{
+	font-size:15px;}
+	
+h2{
+	border-width: unset;
 }

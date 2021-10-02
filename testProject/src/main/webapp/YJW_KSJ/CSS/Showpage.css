@@ -226,11 +226,8 @@ table {
 }
 
 table td {
-<<<<<<< HEAD
    width: 5%;
-=======
    width: 17%;
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/BEFAST.git
    color: #fff;
    padding: 0.5em 0.5em;
    border-bottom: 1px solid #444444;
@@ -277,7 +274,7 @@ tbody tr {
    align-items: center;
    justify-content: center;
    display: flex;
-   font-size: x-large;
+   font-size: large;
 }
 .btnbtn-smbtn-primary{
 	color:#Eee
