@@ -112,7 +112,7 @@ public class TeamDAO {
 			// 연결
 			conn();
 			// SQL문장 전송
-			String sql = "SELECT *  FROM team_member ";
+			String sql = "SELECT *  FROM team_member";
 			// 단점: 속도 늦음→INDEX
 			psmt = conn.prepareStatement(sql);
 			// SQL 실행 후 결과값 받기
@@ -129,7 +129,6 @@ public class TeamDAO {
 				vo.setTeam_member(rs.getInt(7));
 				vo.setTeam_logo(rs.getString(8));
 				vo.setTeamleader(rs.getString(9));
-				
 				list.add(vo);
 			}
 			rs.close();

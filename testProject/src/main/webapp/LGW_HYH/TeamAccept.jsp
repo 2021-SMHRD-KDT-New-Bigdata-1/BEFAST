@@ -35,9 +35,9 @@
 			<td><%=vo.getMEMBER_PHONE() %></td>
 
 			
-			<td><a href="../Myinfo?member_id(<%=vo.getMEMBER_ID()%>)">상세보기</a></td
+			<td><a href="../Myinfo?member_id(<%= vo.getMEMBER_ID()%>)">상세보기</a></td>
 
-			</tr>
+			 </tr>
 
 
 
