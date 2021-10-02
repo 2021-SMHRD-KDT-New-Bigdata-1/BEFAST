@@ -9,6 +9,19 @@ public class BookingVO {
 	
 	private String TEAM_NAME;
 	private String MEMBER_ID;
+	public String getTEAM_NAME2() {
+		return TEAM_NAME2;
+	}
+
+
+
+
+
+	public void setTEAM_NAME2(String TEAM_NAME2) {
+		this.TEAM_NAME2 = TEAM_NAME2;
+	}
+
+
 	private String TEAM_NAME2;
 	
 	
@@ -21,7 +34,7 @@ public class BookingVO {
 	
 	
 	public BookingVO(String MATCHING_DATE, String ADDRESS, String FILED_NAME, String GAMES, String TIMES,
-			String TEAM_NAME, String MEMBER_ID) {
+			String TEAM_NAME, String MEMBER_ID, String TEAM_NAME2) {
 		super();
 		this.MATCHING_DATE = MATCHING_DATE;
 		this.ADDRESS = ADDRESS;
@@ -30,6 +43,7 @@ public class BookingVO {
 		this.TIMES = TIMES;
 		this.TEAM_NAME = TEAM_NAME;
 		this.MEMBER_ID = MEMBER_ID;
+		this.TEAM_NAME2 = TEAM_NAME2;
 	}
 	 
 
