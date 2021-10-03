@@ -135,7 +135,7 @@ p{ text-align: center;}
 
 .PreNext{
 	text-decoration: none;
-	/* margin-left: 4px; */
+	/* margin-left: 4px; //*/
 }
 
 button {
