@@ -51,7 +51,7 @@
 	vo.setResult_3(result_3);
 
 	MannerDAO dao = new MannerDAO();
-	dao.MannerInsert(vo);
+	
 	%>
 	<script>
 		alert("경기 평가 등록이 완료되었습니다.")
