@@ -54,6 +54,7 @@ public class TeamList extends HttpServlet {
 		out.println("<th class=text-center width=10%>ÆÀ À¯´ÏÆû</th>");
 		out.println("<th class=text-center width=10%>ÆÀ ¸â¹ö</th>");
 		out.println("</tr>");
+		
 		// Ãâ·Â
 		TeamDAO dao = new TeamDAO();
 		ArrayList<TeamVO> list;
@@ -126,6 +127,7 @@ public class TeamList extends HttpServlet {
 		out.println("<input type=text size 15 class=input-sm name=word id=search>");
 		out.println("<input type=submit value=Ã£±â class=\"btn btn-sm btn-danger\">");
 		out.println("</form>");
+		
 		out.println("</td>");
 
 		if (prev_page <= 0) {
@@ -142,8 +144,12 @@ public class TeamList extends HttpServlet {
 		out.println("</td>");
 		
 		out.println("</tr>");
-		out.println("<table>");
-
+		out.println("</table>");
+		
+		out.println("<div class='list'>");
+		out.println("<a href='Main.jsp'>¸ñ ·Ï</a>");
+		out.println("</div>");
+		
 		out.println("</div>");
 		out.println("</div>");
 		out.println("</body>");
