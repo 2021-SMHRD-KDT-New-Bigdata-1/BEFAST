@@ -211,6 +211,9 @@ input[type="button"]:hover {
     width: 231px;
     padding: 20px;
 } 
+.win{
+	color:red;
+}
 
 
 
