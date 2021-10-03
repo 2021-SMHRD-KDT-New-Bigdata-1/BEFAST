@@ -163,10 +163,10 @@ public class TeamDAO {
 			vo.setTeam_level(rs.getString(4));
 			vo.setTeam_uniform(rs.getString(5));
 			vo.setTeam_info(rs.getString(6));
-			vo.setTeam_member(rs.getInt(7));
-			vo.setTeam_time(rs.getString(8));
-			vo.setTeam_logo(rs.getString(9));
-			vo.setTeamleader(rs.getString(10));
+			vo.setTeam_time(rs.getString(7));
+			vo.setTeam_logo(rs.getString(7));
+			vo.setTeamleader(rs.getString(9));
+			vo.setTeam_member(rs.getInt(10));
 			rs.close();
 					
 		} catch (Exception ex) {
@@ -245,6 +245,40 @@ public class TeamDAO {
 		return vo;
 	}
 	
-		
+	public ResultVO Result(String team_name) {
+		ResultVO vo = new ResultVO();
+		try {
+			// 연결
+			conn();
+			
+
+			String sql = "select * FROM teams WHERE Team_name=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, team_name); // ?에 값을 채운다
+			// 실행
+			// 내용물 데이터를 가지고 온다
+
+			ResultSet rs = psmt.executeQuery();
+			rs.next();
+			vo.setTEAM_CODE(rs.getInt(1));
+			vo.setTEAM_NAME(rs.getString(2));
+			vo.setMANNERSCORES(rs.getInt(3));
+			vo.setWINNER_POINT(rs.getInt(4));
+			vo.setTEAM_LOGO(rs.getString(5));
+			vo.setTEAM_TROPHY(rs.getString(6));
+			vo.setTEAM_INFO(rs.getString(7));
+			vo.setTEAMLEADER(rs.getString(8));
+			vo.setRESULT_1(rs.getInt(9));
+			vo.setRESULT_2(rs.getInt(10));
+			vo.setRESULT_3(rs.getInt(11));
+			rs.close();
+					
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		} finally {
+			close();
+		}
+		return vo;
+	}
 	}
 	

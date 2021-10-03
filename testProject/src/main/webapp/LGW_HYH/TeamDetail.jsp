@@ -1,3 +1,4 @@
+<%@page import="newthang.ResultVO"%>
 <%@page import="testProject.memberDAO"%>
 <%@page import="testProject.memberVO"%>
 <%@page import="newthang.TeamVO"%>
@@ -21,6 +22,7 @@
 	String team_name = request.getParameter("team_name");
 	TeamDAO dao = new TeamDAO();
 	TeamVO vo = dao.TeamDetail(team_name);
+	ResultVO vo3 =dao.Result(team_name);
 	
 	%>
  	<div id="header">
@@ -36,18 +38,15 @@
 				<tr>
 					<td>주 장</td>
 					<td><%=vo.getTeamleader()%></td>
-				</tr>
-				<tr>
-					<td>순 위</td>
-					<td></td>
-				</tr>
+				</tr>				
 				<tr>
 					<td>승점/전적</td>
-					<td></td>
+					<td><%=vo3.getWINNER_POINT()%>/<%=vo3.getRESULT_2()%>승<%=vo3.getRESULT_3()%>무
+					<%=vo3.getRESULT_1()%>패</td>
 				</tr>
 				<tr>
 					<td>팀 매너점수</td>
-					<td></td>
+					<td><%=vo3.getMANNERSCORES()%></td>
 				</tr>
 				<tr>
 					<td>연고지</td>

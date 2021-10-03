@@ -121,7 +121,7 @@
 					<input type="submit" id="create" class="create" value="팀 생성하기">
 					<%} 
 				else{%>
-					<input type="text" placeholder="이미 가입된 팀이 존재합니다.">
+					<a href = "../Main.jsp">이미 가입된 팀이 존재합니다.</a>
 				<% }%>
 				</div>
 				</div>
