@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 public class BookingService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void service(HttpServletRequest request, HttpServletResponse response)
+	protected void service(HttpServletRequest request, HttpServletResponse response, String TEAM_NAME22)
 			throws ServletException, IOException {
 
 		request.setCharacterEncoding("EUC-KR");
@@ -57,6 +57,7 @@ public class BookingService extends HttpServlet {
 		 */
 
 		int cnt = dao.BOOKINGS(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES, TEAM_NAME, MEMBER_ID);
+		int cnt22 = dao.BOOKINGS22(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES);
 		int cnt1 = dao.BOOKINGS_RESULT(TEAM_NAME);
 
 		if ((cnt > 0) && (cnt1 > 0)) {

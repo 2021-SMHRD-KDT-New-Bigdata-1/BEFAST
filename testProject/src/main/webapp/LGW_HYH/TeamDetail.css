@@ -7,8 +7,11 @@ body{
 }
 .team_name{
 	height: 100px;
+	justify-content:center;
 	width: 300px;
-	align: center;
+	vertical-align: baseline;
+	display: contents;
+	
 }
 .table1{
 	height: 300px;
@@ -18,10 +21,13 @@ body{
 div#header{
     padding-top: 50px;
     min-width: 220px;
-    margin: 0 300px;
     box-sizing: border-box;
     text-align: center;
-    width: max-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
 }
 .logo{
 	display : flex;
@@ -29,33 +35,49 @@ div#header{
 	width:100px;
 }
 .name{
-	display:inline;
-	color:#Eee;
-	position: absolute;
-    left: 43%;
+    color: #Eee;
     font-size: xx-large;
-    top: 110px;	
-		
+    margin:19px;
+    top: 110px;
 }
 .table1{
 	width: 680px;
 	height: 450px;
 }
 h4{
-	width:680px;
-	height: auto;
+	/* width:680px; */
+	/* height: auto; */
 	color: #eee;
-
+	font-size: 1.3rem;
+	
 }
 .info{
-	width: 665px;
+	/* width: 665px; */
 	height:125px;
 	color: #eee;
 }
+
+tr {
+	border-bottom: 1px solid;
+	
+}
+
 tr td{
 	color:#eee;
-	border-bottom: 1px solid #ddd;
+	/* border-bottom: 1px solid #ddd; */
+	text-align: center;
+	border: solid 1px;
 }
+
 a{
 	color:#eee;
+	font-size: 1.3rem;
+    text-decoration: none;
 }
+
+a:hover {
+	transition: all 0.2s ease 0s;
+    color: rgba(31,209,69);
+}
+
+

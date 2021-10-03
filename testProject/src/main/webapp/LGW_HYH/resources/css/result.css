@@ -130,3 +130,12 @@ div{
 	cursor: pointer;
 	background-color: #996699;
 }
+.form{
+	margin: 0px;
+    border: none;
+    background-color: none;
+    font-size: 16px;
+    background-color: #3d405b;
+    color: #eee;
+    border-bottom: solid 1px;
+}
