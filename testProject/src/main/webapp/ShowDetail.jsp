@@ -1,3 +1,4 @@
+<%@page import="testProject.BookingVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="testProject.BookingDAO"%>
 <%@page import="testProject.memberVO"%>
@@ -13,7 +14,7 @@
 	<%
 	
 	
-	/*BookingDAO dao = new BookingDAO();
+	BookingDAO dao = new BookingDAO();
 	memberVO vo = (memberVO) session.getAttribute("vo");
 	ArrayList<BookingVO> al;
 	String MATCHING_DATE = request.getParameter("MATCHING_DATE");
@@ -28,12 +29,12 @@
     System.out.println(TIMES);
     
 	HttpSession session2 = request.getSession();
-	memberVO vo = (memberVO) session.getAttribute("vo");
+	memberVO vo2 = (memberVO) session.getAttribute("vo");
 
 	// 세션에 있는 (로그인되어있는 아이디를 기준) 값을 들고온다.
 	String TEAM_NAME2 = vo.getTEAM_NAME();
 	String MEMBER_ID = vo.getMEMBER_ID();
-*/
+
 	//BookingDAO dao = new BookingDAO();
 	//int cnt1 = dao.BOOKINGS_RESULT2(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES, TEAM_NAME2);
 
