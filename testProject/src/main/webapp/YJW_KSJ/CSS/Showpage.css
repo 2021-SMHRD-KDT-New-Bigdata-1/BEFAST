@@ -26,7 +26,7 @@
 .columns figure img {
    float: left;
    border: 2px solid #000;
-   width: 300px;
+   width: 200px;
    /* height: 100px; */
    /* text-align: center; */
    /* line-height: 100px; */
@@ -289,4 +289,10 @@ tbody tr {
 }
 .coloring{
 	color :white;
+}
+a{
+	color:#eee;
+}
+.btn btn-sm btn-primary{
+	color:#eee;
 }
