@@ -57,7 +57,6 @@ public class BookingService extends HttpServlet {
 		 */
 
 		int cnt = dao.BOOKINGS(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES, TEAM_NAME, MEMBER_ID);
-		int cnt22 = dao.BOOKINGS22(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES);
 		int cnt1 = dao.BOOKINGS_RESULT(TEAM_NAME);
 
 		if ((cnt > 0) && (cnt1 > 0)) {
