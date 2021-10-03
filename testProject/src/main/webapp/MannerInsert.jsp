@@ -19,7 +19,7 @@
 	int result_1 = 0;
 	int result_2 = 0;
 	int result_3 = 0;
-	//String result = request.getParameter("result");
+	//String result = request.getParameter("result);
 	if (m_result.equals("ÆÐ¹è")) {
 		m_result = "10";
 		m_result1 = Integer.parseInt(m_result);
