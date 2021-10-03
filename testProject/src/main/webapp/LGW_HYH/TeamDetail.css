@@ -21,10 +21,14 @@ body{
 div#header{
     padding-top: 50px;
     min-width: 220px;
-    margin: 0 300px;
     box-sizing: border-box;
     text-align: center;
-    width: max-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+    
 }
 .logo{
 	display : flex;
@@ -53,6 +57,12 @@ h4{
 	height:125px;
 	color: #eee;
 }
+
+tr {
+	border-bottom: 1px solid;
+	
+}
+
 tr td{
 	color:#eee;
 	/* border-bottom: 1px solid #ddd; */
