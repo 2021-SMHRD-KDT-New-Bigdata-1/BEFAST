@@ -298,7 +298,8 @@ public class BookingDAO {
 
 	public ArrayList<BookingVO> bookingsSearch(String choice) {
 		ArrayList<BookingVO> boo = new ArrayList<BookingVO>();
-		String sql = "select MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES, TEAM_NAME, MEMBER_ID from BOOKINGS ";
+		System.out.println("sql문 출력 : "+choice);
+		String sql = "select * from BOOKINGS ";
 		String sqlnormal = "";
 		if (choice.equals("일반")) {
 			sqlnormal = "where GAMES like '%" + choice.trim() + "%'";

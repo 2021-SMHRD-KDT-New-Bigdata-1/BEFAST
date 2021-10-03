@@ -3,7 +3,8 @@
 	color : white;
 }
 #result3{
-	color : #eee;
+	color : #eee;    
+	margin-top: 10px;
 }
 .div1{
 	color: #eee;}
@@ -26,7 +27,7 @@
 .columns figure img {
    float: left;
    border: 2px solid #000;
-   width: 300px;
+   width: 200px;
    /* height: 100px; */
    /* text-align: center; */
    /* line-height: 100px; */
@@ -263,7 +264,7 @@ tbody tr {
 }
 
 .columns{
-   width: 1500px;
+   /* width: 1500px; */
    margin-left: auto;
    margin-right: auto;
    display: inline-block;
@@ -289,4 +290,15 @@ tbody tr {
 }
 .coloring{
 	color :white;
+}
+a{
+	color:#eee;
+}
+.btn btn-sm btn-primary{
+	color:#eee;
+}
+.white1{
+	color:#eee;
+	margin: 0 10px 0 10px;
+    display: inline;
 }

@@ -40,6 +40,10 @@
 
 	
 	%>
+	<script>
+		alert("팀 매칭이 완료되었습니다.");
+		location.href ="ShowPage1.jsp"
+	</script>
 	
 </body>
 </html>
