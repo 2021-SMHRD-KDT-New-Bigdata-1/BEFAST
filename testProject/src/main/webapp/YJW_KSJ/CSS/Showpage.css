@@ -3,7 +3,8 @@
 	color : white;
 }
 #result3{
-	color : #eee;
+	color : #eee;    
+	margin-top: 10px;
 }
 .div1{
 	color: #eee;}
@@ -295,4 +296,9 @@ a{
 }
 .btn btn-sm btn-primary{
 	color:#eee;
+}
+.white1{
+	color:#eee;
+	margin: 0 10px 0 10px;
+    display: inline;
 }

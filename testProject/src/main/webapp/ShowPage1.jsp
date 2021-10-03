@@ -147,9 +147,6 @@ input[type="text"] {
 									page1 = "1";
 								}
 								int cur_page = Integer.parseInt(page1);
-								System.out.println("현재 페이지 "+cur_page);
-								System.out.println("총페이지 "+al.size());
-								System.out.println(total_page);
 								int prev_page = cur_page - 1;
 								int next_page = cur_page + 1;
 
@@ -187,7 +184,7 @@ input[type="text"] {
 									next_page = total_page;
 								}
 								out.println("<a href=?page1=" + prev_page + " class=\"btn btn-sm btn-primary\">이전</a>");
-								out.println((prev_page) + " page / " + (next_page) + " pages");
+								out.println("<p class=\"white1\">"+(prev_page) + " page / " + (next_page) + " pages</p>");
 								out.println("<a href=?page1=" + next_page + " class=\"btn btn-sm btn-primary\">다음</a>");
 								%>
 							
