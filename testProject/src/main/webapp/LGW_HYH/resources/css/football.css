@@ -129,3 +129,7 @@ select.input-sm {
 
 .input-sm {
     color: black;}
+.list{
+	text-align :center;
+	font-size : 3rem;
+}

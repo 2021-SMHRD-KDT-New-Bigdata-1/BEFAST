@@ -138,8 +138,12 @@ public class BoardList extends HttpServlet {
 		out.println("</td>");
 
 		out.println("</tr>");
-		out.println("<table>");
-
+		out.println("</table>");
+		
+		out.println("<div class='list'>");
+		out.println("<a href='Main.jsp'>¸ñ ·Ï</a>");
+		out.println("</div>");
+		
 		out.println("</div>");
 		out.println("</div>");
 		out.println("</body>");
