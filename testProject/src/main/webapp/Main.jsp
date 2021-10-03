@@ -162,7 +162,7 @@
                     <h3>Slide  #1</h3>
                     <span>Sub-title #1</span>
                 </div>  -->               
-<img src="YJW_KSJ/resources/99. img/leegunwoo.jpg">
+<img src="YJW_KSJ/resources/99. img/foot1.jpg">
             </li>
 
             <li>
@@ -170,7 +170,7 @@
                     <h3>Slide #2</h3>
                     <span>Sub-title #2</span>
                 </div> -->
-<img src="YJW_KSJ/resources/99. img/leegunwoo2.jpg">
+<img src="YJW_KSJ/resources/99. img/foot2.jpg">
             </li>
 
             <li>
@@ -178,7 +178,7 @@
                     <h3>Slide #3</h3>
                     <span>Sub-title #3</span>
                 </div> -->
-<img src="YJW_KSJ/resources/leegunwoo3.jpg">
+<img src="YJW_KSJ/resources/foot3.jpg">
             </li>
 
             <li>
@@ -186,7 +186,7 @@
                     <h3>Slide #4</h3>
                     <span>Sub-title #4</span>
                 </div> -->
-<img src="YJW_KSJ/resources/99. img/leegunwoo4.jpg">
+<img src="YJW_KSJ/resources/99. img/foot4.jpg">
             </li>
 
             <li>
@@ -194,7 +194,7 @@
                     <h3>Slide #5</h3>
                     <span>Sub-title #5</span>
                 </div> -->
-<img src="YJW_KSJ/resources/99. img/leegunwoo5.jpg">
+<img src="YJW_KSJ/resources/99. img/foot5.jpg">
             </li>
 
 
