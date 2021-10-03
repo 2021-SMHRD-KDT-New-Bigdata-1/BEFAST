@@ -133,15 +133,15 @@
                         <dd>
                             <ol>
                                 <li><a href="#">[Rank 1] AÆÀ ½ÂÁ¡ : 1000Á¡ ÀüÀû 200½Â 2¹« 0ÆĞ ¸Å³ÊÁ¡¼ö 4.7</a></li>
-                                <li><a href="#">Rank 2</a></li>
-                                <li><a href="#">Rank 3</a></li>
-                                <li><a href="#">Rank 4</a></li>
-                                <li><a href="#">Rank 5</a></li>
-                                <li><a href="#">Rank 6</a></li>
-                                <li><a href="#">Rank 7</a></li>
-                                <li><a href="#">Rank 8</a></li>
-                                <li><a href="#">Rank 9</a></li>
-                                <li><a href="#">Rank 10</a></li>
+                                <li><a href="#">[Rank 2]</a></li>
+                                <li><a href="#">[Rank 3]</a></li>
+                                <li><a href="#">[Rank 4]</a></li>
+                                <li><a href="#">[Rank 5]</a></li>
+                                <li><a href="#">[Rank 6]</a></li>
+                                <li><a href="#">[Rank 7]</a></li>
+                                <li><a href="#">[Rank 8]</a></li>
+                                <li><a href="#">[Rank 9]</a></li>
+                                <li><a href="#">[Rank 10]</a></li>
                             </ol>
                         </dd>
 
