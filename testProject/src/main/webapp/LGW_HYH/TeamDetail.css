@@ -7,8 +7,11 @@ body{
 }
 .team_name{
 	height: 100px;
+	justify-content:center;
 	width: 300px;
-	align: center;
+	vertical-align: baseline;
+	display: contents;
+	
 }
 .table1{
 	height: 300px;
@@ -29,13 +32,10 @@ div#header{
 	width:100px;
 }
 .name{
-	display: flex;
     color: #Eee;
-    position: absolute;
-    left: 37%;
     font-size: xx-large;
+    margin:19px;
     top: 110px;
-    text-align: center;	
 }
 .table1{
 	width: 680px;
