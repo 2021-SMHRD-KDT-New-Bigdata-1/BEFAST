@@ -1,7 +1,6 @@
 package testProject;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -37,24 +36,32 @@ public class BookingService extends HttpServlet {
 		String MEMBER_ID = vo.getMEMBER_ID();
 
 		BookingDAO dao = new BookingDAO();
+		
+		
 		dao.BOOKINGS_RESULT2(MATCHING_DATE, FILED_NAME, GAMES, TIMES, TEAM_NAME, TEAM_NAME2);
-		ArrayList<BookingVO> al = dao.select();
+		//ArrayList<BookingVO> al = dao.select();
 		
-		 for (int i = 0; i < al.size(); i++) { if (al.get(i).getTIMES().equals(TIMES))
-		 // && al.get(i).getFILED_NAME().equals(FILED_NAME) &&
-		// al.get(i).getGAMES().equals(GAMES)) {
-				 {
-		 dao.BOOKINGS_RESULT2(al.get(i).getMATCHING_DATE(), al.get(i).getFILED_NAME(),
-		 al.get(i).getGAMES(), al.get(i).getTIMES(), al.get(i).getTEAM_NAME(),
-		 al.get(i).getTEAM_NAME()); System.out.println("ㅋㅋㅋ:" + TEAM_NAME2); } else {
-		 System.out.println("바보바보바보??"); } }
 		
+		/*
+		 * for (int i = 0; i < al.size(); i++) { if (
+		 * al.get(i).getTIMES().equals(TIMES)&&
+		 * al.get(i).getFILED_NAME().equals(FILED_NAME) &&
+		 * al.get(i).getGAMES().equals(GAMES)) {
+		 * 
+		 * dao.BOOKINGS_RESULT2( al.get(i).getMATCHING_DATE(),
+		 * al.get(i).getFILED_NAME(), al.get(i).getGAMES(), al.get(i).getTIMES(),
+		 * al.get(i).getTEAM_NAME(), al.get(i).getTEAM_NAME());
+		 * 
+		 * System.out.println("ㅋㅋㅋ:" + TEAM_NAME2); } else {
+		 * System.out.println("바보바보바보??"); } }
+		 */
+
 		int cnt = dao.BOOKINGS(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES, TEAM_NAME, MEMBER_ID);
 		int cnt1 = dao.BOOKINGS_RESULT(TEAM_NAME);
 
 		if ((cnt > 0) && (cnt1 > 0)) {
 
-			response.sendRedirect("Main.jsp");
+			response.sendRedirect("TEST2");
 
 		}
 

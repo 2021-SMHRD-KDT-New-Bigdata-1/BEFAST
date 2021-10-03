@@ -86,7 +86,7 @@
 									<label for="teamintrodution">팀 소개</label>
 								</h3>
 								<div class="input_box_teamintro">
-									<textarea placeholder="간단한 팀 소개를 해주세요!"></textarea>
+									<textarea placeholder="간단한 팀 소개를 해주세요!" name="intro"></textarea>
 								</div>
 							</div>
 						</div>

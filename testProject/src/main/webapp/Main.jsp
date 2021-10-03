@@ -294,6 +294,7 @@
 
 
 
+
     <!-- 제이쿼리 로드 -->
     <script src="./YJW_KSJ/JS/jquery-3.6.0.min.js"></script>
    
