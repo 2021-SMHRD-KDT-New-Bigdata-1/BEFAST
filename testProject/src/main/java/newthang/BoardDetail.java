@@ -50,8 +50,8 @@ public class BoardDetail extends HttpServlet {
 		out.println("</div>");
 		out.println("<div class=container>");
 		out.println("<h2>" + vo.getWrite_subject() + "</h2>"); //
-		out.println("<hr>");
 		out.println("<div class=row>");
+		out.println("<hr>");
 
 		// post 보안 / get 다보여짐
 		out.println("<div class= profile1 >");
