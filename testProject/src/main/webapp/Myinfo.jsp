@@ -13,14 +13,23 @@
 
 <link rel="stylesheet" href="LGW_HYH/resources/css/result.css">
 <link rel="stylesheet" href="YJW_KSJ/CSS/Manner.css">
-
 <title>내 정보</title>
 <!-- font-awesome  -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
 <meta charset="EUC-KR">
 </head>
 <style>
+
+@font-face {
+    font-family: 'twayfly';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayfly.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 * {
+	font-family: 'twayfly';
 	margin: 0 auto;
 	padding: 0;
 }
@@ -62,6 +71,7 @@ body {
 
 .Card .My_info1 {
 	margin-bottom: 20px;
+	color: #eee;
 }
 
 
@@ -70,7 +80,7 @@ body {
 	display: inline-block;
 	padding: 0 10px;
 	text-align: center;
-	color: #f4f1de;
+	color: #eee;
 	font-size: 20px;
 }
 
@@ -82,8 +92,14 @@ body {
 
 .Card .My_info2 {
 	width: 100%;
+	color: #eee;
 }
-p{ text-align: center;}
+
+p{ 
+
+text-align: center;
+
+}
 
 .Card .My_info2 .title, .Matching_info {
 	color: #eee;
@@ -112,6 +128,10 @@ p{ text-align: center;}
 	margin-bottom: 5px;
 }
 
+p.My_type2 {
+	display: flex;
+}
+
 .Card .barOuter .barLevel {
 	height: auto;
 	line-height: 1.7;
@@ -131,41 +151,81 @@ p{ text-align: center;}
 	margin: 5px auto;
 	position: relative;
 	top: 15px;
+	display: flex;
+	justify-content: center;
+	padding: 0px;
 }
 
-.PreNext{
-	text-decoration: none;
-	/* margin-left: 4px; //*/
-}
+
+button#pre:hover, button#next:hover {
+	transition: all 0.2s ease 0s;
+	background-color: rgba(31,209,69);
+} 
 
 button {
-	border: none;
 	border-radius: 5px;
 	height: 30px;
-	margin: 3px auto;
-	padding: 5px;
+	padding: 26px;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	display: flex;
+	background: none;
+	border: 1px solid #eee;
+	color: #eee;
 }
 
 button:hover {
 	cursor: pointer;
 }
 
-button#pre {
+/* button#pre {
 	position: relative;
-	/* left: -50px; */
+	
 }
 
 button#next {
 	position: relative;
-	/* right: -141px; */
-}
+	
+} */
 
 .barOuter2 {
 	text-align: center;
-	padding: 6px;
-	margin-left: 16px;
+	padding: 0 6px;
+	margin: 0 10px auto;
 
 }
+
+p.My_type {
+	text-align: center;
+}
+
+
+
+.re {
+	/* display: flex; */
+	line-height: 1.7;
+	margin-top: 16px;
+}
+
+table {
+	margin: 0 auto;
+}
+tbody {
+	/* display: flex; */
+	justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+tbody tr td {
+	padding: 8px;
+
+}
+
+/* .date, .location {
+	display: flex;
+} */
 
 </style>
 <body>
@@ -221,30 +281,67 @@ button#next {
 					<div class="line"></div>
 					<p class="haha">내 매칭현황</p><!-- <p class="Matching_info">내 매칭현황</p> -->
 				
-				<div class="barOuter2">
+				<!-- <div class="barOuter2"> -->
 				
 					<%if(Bvo!=null){ %>
-					<div class="barLevel barHTML">경기일자
-					<p class="My_type"><i class="far fa-calendar-alt"></i><%=Bvo.getMATCHING_DATE()%></p> 
+					
+					<table>
+						<tbody>
+							<tr> <!-- 1행 -->
+								<td>경기일자</td>
+								<td><i class="far fa-calendar-alt"></i></td>
+								<td><%=Bvo.getMATCHING_DATE()%></td>
+							</tr>
+							
+							<tr> <!-- 2행 -->
+								<td>경기지역</td>
+								<td><i class="fas fa-search-location"></i></td>
+								<td><%=Bvo.getADDRESS()%></td>
+							</tr>
+							
+							<tr> <!-- 3행 -->
+								<td>경기장소</td>
+								<td><i class="far fa-compass"></i></td>
+								<td><%=Bvo.getFILED_NAME()%></td>
+							</tr>
+							
+							<tr> <!-- 4행 -->
+								<td>게임방식</td>
+								<td><i class="far fa-futbol fa-1g"></i></td>
+								<td><%=Bvo.getGAMES()%></td>
+							</tr>
+							
+							<tr> <!-- 5행 -->
+								<td>경기시간</td>
+								<td><i class="far fa-clock"></i></td>
+								<td><%=Bvo.getTIMES()%></td>
+							</tr>
+							
+							
+						</tbody>
+					</table>
+					
+<%-- 					<div class="barLevel barHTML">경기일자
+					<p class="My_type2"><i class="far fa-calendar-alt"></i><%=Bvo.getMATCHING_DATE()%> 
 					</div>
 					
  					<div class="barLevel barHTML">경기지역
-					<p class="My_type"><i class="far fa-calendar-alt"></i><%=Bvo.getADDRESS()%></p>
+					<p class="My_type2"><i class="far fa-calendar-alt"></i><%=Bvo.getADDRESS()%>
 					</div>
 					
-					<div class="barLevel barHTML">경기장
-					<p class="My_type"><i class="far fa-calendar-alt"></i><%=Bvo.getFILED_NAME()%></p>
+					<div class="barLevel barHTML">경기장소
+					<p class="My_type2"><i class="far fa-calendar-alt"></i><%=Bvo.getFILED_NAME()%></p>
 					</div>
 					
 					<div class="barLevel barHTML">게임방식
-					<p class="My_type"><i class="far fa-calendar-alt"></i><%=Bvo.getGAMES()%></p>
+					<p class="My_type2"><i class="far fa-calendar-alt"></i><%=Bvo.getGAMES()%></p>
 					</div>
 					
 					<div class="barLevel barHTML">경기시간
-					<p class="My_type"><i class="far fa-calendar-alt"></i><%=Bvo.getTIMES()%></p>
-					</div>
+					<p class="My_type2"><i class="far fa-calendar-alt"></i><%=Bvo.getTIMES()%></p>
+					</div> --%>
 					
-					</div>
+				<!-- </div> -->
 					
 					<% }else{%>
 					예약이 없습니다
@@ -252,18 +349,22 @@ button#next {
 					
 					<div class="line"></div>
 					
+	<div class="re">
 		<div class="partner">
-			<h2>경기 결과</h2>
+			<!-- <h2>경기 결과</h2> -->
 				<div class="partner_info">
-					<p>클릭해주세요.</p>
+					<p>눌러서 결과선택</p>
 				</div>
 		</div>
-		<form action="MannerForm.jsp">
-		상대방팀평가<br>
-		<input type="submit" value="클릭해주세요" class="form"> 
-		</form>
 		
-		<div class="clear"></div>
+	<div class="partner2">
+		<form action="MannerForm.jsp">
+		<!-- <h2>상대방팀평가</h2> -->
+		<input type="submit" value="눌러서 평가" class="form"> 
+		</form>
+	</div>
+		
+		<!-- <div class="clear"></div> -->
 			<div id="modal">
 				<div class="body">
 					<p class="p">경기결과를 클릭해주세요</p>
@@ -290,7 +391,7 @@ button#next {
 						</div>
 				</div>
 			</div>
-		</div>
+		<!-- </div> -->
 			
 				<div class="PreNext">
 			
@@ -304,8 +405,10 @@ button#next {
 				<a href="#" onclick="location.href='Update.jsp'">내 정보변경</a> -->
 				
 				</div>
+		</div>
 			
 		</div>
+	</div>
 		
 	<script src="./YJW_KSJ/JS/jquery-3.6.0.min.js"></script>
 	
