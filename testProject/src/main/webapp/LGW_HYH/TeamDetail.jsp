@@ -63,7 +63,7 @@
 				</tr>
 				<tr>
 					<td>선호 시간</td>
-					<td><%=vo.getTeam_time() %></td>
+					<td><%=vo.getTeam_logo() %></td>
 				</tr>
 			</table>
 		</div>

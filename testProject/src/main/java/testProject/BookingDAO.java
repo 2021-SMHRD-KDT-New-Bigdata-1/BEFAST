@@ -80,6 +80,36 @@ public class BookingDAO {
 		return cnt;
 	}
 
+	// 예약하기2
+		public int BOOKINGS22(String MATCHING_DATE, String ADDRESS, String FILED_NAME, String GAMES, String TIMES) {
+			conn();
+
+			int cnt = 0;
+			String sql = "insert into BOOKINGS(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES) values(?,?,?,?,?)";
+
+			try {
+				psmt = conn.prepareStatement(sql);
+				
+				psmt.setString(1, MATCHING_DATE);
+				psmt.setString(2, ADDRESS);
+				psmt.setString(3, FILED_NAME);
+				psmt.setString(4, GAMES);
+				psmt.setString(5, TIMES);
+
+				cnt = psmt.executeUpdate();
+
+			} catch (SQLException e) {
+
+				e.printStackTrace();
+			} finally {
+				close();
+			}
+
+			return cnt;
+		}
+	// 상대방 팀 등록
+	
+	
 	// 경기결과 등록
 	public int BOOKINGS_RESULT(String TEAM_NAME) {
 		conn();
@@ -121,6 +151,34 @@ public class BookingDAO {
 			psmt.setString(4, GAMES);
 			psmt.setString(5, TIMES);
 			psmt.setString(6, TEAM_NAME);
+			
+
+			cnt = psmt.executeUpdate();
+
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return cnt;
+	}
+	
+	// 조인 
+	public int BOOKINGS_JOIN(String MATCHING_DATE, String ADDRESS,String FILED_NAME, String GAMES, String TIMES, String TEAM_NAME22) {
+		conn();
+		
+		
+		int cnt = 0;
+		String sql = "SELECT *\r\n"
+				+ "FROM BOOKINGS B\r\n"
+				+ "INNER JOIN BOOKINGS2 B2 ON (B.MATCHING_DATE = B2.MATCHING_DATE AND B.ADDRESS = B2.ADDRESS AND B.FILED_NAME=B2.FILED_NAME AND B.GAMES=B2.GAMES AND B.TIMES =B2.TIMES)";
+
+		try {
+			psmt = conn.prepareStatement(sql);
+
+			
 			
 
 			cnt = psmt.executeUpdate();
