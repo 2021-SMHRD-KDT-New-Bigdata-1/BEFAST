@@ -33,7 +33,7 @@ body {
 	background-color: #3d405b;
 	color: #f4f1de;
 /* 	width: 250px; *//*  */
-	padding: 30px 20px;
+	padding: 30px 15px;
 	height: auto;
 	box-shadow: 0 0 15px #000;
 	border-radius: 15px;
@@ -135,7 +135,7 @@ p{ text-align: center;}
 
 .PreNext{
 	text-decoration: none;
-	margin-left: 4px;
+	/* margin-left: 4px; //*/
 }
 
 button {
@@ -157,7 +157,7 @@ button#pre {
 
 button#next {
 	position: relative;
-	right: -141px;
+	/* right: -141px; */
 }
 
 .barOuter2 {
