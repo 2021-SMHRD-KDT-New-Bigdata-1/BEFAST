@@ -35,6 +35,11 @@ input[type="text"] {
 	BookingDAO dao = new BookingDAO();
 	memberVO vo = (memberVO) session.getAttribute("vo");
 	ArrayList<BookingVO> al;
+
+	HttpSession session2 = request.getSession();
+	memberVO vo2 = (memberVO) session.getAttribute("vo");
+
+	String TEAM_NAME = vo2.getTEAM_NAME();
 	%>
 
 	<div class="container">
@@ -124,6 +129,7 @@ input[type="text"] {
 
 								for (int i = 3 * (cur_page - 1); i < cur_page * 3; i++) {
 								if (i < al.size()) {
+								out.print("<form action=ShowDetail.jsp>");
 								out.print("<tr>");
 								out.print("<td>" + al.get(i).getMATCHING_DATE() + "</td>");
 								out.print("<td>" + al.get(i).getADDRESS() + "</td>");
@@ -131,10 +137,20 @@ input[type="text"] {
 								out.print("<td>" + al.get(i).getTIMES() + "</td>");
 								out.print("<td>" + al.get(i).getGAMES() + "</td>");
 								out.print("<td>" + al.get(i).getTEAM_NAME() + "</td>");
+
+								String MATCHING_DATE = request.getParameter("MATCHING_DATE");
+								String ADDRESS = request.getParameter("ADDRESS");
+								String FILED_NAME = request.getParameter("FILED_NAME");
+								String GAMES = request.getParameter("GAMES");
+								String TIMES = request.getParameter("TIMES");
+								String TEAM_NAME2 = request.getParameter("TEAM_NAME");
+
+								//int cnt22 = dao.BOOKINGS22(MATCHING_DATE, ADDRESS, FILED_NAME, GAMES, TIMES, TEAM_NAME2);
+								//int cnt1 = dao.BOOKINGS_RESULT(TEAM_NAME);
+
 								// 예약한 겨룰 상대팀이 예약을 눌러 예약정보에 자신의 정보가 담아지게 jsp이동
-								out.print("<form action=ShowDetail.jsp?matching date=" + ">");
-								out.print("<td><input type=\"submit\" name=\"btnsss\" value=\"예약\" class=\"result\""
-										+ "onclick='changeBtnName()'></td>");
+
+								out.print("<td><input type=\"submit\" name=\"btnsss\" value=\"예약\" class=\"result\"" + "onclick='ClickBtn()'></td>");
 								//out.print("<td><input type=\"submit\" value=\"예약\" id=btnss onclick=changeBtnName()"
 								//	  +"></td>");
 								out.print("</form>");
@@ -210,11 +226,16 @@ input[type="text"] {
 				hidden.value = val;
 				document.getElementById("result3").innerText = val;
 			}
-			
+
 			function changeBtnName() {
 				const btnElement = document.getElementById('btnsss');
 
 				btnElement.value = "마감";
+			}
+
+			function ClickBtn() {
+				var cnt22 = dao.BOOKINGS22(MATCHING_DATE, ADDRESS, FILED_NAME,
+						GAMES, TIMES, TEAM_NAME2);
 			}
 		</script>
 </body>

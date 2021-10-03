@@ -163,10 +163,10 @@ public class TeamDAO {
 			vo.setTeam_level(rs.getString(4));
 			vo.setTeam_uniform(rs.getString(5));
 			vo.setTeam_info(rs.getString(6));
+			vo.setTeam_member(rs.getInt(7));
 			vo.setTeam_time(rs.getString(8));
 			vo.setTeam_logo(rs.getString(9));
 			vo.setTeamleader(rs.getString(10));
-			vo.setTeam_member(rs.getInt(7));
 			rs.close();
 					
 		} catch (Exception ex) {
