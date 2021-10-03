@@ -92,6 +92,8 @@
 						</div>
 					</div>
 				</div>
+				</div>
+				
 				<div class="last">
 					<input type="radio" name="img" value="resources/img/logo1.jpg"><img
 						src="resources/img/logo1.jpg" class="img"><input
@@ -121,6 +123,7 @@
 				else{%>
 					<input type="text" placeholder="이미 가입된 팀이 존재합니다.">
 				<% }%>
+				</div>
 				</div>
 		</form>
 
