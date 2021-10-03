@@ -1,83 +1,89 @@
 @charset "EUC-KR";
 
-body{
+.write11 {
+	color: black;
+}
+
+body {
 	width: 1480px;
 	margin: 0 auto;
-	background-color:rgba(9,9,52);
+	background-color: rgba(9, 9, 52);
 }
-.team_name{
+
+.team_name {
 	height: 100px;
-	justify-content:center;
+	justify-content: center;
 	width: 300px;
 	vertical-align: baseline;
 	display: contents;
-	
 }
-.table1{
-	height: 300px;
-	width:200px;
 
+.table1 {
+	height: 300px;
+	width: 200px;
 }
-div#header{
-    /* padding-top: 50px; */
-    /* min-width: 220px; */
-    box-sizing: border-box;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    
+
+div#header {
+	/* padding-top: 50px; */
+	/* min-width: 220px; */
+	box-sizing: border-box;
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
-.logo{
-	display : flex;
-	height:80px;
-	width:100px;
+
+.logo {
+	display: flex;
+	height: 80px;
+	width: 100px;
 }
-.name{
-    color: #Eee;
-    font-size: xx-large;
-    margin:19px;
-    top: 110px;
+
+.name {
+	color: #Eee;
+	font-size: xx-large;
+	margin: 19px;
+	top: 110px;
 }
-.table1{
+
+.table1 {
 	width: 680px;
 	height: 450px;
 }
-h4{
+
+h4 {
 	/* width:680px; */
 	/* height: auto; */
 	color: #eee;
 	font-size: 1.3rem;
-	
 }
-.info{
+
+.info {
 	/* width: 665px; */
-	height:125px;
-	color: #eee;
+	height: 125px;
+	color: black;
+	background-color: #eee;
 }
 
 tr {
 	border-bottom: 1px solid;
-	
 }
 
-tr td{
-	color:#eee;
+tr td {
+	color: #eee;
 	/* border-bottom: 1px solid #ddd; */
 	text-align: center;
 	border: solid 1px;
 }
 
-a{
-	color:#eee;
+a {
+	color: #eee;
 	font-size: 1.3rem;
-    text-decoration: none;
+	text-decoration: none;
 }
 
 a:hover {
 	transition: all 0.2s ease 0s;
-    color: rgba(31,209,69);
+	color: rgba(31, 209, 69);
 }
-
-

@@ -66,11 +66,11 @@
 				</tr>
 			</table>
 		</div>
-		<div class="info">
+		<div>
 			<h4>ÆÀ ¼Ò°³</h4>
-			<table>
+			<p class="info">
 				<%=vo.getTeam_info()%>
-			</table>
+			</p>
 		</div>
 		
 		<%if(team_name2==null){%>
