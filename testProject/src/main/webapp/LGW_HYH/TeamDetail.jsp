@@ -23,7 +23,7 @@
 	TeamVO vo = dao.TeamDetail(team_name);
 	
 	%>
-< 	<div id="header">
+ 	<div id="header">
 		<div class="team_name">
 			<%--<div class="logo"><img src="<%=vo.getTeam_logo() %>"></div>--%>
 			<div class="name"><%="*"+vo.getTeam_name()+"*"%>
