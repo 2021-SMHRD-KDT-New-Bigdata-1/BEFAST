@@ -7,8 +7,11 @@ body{
 }
 .team_name{
 	height: 100px;
+	justify-content:center;
 	width: 300px;
-	align: center;
+	vertical-align: baseline;
+	display: contents;
+	
 }
 .table1{
 	height: 300px;
@@ -29,26 +32,24 @@ div#header{
 	width:100px;
 }
 .name{
-	display: flex;
     color: #Eee;
-    position: absolute;
-    left: 37%;
     font-size: xx-large;
+    margin:19px;
     top: 110px;
-    text-align: center;	
 }
 .table1{
 	width: 680px;
 	height: 450px;
 }
 h4{
-	width:680px;
-	height: auto;
+	/* width:680px; */
+	/* height: auto; */
 	color: #eee;
-
+	font-size: 1.3rem;
+	
 }
 .info{
-	width: 665px;
+	/* width: 665px; */
 	height:125px;
 	color: #eee;
 }
@@ -58,6 +59,16 @@ tr td{
 	text-align: center;
 	border: solid 1px;
 }
+
 a{
 	color:#eee;
+	font-size: 1.3rem;
+    text-decoration: none;
 }
+
+a:hover {
+	transition: all 0.2s ease 0s;
+    color: rgba(31,209,69);
+}
+
+

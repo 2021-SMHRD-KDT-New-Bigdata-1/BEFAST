@@ -3,7 +3,7 @@
 <%@page import="newthang.TeamVO"%>
 <%@page import="newthang.TeamDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>s
+	pageEncoding="EUC-KR"%>
 
 <!DOCTYPE html>
 <html>
@@ -23,7 +23,7 @@
 	TeamVO vo = dao.TeamDetail(team_name);
 	
 	%>
-< 	<div id="header">
+ 	<div id="header">
 		<div class="team_name">
 			<%--<div class="logo"><img src="<%=vo.getTeam_logo() %>"></div>--%>
 			<div class="name"><%="*"+vo.getTeam_name()+"*"%>
@@ -75,11 +75,12 @@
 		</div>
 		
 		<%if(team_name2==null){%>
-					<a href="../TeamJoin?teamname=<%=vo.getTeam_name()%>">가입신청</a>
-					<%} 
-				else{%>
-					<a href="../TeamList">목록으로</a>
-				<% }%>
+			<a href="../TeamJoin?teamname=<%=vo.getTeam_name()%>">가입신청</a>
+		
+		<%} else{%>
+			<a href="../TeamList">목록으로</a>
+			
+		<%}%>
 		
 	
 		 		
