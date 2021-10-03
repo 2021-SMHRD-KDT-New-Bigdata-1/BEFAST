@@ -132,7 +132,7 @@
                         <div class="cont">
                         <dd>
                             <ol>
-                                <li class=win><a href="#">[Rank 1] 황윤희FC 승점 : 2040점 전적: 80승 1패 5무 매너점수: 4</a></li>
+                                <li><a href="#">[Rank 1] 황윤희FC 승점 : 2040점 전적: 80승 1패 5무 매너점수: 4</a></li>
                                 <li><a href="#">[Rank 2] 홍윤희FC 승점 : 1340점 전적: 40승 2패 4무 매너점수: 4</a></li>
                                 <li><a href="#">[Rank 3] 윤종원3FC 승점 : 1120점 전적: 12승 4패 5무 매너점수: 5</a></li>
                                 <li><a href="#">[Rank 4] 윤종원2FC 승점 : 1060점 전적: 3승 4패 5무 매너점수: 5</a></li>
@@ -178,7 +178,7 @@
                     <h3>Slide #3</h3>
                     <span>Sub-title #3</span>
                 </div> -->
-<img src="YJW_KSJ/resources/foot3.jpg">
+<img src="YJW_KSJ/resources/99. img/foot3.jpg">
             </li>
 
             <li>

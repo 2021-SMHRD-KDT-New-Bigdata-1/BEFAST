@@ -27,3 +27,8 @@ tr td{
 .table {
     margin-bottom: 0px;
 }
+
+.list{
+	text-align: center;
+	font-size: 3rem;
+} 
