@@ -178,7 +178,7 @@
                     <h3>Slide #3</h3>
                     <span>Sub-title #3</span>
                 </div> -->
-<img src="YJW_KSJ/resources/foot3.jpg">
+<img src="YJW_KSJ/resources/99. img/foot3.jpg">
             </li>
 
             <li>
