@@ -1,4 +1,7 @@
 @charset "EUC-KR";
+.color{
+	color : white;
+}
 #result3{
 	color : #eee;
 }
@@ -273,7 +276,6 @@ tbody tr {
    text-align:center;
    align-items: center;
    justify-content: center;
-   display: flex;
    font-size: large;
 }
 .btnbtn-smbtn-primary{
@@ -284,4 +286,7 @@ tbody tr {
 	height : 100px;
 	color: white;
 	font-color : black;
+}
+.coloring{
+	color :white;
 }
