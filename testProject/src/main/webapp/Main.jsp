@@ -132,16 +132,12 @@
                         <div class="cont">
                         <dd>
                             <ol>
-                                <li><a href="#">[Rank 1] A팀 승점 : 1000점 전적 200승 2무 0패 매너점수 4.7</a></li>
-                                <li><a href="#">[Rank 2]</a></li>
-                                <li><a href="#">[Rank 3]</a></li>
-                                <li><a href="#">[Rank 4]</a></li>
-                                <li><a href="#">[Rank 5]</a></li>
-                                <li><a href="#">[Rank 6]</a></li>
-                                <li><a href="#">[Rank 7]</a></li>
-                                <li><a href="#">[Rank 8]</a></li>
-                                <li><a href="#">[Rank 9]</a></li>
-                                <li><a href="#">[Rank 10]</a></li>
+                                <li><a href="#">[Rank 1] 황윤희FC 승점 : 2040점 전적: 80승 1패 5무 매너점수: 4</a></li>
+                                <li><a href="#">[Rank 2] 홍윤희FC 승점 : 1340점 전적: 40승 2패 4무 매너점수: 4</a></li>
+                                <li><a href="#">[Rank 3] 윤종원3FC 승점 : 1120점 전적: 12승 4패 5무 매너점수: 5</a></li>
+                                <li><a href="#">[Rank 4] 윤종원2FC 승점 : 1060점 전적: 3승 4패 5무 매너점수: 5</a></li>
+                                <li><a href="#">[Rank 5] 최건우FC 승점 : 1040점 전적: 9승 1패 5무 매너점수:4</a></li>
+                               
                             </ol>
                         </dd>
 
