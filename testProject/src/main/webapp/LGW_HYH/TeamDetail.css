@@ -29,13 +29,13 @@ div#header{
 	width:100px;
 }
 .name{
-	display:inline;
-	color:#Eee;
-	position: absolute;
-    left: 43%;
+	display: flex;
+    color: #Eee;
+    position: absolute;
+    left: 37%;
     font-size: xx-large;
-    top: 110px;	
-		
+    top: 110px;
+    text-align: center;	
 }
 .table1{
 	width: 680px;
@@ -54,7 +54,9 @@ h4{
 }
 tr td{
 	color:#eee;
-	border-bottom: 1px solid #ddd;
+	/* border-bottom: 1px solid #ddd; */
+	text-align: center;
+	border: solid 1px;
 }
 a{
 	color:#eee;
