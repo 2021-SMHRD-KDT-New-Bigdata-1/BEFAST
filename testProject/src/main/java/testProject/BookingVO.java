@@ -6,15 +6,13 @@ public class BookingVO {
 	private String FILED_NAME;
 	private String GAMES;
 	private String TIMES;
-	
 	private String TEAM_NAME;
 	private String MEMBER_ID;
+	
+	
 	public String getTEAM_NAME2() {
 		return TEAM_NAME2;
 	}
-
-
-
 
 
 	public void setTEAM_NAME2(String TEAM_NAME2) {
