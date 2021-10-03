@@ -258,6 +258,10 @@ button#next {
 					<p>클릭해주세요.</p>
 				</div>
 		</div>
+		<form action="MannerForm.jsp">
+		상대방팀평가<br>
+		<input type="submit" value="클릭해주세요" class="form"> 
+		</form>
 		
 		<div class="clear"></div>
 			<div id="modal">
