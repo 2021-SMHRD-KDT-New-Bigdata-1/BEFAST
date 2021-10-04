@@ -131,11 +131,19 @@ h3.join_group, .title {
     border: solid 1px black;
     padding: 10px;
 }
-.input_box_name,.input_box_number, .input_box_area, .input_box_teamlevel, .input_box_teamuniform, .input_box_area
+.input_box_name,.input_box_number, .input_box_area, .input_box_teamlevel, .input_box_teamuniform
 {
+	background : rgba(9,9,52);
     display: block;
     padding: 10px;
     border: solid 2px #eee;
+    border-radius: 8px;
+}
+
+.input_box_area:hover, .input_box_teamlevel:hover, 
+select#area:hover, select#level:hover {
+	cursor: pointer;
+	
 }
 
 .input_name{
@@ -152,8 +160,24 @@ h3.join_group, .title {
     color:#eee;
 }
 .check{
-	width : 19%;
-	font-size:15px;
+    display: inline;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    color: black;
+}
+
+.check:hover {
+	border-radius : 5px;
+    transition: all 0.2s ease 0s;
+    cursor: pointer;
+    background-color: rgba(31,209,69);
+
 }
 .input_number, .input_area, .input_level 
 {
@@ -173,9 +197,16 @@ h3.join_group, .title {
  text-align: center;
     margin: auto;
 }
+
 .button_create {
     margin: 30px 0px 9px;
     text-align:center;
+}
+
+.button_create a {
+	text-decoration: none;
+	font-size: 20px;
+	color: rgba(251,42,79);
 }
 .btntype {
     text-align: center;
@@ -207,6 +238,7 @@ textarea{
    width:402px;
    height : 100px;
    border: solid 2px #eee;
+   border-radius: 8px;
 }
 
 small{
@@ -230,11 +262,13 @@ small{
 	border-radius: 15px;
 }
 .input_box_time{
-	font-size: 30px;
+	font-size: 1.5rem;
     color: #eee;
     text-align: center;
     justify-content: center;
     display: flex;
+    align-items: center;
+    letter-spacing: 8px;
 }
 
 .input_time{
@@ -260,12 +294,12 @@ input[type="submit"]:hover {
 	cursor: pointer;
 	transition: all 0.2s ease 0s;
 	background-color: rgba(31,209,69,0.5);
-	
 }
 
 .input_box_teamuniform{
 	text-align:center;
 	font-size: 23px;
+	word-spacing: 50px;
 }
 
 /* .Card {
