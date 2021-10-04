@@ -110,10 +110,11 @@
 			</div>
 			<p>
 			<h3>
-				코멘트<br>
+				코멘트
+				<div class="line"></div>
 				</p>
 				<textarea cols="50" rows="5" name="comments" placeholder="의견을 적어주세요."></textarea>
-				<div>
+				<div class="sub">
 				<input type="submit" value='등록하기'>
 				</div>
 		</div>

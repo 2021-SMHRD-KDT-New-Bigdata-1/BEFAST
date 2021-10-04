@@ -19,7 +19,7 @@
 <meta charset="EUC-KR">
 </head>
 <style>
-
+/* 티웨이날다체 */
 @font-face {
     font-family: 'twayfly';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayfly.woff') format('woff');
@@ -170,7 +170,7 @@ button {
 	text-align: center;
 	align-items: center;
 	display: flex;
-	background: none;
+	background: rgba(9,9,52);
 	border: 1px solid #eee;
 	color: #eee;
 }
@@ -179,15 +179,6 @@ button:hover {
 	cursor: pointer;
 }
 
-/* button#pre {
-	position: relative;
-	
-}
-
-button#next {
-	position: relative;
-	
-} */
 
 .barOuter2 {
 	text-align: center;

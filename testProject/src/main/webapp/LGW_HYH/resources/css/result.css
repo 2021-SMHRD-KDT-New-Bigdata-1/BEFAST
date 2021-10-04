@@ -9,6 +9,7 @@
     line-height: 2.5;
     /* margin-bottom: 15px; */
     margin: 0 0 15px auto;
+    background-color: rgba(9,9,52);
 }
 
 .partner h2, .partner2 h2{
@@ -30,7 +31,6 @@
 }
 .partner_info>p{
 	cursor: pointer;
-	background-color: #3d405b;
 	text-decoration: none;
 }
 
@@ -41,7 +41,6 @@
 
 .partner2 input[type="submit"] {
 	cursor: pointer;
-	background-color: #3d405b;
 	text-decoration: none;
 }
 .partner2 input[type="submit"]:hover{
