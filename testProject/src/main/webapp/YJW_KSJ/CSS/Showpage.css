@@ -15,6 +15,9 @@
 }
 
 
+div.back {
+	background: rgba(0,0,0);
+}
 
 .color{
 	color : white;
@@ -23,16 +26,15 @@
 #result3{
 	color : #eee;    
 	margin-top: 10px;
+	font-size: 1.5rem;
 }
 .div1{
 	color: #eee;
 }
 
 .columns {
-	background: rgba(9,9,52,0.35);
 	text-align: center;
-	display: flex;
-	justify-content: center;
+	margin: 0 auto;
 }
 
 .columns figure {
@@ -47,10 +49,6 @@
    float: left;
    border: 2px solid #000;
    width: 200px;
-   /* height: 100px; */
-   /* text-align: center; */
-   /* line-height: 100px; */
-   /* font-weight: bold; */
 }
 
 .columns figure figcaption {
@@ -58,6 +56,7 @@
    border-top: 2px solid yellow;
    padding: 10px;
    margin-top: 11px;
+   font-size: 1.5rem;
 }
 
 div.figure_box {
@@ -114,47 +113,17 @@ h3 {
 
 h2 {
    color: #eee;
+   font-size: 1.5rem;
+   margin-top: 35px;
+   margin-bottom: 3px;
 }
 
 tr>td {
    color: #eee;
 }
 
-/* ul {
-    display: block; */
 
-/* 마커 */
-/* http://webberstudy.com/html-css/css-1/list-style/ */
-/* https://www.codingfactory.net/10537 */
 
-/* list-style-type: disc;
-    margin-block-start : 1em;
-    margin-block-end : 1em;
-    margin-inline-start : 0px;
-    margin-inline-end : 0px;
-    padding-inline-start : 0px;
-} */
-
-/* li {
-    display: inline-block;
-    vertical-align: top;
-    position: relative;
-    text-align: -webkit-match-parent;
-}
-
-li.game:not(:last-child) {
-    margin: 0 2vw 0 0;
-}
-
-li.game {
-    width: 10vw;
-    max-width: 200px;
-    min-width: 84px;
-}
-
-li.game1 {
-    position : relative;
-} */
 .game_matching {
    line-height: 2.5;
    font-size: 1.3vw;
@@ -162,11 +131,9 @@ li.game1 {
 
 h1.select_game {
    width: 100%;
-   /* 굵기 가중치 */
-   /* https://aboooks.tistory.com/139 */
-   /* unset :  */
    font-weight: bold;
 }
+
 .bnt-
 h1.select_game ul {
    padding: 0px;
@@ -175,29 +142,20 @@ h1.select_game ul {
 div.container {
    text-align: center;
    background: rgba(31,209,69,0.35);
-   padding: 25px 15px;
+   padding: 35px 17px;
+   width: 50%;
+   margin: 0 auto;
+   border-radius: 30px;
 }
 
 div.outcontainer {
-   display: flex;
-   /* https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=htmlstory&logNo=80192584519 */
-   /* https://ipex.tistory.com/entry/CSS3-flex-Box-justifycontent-alignitems */
-   /* 가운데 정렬 */
-   -webkit-box-pack: center;
-   /* 가로축 - 중심축 */
-   justify-content: center;
-   /* 세로축 - 교차축 */
-   align-items: center;
-   -webkit-box-orient : vertical;
-   /* 박스의 흐름 */
-   -webkit-box-direction: normal;
-   /* 가로 배열 */
-   flex-direction: column;
    position: absolute;
    top: 50%;
    left: 50%;
    transform: translate(-50%,-50%);
    background: rgba(9,9,52,0.35);
+   min-width: 1024px;
+   min-height: auto;
    width: 100%;
    height: 100%;
 
@@ -254,6 +212,7 @@ table {
    width: 100%;
    /* border-collapse:collapse; 바깥선 */
    line-height: 1.1;
+   /* margin-top: 55px; */
 }
 
 table td {
@@ -262,11 +221,13 @@ table td {
    color: #fff;
    padding: 0.5em 0.5em;
    border-bottom: 1px solid #444444;
-    border-collapse: collapse;
+   border-collapse: collapse;
+   font-size: 17px;
 }
 
 tbody {
-   width: 1024px;
+   width: 100%;
+   line-height: 1.1
 }
 
 tbody tr {
@@ -311,6 +272,8 @@ tbody tr {
 }
 .coloring{
 	color :white;
+	font-size: 1.5rem;
+	margin-bottom: 8px;
 }
 a{
 	color:#eee;
@@ -322,4 +285,24 @@ a{
 	color:#eee;
 	margin: 0 10px 0 10px;
     display: inline;
+}
+
+input[type="submit"] {
+    outline: none;
+    background: none;
+    color: #eee;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    font-size: 17px;
+}
+
+input[type="submit"]:hover {
+	cursor : pointer;
+	transition: all 0.2s ease 0s;
+    background-color: rgba(9,9,52);
 }

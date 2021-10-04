@@ -41,6 +41,7 @@ input[type="text"] {
 	%>
 
 	<!-- <div class="container"> -->
+	<div class="back">
 		<div class="outcontainer">
 			<div class="container">
 				<div class="game_box2">
@@ -223,6 +224,8 @@ input[type="text"] {
 					</form>
 					</div>
 				</div>
+			</div>
+		</div>
 			
 
 		
