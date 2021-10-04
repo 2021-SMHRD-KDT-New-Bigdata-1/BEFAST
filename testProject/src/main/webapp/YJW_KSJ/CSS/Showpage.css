@@ -1,7 +1,23 @@
 @charset "EUC-KR";
+
+@font-face {
+    font-family: 'twayfly';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayfly.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+	font-family: 'twayfly';
+/* 	margin: 0 auto;
+	padding: 0; */
+}
+
 .color{
 	color : white;
 }
+
 #result3{
 	color : #eee;    
 	margin-top: 10px;

@@ -131,7 +131,7 @@ input[type="text"] {
 
 
 								</tr>
-								<%
+								<% 
 								if (request.getParameter("choice") == null) {
 									al = dao.select();
 								} else {
