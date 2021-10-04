@@ -214,20 +214,12 @@ tbody tr td {
 
 }
 
-/* .date, .location {
-	display: flex;
-} */
-
 </style>
 <body>
-	<% memberVO vo = (memberVO) session.getAttribute("vo");
-	
+	<% 
+	   memberVO vo = (memberVO) session.getAttribute("vo");
 	   BookingDAO dao = new BookingDAO();
-	   /* BookingVO Bvo = (BookingVO) session.getAttribute("Bvo"); */
-	   /* BookingVO Bvo2 = (BookingVO) session.getAttribute("Bvo2"); */
 	   BookingVO Bvo = dao.My_booking(vo.getMEMBER_ID());
-
-       /* BookingVO Bvo = (BookingVO) session.getAttribute("Bvo"); */
 	%>
 	
 		<div class="Card">
@@ -243,9 +235,6 @@ tbody tr td {
 					<li>이름<bR>  <span><%=vo.getMEMBER_NAME()%></span> </li>
 					<li>성별<bR>  <span><%=vo.getGENDER()%></span> </li>
 					<li>휴대전화<bR>  	 <span><%=vo.getMEMBER_PHONE()%></span> </li>
-<%-- 				<li><%=vo.getP_AREA()%>   <bR>  <span></span> </li>
-					<li><%=vo.getTEAM_NAME()%><bR>  <span></span> </li>
-					<li><%=vo.getPOSITION()%><bR>  <span></span> </li>	 --%>			
 				</ul>
 			</div>
 			
@@ -254,6 +243,7 @@ tbody tr td {
 					<p class="title">경기정보</p>
 					
 				<div class="barOuter">
+				
 				
 					<div class="barLevel barHTML">선호지역 <i class="fas fa-search-location"></i>
 					<p class="My_type"><%=vo.getP_AREA()%></p>
@@ -266,13 +256,11 @@ tbody tr td {
 					<div class="barLevel barHTML">소속 팀 <i class="fas fa-users"></i>
 					<p class="My_type"><%=vo.getTEAM_NAME()%></p>
 					</div>
+					
 				</div>
-				
 			
 					<div class="line"></div>
-					<p class="haha">내 매칭현황</p><!-- <p class="Matching_info">내 매칭현황</p> -->
-				
-				<!-- <div class="barOuter2"> -->
+					<p class="haha">내 매칭현황</p>
 				
 					<%if(Bvo!=null){ %>
 					
@@ -311,28 +299,6 @@ tbody tr td {
 							
 						</tbody>
 					</table>
-					
-<%-- 					<div class="barLevel barHTML">경기일자
-					<p class="My_type2"><i class="far fa-calendar-alt"></i><%=Bvo.getMATCHING_DATE()%> 
-					</div>
-					
- 					<div class="barLevel barHTML">경기지역
-					<p class="My_type2"><i class="far fa-calendar-alt"></i><%=Bvo.getADDRESS()%>
-					</div>
-					
-					<div class="barLevel barHTML">경기장소
-					<p class="My_type2"><i class="far fa-calendar-alt"></i><%=Bvo.getFILED_NAME()%></p>
-					</div>
-					
-					<div class="barLevel barHTML">게임방식
-					<p class="My_type2"><i class="far fa-calendar-alt"></i><%=Bvo.getGAMES()%></p>
-					</div>
-					
-					<div class="barLevel barHTML">경기시간
-					<p class="My_type2"><i class="far fa-calendar-alt"></i><%=Bvo.getTIMES()%></p>
-					</div> --%>
-					
-				<!-- </div> -->
 					
 					<% }else{%>
 					예약이 없습니다
