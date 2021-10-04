@@ -47,6 +47,8 @@ input[type="text"] {
 	<!-- <div class="container"> -->
 	<div class="back">
 		<div class="outcontainer">
+		
+		<div class="outcontainer2">
 			<div class="container">
 				<div class="game_box2">
 					<div class="box1">
@@ -232,7 +234,8 @@ input[type="text"] {
 					</div>
 				</div>
 			</div>
-		</div>
+			</div>
+		</div> 
 			
 
 		

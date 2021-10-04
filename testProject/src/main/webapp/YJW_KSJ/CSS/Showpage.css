@@ -16,7 +16,10 @@
 
 
 div.back {
-	background: rgba(0,0,0);
+	background: rgba(9,9,52,0.35);
+    width: 100%;
+    height: 100%;
+    position: absolute;
 }
 
 .color{
@@ -153,11 +156,7 @@ div.outcontainer {
    top: 50%;
    left: 50%;
    transform: translate(-50%,-50%);
-   background: rgba(9,9,52,0.35);
-   min-width: 1024px;
-   min-height: auto;
    width: 100%;
-   height: 100%;
 
 }
 
@@ -322,4 +321,10 @@ div.Mat {
     word-spacing: 50px;
     margin-top: 15px;
     letter-spacing: 5px;
+}
+
+div.wait a:hover {
+	cursor : pointer;
+	transition: all 0.2s ease 0s;
+    background-color: rgba(9,9,52);
 }
