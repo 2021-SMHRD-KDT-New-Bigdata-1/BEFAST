@@ -1,10 +1,23 @@
+@font-face {
+    font-family: 'twayfly';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayfly.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+	font-family: 'twayfly';
+}
+
+
 body{
     margin: 0;
     padding: 0;
-    background: url(bg.jpg);
+    background: url("../resources/99. img/back2.jpg");
     background-size: cover;
-    font-family: sans-serif;
 }
+
 
 .loginBox{
     position: absolute;
@@ -13,10 +26,10 @@ body{
     transform: translate(-50%,-50%);
     width: 350px;
     height: 420px;
-    padding: 50px;
+    padding: 20px;
     border-radius: 10px;
     box-sizing: border-box;
-    background: rgba(9,9,52);
+    background: rgba(9,9,52,.7);
 }
 
 .user{
@@ -31,9 +44,12 @@ body{
 
 h2{
     margin: 0;
-    padding: 10px 0 20px;
+    /* padding: 10px 0 20px; */
     color: #00b92e;
     text-align: center;
+    font-family:'Bangers', cursive;
+    font-size: 3.5rem;
+    letter-spacing: 5px;
 }
 
 .loginBox p{
@@ -43,8 +59,14 @@ h2{
     color: #fff;
 }
 
+div.log {
+	margin-top: 33px;
+    padding: 15px;
+}
+
 .Join {
     text-align: right;
+    margin-top: 12.5px;
 }
 
 .loginBox input{
@@ -63,6 +85,9 @@ h2{
     font-size: 16px;
 }
 
+.loginBox input[type="password"] {
+	font-family: sans-serif;
+}
 ::placeholder{
     color: rgba(255,255,255,.5);
 }
@@ -75,6 +100,7 @@ h2{
     font-size: 16px;
     background: rgba(31,209,69);
     cursor: pointer;
+    margin : 15px auto;
     border-radius: 20px;
 }
 
@@ -88,4 +114,9 @@ h2{
     font-size: 14px;
     font-weight: bold;
     text-decoration: none;
+}
+
+.loginBox a:hover {
+	transition: all 0.2s ease 0s;
+    color: #e6e213;
 }
