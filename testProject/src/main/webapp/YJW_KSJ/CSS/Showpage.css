@@ -60,7 +60,7 @@ div.back {
 }
 
 div.figure_box {
-	margin: 15px auto;
+	margin: 26px auto;
 }
 
 @media screen and (max-width: 800px) {
@@ -200,7 +200,7 @@ h1.select_game, ul.choose_game {
 
 .btn:hover {
 	transition: all 0.2s ease 0s;
-    background-color: rgba(9,9,52);
+    background-color: rgba(31,209,69,0.5);
     border-radius: 5px;
 }
 
@@ -305,4 +305,21 @@ input[type="submit"]:hover {
 	cursor : pointer;
 	transition: all 0.2s ease 0s;
     background-color: rgba(9,9,52);
+}
+
+i.fa-handshake, i.fa-trophy, i.fa-flag-checkered {
+	font-size: 5rem;
+}
+
+i.fa-handshake:hover, i.fa-trophy:hover, i.fa-flag-checkered:hover {
+	color: #eee;
+	transition: all 0.2s ease 0s;
+}
+
+div.Mat {
+	display: flex;
+    justify-content: center;
+    word-spacing: 50px;
+    margin-top: 15px;
+    letter-spacing: 5px;
 }

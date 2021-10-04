@@ -13,6 +13,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
+
+<!-- 폰트어썸 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
+
 <link rel="stylesheet" href="YJW_KSJ/CSS/Showpage.css">
 </head>
 <style>
@@ -187,41 +191,44 @@ input[type="text"] {
 		<div class="columns">
 			<div class="figure_box">
 				<div id='result3'>경기방식을 선택해주세요</div>
+					<div class="Mat">
 					 <form method="get" action="ShowPage1.jsp">
 						<figure>
 							<!-- 기존 : <img src="img/랭크경기.jpg"> -->
-							<button class="btn" value="일반" id="btn" type="submit"
-								name="choice" onclick='hidden_change("일반")'>
-								<input type="hidden" name="choice" value="선택안함" class="result"
-									id="hidden_input"> <img class="btn-img"
-									src="YJW_KSJ/resources/99. img/team2.jpg">
+							<button class="btn" value="일반" id="btn" type="submit" name="choice" onclick='hidden_change("일반")'>
+							<i class="fas fa-flag-checkered"></i>
+							<input type="hidden" name="choice" value="선택안함" class="result"
+									id="hidden_input"> <!-- <img class="btn-img"src="YJW_KSJ/resources/99. img/team2.jpg"> -->
+									
 							</button>
+							
 							<figcaption>일반경기</figcaption>
 						</figure>
 
 						<figure>
 							<!-- <img src="img/랭크경기.jpg"> -->
-							<button class="btn" value="친선" id="btn" type="submit"
-								name="choice" onclick='hidden_change("친선")'>
+							<button class="btn" value="친선" id="btn" type="submit" name="choice" onclick='hidden_change("친선")'>
+							<i class="far fa-handshake"></i>
 								<input type="hidden" name="choice" value="선택안함" class="result"
-									id="hidden_input"> <img class="btn-img"
-									src="YJW_KSJ/resources/99. img/team2.jpg">
+									id="hidden_input"> <!-- <img class="btn-img" src="YJW_KSJ/resources/99. img/team2.jpg"> -->
 							</button>
+							
 							<figcaption>친선경기</figcaption>
 						</figure>
 
 						<figure>
 							<!-- <img src="img/랭크경기.jpg"> -->
-							<button class="btn" value="랭크" id="btn" type="submit"
-								name="choice" onclick='hidden_change("랭크")'>
+							<button class="btn" value="랭크" id="btn" type="submit" name="choice" onclick='hidden_change("랭크")'>
+								<i class="fas fa-trophy"></i>
 								<input type="hidden" name="choice" value="선택안함" class="result"
-									id="hidden_input"> <img class="btn-img"
-									src="YJW_KSJ/resources/99. img/team2.jpg">
+									id="hidden_input"> <!-- <img class="btn-img" src="YJW_KSJ/resources/99. img/team2.jpg"> -->
+							
 							</button>
 							<figcaption>랭크경기</figcaption>
 						</figure>
 
 					</form>
+						</div>
 					</div>
 				</div>
 			</div>
