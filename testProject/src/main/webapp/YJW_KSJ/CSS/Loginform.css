@@ -29,7 +29,9 @@ body{
     padding: 20px;
     border-radius: 10px;
     box-sizing: border-box;
+    box-shadow : 0 0 15px #000;
     background: rgba(9,9,52,.7);
+    
 }
 
 .user{
