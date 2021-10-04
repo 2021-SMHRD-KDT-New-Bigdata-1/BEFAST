@@ -85,6 +85,10 @@ input[type="password"], input[type="text"] {
     height: 30px;
 }
 
+input[type="password"] {
+	font-family: sans-serif;
+}
+
 
 
 

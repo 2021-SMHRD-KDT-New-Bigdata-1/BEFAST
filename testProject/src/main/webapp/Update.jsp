@@ -28,8 +28,9 @@
 		
 			
 			<div>
-			<span>비밀번호 변경</span>
-			<input type="password" name="PWD" placeholder="PW를 입력하세요" style="width: 500px; margin: 0 auto; color:#eee;">
+			<span>비밀번호 변경</span> 
+			<!-- 폰트 적용 안 되서 기본 폰트로 할 것 -->
+			<input type="password" name="PWD" placeholder="PW를 입력하세요" style="width: 500px;">
 			</div>
 		
 		
