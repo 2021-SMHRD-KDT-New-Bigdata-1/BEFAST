@@ -59,7 +59,7 @@
    
    
        <!-- 순위 -->
-    <!-- 이미지 슬라이더 -->
+    <!-- 이미지 슬이더 -->
     <div class="container">
         <div class="navbar">
             <div class="navContainer">

@@ -40,21 +40,13 @@ input[type="text"] {
 
 	%>
 
-	<div class="container">
+	<!-- <div class="container"> -->
 		<div class="outcontainer">
-			<!--    <div class="game_box">
-            <h3 class="select_game">예약현황 페이지지롱</h3> -->
-
-			<!-- 예약현황 -->
 			<div class="container">
 				<div class="game_box2">
 					<div class="box1">
-
-
-
 						<%
 						out.println("<h1 class=\"coloring\">랭크 순위</h1>");
-
 						out.println("<table class=\"table table-hover\">");
 						out.println("<tr class=color>"); // 색상 빨간색:danger(table-hover)
 						out.println("<th class=text-center width=15>순위</th>");
@@ -83,7 +75,9 @@ input[type="text"] {
 						}
 						out.println("</table><br>");
 						%>
+						
 					</div>
+					
 					<%--                             <form action="MatchService">
                            <table>
                               <tr>
@@ -97,8 +91,6 @@ input[type="text"] {
                               </tr>
                            </table>
                            </form> --%>
-
-
 					<!--                               out.print("<tr>");
                               out.print("<td>" + al.get(i).getMATCHING_DATE() + "</td>");
                               out.print("<td>" + al.get(i).getADDRESS() + "</td>");
@@ -107,9 +99,6 @@ input[type="text"] {
                               out.print("<td>" + al.get(i).getGAMES() + "</td>");
                               out.print("<td>" + al.get(i).getTEAM_NAME() + "</td>");
                               out.print("</tr>"); -->
-
-
-
 
 					<div class="wait">
 						<table>
@@ -125,13 +114,11 @@ input[type="text"] {
 									<td>경기방식</td>
 									<td>팀명</td>
 									<td>예약</td>
-
 								</tr>
-								<tr>
-
-
-								</tr>
-								<% 
+<!-- 								<tr>
+								
+								</tr> -->
+							<%	 
 								if (request.getParameter("choice") == null) {
 									al = dao.select();
 								} else {
@@ -176,9 +163,9 @@ input[type="text"] {
 										break;
 									}
 
-								}
+								} 
 
-								if (prev_page <= 0) {
+								 if (prev_page <= 0) {
 									prev_page = 1;
 								} else if (cur_page >= total_page) {
 									next_page = total_page;
@@ -187,16 +174,19 @@ input[type="text"] {
 								out.println("<p class=\"white1\">"+(prev_page) + " page / " + (next_page) + " pages</p>");
 								out.println("<a href=?page1=" + next_page + " class=\"btn btn-sm btn-primary\">다음</a>");
 								%>
-							
+					
 						</table>
 						</tbody>
 
 					</div>
 
 				</div>
-				<div id='result3'>선택안함</div>
-				<form method="get" action="ShowPage1.jsp">
-					<div class="columns">
+			</div>
+				
+		<div class="columns">
+			<div class="figure_box">
+				<div id='result3'>경기방식을 선택해주세요</div>
+					 <form method="get" action="ShowPage1.jsp">
 						<figure>
 							<!-- 기존 : <img src="img/랭크경기.jpg"> -->
 							<button class="btn" value="일반" id="btn" type="submit"
@@ -230,11 +220,12 @@ input[type="text"] {
 							<figcaption>랭크경기</figcaption>
 						</figure>
 
+					</form>
 					</div>
-				</form>
-			</div>
+				</div>
+			
 
-		</div>
+		
 		<script>
 			function hidden_change(val) {
 				var hidden = document.getElementById("hidden_input");

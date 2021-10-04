@@ -14,6 +14,8 @@
 	padding: 0; */
 }
 
+
+
 .color{
 	color : white;
 }
@@ -23,21 +25,22 @@
 	margin-top: 10px;
 }
 .div1{
-	color: #eee;}
+	color: #eee;
+}
+
 .columns {
-   /* column-width:400px; */
-   column-gap: 15px;
-   max-width: 1184px;
-   margin: 0 auto;
+	background: rgba(9,9,52,0.35);
+	text-align: center;
+	display: flex;
+	justify-content: center;
 }
 
 .columns figure {
    display: inline-block;
-   border: 1px solid rgba(0, 0, 0, 0.2);
-   margin: 0;
-   margin-bottom: 15px;
+   /* border: 1px solid rgba(0, 0, 0, 0.2); */
+   margin: 3px auto;
    padding: 10px;
-   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);;
+   /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); */
 }
 
 .columns figure img {
@@ -52,9 +55,13 @@
 
 .columns figure figcaption {
    color: rgba(31, 209, 69);
-   border-top: 1px solid rgba(255, 255, 255);
+   border-top: 2px solid yellow;
    padding: 10px;
    margin-top: 11px;
+}
+
+div.figure_box {
+	margin: 15px auto;
 }
 
 @media screen and (max-width: 800px) {
@@ -76,9 +83,16 @@
 }
 
 body {
-   background-color: rgba(3, 3, 30);
-   font-size: 2rem;
+   /*  background-color: rgba(9,9,52,0.7); */
+    font-size: 2rem; 
+	margin: 0;
+	padding: 0;
+	background-image: url("../resources/99. img/back3.jpg");
+	background-size: cover;
+	
 }
+
+
 
 div {
    display: block;
@@ -159,12 +173,9 @@ h1.select_game ul {
 }
 
 div.container {
-   /* position : fixed; */
-   /* top: 0px; */
-   left: 0;
-   right: 0;
-   bottom: 0;
    text-align: center;
+   background: rgba(31,209,69,0.35);
+   padding: 25px 15px;
 }
 
 div.outcontainer {
@@ -183,10 +194,13 @@ div.outcontainer {
    /* 가로 배열 */
    flex-direction: column;
    position: absolute;
-   top: 0;
-   left: 0;
-   right: 0;
-   bottom: 0;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+   background: rgba(9,9,52,0.35);
+   width: 100%;
+   height: 100%;
+
 }
 
 div.game_box {
@@ -212,28 +226,24 @@ div.game_pic {
    border: none;
 }
 
-/* ul.choose_game { */
-/* margin: 2em 0; */
-/* margin: 0 auto;
-    
-    align-items: center;
-} */
-
-/* ul li {
-    color : rgba(31,209,69);
-    font-size: 23px;
-    font-weight: 500;
-} */
 h1.select_game, ul.choose_game {
    opacity: 1;
    transition: opacity .4s ease-out;
 }
 
 .btn {
-   border: none;
-   outline: none;
-   background-color: rgba(3, 3, 30);
-   cursor: pointer;
+	text-decoration : none;
+	border: none;
+	outline: none;
+	background: none;
+	cursor: pointer;
+	font-size: 1.3rem;
+}
+
+.btn:hover {
+	transition: all 0.2s ease 0s;
+    background-color: rgba(9,9,52);
+    border-radius: 5px;
 }
 
 .btn:hover {
@@ -241,8 +251,9 @@ h1.select_game, ul.choose_game {
 }
 
 table {
-   width: 1024px;
+   width: 100%;
    /* border-collapse:collapse; 바깥선 */
+   line-height: 1.1;
 }
 
 table td {
@@ -279,16 +290,10 @@ tbody tr {
    margin: 10px;
 }
 
-.columns{
-   /* width: 1500px; */
-   margin-left: auto;
-   margin-right: auto;
-   display: inline-block;
-   height: 300px;
-}
 .wait{
    text-align:center;
 }
+
 .game_box2{
    text-align:center;
    align-items: center;
