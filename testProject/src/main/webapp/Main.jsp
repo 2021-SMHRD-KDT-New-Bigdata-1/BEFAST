@@ -140,52 +140,52 @@
                             <ol>
                                 <!-- <li><a href="#">[Rank 1] 황윤희FC 승점 : 2040점 전적: 80승 1패 5무 매너점수: 4</a></li> -->
                                 <li><a href="#">
-                        [Rank 1]팀명 : <%=list2.get(0).getTeam_name()%> 
+                        [# 1]팀명 : <%=list2.get(0).getTeam_name()%> 
                        			승점 : <%=list2.get(0).getTotal_score()%> 
                                 전적 : <%=list2.get(0).getResult_1()%>승 
                                 	  <%=list2.get(0).getResult_2()%>무 
                                 	  <%=list2.get(0).getResult_3()%>패
-                                매너점수 : <%=list2.get(0).getM_result()%>점
+                                매너 : <%=list2.get(0).getM_result()%>점
                                 	  </a>
                                 	  </li>
                                 
                                 <li><a href="#">
-						[Rank 2]팀명 : <%=list2.get(1).getTeam_name()%> 
+						[# 2]팀명 : <%=list2.get(1).getTeam_name()%> 
                        			승점 : <%=list2.get(1).getTotal_score()%> 
                                 전적 : <%=list2.get(1).getResult_1()%>승 
                                 	  <%=list2.get(1).getResult_2()%>무 
                                 	  <%=list2.get(1).getResult_3()%>패
-                                매너점수 : <%=list2.get(1).getM_result()%>점
+                                매너 : <%=list2.get(1).getM_result()%>점
 	                                </a>
 	                                </li>
 	                                
                                 <li><a href="#">
-						[Rank 3]팀명 : <%=list2.get(2).getTeam_name()%> 
+						[# 3]팀명 : <%=list2.get(2).getTeam_name()%> 
                        			승점 : <%=list2.get(2).getTotal_score()%> 
                                 전적 : <%=list2.get(2).getResult_1()%>승 
                                 	  <%=list2.get(2).getResult_2()%>무 
                                 	  <%=list2.get(2).getResult_3()%>패
-                                매너점수 : <%=list2.get(2).getM_result()%>점
+                                매너 : <%=list2.get(2).getM_result()%>점
 	                                </a>
 	                                </li>
 	                                
                                 <li><a href="#">
-						[Rank 4]팀명 : <%=list2.get(3).getTeam_name()%> 
+						[# 4]팀명 : <%=list2.get(3).getTeam_name()%> 
                        			승점 : <%=list2.get(3).getTotal_score()%> 
                                 전적 : <%=list2.get(3).getResult_1()%>승 
                                 	  <%=list2.get(3).getResult_2()%>무 
                                 	  <%=list2.get(3).getResult_3()%>패
-                                매너점수 : <%=list2.get(3).getM_result()%>점
+                                매너 : <%=list2.get(3).getM_result()%>점
 	                                </a>
 	                                </li>
 	                                
                                 <li><a href="#">
-						[Rank 5]팀명 : <%=list2.get(4).getTeam_name()%> 
+						[# 5]팀명 : <%=list2.get(4).getTeam_name()%> 
                        			승점 : <%=list2.get(4).getTotal_score()%> 
                                 전적 : <%=list2.get(4).getResult_1()%>승 
                                 	  <%=list2.get(4).getResult_2()%>무 
                                 	  <%=list2.get(4).getResult_3()%>패
-                                매너점수 : <%=list2.get(4).getM_result()%>점
+                                매너 : <%=list2.get(4).getM_result()%>점
                                 </a>
                                 </li>
                                
