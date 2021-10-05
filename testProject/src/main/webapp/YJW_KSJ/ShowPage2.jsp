@@ -38,6 +38,7 @@ input[type="text"] {
 	border:none;
 	background: transparent;
 	color :white;
+	text-align: center;
 	
 }
 </style>
