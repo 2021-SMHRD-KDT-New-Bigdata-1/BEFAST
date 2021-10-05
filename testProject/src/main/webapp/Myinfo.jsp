@@ -105,7 +105,7 @@ text-align: center;
 	text-align: center;
 }
 .Card .barOuter .My_type {
-	text-transform: lowercase;
+	/* text-transform: lowercase; */
 	font-size: 15px;
 	margin-bottom: 5px;
 }
