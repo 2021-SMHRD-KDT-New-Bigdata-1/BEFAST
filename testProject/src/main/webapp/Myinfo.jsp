@@ -347,7 +347,7 @@ tbody tr td {
 				<!-- 뒤로가기  -->
 				<button id="pre" onclick="history.back();">이전으로</button>
 				
-				<!-- 현재 페이지에서 다른 이지 이동  -->
+				<!-- 현재 페이지에서 다른 페이지 이동  -->
 				<button id="next" onclick="location.href='Update.jsp'">정보변경</button>
 				
 				<!-- <a href="#" onclick="history.back()">이전으로</a>
