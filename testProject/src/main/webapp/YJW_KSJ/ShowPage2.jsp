@@ -179,10 +179,7 @@ input[type="text"] {
                         out.println("<p class=\"white1\">"+(prev_page) + " page / " + (next_page) + " pages</p>");
                         out.println("<a href=?page1=" + next_page + " class=\"btn btn-sm btn-primary\">´ÙÀ½</a>");
                        
-                        
                         %>
-                        
-                        
                      
                  	 </tbody>
                   </table>

@@ -295,6 +295,7 @@ tbody tr td {
 					<p>눌러서 결과선택</p>
 				</div>
 		</div>
+		
 		<form action="MannerForm.jsp">
 			<div class="partner2">
 				<div class="partner_info2">
@@ -338,7 +339,7 @@ tbody tr td {
 		</div>
 						<%}else{%>
 			
-			<p>랭크 매칭내역이 없습니다.<p>
+					<p>매칭내역이 없습니다.<p>
 			<% }%>
 		<% }%>
 				<div class="PreNext">
