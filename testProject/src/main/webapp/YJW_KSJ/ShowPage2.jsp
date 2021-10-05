@@ -153,10 +153,15 @@ input[type="text"] {
                                  value="<%=al.get(i).getTEAM_NAME()%>" readonly/></td>
                               <%
                               
-                              out.print("<td><input type=\"submit\" name=\"btnsss\" value=\"예약\" class=\"result\""
-                              + "onclick='ClickBtn()'></td>");
-                              //out.print("<td><input type=\"submit\" value=\"예약\" id=btnss onclick=changeBtnName()"
-                              //     +"></td>");
+                              if(al.get(i).getTEAM_NAME2()==null){
+                                  
+                                  out.print("<td><input type=\"submit\" name=\"btnsss\" value=\"예약\" class=\"result\""
+                                  + "onclick='ClickBtn()'></td>");
+                                  }else{
+                                     out.print("<td><input type=\"text\" name=\"btnsss\" value=\"예약이 마감되었습니다.\" readonly/ class=\"result\""
+                                           + "onclick='ClickBtn()'></td>");   
+                                     
+                                  }
                               out.print("</form>");
                               out.print("</tr>");
                            } else {
@@ -173,7 +178,11 @@ input[type="text"] {
                         out.println("<a href=?page1=" + prev_page + " class=\"btn btn-sm btn-primary\">이전</a>");
                         out.println("<p class=\"white1\">"+(prev_page) + " page / " + (next_page) + " pages</p>");
                         out.println("<a href=?page1=" + next_page + " class=\"btn btn-sm btn-primary\">다음</a>");
+                       
+                        
                         %>
+                        
+                        
                      
                  	 </tbody>
                   </table>
