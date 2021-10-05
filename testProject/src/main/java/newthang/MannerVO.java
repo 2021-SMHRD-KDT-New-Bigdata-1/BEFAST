@@ -11,6 +11,13 @@ public class MannerVO {
 	private int result_1;
 	private int result_2;
 	private int result_3;
+	private int num;
+	public int getNum() {
+		return num;
+	}
+	public void setNum(int num) {
+		this.num = num;
+	}
 	public int getM_result() {
 		return m_result;
 	}

@@ -4,121 +4,252 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
-import testProject.BookingVO;
-
 public class MannerDAO {
-	private Connection conn;
-	// SQL문장 전송
-	private PreparedStatement ps;
-	ResultSet rs;
+	Connection conn = null;
+	PreparedStatement psmt = null;
+	ResultSet rs = null;
 
-	private static BoardDAO instance;
+	public void conn() {
 
-	public static BoardDAO getInstance() {
-		if (instance == null)
-			instance = new BoardDAO();
-		return instance;
-	}
-
-	private final String URL = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
-
-	// 연결 준비
-	// 1. 드라이버 등록
-	public MannerDAO() {
 		try {
+
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-		} catch (Exception ex) {
-			System.out.println(ex.getMessage());
+
+			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
+			String dbid = "cgi_6_5";
+			String dbpw = "smhrd5";
+			conn = DriverManager.getConnection(url, dbid, dbpw);
+
+		} catch (Exception e) {
+
 		}
+
 	}
 
-	// 연결
-	public void getConnection() {
+	public void close() {
 		try {
-			conn = DriverManager.getConnection(URL, "cgi_6_5", "smhrd5");
-		} catch (Exception ex) {
-		}
-	}
+			if (rs != null) {
+				rs.close();
+			}
 
-	// 해제
-	public void disConnection() {
-		try {
-			if (ps != null)
-				ps.close();
-			if (conn != null)
+			if (psmt != null) {
+				psmt.close();
+
+			}
+			if (conn != null) {
 				conn.close();
-		} catch (Exception ex) {
-		}
-	}
-	// select
-	public ArrayList<TeamsssVO> MannerListData() {
-		ArrayList<TeamsssVO> list = new ArrayList<TeamsssVO>();
-		try {
-			
-			// 연결
-			getConnection();
-			String sql = "SELECT team_name,mannerscores,winner_point,result_1,result_2,result_3 "
-					+ "from teams ORDER BY winner_point desc"; // 단점: 속도 늦음→INDEX
-			ps = conn.prepareStatement(sql);
-			rs = ps.executeQuery();
-			while (rs.next()) {
-				TeamsssVO vo = new TeamsssVO();
-				vo.setTeam_name(rs.getString(1));
-				vo.setMannerscores(rs.getInt(2));
-				vo.setWinner_point(rs.getInt(3));
-				vo.setResult_1(rs.getInt(4));
-				vo.setResult_2(rs.getInt(5));
-				vo.setResult_3(rs.getInt(6));
-				list.add(vo);
 			}
-			rs.close();
-		} catch (Exception ex) {
-			System.out.println(ex.getMessage());
-		} finally {
-			disConnection();
+
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		return list;
-
 	}
+	public int RESULT(String TEAM_NAME) {
+		
+		int cnt=0;
 
-	
-	
-	// 입력
-	public void MannerInsert(MannerVO vo,TeamsssVO vo2,BookingVO vo3) {
 		try {
-			// 연결
-			getConnection();// team_name,mannerscores,winner_point,result_1,result_2,result_3
-			if(vo.getTeam_name()==vo2.getTeam_name()) {
-				String sql = "insert into teams(winner_point, mannerscores,result_1,result_2,result_3)"
-						+ "select m_result,total_score,result_1,result_2,result_3 from matching_results;";
+			conn();
 			
-			
-			/*"INSERT INTO MATCHING_RESULTS(winner_point,time_result,fair_plays,languages,comments,team_name,mannerscores,numbering,result_1,result_2,result_3) "
-					+"VALUES ((select winner_point from teams),?,?,?,?,(select team_name from teams),(select mannerscores from teams),"
-					+ "(SELECT NVL(MAX(numbering)+1,1) FROM matching_results),(select result_1 from teams),(select result_2 from teams),(select result_3 from teams))";*/
-			ps = conn.prepareStatement(sql);
-			ps.setInt(1, vo.getM_result());
-			ps.setInt(2, vo.getTime_result());
-			ps.setInt(3, vo.getFair_plays());
-			ps.setInt(4, vo.getLanguages());
-			ps.setString(5, vo.getComments());
-			//ps.setString(6, vo.getTeam_name());
-			ps.setInt(6, vo.getTotal_score());
-			ps.setInt(7, vo.getResult_1());
-			ps.setInt(8, vo.getResult_2());
-			ps.setInt(9, vo.getResult_3());
-			
-			ps.executeUpdate(); // auto COMMIT
-			}else {
-				System.out.print(false);
-			}
-		} catch (Exception ex) {
-			ex.printStackTrace();
-			//실행해주세요
-		} finally {
+			String sql = "insert into MATCHING_RESULTS(m_result,time_result,fair_plays,languages,comments,team_name,total_score,numbering,result_1,result_2,result_3,num) "
+					+ "values(0,0,0,0,null,?,0,(SELECT NVL(MAX(numbering)+1,1) FROM matching_results),0,0,0,1)";
 
+			PreparedStatement psmt = conn.prepareStatement(sql);
+				
+			psmt.setString(1, TEAM_NAME);
+			
+
+			cnt = psmt.executeUpdate();
+
+			} catch (SQLException e) {
+
+				e.printStackTrace();
+			} finally {
+				close();
+			}
+		return cnt;
+
+ }
+	public int MATCHINGRE1(String TEAM_NAME) {
+		conn();
+		
+		
+		int cnt = 0;
+		String sql = "update MATCHING_RESULTS SET TOTAL_SCORE=NVL(TOTAL_SCORE,0)+10, RESULT_1=NVL(RESULT_1,0)+1 where TEAM_NAME=?";
+
+		try {
+			psmt = conn.prepareStatement(sql);
+
+			psmt.setString(1, TEAM_NAME);
+			
+			
+
+			cnt = psmt.executeUpdate();
+
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		} finally {
+			close();
 		}
+
+		return cnt;
 	}
+	public int MATCHINGRE2(String TEAM_NAME) {
+		conn();
+		
+		
+		int cnt = 0;
+		String sql = "update MATCHING_RESULTS SET TOTAL_SCORE=NVL(TOTAL_SCORE,0)+5, RESULT_2=NVL(RESULT_2,0)+1 where TEAM_NAME=?";
+
+		try {
+			psmt = conn.prepareStatement(sql);
+
+			
+			psmt.setString(1, TEAM_NAME);
+			
+			
+
+			cnt = psmt.executeUpdate();
+
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return cnt;
+	}
+	public int MATCHINGRE3(String TEAM_NAME) {
+		conn();
+		
+		
+		int cnt = 0;
+		String sql = "update MATCHING_RESULTS SET RESULT_3=NVL(RESULT_3,0)+1 where TEAM_NAME=?";
+
+		try {
+			psmt = conn.prepareStatement(sql);
+
+			
+			psmt.setString(1, TEAM_NAME);
+			
+			
+
+			cnt = psmt.executeUpdate();
+
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return cnt;
+	}
+	public int MANNER(int time_result, int fair_plays, int languages, String TEAM_NAME) {
+		conn();
+		
+		
+		int cnt = 0;
+		String sql = "update MATCHING_RESULTS SET m_result =(time_result+fair_plays+languages)/(num-1)/3 , time_result=NVL(time_result,0)+?,fair_plays=NVL(fair_plays,0)+?,languages=NVL(languages,0)+?,num=NVL(num,0)+1 "
+				+ "where TEAM_NAME=?";
+
+		try {
+			psmt = conn.prepareStatement(sql);
+
+			
+			
+			psmt.setInt(1, time_result);
+			psmt.setInt(2, fair_plays);
+			psmt.setInt(3, languages);
+			psmt.setString(4, TEAM_NAME);
+			
+
+			cnt = psmt.executeUpdate();
+
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return cnt;
+	}
+	public MannerVO MANNER_AVG(String team_name2) {
+
+		MannerVO vo = null;
+		
+		conn();
+
+		String sql = "select * from matching_results where team_name=?";
+
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, team_name2);
+
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+
+				int m_result = rs.getInt(1);
+				int time_result = rs.getInt(2);
+				int fair_result = rs.getInt(3);
+				int languages = rs.getInt(4);
+				String comments = rs.getString(5);
+				String team_name= rs.getString(6);
+				int total_score = rs.getInt(7);
+				int numbering = rs.getInt(8);
+				int result_1 = rs.getInt(9);
+				int result_2 = rs.getInt(10);
+				int result_3 = rs.getInt(11);
+				int num =rs.getInt(12);
+				
+				vo= new	MannerVO();
+			}
+
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+
+		} finally {
+			close();
+		}
+		return vo;
+		
+
+	}
+	public ArrayList<MannerVO> MannerListData() {
+	      ArrayList<MannerVO> list = new ArrayList<MannerVO>();
+	      try {
+	         
+	         // 연결
+	         conn();
+	         String sql = "SELECT m_result,team_name,total_score,result_1,result_2,result_3 "
+	               + "from matching_results ORDER BY total_score desc"; // 단점: 속도 늦음→INDEX
+	         psmt = conn.prepareStatement(sql);
+	         rs = psmt.executeQuery();
+	         while (rs.next()) {
+	            MannerVO vo = new MannerVO();
+	            vo.setM_result(rs.getInt(1));
+	            vo.setTeam_name(rs.getString(2));
+	            vo.setTotal_score(rs.getInt(3));
+	            vo.setResult_1(rs.getInt(4));
+	            vo.setResult_2(rs.getInt(5));
+	            vo.setResult_3(rs.getInt(6));
+	            list.add(vo);
+	         }
+	         rs.close();
+	      } catch (Exception ex) {
+	         System.out.println(ex.getMessage());
+	      } finally {
+	        close();
+	      }
+	      return list;
+
+	   }
 }

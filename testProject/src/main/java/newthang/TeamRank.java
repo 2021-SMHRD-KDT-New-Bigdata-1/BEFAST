@@ -2,7 +2,6 @@ package newthang;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -54,23 +53,23 @@ public class TeamRank extends HttpServlet {
 		out.println("</tr>");
 		// 출력
 		MannerDAO dao = new MannerDAO();
-		ArrayList<TeamsssVO> list = dao.MannerListData();
-		for (int i = 0; i < list.size(); i++) {
-			if (i < 10) {
-				TeamsssVO vo = list.get(i);
-				// 회원의 수만큼 반복
-				out.print("<tr>");
-				out.print("<td width=15%>" + (i + 1) + "</td>");
-				out.print("<td><a href='LGW_HYH/TeamDetail.jsp?team_name=" + list.get(i).getTeam_name() + "'>"
-						+ list.get(i).getTeam_name() + "</a></td>");
-				out.print("<td width=15%>" + list.get(i).getMannerscores() + "</td>"); // 매너점수
-				out.print("<td width=15%>" + list.get(i).getWinner_point() + "</td>"); //승점(경기결과에서 가져옴)
-				out.print("<td width=15%>" + list.get(i).getResult_2() + "승"+list.get(i).getResult_1() + 
-						"패"+list.get(i).getResult_3() + "무</td>"); //전적
-				out.print("</tr>");
+	//	ArrayList<TeamsssVO> list = dao.MannerListData();
+	//	for (int i = 0; i < list.size(); i++) {
+	//		if (i < 10) {
+	//			TeamsssVO vo = list.get(i);
+	//			// 회원의 수만큼 반복
+	//			out.print("<tr>");
+	//			out.print("<td width=15%>" + (i + 1) + "</td>");
+	//			out.print("<td><a href='LGW_HYH/TeamDetail.jsp?team_name=" + list.get(i).getTeam_name() + "'>"
+	//					+ list.get(i).getTeam_name() + "</a></td>");
+	//			out.print("<td width=15%>" + list.get(i).getMannerscores() + "</td>"); // 매너점수
+	//			out.print("<td width=15%>" + list.get(i).getWinner_point() + "</td>"); //승점(경기결과에서 가져옴)
+	//			out.print("<td width=15%>" + list.get(i).getResult_2() + "승"+list.get(i).getResult_1() + 
+	//					"패"+list.get(i).getResult_3() + "무</td>"); //전적
+	//			out.print("</tr>");
 
-			}
-		}
+			//}
+	//	}
 
 		out.println("</table>");
 

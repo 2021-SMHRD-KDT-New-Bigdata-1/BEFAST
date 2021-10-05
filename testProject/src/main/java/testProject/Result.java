@@ -34,10 +34,14 @@ public class Result extends HttpServlet {
 			
 			dao.MATCHINGRE2(vo.getTEAM_NAME());
 		}
+		
 		if(cnt>0) {
 			System.out.println("업데이트 성공");
+			response.sendRedirect("Main.jsp");
+			
 		}else {
 			System.out.println("실패");
+			response.sendRedirect("Main.jsp");
 		}
 		
 	}

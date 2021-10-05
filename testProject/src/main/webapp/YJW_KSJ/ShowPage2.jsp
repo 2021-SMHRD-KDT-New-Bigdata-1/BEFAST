@@ -70,7 +70,7 @@ input[type="text"] {
 						out.println("</tr>"); // 출력 MannerDAO dao = new MannerDAO(); ArrayList
 						MannerDAO dao2 = new MannerDAO();
 						ArrayList<MannerVO> list = dao2.MannerListData();
-						for (int i = 0; i < 4; i++) {
+						for (int i = 0; i < 5; i++) {
 							if (i < 10) {
 								MannerVO vo3 = list.get(i); // 회원의 수만큼 반복 
 								out.print("<tr>");

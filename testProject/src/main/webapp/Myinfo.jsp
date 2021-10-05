@@ -13,23 +13,14 @@
 
 <link rel="stylesheet" href="LGW_HYH/resources/css/result.css">
 <link rel="stylesheet" href="YJW_KSJ/CSS/Manner.css">
+
 <title>내 정보</title>
 <!-- font-awesome  -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
 <meta charset="EUC-KR">
 </head>
 <style>
-/* 티웨이날다체 */
-@font-face {
-    font-family: 'twayfly';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayfly.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
 * {
-	font-family: 'twayfly';
 	margin: 0 auto;
 	padding: 0;
 }
@@ -71,7 +62,6 @@ body {
 
 .Card .My_info1 {
 	margin-bottom: 20px;
-	color: #eee;
 }
 
 
@@ -80,7 +70,7 @@ body {
 	display: inline-block;
 	padding: 0 10px;
 	text-align: center;
-	color: #eee;
+	color: #f4f1de;
 	font-size: 20px;
 }
 
@@ -92,14 +82,8 @@ body {
 
 .Card .My_info2 {
 	width: 100%;
-	color: #eee;
 }
-
-p{ 
-
-text-align: center;
-
-}
+p{ text-align: center;}
 
 .Card .My_info2 .title, .Matching_info {
 	color: #eee;
@@ -128,10 +112,6 @@ text-align: center;
 	margin-bottom: 5px;
 }
 
-p.My_type2 {
-	display: flex;
-}
-
 .Card .barOuter .barLevel {
 	height: auto;
 	line-height: 1.7;
@@ -151,75 +131,67 @@ p.My_type2 {
 	margin: 5px auto;
 	position: relative;
 	top: 15px;
-	display: flex;
-	justify-content: center;
-	padding: 0px;
 }
 
-
-button#pre:hover, button#next:hover {
-	transition: all 0.2s ease 0s;
-	background-color: rgba(31,209,69);
-} 
+.PreNext{
+	text-decoration: none;
+	/* margin-left: 4px; //*/
+}
 
 button {
+	border: none;
 	border-radius: 5px;
 	height: 30px;
-	padding: 26px;
-	justify-content: center;
-	text-align: center;
-	align-items: center;
-	display: flex;
-	background: rgba(9,9,52);
-	border: 1px solid #eee;
-	color: #eee;
+	margin: 3px auto;
+	padding: 5px;
 }
 
 button:hover {
 	cursor: pointer;
 }
 
+button#pre {
+	position: relative;
+	/* left: -50px; */
+}
+
+button#next {
+	position: relative;
+	/* right: -141px; */
+}
 
 .barOuter2 {
 	text-align: center;
-	padding: 0 6px;
-	margin: 0 10px auto;
+	padding: 6px;
+	margin-left: 16px;
 
 }
+.sub{
+padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    background-color: #996699;}
+.manner{	
 
-p.My_type {
-	text-align: center;
-}
-
-
-
-.re {
-	/* display: flex; */
-	line-height: 1.7;
-	margin-top: 16px;
-}
-
-table {
-	margin: 0 auto;
-}
-tbody {
-	/* display: flex; */
-	justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-tbody tr td {
-	padding: 8px;
+	border:none;
+	background: transparent;
+	color :white;
+	margin-left: 68px;
 
 }
 
 </style>
 <body>
-	<% 
-	   memberVO vo = (memberVO) session.getAttribute("vo");
+	<% memberVO vo = (memberVO) session.getAttribute("vo");
+	
 	   BookingDAO dao = new BookingDAO();
+	   /* BookingVO Bvo = (BookingVO) session.getAttribute("Bvo"); */
+	   /* BookingVO Bvo2 = (BookingVO) session.getAttribute("Bvo2"); */
 	   BookingVO Bvo = dao.My_booking(vo.getMEMBER_ID());
+		System.out.println("정보: "+Bvo);
+       /* BookingVO Bvo = (BookingVO) session.getAttribute("Bvo"); */
 	%>
 	
 		<div class="Card">
@@ -235,6 +207,9 @@ tbody tr td {
 					<li>이름<bR>  <span><%=vo.getMEMBER_NAME()%></span> </li>
 					<li>성별<bR>  <span><%=vo.getGENDER()%></span> </li>
 					<li>휴대전화<bR>  	 <span><%=vo.getMEMBER_PHONE()%></span> </li>
+<%-- 				<li><%=vo.getP_AREA()%>   <bR>  <span></span> </li>
+					<li><%=vo.getTEAM_NAME()%><bR>  <span></span> </li>
+					<li><%=vo.getPOSITION()%><bR>  <span></span> </li>	 --%>			
 				</ul>
 			</div>
 			
@@ -243,7 +218,6 @@ tbody tr td {
 					<p class="title">경기정보</p>
 					
 				<div class="barOuter">
-				
 				
 					<div class="barLevel barHTML">선호지역 <i class="fas fa-search-location"></i>
 					<p class="My_type"><%=vo.getP_AREA()%></p>
@@ -256,77 +230,67 @@ tbody tr td {
 					<div class="barLevel barHTML">소속 팀 <i class="fas fa-users"></i>
 					<p class="My_type"><%=vo.getTEAM_NAME()%></p>
 					</div>
-					
 				</div>
+				
 			
 					<div class="line"></div>
-					<p class="haha">내 매칭현황</p>
+					<p class="haha">내 매칭현황</p><!-- <p class="Matching_info">내 매칭현황</p> -->
+				
+				<div class="barOuter2">
 				
 					<%if(Bvo!=null){ %>
+					<div class="barLevel barHTML">경기일자
+					<p class="My_type"><i class="far fa-calendar-alt"></i><%=Bvo.getMATCHING_DATE()%></p> 
+					</div>
+					<div class="barLevel barHTML">상대 팀
+					<p class="My_type"><i class="far fa-calendar-alt"></i><%=Bvo.getTEAM_NAME2()%></p>
+					</div>
+ 					<div class="barLevel barHTML">경기지역
+					<p class="My_type"><i class="far fa-calendar-alt"></i><%=Bvo.getADDRESS()%></p>
+					</div>
 					
-					<table>
-						<tbody>
-							<tr> <!-- 1행 -->
-								<td>경기일자</td>
-								<td><i class="far fa-calendar-alt"></i></td>
-								<td><%=Bvo.getMATCHING_DATE()%></td>
-							</tr>
-							
-							<tr> <!-- 2행 -->
-								<td>경기지역</td>
-								<td><i class="fas fa-search-location"></i></td>
-								<td><%=Bvo.getADDRESS()%></td>
-							</tr>
-							
-							<tr> <!-- 3행 -->
-								<td>경기장소</td>
-								<td><i class="far fa-compass"></i></td>
-								<td><%=Bvo.getFILED_NAME()%></td>
-							</tr>
-							
-							<tr> <!-- 4행 -->
-								<td>게임방식</td>
-								<td><i class="far fa-futbol fa-1g"></i></td>
-								<td><%=Bvo.getGAMES()%></td>
-							</tr>
-							
-							<tr> <!-- 5행 -->
-								<td>경기시간</td>
-								<td><i class="far fa-clock"></i></td>
-								<td><%=Bvo.getTIMES()%></td>
-							</tr>
-							
-							
-						</tbody>
-					</table>
+					<div class="barLevel barHTML">경기장
+					<p class="My_type"><i class="far fa-calendar-alt"></i><%=Bvo.getFILED_NAME()%></p>
+					</div>
 					
-					<% }else{%>
+					<div class="barLevel barHTML">게임방식
+					<p class="My_type"><i class="far fa-calendar-alt"></i><%=Bvo.getGAMES()%></p>
+					</div>
+					
+					<div class="barLevel barHTML">경기시간
+					<p class="My_type"><i class="far fa-calendar-alt"></i><%=Bvo.getTIMES()%></p>
+					</div>
+					
+					
+					</div>
+					
+					<% }else if(Bvo ==null){%>
 					예약이 없습니다
 					<% }%>
 					
 					<div class="line"></div>
 					
-	<div class="re">
 		<div class="partner">
-			<!-- <h2>경기 결과</h2> -->
+			<h2>경기 결과</h2>
+			<%if(Bvo!=null){ %>
+			<%if(Bvo.getTEAM_NAME2()!=null&& Bvo.getGAMES().equals("랭크")){ %>
 				<div class="partner_info">
-					<p>눌러서 결과선택</p>
+					<p>클릭해주세요.</p>
 				</div>
 		</div>
-		
-	<div class="partner2">
 		<form action="MannerForm.jsp">
-		<!-- <h2>상대방팀평가</h2> -->
-		<input type="submit" value="눌러서 평가" class="form"> 
+	<td> <input type="text" name="team_name2" class="manner"
+	value="<%=Bvo.getTEAM_NAME2()%>" readonly/></td><br>
+		<input type="submit" value="클릭해주세요" class="form"> 
 		</form>
-	</div>
 		
-		<!-- <div class="clear"></div> -->
+		<div class="clear"></div>
 			<div id="modal">
 				<div class="body">
 					<p class="p">경기결과를 클릭해주세요</p>
 					<br>
 					
+					<form action ="Result">
 				<div class="modal_img">
 					<input type="button" name="m_result" value="승리" class="win"
 						onclick='hidden_change("승리")'> <input type="hidden"
@@ -340,16 +304,24 @@ tbody tr td {
 						onclick='hidden_change("무승부")'> <input type="hidden"
 						name="m_result" value="선택안함" class="result" id="hidden_input">
 						
+											
 				</div>
+				
 					<br>
 					<div id='result3'>선택안함</div>
 						<div class="button">
+						<input type = "submit" value="결과등록" class="sub">
 							<button type="button" id="btn-close">닫기</button>
 						</div>
+					</form>
 				</div>
 			</div>
-		<!-- </div> -->
+		</div>
+						<%}else{%>
 			
+			<p>랭크 매칭내역이 없습니다.<p>
+			<% }%>
+		<% }%>
 				<div class="PreNext">
 			
 				<!-- 뒤로가기  -->
@@ -362,10 +334,8 @@ tbody tr td {
 				<a href="#" onclick="location.href='Update.jsp'">내 정보변경</a> -->
 				
 				</div>
-		</div>
 			
 		</div>
-	</div>
 		
 	<script src="./YJW_KSJ/JS/jquery-3.6.0.min.js"></script>
 	

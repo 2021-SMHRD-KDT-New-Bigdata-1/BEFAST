@@ -198,9 +198,9 @@ public class BookingDAO {
 
 		BookingVO Bvo = null;
 		conn();
-
-		String sql = "select * from (select*from BOOKINGS order by MATCHING_DATE DESC) where MEMBER_ID=?";
-
+		// "select * from (select*from BOOKINGS order by MATCHING_DATE DESC) where MEMBER_ID=?";
+		String sql = "select to_char(MATCHING_DATE,'yyyy-mm-dd'), address, filed_name, games, times, team_name, member_id, team_name2 from (select*from BOOKINGS order by MATCHING_DATE DESC) where MEMBER_ID=?";
+		//select to_char(MATCHING_DATE,'yyyy-mm-dd'), address, filed_name, games, times, team_name, member_id, team_name2 from bookings;
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, MEMBER_ID);
@@ -215,7 +215,7 @@ public class BookingDAO {
 				String GAMES = rs.getString(4);
 				String TIMES = rs.getString(5);
 				String TEAM_NAME = rs.getString(6);
-				String TEAM_NAME2 = rs.getString(7);
+				String TEAM_NAME2 = rs.getString(8);
 
 				
 				Bvo = new BookingVO(MATCHING_DATE, ADDRESS, FILED_NAME,GAMES,TIMES, TEAM_NAME, MEMBER_ID,TEAM_NAME2);
@@ -268,7 +268,7 @@ public class BookingDAO {
 		try {
 			conn();
 
-			String sql = "select * from BOOKINGS";
+			String sql = "select to_char(MATCHING_DATE,'yyyy-mm-dd'), address, filed_name, games, times, team_name, member_id, team_name2 from bookings";
 			psmt = conn.prepareStatement(sql);
 
 			rs = psmt.executeQuery();
@@ -299,7 +299,7 @@ public class BookingDAO {
 	public ArrayList<BookingVO> bookingsSearch(String choice) {
 		ArrayList<BookingVO> boo = new ArrayList<BookingVO>();
 		System.out.println("sql문 출력 : "+choice);
-		String sql = "select * from BOOKINGS ";
+		String sql = "select to_char(MATCHING_DATE,'yyyy-mm-dd'), address, filed_name, games, times, team_name, member_id, team_name2 from bookings ";
 		String sqlnormal = "";
 		if (choice.equals("일반")) {
 			sqlnormal = "where GAMES like '%" + choice.trim() + "%'";

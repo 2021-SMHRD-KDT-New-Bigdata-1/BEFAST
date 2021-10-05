@@ -8,7 +8,7 @@ public class BookingVO {
 	private String TIMES;
 	private String TEAM_NAME;
 	private String MEMBER_ID;
-	
+	private String TEAM_NAME2;
 	
 	public String getTEAM_NAME2() {
 		return TEAM_NAME2;
@@ -20,7 +20,7 @@ public class BookingVO {
 	}
 
 
-	private String TEAM_NAME2;
+	
 	
 	
 	public BookingVO() {
@@ -125,6 +125,14 @@ public class BookingVO {
 
 	public void setTIMES(String TIMES) {
 		this.TIMES = TIMES;
+	}
+
+
+	@Override
+	public String toString() {
+		return "BookingVO [MATCHING_DATE=" + MATCHING_DATE + ", ADDRESS=" + ADDRESS + ", FILED_NAME=" + FILED_NAME
+				+ ", GAMES=" + GAMES + ", TIMES=" + TIMES + ", TEAM_NAME=" + TEAM_NAME + ", MEMBER_ID=" + MEMBER_ID
+				+ ", TEAM_NAME2=" + TEAM_NAME2 + "]";
 	}
 	
 	

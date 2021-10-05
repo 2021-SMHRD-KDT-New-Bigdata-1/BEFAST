@@ -109,7 +109,7 @@
                             <li><a href="TeamList">팀 찾기</a></li>
                             <li><a href="LGW_HYH/Team.jsp">팀 생성</a></li>
                             <li><a href="BoardList">용병게시판</a></li>
-                            <li><a href="ShowPage1.jsp">예약현황</a></li>
+                            <li><a href="YJW_KSJ/ShowPage2.jsp">예약현황</a></li>
                             <li><a href="LGW_HYH/Guide.jsp">풋살가이드</a></li>
                             <li><a href="Logoutform.jsp">로그아웃</a></li>
                         </ul>
@@ -222,7 +222,7 @@
 
 
     <!-- 매칭준비 -->
-   <form action="BookingService" id="Bookingform">
+   <form action="BookingService2" id="Bookingform">
     <div class="ready">
             <div class="date_select">
 
@@ -313,7 +313,7 @@
         $(function() {
             $("#datepicker1").datepicker({
                 dateFormat: 'yy-mm-dd' //달력 날짜 형태
-                ,type : "date"
+                // ,type : "date"
                 ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
                 ,showMonthAfterYear:true // 월- 년 순서가아닌 년도 - 월 순서
                 ,changeYear: true //option값 년 선택 가능

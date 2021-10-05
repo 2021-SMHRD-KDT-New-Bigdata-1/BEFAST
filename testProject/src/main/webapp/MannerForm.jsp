@@ -1,3 +1,6 @@
+<%@page import="testProject.memberVO"%>
+<%@page import="testProject.BookingDAO2"%>
+<%@page import="testProject.BookingVO"%>
 <%@page import="newthang.MannerDAO"%>
 <%@page import="newthang.MannerVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -13,6 +16,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<%
+	memberVO vo = (memberVO) session.getAttribute("vo");
+	BookingDAO2 dao = new BookingDAO2();
+	 BookingVO Bvo = dao.My_booking(vo.getMEMBER_ID());
+	%>
 	<form action="MannerInsert.jsp" method="post">
 		<div id="header"></div>
 		
@@ -59,7 +67,8 @@
 		<h1>
 			<b>경기 평가</b>
 		</h1>
-			1. 상대 팀은 시간 약속을 잘 지켰나요?
+			1.<input type="text" name="team_name2" class="manner"
+	value="<%=Bvo.getTEAM_NAME2()%>" readonly/>은 시간 약속을 잘 지켰나요?
 			<div class="star-rating space-x-4 mx-auto">
 				<input type="radio" id="5-stars" name="rating" value="5"
 					v-model="ratings" class="rate_radio" onclick='getCheckboxValue()' />

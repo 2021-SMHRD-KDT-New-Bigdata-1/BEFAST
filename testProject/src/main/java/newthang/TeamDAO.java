@@ -77,6 +77,7 @@ public class TeamDAO {
 		}
 	}
 
+	
 	// 팀명 중복확인
 	public boolean TeamCheck(String TEAM_NAME) {
 		boolean check = false;
@@ -280,5 +281,33 @@ public class TeamDAO {
 		}
 		return vo;
 	}
+public void ResultInsert(ResultVO vo) {
+		
+		try {
+			// 오라클 접속
+			conn();
+			
+			
+
+			String sql = "insert into teams(team_code, team_name, mannerscores, winner_point, team_logo, team_trophy, team_info, teamleader, result_1, result_2,result_3) values(null,?,null,null,?,null,?,?,null,null,null)";
+
+			PreparedStatement psmt = conn.prepareStatement(sql);
+			
+			
+			psmt.setString(1, vo.getTEAM_NAME());
+			psmt.setString(2, vo.getTEAM_LOGO());
+			psmt.setString(3, vo.getTEAM_INFO());
+			psmt.setString(4, vo.getTEAMLEADER());
+			// 2_5. sql문 실행하기 -> 성공 여부에 따라 페이지 이동시키기
+			psmt.executeUpdate();
+			// 2_6 실행문처리
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			// 실행 후 오류 발생 시 에러출력
+		}
 	}
+
+	}
+
 	

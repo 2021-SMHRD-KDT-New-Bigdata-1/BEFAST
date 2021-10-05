@@ -13,10 +13,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
-
-<!-- 폰트어썸 -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
-
 <link rel="stylesheet" href="YJW_KSJ/CSS/Showpage.css">
 </head>
 <style>
@@ -44,16 +40,21 @@ input[type="text"] {
 
 	%>
 
-	<!-- <div class="container"> -->
-	<div class="back">
+	<div class="container">
 		<div class="outcontainer">
-		
-		<div class="outcontainer2">
+			<!--    <div class="game_box">
+            <h3 class="select_game">예약현황 페이지지롱</h3> -->
+
+			<!-- 예약현황 -->
 			<div class="container">
 				<div class="game_box2">
 					<div class="box1">
+
+
+
 						<%
 						out.println("<h1 class=\"coloring\">랭크 순위</h1>");
+
 						out.println("<table class=\"table table-hover\">");
 						out.println("<tr class=color>"); // 색상 빨간색:danger(table-hover)
 						out.println("<th class=text-center width=15>순위</th>");
@@ -82,9 +83,7 @@ input[type="text"] {
 						}
 						out.println("</table><br>");
 						%>
-						
 					</div>
-					
 					<%--                             <form action="MatchService">
                            <table>
                               <tr>
@@ -98,6 +97,8 @@ input[type="text"] {
                               </tr>
                            </table>
                            </form> --%>
+
+
 					<!--                               out.print("<tr>");
                               out.print("<td>" + al.get(i).getMATCHING_DATE() + "</td>");
                               out.print("<td>" + al.get(i).getADDRESS() + "</td>");
@@ -106,6 +107,9 @@ input[type="text"] {
                               out.print("<td>" + al.get(i).getGAMES() + "</td>");
                               out.print("<td>" + al.get(i).getTEAM_NAME() + "</td>");
                               out.print("</tr>"); -->
+
+
+
 
 					<div class="wait">
 						<table>
@@ -121,11 +125,13 @@ input[type="text"] {
 									<td>경기방식</td>
 									<td>팀명</td>
 									<td>예약</td>
+
 								</tr>
-<!-- 								<tr>
-								
-								</tr> -->
-							<%	 
+								<tr>
+
+
+								</tr>
+								<%
 								if (request.getParameter("choice") == null) {
 									al = dao.select();
 								} else {
@@ -170,9 +176,9 @@ input[type="text"] {
 										break;
 									}
 
-								} 
+								}
 
-								 if (prev_page <= 0) {
+								if (prev_page <= 0) {
 									prev_page = 1;
 								} else if (cur_page >= total_page) {
 									next_page = total_page;
@@ -181,64 +187,54 @@ input[type="text"] {
 								out.println("<p class=\"white1\">"+(prev_page) + " page / " + (next_page) + " pages</p>");
 								out.println("<a href=?page1=" + next_page + " class=\"btn btn-sm btn-primary\">다음</a>");
 								%>
-					
+							
 						</table>
 						</tbody>
 
 					</div>
 
 				</div>
-			</div>
-				
-		<div class="columns">
-			<div class="figure_box">
-				<div id='result3'>경기방식을 선택해주세요</div>
-					<div class="Mat">
-					 <form method="get" action="ShowPage1.jsp">
+				<div id='result3'>선택안함</div>
+				<form method="get" action="ShowPage1.jsp">
+					<div class="columns">
 						<figure>
 							<!-- 기존 : <img src="img/랭크경기.jpg"> -->
-							<button class="btn" value="일반" id="btn" type="submit" name="choice" onclick='hidden_change("일반")'>
-							<i class="fas fa-flag-checkered"></i>
-							<input type="hidden" name="choice" value="선택안함" class="result"
-									id="hidden_input"> <!-- <img class="btn-img"src="YJW_KSJ/resources/99. img/team2.jpg"> -->
-									
+							<button class="btn" value="일반" id="btn" type="submit"
+								name="choice" onclick='hidden_change("일반")'>
+								<input type="hidden" name="choice" value="선택안함" class="result"
+									id="hidden_input"> <img class="btn-img"
+									src="YJW_KSJ/resources/99. img/team2.jpg">
 							</button>
-							
 							<figcaption>일반경기</figcaption>
 						</figure>
 
 						<figure>
 							<!-- <img src="img/랭크경기.jpg"> -->
-							<button class="btn" value="친선" id="btn" type="submit" name="choice" onclick='hidden_change("친선")'>
-							<i class="far fa-handshake"></i>
+							<button class="btn" value="친선" id="btn" type="submit"
+								name="choice" onclick='hidden_change("친선")'>
 								<input type="hidden" name="choice" value="선택안함" class="result"
-									id="hidden_input"> <!-- <img class="btn-img" src="YJW_KSJ/resources/99. img/team2.jpg"> -->
+									id="hidden_input"> <img class="btn-img"
+									src="YJW_KSJ/resources/99. img/team2.jpg">
 							</button>
-							
 							<figcaption>친선경기</figcaption>
 						</figure>
 
 						<figure>
 							<!-- <img src="img/랭크경기.jpg"> -->
-							<button class="btn" value="랭크" id="btn" type="submit" name="choice" onclick='hidden_change("랭크")'>
-								<i class="fas fa-trophy"></i>
+							<button class="btn" value="랭크" id="btn" type="submit"
+								name="choice" onclick='hidden_change("랭크")'>
 								<input type="hidden" name="choice" value="선택안함" class="result"
-									id="hidden_input"> <!-- <img class="btn-img" src="YJW_KSJ/resources/99. img/team2.jpg"> -->
-							
+									id="hidden_input"> <img class="btn-img"
+									src="YJW_KSJ/resources/99. img/team2.jpg">
 							</button>
 							<figcaption>랭크경기</figcaption>
 						</figure>
 
-					</form>
-						</div>
 					</div>
-				</div>
+				</form>
 			</div>
-			</div>
-		</div> 
-			
 
-		
+		</div>
 		<script>
 			function hidden_change(val) {
 				var hidden = document.getElementById("hidden_input");
