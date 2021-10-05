@@ -1,23 +1,54 @@
 @charset "EUC-KR";
-.partner{
-	/* display : inline; */
-	background-color : green;
-	width: 110px;
+.partner, .partner2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 7px;
+    line-height: 2.5;
+    /* margin-bottom: 15px; */
+    margin: 0 0 15px auto;
+    background-color: rgba(9,9,52);
 }
-.partner h2{
+
+.partner h2, .partner2 h2{
 	text-align: center;
 	background-color: #3d405b;
 	font-size:20px;
 	font-weight: unset;
 }
+
+.partner:hover, .partner2:hover {
+	transition: all 0.2s ease 0s;
+	border: 1px solid rgba(31,209,69);
+}
+
+
 .haha{
 	font-size:20px;
+	margin-bottom: 8px;
 }
 .partner_info>p{
 	cursor: pointer;
-	background-color: #3d405b;
-	text-decoration: underline;
+	text-decoration: none;
 }
+
+.partner_info>p:hover {
+	transition: all 0.2s ease 0s;
+    color: rgba(31,209,69);
+}
+
+.partner2 input[type="submit"] {
+	cursor: pointer;
+	text-decoration: none;
+}
+.partner2 input[type="submit"]:hover{
+	transition: all 0.2s ease 0s;
+    color: rgba(31,209,69);
+}
+
+
 .p{
 	text-align : center;
 	font-size: 18px;
@@ -130,12 +161,9 @@ div{
 	cursor: pointer;
 	background-color: #996699;
 }
+
 .form{
-	margin: 0px;
     border: none;
-    background-color: none;
     font-size: 16px;
-    background-color: #3d405b;
     color: #eee;
-    border-bottom: solid 1px;
 }

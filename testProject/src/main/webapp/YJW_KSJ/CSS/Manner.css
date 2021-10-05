@@ -1,5 +1,20 @@
 @charset "EUC-KR";
 /*  */
+
+@font-face {
+    font-family: 'twayfly';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayfly.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+	font-family: 'twayfly';
+/* 	margin: 0 auto;
+	padding: 0; */
+}
+
 .star-rating {
     display: flex;
     flex-direction: row-reverse;
@@ -18,7 +33,7 @@
 .star-rating label {
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 2.3px;
-    -webkit-text-stroke-color: lightgoldenrodyellow;
+    -webkit-text-stroke-color: #eee;
     cursor: pointer;
     margin: 3px;
 }
@@ -38,7 +53,7 @@ body{
 }
 .Card {
     background-color: #3d405b;
-    color: #f4f1de;
+    color: #eee;
     /* width: 250px; */
     padding: 0px 22px;
     height: auto;
@@ -54,12 +69,45 @@ body{
     overflow: hidden;
 }
 textarea{
-	margin-left:20px;
+	margin: 0 auto;
+	resize: none;
+    border-radius: 5px;
 }
 label{
 	color:#eee;
 }
 input{
-	margin:10px;
+	/* margin:10px; */
 	font-size: 15px;
+	background: none;
+    border: none;
+    outline: none;
+    color: #eee;
 }
+
+div.sub {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 7px;
+    line-height: 2.5;
+    cursor : pointer;
+    /* margin-bottom: 15px; */
+    /* margin: 0 0 15px auto; */
+    margin-top:19px;
+
+}
+
+div.sub:hover {
+	transition: all 0.2s ease 0s;
+    background-color: rgba(31,209,69);
+}
+
+.line {
+	border-bottom: 2px solid yellow;
+	margin: 8px auto;
+}
+
+
