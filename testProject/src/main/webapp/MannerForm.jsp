@@ -19,50 +19,11 @@
 	<%
 	memberVO vo = (memberVO) session.getAttribute("vo");
 	BookingDAO2 dao = new BookingDAO2();
-	 BookingVO Bvo = dao.My_booking(vo.getMEMBER_ID());
+	BookingVO Bvo = dao.My_booking(vo.getMEMBER_ID());
 	%>
 	<form action="MannerInsert.jsp" method="post">
 		<div id="header"></div>
-		
-		<!--- <div class="partner">
-			<h2>경기 결과</h2>
-			<div class="partner_info">
-				<p>클릭해주세요.</p>
-			</div>
-		</div>
-		<div class="clear"></div>
-		<div id="modal">
-			<div class="body">
-				<p class="p">경기결과를 클릭해주세요</p>
-				<br>
-				<div class="modal_img">
-					<input type="button" name="m_result" value="승리" class="result"
-						onclick='hidden_change("승리")'> <input type="hidden"
-						name="m_result" value="선택안함" class="result" id="hidden_input">
-					<input type="button" name="m_result" value="패배" class="result"
-						onclick='hidden_change("패배")'> <input type="hidden"
-						name="m_result" value="선택안함" class="result" id="hidden_input">
-					<input type="button" name="m_result" value="무승부" class="result"
-						onclick='hidden_change("무승부")'> <input type="hidden"
-						name="m_result" value="선택안함" class="result" id="hidden_input">
-				</div>
-				<br> 경기결과 :
-				<div id='result3'>선택안함</div>
-				<div class="button">
-					<button type="button" id="btn-close">닫기</button>
-				</div>
-			</div>
-		</div>
-		<script>
-			$(".partner p").click(function() {
-				$("#modal").addClass("active");
-			});
-			$("#modal button").click(function() {
-				$("#modal").removeClass("active");
-			});
-		</script>
 
-		<div> -->
 		<div class="Card">
 		<h1>
 			<b>경기 평가</b>
@@ -70,10 +31,9 @@
 			1.<input type="text" name="team_name2" class="manner"
 	value="<%=Bvo.getTEAM_NAME2()%>" readonly/>은 시간 약속을 잘 지켰나요?
 			<div class="star-rating space-x-4 mx-auto">
-				<input type="radio" id="5-stars" name="rating" value="5"
-					v-model="ratings" class="rate_radio" onclick='getCheckboxValue()' />
-				<label for="5-stars" class="star pr-4">★</label> <input type="radio"
-					id="4-stars" name="rating" value="4" v-model="ratings"
+				<input type="radio" id="5-stars" name="rating" value="5" v-model="ratings" class="rate_radio" onclick='getCheckboxValue()' />
+				<label for="5-stars" class="star pr-4">★</label> 
+				<input type="radio" id="4-stars" name="rating" value="4" v-model="ratings"
 					class="rate_radio" onclick='getCheckboxValue()' /> <label
 					for="4-stars" class="star">★</label> <input type="radio"
 					id="3-stars" name="rating" value="3" v-model="ratings"

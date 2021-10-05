@@ -200,7 +200,7 @@ h1.select_game, ul.choose_game {
 .btn:hover {
 	transition: all 0.2s ease 0s;
     background-color: rgba(31,209,69,0.5);
-    border-radius: 5px;
+    border-radius: 5;
 }
 
 .btn:hover {

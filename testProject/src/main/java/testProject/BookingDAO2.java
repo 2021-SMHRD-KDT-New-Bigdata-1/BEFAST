@@ -111,7 +111,7 @@ public void BOOKINGS(BookingVO vo) {
 				String GAMES = rs.getString(4);
 				String TIMES = rs.getString(5);
 				String TEAM_NAME = rs.getString(6);
-				String TEAM_NAME2 = rs.getString(7);
+				String TEAM_NAME2 = rs.getString(8);
 
 				
 				Bvo = new BookingVO(MATCHING_DATE, ADDRESS, FILED_NAME,GAMES,TIMES, TEAM_NAME, MEMBER_ID,TEAM_NAME2);
