@@ -28,8 +28,10 @@
 		<h1>
 			<b>경기 평가</b>
 		</h1>
-			1.<input type="text" name="team_name2" class="manner"
-	value="<%=Bvo.getTEAM_NAME2()%>" readonly/>은 시간 약속을 잘 지켰나요?
+			<div class="fir">
+			1. 상대팀(<input type="text" size=5 maxlength=5 name="team_name2" class="manner" value="<%=Bvo.getTEAM_NAME2()%>" readonly/>)는(은) 시간 약속을 잘 지켰나요?
+			</div>
+			
 			<div class="star-rating space-x-4 mx-auto">
 				<input type="radio" id="5-stars" name="rating" value="5" v-model="ratings" class="rate_radio" onclick='getCheckboxValue()' />
 				<label for="5-stars" class="star pr-4">★</label> 

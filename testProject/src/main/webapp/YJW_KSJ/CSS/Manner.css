@@ -94,9 +94,8 @@ div.sub {
     padding: 7px;
     line-height: 2.5;
     cursor : pointer;
-    /* margin-bottom: 15px; */
-    /* margin: 0 0 15px auto; */
     margin-top:19px;
+    background: rgba(9,9,52);
 
 }
 

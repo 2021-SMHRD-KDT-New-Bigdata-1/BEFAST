@@ -145,7 +145,7 @@ button {
 	text-align: center;
 	align-items: center;
 	display: flex;
-	background: none;
+	background: rgba(9,9,52);
 	border: 1px solid #eee;
 	color: #eee;
 }
